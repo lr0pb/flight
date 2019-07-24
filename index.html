@@ -1,0 +1,1384 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Полёт</title>
+    <meta name="description" content="Полёт — новый режим просмотра фотографий!">
+    <meta name="keywords" content="LR0PB сайт фотографии полёт">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:800&display=swap&subset=cyrillic" rel="stylesheet">
+    <style>
+      body {
+        overflow-x: hidden;
+        margin: 0;
+        top: 0px;
+        left: 0px;
+        height: 100vh;
+        width: 100vw;
+      }
+      h2, h3, h4 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        color: #fff;
+        margin: 0;
+      }
+      sup {
+        background: -webkit-linear-gradient(75deg, #41B619, #CBE724);
+      }
+      #fly {
+        display: none;
+        position: absolute;
+        overflow: hidden;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000 /*
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 30%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(image/bg.jpeg);*/
+      }
+      #fly:-moz-full-screen {
+        display: block;
+      }
+      #fly:-webkit-full-screen {
+        display: block;
+      }
+      #fly:-ms-fullscreen {
+        display: block;
+      }
+      #bg-box {
+        display: block;
+      }
+      .bg-image {
+        display: none;
+        top: -20px;
+        left: -20px;
+        height: 105vh;
+        width: 105vw;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .bgo {
+        display: block;
+        top: -20px;
+        left: -20px;
+        height: 105vh;
+        width: 105vw;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .bg-center {
+        background-position: center center;
+      }
+      .bg-top {
+        background-position: center top;
+      }
+      #bgo {position: absolute; z-index: 100;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 30%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(https://static.tildacdn.com/tild3333-3261-4565-a565-306135666536/bg.jpeg);
+      }
+      #bg1 {position: absolute; z-index: 110;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(https://static.tildacdn.com/tild6239-6232-4133-a265-633831653063/im1.jpeg);
+      }
+      #bg2 {position: absolute; z-index: 120;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(https://static.tildacdn.com/tild3335-6531-4233-a664-626637393830/im2.jpeg);
+      }
+      #bg3 {position: absolute; z-index: 130;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(https://static.tildacdn.com/tild3735-3530-4131-b437-666132346163/im3.jpeg);
+      }
+      #bg4 {position: absolute; z-index: 140;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(https://static.tildacdn.com/tild3733-6236-4234-b837-633639383166/im4.jpeg);
+      }
+      #bg5 {position: absolute; z-index: 150;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(https://static.tildacdn.com/tild6234-3635-4263-b538-356339656362/im5.jpeg);
+      }
+      #bg6 {position: absolute; z-index: 160;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(https://static.tildacdn.com/tild3733-3736-4264-b932-643265303464/im6.jpeg);
+      }
+      #bg7 {position: absolute; z-index: 170;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(https://static.tildacdn.com/tild6164-3330-4164-b833-396265323234/im7.jpeg);
+      }
+      #bg8 {position: absolute; z-index: 180;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(https://static.tildacdn.com/tild3336-3764-4262-b436-633264623336/im8.jpeg);
+      }
+      #bg9 {position: absolute; z-index: 190;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(https://static.tildacdn.com/tild3231-3962-4662-b031-356232313532/im9.jpeg);
+      }
+      #bg10 {position: absolute; z-index: 200;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(https://static.tildacdn.com/tild6536-3532-4239-b039-646637663665/im10.jpeg);
+      }
+      #bg11 {position: absolute; z-index: 201;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(https://static.tildacdn.com/tild3065-3665-4662-b438-393463353438/im11.jpeg);
+      }
+      #bg12 {position: absolute; z-index: 202;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(https://static.tildacdn.com/tild6664-3263-4933-a530-346233316238/im12.jpeg);
+      }
+      #bg13 {position: absolute; z-index: 203;
+        background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(https://static.tildacdn.com/tild3031-6430-4261-a466-323562333138/im13.jpeg);
+      }
+      #cross {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        z-index: 910;
+        height: 50px;
+        width: 50px;
+        margin-top: 15px;
+        margin-left: calc(100% - 75px);
+      }
+      #pre-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 30%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 15%), url(https://static.tildacdn.com/tild3333-3261-4565-a565-306135666536/bg.jpeg);
+      }
+      #fly-open {
+        position: absolute;
+        cursor: pointer;
+        z-index: 10;
+        padding: 11px 40px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: 4px solid #41B619;
+        border-radius: 50px;
+        box-shadow: 0px 0px 10px #41B619;
+        transition: 0.5s;
+      }
+      #fly-open:hover {
+        background: -webkit-linear-gradient(75deg, #41B619, #CBE724);
+        box-shadow: 0px 0px 10px #CBE724;
+      }
+      #rotare-box {
+        position: absolute;
+        z-index: 900;
+      }
+      @media screen and (orientation: portrait) {
+        #rotare-box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          min-width: 100vw;
+          background-size: cover;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 30%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 15%), url(https://static.tildacdn.com/tild3333-3261-4565-a565-306135666536/bg.jpeg);
+        }
+      }
+      @media screen and (orientation: portrait) {
+        .portrait-text {
+          display: inline-block;
+          text-align: center;
+        }
+        #fly-open {display: none;}
+      }
+      @media screen and (orientation: landscape) {
+        .portrait-text {display: none;}
+        #fly-open {display: block;}
+      }
+      @keyframes fade-up {
+        from {opacity: 0; top: -7%;}
+        to {opacity: 1; top: 2%;}
+      }
+      @keyframes fade-down {
+        from {opacity: 0; bottom: -7%;}
+        to {opacity: 1; bottom: 2%;}
+      }
+      @media (min-width: 567px) and (orientation: landscape) {
+        .top-text {
+          position: absolute;
+          z-index: 210;
+          top: 2%;
+          left: 1%;
+          animation-name: fade-up;
+          animation-duration: 1.2s;
+          animation-delay: 1.5s;
+        }
+        .bottom-text {
+          position: absolute;
+          z-index: 220;
+          bottom: 2%;
+          left: 1%;
+          animation-name: fade-down;
+          animation-duration: 1.2s;
+          animation-delay: 1.5s;
+        }
+        #bottom-button {
+          display: block;
+          position: absolute;
+          cursor: pointer;
+          z-index: 240;
+          padding: 11px 40px;
+          bottom: 2%;
+          right: 2%;
+          background-color: rgba(0, 0, 0, 0.5);
+          border: 4px solid #41B619;
+          border-radius: 50px;
+          box-shadow: 0px 0px 10px #41B619;
+          transition: 0.5s;
+          animation-name: fade-down;
+          animation-duration: 1.2s;
+          animation-delay: 1.5s;
+        }
+        #bottom-button:hover {
+          background: -webkit-linear-gradient(75deg, #41B619, #CBE724);
+          box-shadow: 0px 0px 10px #CBE724;
+        }
+        #icon0-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ... ... ... ... ... ... ... ... ... ..."
+            "... im1 ... ... ... ... im3 im4 ... ... ... ..."
+            "... ... ... ... im2 ... ... ... ... im5 ... ..."
+            "... ... ... ... ... ... ... ... ... ... ... ..."
+            "... ... ... ... ... ... ... ... ... ... ... ..."
+          ;
+          grid-template-rows: 2.7fr repeat(3, 1fr) 2.3fr;
+          grid-template-columns: 2fr repeat(10, 1fr) 2fr;
+        }
+        #icon1-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ... ..."
+            "... im4-1 ... ..."
+            "... ... im3-1 ..."
+            "... ... im6 ..."
+            "... ... ... im7"
+            "... ... ... ..."
+          ;
+          grid-template-rows: 4.1fr 0.7fr 0.2fr 0.9fr 3.1fr;
+          grid-template-columns: 3.8fr 4.2fr 2fr 2fr;
+        }
+        #icon2-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im8 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: 3.2fr 1fr 1.8fr;
+          grid-template-columns: 5.1fr 1fr 3.9fr;
+        }
+        #icon3-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im10 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: 3.45fr 1fr 1.55fr;
+          grid-template-columns: 5.1fr 1fr 3.9fr;
+        }
+        #icon4-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... im0 ... ..."
+            "... ... ... im1-3"
+            "... im12 ... ..."
+          ;
+          grid-template-rows: 1.3fr 0.2fr 1.5fr;
+          grid-template-columns: repeat(2, 2fr) 1fr 3fr;
+        }
+        #icon5-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im13 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: 2fr 1fr 3fr;
+          grid-template-columns: 4fr 1fr 7fr;
+        }
+        #icon6-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ... ... ..."
+            "... ... ... im1-1 ..."
+            "... im7-1 ... ... ..."
+            "... ... ... ... ..."
+          ;
+          grid-template-rows: 2.85fr 1fr 1.85fr 2.3fr;
+          grid-template-columns: 3.2fr 1fr 0.6fr 1fr 8.3fr;
+        }
+        #icon7-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im1-2 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr) 3fr;
+        }
+        #icon8-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im9 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: 2fr 1fr 4fr;
+          grid-template-columns: 7fr 1fr 4fr;
+        }
+        #icon9-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im6-1 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: 3.5fr 1fr 4fr;
+          grid-template-columns: 4fr 1fr 3fr;
+        }
+        #icon10-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im11 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: 3.5fr 1fr 2.5fr;
+          grid-template-columns: 3.1fr 1fr 2.9fr;
+        }
+        #icon12-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im4-2 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: 3.5fr 1fr 2.5fr;
+          grid-template-columns: 3.1fr 1fr 2.9fr;
+        }
+      }
+      .image-point {
+        position: absolute;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 50%;
+        border-style: solid;
+        border-color: #fff;
+        transition: 0.2s;
+      }
+      .image-point:hover {
+        transform: scale(1.3, 1.3);
+      }
+      .non-vis {
+        display: none;
+      }/*
+      .fade-point {
+        animation-name: fade-in;
+        animation-duration: 0.8s;
+        animation-delay: 1.2s;
+      }
+      @keyframes fade-in {
+        from {opacity: 0; transform: scale(2, 2);}
+        to {opacity: 1; transform: scale(1, 1);}
+      }*/
+      #im0 {
+        grid-area: im0;
+        z-index: 300;
+        right: 0px;
+        bottom: 0px;
+        background-image: url(https://static.tildacdn.com/tild3333-3261-4565-a565-306135666536/bg.jpeg);
+      }
+      #im1 {
+        grid-area: im1;
+        z-index: 310;
+        height: 50px;
+        background-image: url(https://static.tildacdn.com/tild6239-6232-4133-a265-633831653063/im1.jpeg);
+      }
+      #im1-1 {
+        grid-area: im1-1;
+        z-index: 315;
+        background-image: url(https://static.tildacdn.com/tild6239-6232-4133-a265-633831653063/im1.jpeg);
+      }
+      #im1-2 {
+        grid-area: im1-2;
+        z-index: 316;
+        background-image: url(https://static.tildacdn.com/tild6239-6232-4133-a265-633831653063/im1.jpeg);
+      }
+      #im1-3 {
+        grid-area: im1-3;
+        z-index: 317;
+        bottom: 0px;
+        background-image: url(https://static.tildacdn.com/tild6239-6232-4133-a265-633831653063/im1.jpeg);
+      }
+      #im2 {
+        grid-area: im2;
+        z-index: 320;
+        top: 20px;
+        background-image: url(https://static.tildacdn.com/tild3335-6531-4233-a664-626637393830/im2.jpeg);
+      }
+      #im3 {
+        grid-area: im3;
+        z-index: 330;
+        left: -10px;
+        bottom: -10px;
+        background-image: url(https://static.tildacdn.com/tild3735-3530-4131-b437-666132346163/im3.jpeg);
+      }
+      #im3-1 {
+        grid-area: im3-1;
+        z-index: 335;
+        background-image: url(https://static.tildacdn.com/tild3735-3530-4131-b437-666132346163/im3.jpeg);
+      }
+      #im4 {
+        grid-area: im4;
+        z-index: 340;
+        right: 0px;
+        background-image: url(https://static.tildacdn.com/tild3733-6236-4234-b837-633639383166/im4.jpeg);
+      }
+      #im4-1 {
+        grid-area: im4-1;
+        z-index: 345;
+        background-image: url(https://static.tildacdn.com/tild3733-6236-4234-b837-633639383166/im4.jpeg);
+      }
+      #im4-2 {
+        grid-area: im4-2;
+        z-index: 346;
+        background-image: url(https://static.tildacdn.com/tild3733-6236-4234-b837-633639383166/im4.jpeg);
+      }
+      #im5 {
+        grid-area: im5;
+        z-index: 350;
+        left: 0px;
+        bottom: -50px;
+        background-image: url(https://static.tildacdn.com/tild6234-3635-4263-b538-356339656362/im5.jpeg);
+      }
+      #im6 {
+        grid-area: im6;
+        z-index: 360;
+        right: 60px;
+        background-image: url(https://static.tildacdn.com/tild3733-3736-4264-b932-643265303464/im6.jpeg);
+      }
+      #im6-1 {
+        grid-area: im6-1;
+        z-index: 365;
+        background-image: url(https://static.tildacdn.com/tild3733-3736-4264-b932-643265303464/im6.jpeg);
+      }
+      #im7 {
+        grid-area: im7;
+        z-index: 370;
+        background-image: url(https://static.tildacdn.com/tild6164-3330-4164-b833-396265323234/im7.jpeg);
+      }
+      #im7-1 {
+        grid-area: im7-1;
+        z-index: 375;
+        background-image: url(https://static.tildacdn.com/tild6164-3330-4164-b833-396265323234/im7.jpeg);
+      }
+      #im8 {
+        grid-area: im8;
+        z-index: 380;
+        background-image: url(https://static.tildacdn.com/tild3336-3764-4262-b436-633264623336/im8.jpeg);
+      }
+      #im9 {
+        grid-area: im9;
+        z-index: 390;
+        background-image: url(https://static.tildacdn.com/tild3231-3962-4662-b031-356232313532/im9.jpeg);
+      }
+      #im10 {
+        grid-area: im10;
+        z-index: 400;
+        background-image: url(https://static.tildacdn.com/tild6536-3532-4239-b039-646637663665/im10.jpeg);
+      }
+      #im11 {
+        grid-area: im11;
+        z-index: 410;
+        background-image: url(https://static.tildacdn.com/tild3065-3665-4662-b438-393463353438/im11.jpeg);
+      }
+      #im12 {
+        grid-area: im12;
+        z-index: 410;
+        background-image: url(https://static.tildacdn.com/tild6664-3263-4933-a530-346233316238/im12.jpeg);
+      }
+      #im13 {
+        grid-area: im13;
+        z-index: 430;
+        background-image: url(https://static.tildacdn.com/tild3031-6430-4261-a466-323562333138/im13.jpeg);
+      }
+      @media screen and (max-width: 979px) and (orientation: landscape) {
+        #im0 {width: 35px; height: 35px; border-width: 7px;}
+        #im1 {width: 34px; height: 34px; border-width: 7px;}
+        #im1-1 {width: 41px; height: 41px; border-width: 8px;}
+        #im1-2 {width: 47px; height: 47px; border-width: 9px;}
+        #im1-3 {width: 40px; height: 40px; border-width: 8px;}
+        #im2 {width: 42px; height: 42px; border-width: 8px;}
+        #im3 {width: 35px; height: 35px; border-width: 7px;}
+        #im3-1 {width: 28px; height: 28px; border-width: 6px;}
+        #im4 {width: 32px; height: 32px; border-width: 6px;}
+        #im4-1 {width: 26px; height: 26px; border-width: 5px;}
+        #im4-2 {width: 34px; height: 34px; border-width: 7px;}
+        #im5 {width: 47px; height: 47px; border-width: 9px;}
+        #im6 {width: 33px; height: 33px; border-width: 7px;}
+        #im6-1 {width: 47px; height: 47px; border-width: 9px;}
+        #im7 {width: 48px; height: 48px; border-width: 9px;}
+        #im7-1 {width: 48px; height: 48px; border-width: 9px;}
+        #im8 {width: 47px; height: 47px; border-width: 9px;}
+        #im9 {width: 47px; height: 47px; border-width: 9px;}
+        #im10 {width: 46px; height: 46px; border-width: 9px;}
+        #im11 {width: 46px; height: 46px; border-width: 9px;}
+        #im12 {width: 46px; height: 46px; border-width: 9px;}
+        #im13 {width: 47px; height: 47px; border-width: 9px;}
+        .top-text {font-size: 27px;}
+        .bottom-text {font-size: 27px;}
+        h4 {font-size: 15px;}
+        #bottom-button {padding: 4 20;}
+      }
+      @media screen and (min-width: 980px) and (max-width: 1199px) and (orientation: landscape) {
+        #im0 {width: 35px; height: 35px; border-width: 8px;}
+        #im1 {width: 40px; height: 40px; border-width: 9px;}
+        #im1-1 {width: 48px; height: 48px; border-width: 11px;}
+        #im1-2 {width: 70px; height: 70px; border-width: 13px;}
+        #im1-3 {width: 44px; height: 44px; border-width: 9px;}
+        #im2 {width: 57px; height: 57px; border-width: 11px;}
+        #im3 {width: 47px; height: 47px; border-width: 10px;}
+        #im3-1 {width: 35px; height: 35px; border-width: 8px;}
+        #im4 {width: 35px; height: 35px; border-width: 8px;}
+        #im4-1 {width: 30px; height: 30px; border-width: 7px;}
+        #im4-2 {width: 35px; height: 35px; border-width: 8px;}
+        #im5 {width: 70px; height: 70px; border-width: 13px;}
+        #im6 {width: 40px; height: 40px; border-width: 9px;}
+        #im6-1 {width: 70px; height: 70px; border-width: 13px;}
+        #im7 {width: 55px; height: 55px; border-width: 11px;}
+        #im7-1 {width: 75px; height: 75px; border-width: 14px;}
+        #im8 {width: 70px; height: 70px; border-width: 13px;}
+        #im9 {width: 70px; height: 70px; border-width: 13px;}
+        #im10 {width: 55px; height: 55px; border-width: 11px;}
+        #im11 {width: 55px; height: 55px; border-width: 11px;}
+        #im12 {width: 55px; height: 55px; border-width: 11px;}
+        #im13 {width: 70px; height: 70px; border-width: 13px;}
+        .top-text {font-size: 31px;}
+        .bottom-text {font-size: 31px;}
+        h4 {font-size: 16px;}
+        #bottom-button {padding: 7 26;}
+      }
+      @media screen and (min-width: 1200px) and (max-width: 1439px) and (orientation: landscape) {
+        #im0 {width: 45px; height: 45px; border-width: 9px;}
+        #im1 {width: 50px; height: 50px; border-width: 10px;}
+        #im1-1 {width: 58px; height: 58px; border-width: 12px;}
+        #im1-2 {width: 80px; height: 80px; border-width: 14px;}
+        #im1-3 {width: 54px; height: 54px; border-width: 10px;}
+        #im2 {width: 67px; height: 67px; border-width: 12px;}
+        #im3 {width: 57px; height: 57px; border-width: 11px;}
+        #im3-1 {width: 45px; height: 45px; border-width: 9px;}
+        #im4 {width: 45px; height: 45px; border-width: 9px;}
+        #im4-1 {width: 40px; height: 40px; border-width: 8px;}
+        #im4-2 {width: 45px; height: 45px; border-width: 9px;}
+        #im5 {width: 80px; height: 80px; border-width: 14px;}
+        #im6 {width: 50px; height: 50px; border-width: 10px;}
+        #im6-1 {width: 80px; height: 80px; border-width: 14px;}
+        #im7 {width: 65px; height: 65px; border-width: 12px;}
+        #im7-1 {width: 85px; height: 85px; border-width: 15px;}
+        #im8 {width: 80px; height: 80px; border-width: 14px;}
+        #im9 {width: 80px; height: 80px; border-width: 14px;}
+        #im10 {width: 65px; height: 65px; border-width: 12px;}
+        #im11 {width: 65px; height: 65px; border-width: 12px;}
+        #im12 {width: 65px; height: 65px; border-width: 12px;}
+        #im13 {width: 80px; height: 80px; border-width: 14px;}
+        .top-text {font-size: 33px;}
+        .bottom-text {font-size: 33px;}
+        h4 {font-size: 17px;}
+        #bottom-button {padding: 9 33;}
+      }
+      @media screen and (min-width: 1440px) and (orientation: landscape) {
+        #im0 {width: 55px; height: 55px; border-width: 11px;}
+        #im1 {width: 60px; height: 60px; border-width: 12px;}
+        #im1-1 {width: 68px; height: 68px; border-width: 14px;}
+        #im1-2 {width: 90px; height: 90px; border-width: 16px;}
+        #im1-3 {width: 64px; height: 64px; border-width: 12px;}
+        #im2 {width: 77px; height: 77px; border-width: 14px;}
+        #im3 {width: 67px; height: 67px; border-width: 13px;}
+        #im3-1 {width: 55px; height: 55px; border-width: 11px;}
+        #im4 {width: 55px; height: 55px; border-width: 11px;}
+        #im4-1 {width: 50px; height: 50px; border-width: 10px;}
+        #im4-2 {width: 55px; height: 55px; border-width: 11px;}
+        #im5 {width: 90px; height: 90px; border-width: 16px;}
+        #im6 {width: 60px; height: 60px; border-width: 12px;}
+        #im6-1 {width: 90px; height: 90px; border-width: 16px;}
+        #im7 {width: 75px; height: 75px; border-width: 14px;}
+        #im7-1 {width: 95px; height: 95px; border-width: 17px;}
+        #im8 {width: 90px; height: 90px; border-width: 16px;}
+        #im9 {width: 90px; height: 90px; border-width: 16px;}
+        #im10 {width: 75px; height: 75px; border-width: 14px;}
+        #im11 {width: 75px; height: 75px; border-width: 14px;}
+        #im12 {width: 75px; height: 75px; border-width: 14px;}
+        #im13 {width: 90px; height: 90px; border-width: 16px;}
+        .top-text {font-size: 36px;}
+        .bottom-text {font-size: 36px;}
+        h4 {font-size: 18px;}
+        #bottom-button {padding: 11 40;}
+      }
+      .open {
+        animation-name: open-in;
+        animation-duration: 1s;
+        animation-delay: 1ms;
+        animation-fill-mode: forwards;
+      }
+      @keyframes open-in {
+        from {transform: scale(1.3, 1.3); opacity: 1;}
+        99% {transform: scale(5, 5); opacity: 0; visibility: hidden;}
+        to {transform: scale(0.1, 0.1); visibility: hidden;}
+      }
+        /*
+        #icon0-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ... ... ... ... ... ... ... ... ... ..."
+            "... im1 ... ... ... ... im3 im4 ... ... ... ..."
+            "... ... ... ... im2 ... ... ... ... im5 ... ..."
+            "... ... ... ... ... ... ... ... ... ... ... ..."
+          ;
+          grid-template-rows: 2.7fr repeat(2, 1fr) 3.3fr;
+          grid-template-columns: 2fr repeat(10, 1fr) 2fr;
+        }
+        #icon1-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ... ..."
+            "... im4-1 ... ..."
+            "... ... im3-1 ..."
+            "... ... im6 ..."
+            "... ... ... im7"
+            "... ... ... ..."
+          ;
+          grid-template-columns: 3.8fr 4.2fr 2fr 2fr;
+        }
+        #icon2-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im8 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: 3.2fr 1fr 1.8fr;
+          grid-template-columns: 5.1fr 1fr 3.9fr;
+        }
+        #icon3-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im10 ..."
+            "... ... ..."
+          ;
+          grid-template-columns: 5.1fr 1fr 3.9fr;
+        }
+        #icon4-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... im0 ... ..."
+            "... ... ... im1-3"
+            "... im12 ... ..."
+          ;
+          grid-template-rows: 1.3fr 0.2fr 1.5fr;
+          grid-template-columns: repeat(2, 2fr) 1fr 3fr;
+        }
+        #icon5-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im13 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: 2fr 1fr 3fr;
+          grid-template-columns: 4fr 1fr 7fr;
+        }
+        #icon6-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ... ... ..."
+            "... ... ... im1-1 ..."
+            "... im7-1 ... ... ..."
+            "... ... ... ... ..."
+          ;
+          grid-template-rows: 2.85fr 1fr 1.85fr 2.3fr;
+          grid-template-columns: 3.2fr 1fr 0.6fr 1fr 8.3fr;
+        }
+        #icon7-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im1-2 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: repeat(3, 1fr);
+          grid-template-columns: repeat(2, 1fr) 3fr;
+        }
+        #icon8-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im9 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: 2fr 1fr 4fr;
+          grid-template-columns: 7fr 1fr 4fr;
+        }
+        #icon9-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im6-1 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: 3.5fr 1fr 4fr;
+          grid-template-columns: 4fr 1fr 3fr;
+        }
+        #icon10-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im11 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: 3.5fr 1fr 2.5fr;
+          grid-template-columns: 3.1fr 1fr 2.9fr;
+        }
+        #icon12-box {position: absolute; top: 0px; left: 0px; width: 100vw; height: 100vh; display: grid;
+          grid:
+            "... ... ..."
+            "... im4-2 ..."
+            "... ... ..."
+          ;
+          grid-template-rows: 1.8fr 1fr 4.2fr;
+          grid-template-columns: 3fr repeat(2, 1fr);
+        }
+      }
+      */
+
+
+      /*
+      @media screen and (max-width: 1799px) and (orientation: landscape) and (max-aspect-ratio: 15/10) {
+        #icon1-box {grid-template-rows: 2.5fr 0.7fr 0.2fr 0.9fr 3.1fr;}
+        #icon3-box {grid-template-rows: 3fr 1fr 2fr;}
+      }
+      @media screen and (max-width: 1799px) and (orientation: landscape) and (min-aspect-ratio: 15/10) and (max-aspect-ratio: 16/9) {
+        #icon1-box {grid-template-rows: 3.5fr 0.7fr 0.2fr 0.9fr 3.1fr;}
+        #icon3-box {grid-template-rows: 3.5fr 1fr 2fr;}
+      }
+      @media screen and (min-width: 1800px) and (orientation: landscape) and (min-aspect-ratio: 16/10) {
+        #icon1-box {grid-template-rows: 4.1fr 0.7fr 0.2fr 0.9fr 3.1fr;}
+        #icon3-box {grid-template-rows: 3.45fr 1fr 1.55fr;}
+      }
+      .image-point {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 50%;
+        border-style: solid;
+        border-color: #fff;
+        transition: 0.2s;
+      }
+      .image-point:hover {
+        transform: scale(1.3, 1.3);
+      }
+      .fade-point {
+        display: block;
+        animation-name: fade-in;
+        animation-duration: 1.2s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+      }
+      @keyframes fade-in {
+        from {opacity: 0; transform: scale(1.7, 1.7);}
+        to {opacity: 1; transform: scale(1, 1);}
+      }
+      #im0 {
+        grid-area: im0;
+        z-index: 300;
+        right: 0;
+        bottom: 0;
+        background-image: url(image/bg.jpeg);
+      }
+      #im1 {
+        grid-area: im1;
+        z-index: 310;
+        background-image: url(image/im1.jpeg);
+      }
+      #im1-1 {
+        grid-area: im1-1;
+        z-index: 315;
+        background-image: url(image/im1.jpeg);
+      }
+      #im1-2 {
+        grid-area: im1-2;
+        z-index: 316;
+        background-image: url(image/im1.jpeg);
+      }
+      #im1-3 {
+        grid-area: im1-3;
+        z-index: 317;
+        bottom: 0;
+        background-image: url(image/im1.jpeg);
+      }
+      #im2 {
+        grid-area: im2;
+        z-index: 320;
+        top: 20px;
+        background-image: url(image/im2.jpeg);
+      }
+      #im3 {
+        grid-area: im3;
+        z-index: 330;
+        left: -10px;
+        bottom: -10px;
+        background-image: url(image/im3.jpeg);
+      }
+      #im3-1 {
+        grid-area: im3-1;
+        z-index: 335;
+        background-image: url(image/im3.jpeg);
+      }
+      #im4 {
+        grid-area: im4;
+        z-index: 340;
+        right: 0px;
+        background-image: url(image/im4.jpeg);
+      }
+      #im4-1 {
+        grid-area: im4-1;
+        z-index: 345;
+        background-image: url(image/im4.jpeg);
+      }
+      #im4-2 {
+        grid-area: im4-2;
+        z-index: 346;
+        bottom: 0;
+        background-image: url(image/im4.jpeg);
+      }
+      #im5 {
+        grid-area: im5;
+        z-index: 350;
+        left: 0;
+        bottom: -50px;
+        background-image: url(image/im5.jpeg);
+      }
+      #im6 {
+        grid-area: im6;
+        z-index: 360;
+        right: 60px;
+        background-image: url(image/im6.jpeg);
+      }
+      #im6-1 {
+        grid-area: im6-1;
+        z-index: 365;
+        background-image: url(image/im6.jpeg);
+      }
+      #im7 {
+        grid-area: im7;
+        z-index: 370;
+        background-image: url(image/im7.jpeg);
+      }
+      #im7-1 {
+        grid-area: im7-1;
+        z-index: 375;
+        background-image: url(image/im7.jpeg);
+      }
+      #im8 {
+        grid-area: im8;
+        z-index: 380;
+        background-image: url(image/im8.jpeg);
+      }
+      #im9 {
+        grid-area: im9;
+        z-index: 390;
+        background-image: url(image/im9.jpeg);
+      }
+      #im10 {
+        grid-area: im10;
+        z-index: 400;
+        background-image: url(image/im10.jpeg);
+      }
+      #im11 {
+        grid-area: im11;
+        z-index: 410;
+        background-image: url(image/im11.jpeg);
+      }
+      #im12 {
+        grid-area: im12;
+        z-index: 410;
+        background-image: url(image/im12.jpeg);
+      }
+      #im13 {
+        grid-area: im13;
+        z-index: 430;
+        background-image: url(image/im13.jpeg);
+      }
+      @media screen and (max-width: 979px) and (orientation: landscape) {
+        #im0 {width: 35px; height: 35px; border-width: 7px;}
+        #im1 {width: 34px; height: 34px; border-width: 7px;}
+        #im1-1 {width: 41px; height: 41px; border-width: 8px;}
+        #im1-2 {width: 47px; height: 47px; border-width: 9px;}
+        #im1-3 {width: 40px; height: 40px; border-width: 8px;}
+        #im2 {width: 42px; height: 42px; border-width: 8px;}
+        #im3 {width: 35px; height: 35px; border-width: 7px;}
+        #im3-1 {width: 28px; height: 28px; border-width: 6px;}
+        #im4 {width: 32px; height: 32px; border-width: 6px;}
+        #im4-1 {width: 26px; height: 26px; border-width: 5px;}
+        #im4-2 {width: 34px; height: 34px; border-width: 7px;}
+        #im5 {width: 47px; height: 47px; border-width: 9px;}
+        #im6 {width: 33px; height: 33px; border-width: 7px;}
+        #im6-1 {width: 47px; height: 47px; border-width: 9px;}
+        #im7 {width: 48px; height: 48px; border-width: 9px;}
+        #im7-1 {width: 48px; height: 48px; border-width: 9px;}
+        #im8 {width: 47px; height: 47px; border-width: 9px;}
+        #im9 {width: 47px; height: 47px; border-width: 9px;}
+        #im10 {width: 46px; height: 46px; border-width: 9px;}
+        #im11 {width: 46px; height: 46px; border-width: 9px;}
+        #im12 {width: 46px; height: 46px; border-width: 9px;}
+        #im13 {width: 47px; height: 47px; border-width: 9px;}
+        .top-text {font-size: 24px;}
+        .bottom-text {font-size: 24px;}
+        h4 {font-size: 13px;}
+        #bottom-button {padding: 4 20;}
+      }
+      @media screen and (min-width: 980px) and (max-width: 1199px) and (orientation: landscape) {
+        #im0 {width: 35px; height: 35px; border-width: 8px;}
+        #im1 {width: 40px; height: 40px; border-width: 9px;}
+        #im1-1 {width: 48px; height: 48px; border-width: 11px;}
+        #im1-2 {width: 70px; height: 70px; border-width: 13px;}
+        #im1-3 {width: 44px; height: 44px; border-width: 9px;}
+        #im2 {width: 57px; height: 57px; border-width: 11px;}
+        #im3 {width: 47px; height: 47px; border-width: 10px;}
+        #im3-1 {width: 35px; height: 35px; border-width: 8px;}
+        #im4 {width: 35px; height: 35px; border-width: 8px;}
+        #im4-1 {width: 30px; height: 30px; border-width: 7px;}
+        #im4-2 {width: 35px; height: 35px; border-width: 8px;}
+        #im5 {width: 70px; height: 70px; border-width: 13px;}
+        #im6 {width: 40px; height: 40px; border-width: 9px;}
+        #im6-1 {width: 70px; height: 70px; border-width: 13px;}
+        #im7 {width: 55px; height: 55px; border-width: 11px;}
+        #im7-1 {width: 75px; height: 75px; border-width: 14px;}
+        #im8 {width: 70px; height: 70px; border-width: 13px;}
+        #im9 {width: 70px; height: 70px; border-width: 13px;}
+        #im10 {width: 55px; height: 55px; border-width: 11px;}
+        #im11 {width: 55px; height: 55px; border-width: 11px;}
+        #im12 {width: 55px; height: 55px; border-width: 11px;}
+        #im13 {width: 70px; height: 70px; border-width: 13px;}
+        .top-text {font-size: 29px;}
+        .bottom-text {font-size: 29px;}
+        h4 {font-size: 15px;}
+        #bottom-button {padding: 7 26;}
+      }
+      @media screen and (min-width: 1200px) and (max-width: 1439px) and (orientation: landscape) {
+        #im0 {width: 45px; height: 45px; border-width: 9px;}
+        #im1 {width: 50px; height: 50px; border-width: 10px;}
+        #im1-1 {width: 58px; height: 58px; border-width: 12px;}
+        #im1-2 {width: 80px; height: 80px; border-width: 14px;}
+        #im1-3 {width: 54px; height: 54px; border-width: 10px;}
+        #im2 {width: 67px; height: 67px; border-width: 12px;}
+        #im3 {width: 57px; height: 57px; border-width: 11px;}
+        #im3-1 {width: 45px; height: 45px; border-width: 9px;}
+        #im4 {width: 45px; height: 45px; border-width: 9px;}
+        #im4-1 {width: 40px; height: 40px; border-width: 8px;}
+        #im4-2 {width: 45px; height: 45px; border-width: 9px;}
+        #im5 {width: 80px; height: 80px; border-width: 14px;}
+        #im6 {width: 50px; height: 50px; border-width: 10px;}
+        #im6-1 {width: 80px; height: 80px; border-width: 14px;}
+        #im7 {width: 65px; height: 65px; border-width: 12px;}
+        #im7-1 {width: 85px; height: 85px; border-width: 15px;}
+        #im8 {width: 80px; height: 80px; border-width: 14px;}
+        #im9 {width: 80px; height: 80px; border-width: 14px;}
+        #im10 {width: 65px; height: 65px; border-width: 12px;}
+        #im11 {width: 65px; height: 65px; border-width: 12px;}
+        #im12 {width: 65px; height: 65px; border-width: 12px;}
+        #im13 {width: 80px; height: 80px; border-width: 14px;}
+        .top-text {font-size: 33px;}
+        .bottom-text {font-size: 33px;}
+        h4 {font-size: 17px;}
+        #bottom-button {padding: 9 33;}
+      }
+      @media screen and (min-width: 1440px) and (orientation: landscape) {
+        #im0 {width: 55px; height: 55px; border-width: 11px;}
+        #im1 {width: 60px; height: 60px; border-width: 12px;}
+        #im1-1 {width: 68px; height: 68px; border-width: 14px;}
+        #im1-2 {width: 90px; height: 90px; border-width: 16px;}
+        #im1-3 {width: 64px; height: 64px; border-width: 12px;}
+        #im2 {width: 77px; height: 77px; border-width: 14px;}
+        #im3 {width: 67px; height: 67px; border-width: 13px;}
+        #im3-1 {width: 55px; height: 55px; border-width: 11px;}
+        #im4 {width: 55px; height: 55px; border-width: 11px;}
+        #im4-1 {width: 50px; height: 50px; border-width: 10px;}
+        #im4-2 {width: 55px; height: 55px; border-width: 11px;}
+        #im5 {width: 90px; height: 90px; border-width: 16px;}
+        #im6 {width: 60px; height: 60px; border-width: 12px;}
+        #im6-1 {width: 90px; height: 90px; border-width: 16px;}
+        #im7 {width: 75px; height: 75px; border-width: 14px;}
+        #im7-1 {width: 95px; height: 95px; border-width: 17px;}
+        #im8 {width: 90px; height: 90px; border-width: 16px;}
+        #im9 {width: 90px; height: 90px; border-width: 16px;}
+        #im10 {width: 75px; height: 75px; border-width: 14px;}
+        #im11 {width: 75px; height: 75px; border-width: 14px;}
+        #im12 {width: 75px; height: 75px; border-width: 14px;}
+        #im13 {width: 90px; height: 90px; border-width: 16px;}
+        .top-text {font-size: 36px;}
+        .bottom-text {font-size: 36px;}
+        h4 {font-size: 18px;}
+        #bottom-button {padding: 11 40;}
+      }
+      .open {
+        animation-name: open-in;
+        animation-duration: 1s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards;
+      }
+      @keyframes open-in {
+        from {transform: scale(1.3, 1.3); opacity: 1;}
+        99% {transform: scale(5, 5); opacity: 0; visibility: hidden;}
+        to {transform: scale(0.1, 0.1); visibility: hidden;}
+      }
+      */
+      /*
+      .bg-open {
+        display: block;
+        animation-name: bg-open;
+        animation-duration: 0.5s;
+        animation-delay: 0s;
+        animation-fill-mode: forwards;
+      }
+      @keyframes bg-open {
+        from {transform: scale(0.3, 0.3); opacity: 0;}
+        to {transform: scale(1, 1); opacity: 1;}
+      } */
+    </style>
+  </head>
+  <!-- fly-for-beta -->
+  <body>
+    <div id="pre-box">
+      <h3 class="portrait-text">Пожалуйста, поверните Ваше <br> устройство горизонтально или <br> воспользуйтесь другим.</h3>
+      <h4 id="fly-open">Погрузиться</h4>
+    </div>
+    <main id="fly">
+      <div id="rotare-box">
+        <h3 class="portrait-text">Пожалуйста, поверните Ваше <br> устройство горизонтально или <br> воспользуйтесь другим.</h3>
+      </div>
+      <div id="bg-box">
+        <div id="bgo" class="bgo bg-center"></div>
+        <div id="bg1" class="bg-image bg-top"></div>
+        <div id="bg2" class="bg-image bg-center"></div>
+        <div id="bg3" class="bg-image bg-top"></div>
+        <div id="bg4" class="bg-image bg-center"></div>
+        <div id="bg5" class="bg-image bg-center"></div>
+        <div id="bg6" class="bg-image bg-center"></div>
+        <div id="bg7" class="bg-image bg-center"></div>
+        <div id="bg8" class="bg-image bg-center"></div>
+        <div id="bg9" class="bg-image bg-center"></div>
+        <div id="bg10" class="bg-image bg-center"></div>
+        <div id="bg11" class="bg-image bg-center"></div>
+        <div id="bg12" class="bg-image bg-center"></div>
+        <div id="bg13" class="bg-image bg-center"></div>
+      </div>
+      <div id="text-box">
+        <h2 class="top-text">Новый Полёт <sup>&nbsp;β&nbsp;</sup></h2>
+        <h3 class="bottom-text">Жми на значки, чтобы перемещаться</h3>
+        <img id="cross" src="https://static.tildacdn.com/tild6135-6630-4137-b961-633066356438/cross-icon.png" alt="Cross icon">
+        <h4 id="bottom-button">В начало</h4>
+      </div>
+      <div id="icons-box">
+        <div id="icon0-box">
+          <div id="im1" class="image-point fade-point"></div>
+          <div id="im2" class="image-point fade-point"></div>
+          <div id="im3" class="image-point fade-point"></div>
+          <div id="im4" class="image-point fade-point"></div>
+          <div id="im5" class="image-point fade-point"></div>
+        </div>
+        <div id="icon1-box">
+          <div id="im3-1" class="image-point non-vis"></div>
+          <div id="im4-1" class="image-point non-vis"></div>
+          <div id="im6" class="image-point non-vis"></div>
+          <div id="im7" class="image-point non-vis"></div>
+        </div>
+        <div id="icon2-box">
+          <div id="im8" class="image-point non-vis"></div>
+        </div>
+        <div id="icon3-box">
+          <div id="im10" class="image-point non-vis"></div>
+        </div>
+        <div id="icon4-box">
+          <div id="im0" class="image-point non-vis"></div>
+          <div id="im1-3" class="image-point non-vis"></div>
+          <div id="im12" class="image-point non-vis"></div>
+        </div>
+        <div id="icon5-box">
+          <div id="im13" class="image-point non-vis"></div>
+        </div>
+        <div id="icon6-box">
+          <div id="im1-1" class="image-point non-vis"></div>
+          <div id="im7-1" class="image-point non-vis"></div>
+        </div>
+        <div id="icon7-box">
+          <div id="im1-2" class="image-point non-vis"></div>
+        </div>
+        <div id="icon8-box">
+          <div id="im9" class="image-point non-vis"></div>
+        </div>
+        <div id="icon9-box">
+          <div id="im6-1" class="image-point non-vis"></div>
+        </div>
+        <div id="icon10-box">
+          <div id="im11" class="image-point non-vis"></div>
+        </div>
+        <div id="icon12-box">
+          <div id="im4-2" class="image-point non-vis"></div>
+        </div>
+      </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        if ( $(window).width() > 1440 ) {
+          $("#fly").on('mousemove', (e) => {
+            const cx = $(window).width() / 2;
+            const cy = $(window).height() / 2;
+
+            const x = ((cx - e.pageX) / cx) * 10;
+            const y = ((cy - e.pageY) / cy) * 10;
+            /*$(".image-point").css('transform',`translate(${x}px, ${y}px)`);*/
+            $(".bgo").css('transform',`translate(${x}px, ${y}px)`);
+            $(".bg-image").css('transform',`translate(${x}px, ${y}px)`);
+          });
+        };
+      $('#im0').click(function () {
+          $('.image-point').removeClass('open');
+          $('.bg-image').hide('.bg-image');
+          $('#im1').show('#im1');
+          $('#im2').show('#im2');
+          $('#im3').show('#im3');
+          $('#im4').show('#im4');
+          $('#im5').show('#im5');
+          $('#im1-1').css('display','none');
+          $('#im1-2').css('display','none');
+          $('#im1-3').css('display','none');
+          $('#im4-1').css('display','none');
+          $('#im4-2').css('display','none');
+          $('#im6-1').css('display','none');
+          $('#im7-1').css('display','none');
+          $('#im6').css('display','none');
+          $('#im7').css('display','none');
+          $('#im8').css('display','none');
+          $('#im9').css('display','none');
+          $('#im12').css('display','none');
+          $('#im0').addClass('open');
+        });
+      $('#im1').click(function() {
+          $('#im1').addClass('open');
+          $('#im2').css('display','none');
+          $('#im3').css('display','none');
+          $('#im4').css('display','none');
+          $('#im5').css('display','none');
+          $('#bg1').show('#bg1');
+          $('#im3-1').show('#im3-1');
+          $('#im4-1').show('#im4-1');
+          $('#im6').show('#im6');
+          $('#im7').show('#im7');
+        });
+      $('#im1-1').click(function () {
+          $('#im1-1').addClass('open');
+          $('#im7-1').css('display','none');
+          $('#im3-1').show('#im3-1');
+          $('#im4-1').show('#im4-1');
+          $('#im6').removeClass('open');
+          $('#im6').show('#im6');
+          $('#im7').show('#im7');
+          $('#bg1').show('#bg1');
+          $('#bg2').hide('#bg2');
+          $('#bg6').hide('#bg6');
+        });
+      $('#im1-2').click(function () {
+          $('#im1-2').addClass('open');
+          $('#im3-1').show('#im3-1');
+          $('#im4-1').show('#im4-1');
+          $('#im6').show('#im6');
+          $('#im7').removeClass('open');
+          $('#im7').show('#im7');
+          $('#bg1').show('#bg1');
+          $('#bg2').hide('#bg2');
+          $('#bg6').hide('#bg6');
+          $('#bg7').hide('#bg7');
+        });
+      $('#im1-3').click(function () {
+          $('#im1-3').addClass('open');
+          $('#im4-1').removeClass('open');
+          $('#im0').hide('#im0');
+          $('#im12').hide('#im12');
+          $('#im3-1').show('#im3-1');
+          $('#im4-1').show('#im4-1');
+          $('#im6').show('#im6');
+          $('#im7').show('#im7');
+          $('#bg1').show('#bg1');
+          $('#bg4').hide('#bg4');
+        });
+      $('#im2').click(function() {
+          $('#im2').addClass('open');
+          $('#im1').css('display','none');
+          $('#im3').css('display','none');
+          $('#im4').css('display','none');
+          $('#im5').css('display','none');
+          $('#bg2').show('#bg2');
+          $('#im8').show('#im8');
+        });
+      $('#im3').click(function() {
+          $('#im3').addClass('open');
+          $('#im1').css('display','none');
+          $('#im2').css('display','none');
+          $('#im4').css('display','none');
+          $('#im5').css('display','none');
+          $('#im10').show('#im10');
+          $('#bg3').show('#bg3');
+        });
+      $('#im3-1').click(function () {
+          $('#im3-1').addClass('open');
+          $('#im4-1').css('display','none');
+          $('#im6').css('display','none');
+          $('#im7').css('display','none');
+          $('#im10').show('#im10');
+          $('#bg3').show('#bg3');
+        });
+      $('#im4').click(function() {
+          $('#im4').addClass('open');
+          $('#im0').removeClass('open');
+          $('#im1').css('display','none');
+          $('#im2').css('display','none');
+          $('#im3').css('display','none');
+          $('#im5').css('display','none');
+          $('#bg4').show('#bg4');
+          $('#im1-3').show('#im1-3');
+          $('#im12').show('#im12');
+          $('#im0').show('#im0');
+        });
+      $('#im4-1').click(function () {
+          $('#im4-1').addClass('open');
+          $('#im0').removeClass('open');
+          $('#im1-3').removeClass('open');
+          $('#im3-1').css('display','none');
+          $('#im6').css('display','none');
+          $('#im7').css('display','none');
+          $('#bg4').show('#bg4');
+          $('#im12').show('#im12');
+          $('#im0').show('#im0');
+          $('#im1-3').show('#im1-3');
+        });
+      $('#im4-2').click(function () {
+          $('#im4-2').addClass('open');
+          $('#im12').removeClass('open');
+          $('#bg12').hide('#bg12');
+          $('#bg4').show('#bg4');
+          $('#im0').show('#im0');
+          $('#im1-3').show('#im1-3');
+          $('#im12').show('#im12');
+        });
+      $('#im5').click(function() {
+          $('#im5').addClass('open');
+          $('#im1').css('display','none');
+          $('#im2').css('display','none');
+          $('#im3').css('display','none');
+          $('#im4').css('display','none');
+          $('#bg5').show('#bg5');
+          $('#im13').show('#im13');
+        });
+      $('#im6').click(function () {
+          $('#im6').addClass('open');
+          $('#im3-1').css('display','none');
+          $('#im4-1').css('display','none');
+          $('#im7').css('display','none');
+          $('#bg6').show('#bg6');
+          $('#im1-1').removeClass('open');
+          $('#im1-1').show('#im1-1');
+          $('#im7-1').show('#im7-1');
+        });
+      $('#im6-1').click(function () {
+          $('#im6-1').addClass('open');
+          $('#bg8').hide('#bg8');
+          $('#bg9').hide('#bg9');
+          $('#bg6').show('#bg6');
+          $('#im1-1').show('#im1-1');
+          $('#im7-1').show('#im7-1');
+        });
+      $('#im7').click(function () {
+          $('#im7').addClass('open');
+          $('#im3-1').css('display','none');
+          $('#im4-1').css('display','none');
+          $('#im6').css('display','none');
+          $('#bg7').show('#bg7');
+          $('#im1-2').removeClass('open');
+          $('#im1-2').show('#im1-2');
+        });
+      $('#im7-1').click(function () {
+          $('#im7-1').addClass('open');
+          $('#im1-1').css('display','none');
+          $('#im7').removeClass('open');
+          $('#bg7').show('#bg7');
+          $('#im1-2').removeClass('open');
+          $('#im1-2').show('#im1-2');
+        });
+      $('#im8').click(function () {
+          $('#im8').addClass('open');
+          $('#bg8').show('#bg8');
+          $('#im9').show('#im9');
+        });
+      $('#im9').click(function () {
+          $('#im9').addClass('open');
+          $('#bg9').show('#bg9');
+          $('#im6-1').show('#im6-1');
+        });
+      $('#im10').click(function () {
+          $('#im10').addClass('open');
+          $('#bg10').show('#bg10');
+          $('#im11').show('#im11');
+        });
+      $('#im11').click(function () {
+          $('#im11').addClass('open');
+          $('#bg11').show('#bg11');
+        });
+      $('#im12').click(function () {
+          $('#im12').addClass('open');
+          $('#im4-2').removeClass('open');
+          $('#im0').css('display','none');
+          $('#im1-3').css('display','none');
+          $('#bg12').show('#bg12');
+          $('#im4-2').show('#im4-2');
+        });
+      $('#im13').click(function () {
+          $('#im13').addClass('open');
+          $('#bg13').show('#bg13');
+        });
+      $('#bottom-button').click(function () {
+          $('.image-point').removeClass('open');
+          $('.bg-image').hide('.bg-image');
+          $('#im1').show('#im1');
+          $('#im2').show('#im2');
+          $('#im3').show('#im3');
+          $('#im4').show('#im4');
+          $('#im5').show('#im5');
+          $('#im1-1').css('display','none');
+          $('#im1-2').css('display','none');
+          $('#im1-3').css('display','none');
+          $('#im3-1').css('display','none');
+          $('#im4-1').css('display','none');
+          $('#im4-2').css('display','none');
+          $('#im6-1').css('display','none');
+          $('#im7-1').css('display','none');
+          $('#im0').css('display','none');
+          $('#im6').css('display','none');
+          $('#im7').css('display','none');
+          $('#im8').css('display','none');
+          $('#im9').css('display','none');
+          $('#im10').css('display','none');
+          $('#im11').css('display','none');
+          $('#im12').css('display','none');
+          $('#im13').css('display','none');
+        })
+      });
+
+      /*function clear() {
+        open1.classList.remove('fade-point');
+        open2.classList.remove('fade-point');
+        open3.classList.remove('fade-point');
+        open4.classList.remove('fade-point');
+        open5.classList.remove('fade-point');
+      };*/
+
+      var flyOpen = document.getElementById('fly-open');
+      flyOpen.onclick = function() {
+        fullScreen()//, setTimeout(clear(), 2500);
+      };
+      var flyExit = document.getElementById('cross');
+      flyExit.onclick = function() {
+        exitScreen()
+      };
+      var fly = document.getElementById('fly');
+      function fullScreen() {
+        if (fly.webkitRequestFullscreen) fly.webkitRequestFullscreen();
+        else if (fly.requestFullscreen) fly.requestFullscreen();
+      };
+      function exitScreen() {
+        if (fly.webkitRequestFullscreen) document.exitFullscreen();
+        else if (fly.requestFullscreen) document.exitFullscreen();
+      };
+    </script>
+  </body>
+</html>
