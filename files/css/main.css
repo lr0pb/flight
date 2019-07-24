@@ -42,6 +42,27 @@ span {font-family: 'Montserrat', sans-serif; font-weight: 800; background-color:
 }
 /* Navigation and Footer block */
 header, footer {background-color: hsl(205, 15%, 5%); position: relative; z-index: 20;}
+@media screen and (orientation: portrait) {
+  nav {flex-direction: column;}
+  nav, footer, header, #fut-content {height: auto;}
+  a.big {font-size: 3em; margin: 2.2rem auto 2.2rem 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
+  a.norm {font-size: 2.4em; margin: 1rem 0 1rem; border-bottom: 3px solid transparent;}
+  a.left {margin-top: 1rem;}
+  a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
+  a.this {border-bottom: 3px solid #41B619;}
+  a.last {margin-bottom: 2.2rem;}
+  .fut-text {font-size: 2em; margin: 2.2rem 1.5rem; border-bottom: 3px solid transparent;}
+}
+@media screen and (orientation: landscape) {
+  a.big {font-size: 3em; margin: 0 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
+  a.norm {font-size: 1.9em; margin: 0 1.5rem; border-bottom: 3px solid transparent;}
+  a.left {margin-left: auto;}
+  a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
+  a.this {border-bottom: 3px solid #41B619; margin-left: 1.5rem;}
+  a.last {margin-right: 3rem;}
+  .fut-text {font-size: 1.6em; margin: 0 1.5rem; border-bottom: 3px solid transparent;}
+  nav, footer, header, #fut-content {height: 8rem;}
+}
 @media screen and (max-width: 1199px) and (orientation: landscape) {
   nav, #fut-content {width: 100vw;}
 }
@@ -62,14 +83,7 @@ a, .fut-text {
   text-decoration: none;
   color: #fff;
 }
-a.big {font-size: 3em; margin: 0 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
-a.norm {font-size: 1.9em; margin: 0 1.5rem; border-bottom: 3px solid transparent;}
-a.left {margin-left: auto;}
-a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
-a.this {font-size: 1.9em; border-bottom: 3px solid #41B619; margin-left: 1.5rem; margin-right: 3rem;}
-nav, footer, header, #fut-content {height: 8rem;}
 footer, #fut-content {display: flex; justify-content: center; align-items: center;}
-.fut-text {font-size: 1.9em; margin: 0 1.5rem; border-bottom: 3px solid transparent;}
 @media screen and (max-width: 350px) and (orientation: portrait) {
   html {font-size: 8px;}
 }
