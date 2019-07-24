@@ -62,7 +62,7 @@ a, .fut-text {
   text-decoration: none;
   color: #fff;
 }
-a.big {font-size: 3em; margin: 0 3rem;}
+a.big {font-size: 3em; margin: 0 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
 a.norm {font-size: 1.9em; margin: 0 1.5rem; border-bottom: 3px solid transparent;}
 a.left {margin-left: auto;}
 a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
