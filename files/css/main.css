@@ -54,9 +54,9 @@ header, footer {background-color: hsl(205, 15%, 5%); position: relative; z-index
   a.last {margin-bottom: 2.2rem;}
   .fut-text {font-size: 1.8em; margin: 2.2rem 1.5rem; border-bottom: 3px solid transparent;}
   #burger {position: absolute; right: 0; width: 3.7rem; height: 3.7rem; margin: 2.2rem 2rem 2.2rem; cursor: pointer;}
-  #burger span {display: block; width: 3.7rem; height: 6px; background-color: #fff;}
-  #burger span:nth-child(1) {margin-top: 3px;}
-  #burger span:nth-child(2), #burger span:nth-child(3) {margin-top: 6px;}
+  #burger span {display: block; width: 3.7rem; height: 0.6rem; background-color: #fff;}
+  #burger span:nth-child(1) {margin-top: 0.3rem;}
+  #burger span:nth-child(2), #burger span:nth-child(3) {margin-top: 0.6rem;}
 }
 @media screen and (orientation: landscape) {
   a.big {font-size: 3em; margin: 0 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
