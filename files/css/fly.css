@@ -348,7 +348,7 @@
 .blue-line {
   width: 22.5rem;
   min-height: 64rem;
-  height: calc(100vh - 16rem);
+  height: calc(100vh - 14rem);
   transform: translateX(4.8rem);
   background: rgba(11, 14, 23, 0.65);
 }
