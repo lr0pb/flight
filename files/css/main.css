@@ -64,7 +64,7 @@ header, footer {background-color: hsl(205, 15%, 5%); position: relative; z-index
   a.this {border-bottom: 3px solid #41B619; margin-left: 1.5rem;}
   a.last {margin-right: 3rem;}
   .fut-text {font-size: 1.6em; margin: 0 1.5rem; border-bottom: 3px solid transparent;}
-  nav, footer, header, #fut-content {height: 8rem;}
+  nav, footer, header, #fut-content {height: 7rem;}
   #burger, span {display: none;}
 }
 @media screen and (max-width: 1199px) and (orientation: landscape) {

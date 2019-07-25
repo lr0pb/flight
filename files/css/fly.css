@@ -180,7 +180,7 @@
   html {font-size: 9px;}
   .blue-line {display: none;}
   #start-content {
-    width: 100vw; height: auto; min-height: calc(100vh - 16rem);
+    width: 100vw; height: auto; min-height: calc(100vh - 14rem);
     grid:
       "... ..."
       "head head"
@@ -195,7 +195,7 @@
   html {font-size: 10px;}
   .blue-line {display: none;}
   #start-content {
-    width: 100vw; height: auto; min-height: calc(100vh - 16rem);
+    width: 100vw; height: auto; min-height: calc(100vh - 14rem);
     grid:
       "... ..."
       "head head"
@@ -209,7 +209,7 @@
 @media screen and (min-width: 841px) and (orientation: portrait) {
   .blue-line {display: none;}
   #start-content {
-    width: 100vw; height: auto; min-height: calc(100vh - 16rem);
+    width: 100vw; height: auto; min-height: calc(100vh - 14rem);
     grid:
       "... ... ... ..."
       "... head head ..."
@@ -236,14 +236,14 @@
   }
 }
 @media screen and (max-height: 84rem) and (orientation: landscape) {
-  #start-content {height: auto; min-height: calc(100vh - 16rem);}
+  #start-content {height: auto; min-height: calc(100vh - 14rem);}
 }
 @media screen and (min-height: 85rem) and (orientation: landscape) {
-  #start-content {height: calc(100vh - 16rem);}
+  #start-content {height: calc(100vh - 14rem);}
 }
 @media screen and (min-width: 1146px) and (orientation: landscape) {
   #start-content {
-    width: 100vw; min-height: 64rem; max-height: calc(100vh - 16rem);
+    width: 100vw; min-height: 64rem; max-height: calc(100vh - 14rem);
     grid:
       "lin1 ... lin2"
       "lin1 head lin2"
