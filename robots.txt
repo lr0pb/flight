@@ -1,7 +1,6 @@
 Host: https://lr0pb.github.io
 
 User-agent: *
-Disallow: /files
-Disallow: /image/icons
+Disallow:
 
 Sitemap: https://lr0pb.github.io/sitemap.xml
