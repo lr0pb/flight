@@ -57,8 +57,8 @@ header, footer {background-color: hsl(205, 15%, 5%); position: relative; z-index
   #burger span {display: block; width: 2.5rem; height: 0.3rem; margin-top: 0.4rem; background-color: #fff;}
 }
 @media screen and (orientation: landscape) {
-  a.big {font-size: 2.6em; margin: 0 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
-  a.norm {font-size: 1.9em; margin: 0 1.5rem; border-bottom: 3px solid transparent;}
+  a.big {font-size: 2.7em; margin: 0 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
+  a.norm {font-size: 1.8em; margin: 0 1.5rem; border-bottom: 3px solid transparent;}
   a.left {margin-left: auto;}
   a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
   a.this {border-bottom: 3px solid #41B619; margin-left: 1.5rem;}
