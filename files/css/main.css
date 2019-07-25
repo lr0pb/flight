@@ -45,7 +45,7 @@ header, footer {background-color: hsl(205, 15%, 5%); position: relative; z-index
   nav {flex-direction: column; height: 8rem;}
   .nav-burger, footer, header {height: auto;}
   #fut-content {height: 8rem;}
-  a.big {font-size: 3em; margin: 2.2rem auto 2.2rem 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
+  a.big {font-size: 3em; margin: 2.2rem auto 2.2rem 2rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
   a.norm {font-size: 2.4em; margin: 1rem 0 1rem; border-bottom: 3px solid transparent;}
   .a-burger {display: none;}
   a.left {margin-top: 1rem;}
@@ -53,7 +53,7 @@ header, footer {background-color: hsl(205, 15%, 5%); position: relative; z-index
   a.this {border-bottom: 3px solid #41B619;}
   a.last {margin-bottom: 2.2rem;}
   .fut-text {font-size: 1.8em; margin: 2.2rem 1.5rem; border-bottom: 3px solid transparent;}
-  #burger {position: absolute; right: 0; width: 3.7rem; height: 3.7rem; margin: 2.2rem 3rem 2.2rem; cursor: pointer;}
+  #burger {position: absolute; right: 0; width: 3.7rem; height: 3.7rem; margin: 2.2rem 2rem 2.2rem; cursor: pointer;}
   #burger span {display: block; width: 3.7rem; height: 6px; background-color: #fff;}
   #burger span:nth-child(1) {margin-top: 3px;}
   #burger span:nth-child(2), #burger span:nth-child(3) {margin-top: 6px;}
