@@ -12,7 +12,8 @@ $(document).ready(function() {
   $('body').addClass('overflow-hidden');
   setTimeout(function() {
     $('#transition-layer').css('display','none');
-  }, 1000);
+    $('body').removeClass('overflow-hidden');
+  }, 1000);/*
   setTimeout(function() {
     $('#fly-start').removeClass('not-now');
     $('#log-start').removeClass('not-now');
@@ -21,7 +22,7 @@ $(document).ready(function() {
     $('#st-anim-text').addClass('not-now');
     $('.light').addClass('not-now');
     $('body').removeClass('overflow-hidden');
-  }, 12500);
+  }, 12500);*/
   $('.image-point').addClass('complete');
   $('#im1to4').removeClass('complete');
   $('#im4to1').removeClass('complete');
