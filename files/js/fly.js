@@ -10,16 +10,10 @@ $(document).ready(function() {
     });
   };
   $('body').addClass('overflow-hidden');
-  $('#fly-start').removeClass('not-now');
-  $('#log-start').removeClass('not-now');
-  $('#img-start').removeClass('not-now');
-  $('.blue-line').removeClass('not-now');
-  $('#st-anim-text').addClass('not-now');
-  $('.light').addClass('not-now');
   setTimeout(function() {
     $('#transition-layer').css('display','none');
     $('body').removeClass('overflow-hidden');
-  }, 1000);/*
+  }, 1000);
   setTimeout(function() {
     $('#fly-start').removeClass('not-now');
     $('#log-start').removeClass('not-now');
@@ -28,7 +22,7 @@ $(document).ready(function() {
     $('#st-anim-text').addClass('not-now');
     $('.light').addClass('not-now');
     $('body').removeClass('overflow-hidden');
-  }, 12500);*/
+  }, 12500);
   $('.image-point').addClass('complete');
   $('#im1to4').removeClass('complete');
   $('#im4to1').removeClass('complete');
@@ -693,4 +687,3 @@ $('#img').click(function() {
     $('#transition-layer').css('display','none');
   }, 1100);
 });
-document.location.href = "https://lr0pb.github.io";
