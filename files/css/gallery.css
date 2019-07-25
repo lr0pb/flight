@@ -1,0 +1,108 @@
+#support-box {
+  display: block;
+  position: absolute;
+  top: 45%;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 2em;
+  background-color: rgb(11, 14, 23);
+}
+#gallery {
+  display: none;
+  height: auto;
+  min-height: calc(100vh - 16rem);
+}
+header, footer {display: none;}
+@supports (display: grid) {
+  #support-box {display: none;}
+  #gallery {display: block;}
+  header, footer {display: block;}
+}
+@media screen and (max-width: 995px) {
+  #gallery-nav {display: block;}
+  #gallery-box {flex-direction: column; align-items: center; left: 0;}
+  picture:first-child, picture:last-child, #prev, #next {display: none;}
+  img {
+    width: 100vmin;
+    height: 75vmin;
+  }
+}
+@media screen and (min-width: 996px) {
+  #gallery-nav {
+    display: grid;
+    grid:
+      "gl-head gl-head gl-head"
+      "prev gl-box next"
+    ;
+    grid-template-rows: 12rem minmax(68rem, calc(100vh - 28rem));
+    grid-template-columns: 1fr 80rem 1fr;
+  }
+  #gallery-box {left: -95rem;}
+  img {
+    width: 80rem;
+    height: 60rem;
+  }
+  #prev, #next {
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 60rem;
+  }
+  #prev {
+    grid-area: prev;
+    background: -webkit-linear-gradient(left, rgba(11, 14, 23, 0.9) 85%, transparent 100%);
+  }
+  #next {
+    grid-area: next;
+    background: -webkit-linear-gradient(right, rgba(11, 14, 23, 0.9) 85%, transparent 100%);
+  }
+  #prev-icon, #next-icon {
+    width: 2rem;
+    height: 2rem;
+    border: 0.7rem solid;
+    border-color: #fff #fff transparent transparent;
+  }
+  #prev-icon {
+    margin-left: auto;
+    margin-right: 2rem;
+    transform: rotateZ(-135deg);
+  }
+  #next-icon {
+    margin-left: 2rem;
+    transform: rotateZ(45deg);
+  }
+}
+#gallery-box {
+  position: relative;
+  z-index: 998;
+  display: flex;
+  grid-area: gl-box;
+  transition: 1s;
+}
+img {
+  margin: 0 5rem;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.3);
+}
+.container {width: 100vw; height: 12rem; display: flex; grid-area: gl-head;}
+.gl-head-box {width: 1200px; height: inherit;; display: flex; align-items: center; margin-left: auto; margin-right: auto;}
+#gl-head {position: absolute; font-size: 3.6em; margin-left: 3rem; white-space: nowrap; cursor: pointer;}
+#gl-head::before {
+  display: inline-block;
+  content: ' < ';
+  background-color: #eee;
+  color: #000;
+  font-size: 0.7em;
+  line-height: 1.2;
+  border-radius: 50%;
+  margin: 0 1.5rem 0 0;
+}
+.image-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.9em;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.7;
+  max-width: 80rem;
+  margin: 2rem 5rem 3rem 5rem;
+}
