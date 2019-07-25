@@ -4,7 +4,7 @@ main {
   align-items: center;
   justify-content: center;
   background-size: cover; background-position: center center; background-repeat: no-repeat;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.3)), url(/image/cover.jpeg);
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.0), rgba(11, 14, 23, 0.0)), url(/image/main.jpeg);
 }
 @media screen and (orientation: portrait) {
   main {height: 100vh}
