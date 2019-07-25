@@ -18,8 +18,7 @@ h1 {
   font-size: 4.8em;
   white-space: nowrap;
 }
-p {font-family: 'Ubuntu', sans-serif; font-weight: 700; color: #fff; line-height: 1.7;}/*
-span {font-family: 'Montserrat', sans-serif; font-weight: 800; background-color: #41b619;}*/
+p {font-family: 'Ubuntu', sans-serif; font-weight: 700; color: #fff; line-height: 1.7;}
 #transition-layer {
   position: absolute;
   z-index: 100000;
@@ -43,15 +42,21 @@ span {font-family: 'Montserrat', sans-serif; font-weight: 800; background-color:
 /* Navigation and Footer block */
 header, footer {background-color: hsl(205, 15%, 5%); position: relative; z-index: 20;}
 @media screen and (orientation: portrait) {
-  nav {flex-direction: column;}
-  nav, footer, header, #fut-content {height: auto;}
+  nav {flex-direction: column; height: 8rem;}
+  .nav-burger, footer, header {height: auto;}
+  #fut-content {height: 8rem;}
   a.big {font-size: 3em; margin: 2.2rem auto 2.2rem 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
   a.norm {font-size: 2.4em; margin: 1rem 0 1rem; border-bottom: 3px solid transparent;}
+  .a-burger {display: none;}
   a.left {margin-top: 1rem;}
   a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
   a.this {border-bottom: 3px solid #41B619;}
   a.last {margin-bottom: 2.2rem;}
-  .fut-text {font-size: 2em; margin: 2.2rem 1.5rem; border-bottom: 3px solid transparent;}
+  .fut-text {font-size: 1.8em; margin: 2.2rem 1.5rem; border-bottom: 3px solid transparent;}
+  #burger {position: absolute; right: 0; width: 3.7rem; height: 3.7rem; margin: 2.2rem 3rem 2.2rem; cursor: pointer;}
+  #burger span {display: block; width: 3.7rem; height: 6px; background-color: #fff;}
+  #burger span:nth-child(1) {margin-top: 3px;}
+  #burger span:nth-child(2), #burger span:nth-child(3) {margin-top: 6px;}
 }
 @media screen and (orientation: landscape) {
   a.big {font-size: 3em; margin: 0 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
@@ -62,6 +67,7 @@ header, footer {background-color: hsl(205, 15%, 5%); position: relative; z-index
   a.last {margin-right: 3rem;}
   .fut-text {font-size: 1.6em; margin: 0 1.5rem; border-bottom: 3px solid transparent;}
   nav, footer, header, #fut-content {height: 8rem;}
+  #burger, span {display: none;}
 }
 @media screen and (max-width: 1199px) and (orientation: landscape) {
   nav, #fut-content {width: 100vw;}
