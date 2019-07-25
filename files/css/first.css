@@ -8,7 +8,7 @@ main {
   background-image: radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)), radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/image/main.jpeg);
 }
 @media screen and (orientation: portrait) {
-  main {height: 100vh}
+  main {height: calc(100vh - 6rem);}
 }
 @media screen and (orientation: landscape) {
   main {min-height: 500px; height: calc(100vh - 16rem)}
