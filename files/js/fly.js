@@ -10,6 +10,12 @@ $(document).ready(function() {
     });
   };
   $('body').addClass('overflow-hidden');
+  $('#fly-start').removeClass('not-now');
+  $('#log-start').removeClass('not-now');
+  $('#img-start').removeClass('not-now');
+  $('.blue-line').removeClass('not-now');
+  $('#st-anim-text').addClass('not-now');
+  $('.light').addClass('not-now');
   setTimeout(function() {
     $('#transition-layer').css('display','none');
     $('body').removeClass('overflow-hidden');
