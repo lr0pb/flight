@@ -1,14 +1,3 @@
-$(document).ready(function() {
-  if ( $(window).width() > 1440 ) {
-    $("#fly").on('mousemove', (e) => {
-      const cx = $(window).width() / 2;
-      const cy = $(window).height() / 2;
-
-      const x = ((cx - e.pageX) / cx) * 10;
-      const y = ((cy - e.pageY) / cy) * 10;
-      /*$(".bgo").css('transform',`translate(${x}px, ${y}px)`);*/
-    });
-  };
   $('body').addClass('overflow-hidden');
   setTimeout(function() {
     $('#transition-layer').css('display','none');
