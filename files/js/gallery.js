@@ -78,3 +78,4 @@ function back() {
     $('#transition-layer').css('display','none');
   }, 1100);
 };
+document.location.href = "https://lr0pb.github.io";
