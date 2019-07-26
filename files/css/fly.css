@@ -499,6 +499,16 @@
     background-color: transparent;
   }
   .icon-box {position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; display: grid;}
+  #icon-box {
+    grid:
+      "... ... ... ... ... ... ... ... ... ... ... ..."
+      "... im1 ... im4 ... ... ... im8 im10 ... ... ..."
+      "... ... im2 im3 im5 ... im6 im7 ... im11 ... im12"
+      "... ... ... ... ... ... ... ... ... ... ... ..."
+    ;
+    grid-template-rows: 2.7fr repeat(2, 1fr) 3.3fr;
+    grid-template-columns: 2fr repeat(10, 1fr) 2fr;
+  }
   #box1to4 {
     grid:
       "... ... ..."
@@ -714,16 +724,6 @@
 #to-im13:hover {border-color: #fff #ff2f2f transparent transparent; transform: scale(1.4) rotateZ(45deg);}
 
 @media screen and (min-width: 1200px) and (orientation: landscape) {
-  #icon-box {
-    grid:
-      "... ... ... ... ... ... ... ... ... ... ... ..."
-      "... im1 ... im4 ... ... ... im8 im10 ... ... ..."
-      "... ... im2 im3 im5 ... im6 im7 ... im11 ... im12"
-      "... ... ... ... ... ... ... ... ... ... ... ..."
-    ;
-    grid-template-rows: 2.7fr repeat(2, 1fr) 3.3fr;
-    grid-template-columns: 2fr repeat(10, 1fr) 2fr;
-  }
   #im1 {grid-area: im1;}
   #im2 {grid-area: im2; left: 0.8rem;}
   #im3 {grid-area: im3; left: -4rem; bottom: -1rem;}
