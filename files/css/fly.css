@@ -650,19 +650,24 @@
   transition: 0.5s;
 }
 .complete::before {
-  display: block; content: ''; width: 1.5rem; height: 1.5rem; margin: 0 0 0 5.5rem;
+  display: block; content: '';
   border-radius: 50%; background-color: #41b619;
 }
 @media screen and (max-width: 1199px) {
   .image-point {
-    width: 4.5rem;
-    height: 4.5rem;
-    border-width: 0.7rem;
+    width: 4rem;
+    height: 4rem;
+    border-width: 0.8rem;
   }
   .to-point {
-    width: 3rem;
-    height: 3rem;
-    border-width: 0.9rem;
+    width: 2rem;
+    height: 2rem;
+    border-width: 0.7rem;
+  }
+  .complete::before {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: 0 0 0 4rem;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -675,6 +680,11 @@
     width: 3rem;
     height: 3rem;
     border-width: 0.9rem;
+  }
+  .complete::before {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 0 0 5.5rem;
   }
 }
 #im1 {grid-area: im1;}
