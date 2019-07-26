@@ -332,7 +332,7 @@
   box-shadow: 0 0.5rem 1.5rem rgba(65, 182, 25, 0.55);
   transition: 0.5s;
 }
-#fly-open:hover {box-shadow: 0 0.5rem 1.5rem #41B619;/* background: -webkit-linear-gradient(75deg, #41B619, #CBE724);*/}
+#fly-open:hover {box-shadow: 0 0.5rem 1.5rem #41B619; border: 0.5rem solid #41b619;/* background: -webkit-linear-gradient(75deg, #41B619, #CBE724);*/}
 /*</open button>*/
 /*<log start>*/
 #log-start {
@@ -496,9 +496,7 @@
     padding: 1.6rem 4.5rem;
     bottom: 2vh;
     right: 2vw;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 5rem;
-    transition: 0.5s;
+    background-color: transparent;
   }
   .icon-box {position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; display: grid;}
   #icon-box {
