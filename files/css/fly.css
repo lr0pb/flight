@@ -499,16 +499,6 @@
     background-color: transparent;
   }
   .icon-box {position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; display: grid;}
-  #icon-box {
-    grid:
-      "... ... ... ... ... ... ... ... ... ... ... ..."
-      "... im1 ... im4 ... ... ... im8 im10 ... ... ..."
-      "... ... im2 im3 im5 ... im6 im7 ... im11 ... im12"
-      "... ... ... ... ... ... ... ... ... ... ... ..."
-    ;
-    grid-template-rows: 2.7fr repeat(2, 1fr) 3.3fr;
-    grid-template-columns: 2fr repeat(10, 1fr) 2fr;
-  }
   #box1to4 {
     grid:
       "... ... ..."
@@ -650,7 +640,7 @@
   display: block; content: '';
   border-radius: 50%; background-color: #41b619;
 }
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1439px) {
   .image-point {
     width: 3.7rem;
     height: 3.7rem;
@@ -667,7 +657,7 @@
     margin: 0 0 0 3.4rem;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1440px) {
   .image-point {
     width: 6rem;
     height: 6rem;
@@ -685,38 +675,35 @@
   }
 }
 #im1 {grid-area: im1;}
-#im2 {grid-area: im2; left: 0.8rem;}
-#im3 {grid-area: im3; left: -4rem; bottom: -1rem;}
+#im2 {grid-area: im2;}
+#im3 {grid-area: im3;}
 #im4 {grid-area: im4; right: 0; bottom: 0;}
-#im5 {grid-area: im5; top: 1rem; right: 0;}
-#im6 {grid-area: im6; top: -2rem;}
-#im7 {grid-area: im7; top: -3.5rem;}
-#im8 {grid-area: im8; top: 1rem; left: 2rem;}
+#im5 {grid-area: im5; right: 0;}
+#im6 {grid-area: im6;}
+#im7 {grid-area: im7;}
+#im8 {grid-area: im8;}
 #im9 {display: none;}
-#im10 {grid-area: im10; bottom: -4rem;}
-#im11 {grid-area: im11; right: -3rem;}
-#im12 {grid-area: im12; bottom: 1rem;}
+#im10 {grid-area: im10;}
+#im11 {grid-area: im11;}
+#im12 {grid-area: im12;}
 #im13 {grid-area: im13;}
-.not-now {display: none;}
-h5 {font-size: 3.2em; position: absolute; z-index: 800; text-shadow: 0 0 1rem #000; cursor: pointer; transition: 0.5s;}
-h5:hover {transform: scale(1.3);}
 #im1to4 {grid-area: im1to4; bottom: 0; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
-#text1to4 {grid-area: im1to4; bottom: 3.2rem; left: 0.7rem;}
+#text1to4 {grid-area: im1to4; left: 0.7rem;}
 #to-im2-1 {grid-area: to-im2-1; transform: rotateZ(-135deg); right: 0;}
 #to-im2-1:hover {border-color: #ff2f2f #fff transparent transparent; transform: scale(1.4) rotateZ(-135deg);}
 #to-im2-2 {grid-area: to-im2-2; transform: rotateZ(45deg);}
 #to-im2-2:hover {border-color: #fff #ff2f2f transparent transparent; transform: scale(1.4) rotateZ(45deg);}
 #im3to2 {grid-area: im3to2;}
-#im4to1 {grid-area: im4to1; top: 3rem; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
-#text4to1 {grid-area: im4to1; top: 3.8rem; left: 0.7rem;}
-#im5to3 {grid-area: im5to3; bottom: 0; left: -3rem;}
+#im4to1 {grid-area: im4to1; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
+#text4to1 {grid-area: im4to1; left: 0.7rem;}
+#im5to3 {grid-area: im5to3; bottom: 0;}
 #im6to7 {grid-area: im6to7; bottom: 0;}
 #im7to10 {grid-area: im7to10; bottom: 0;}
 #im9to4 {grid-area: im9to4;}
 #im8to9 {grid-area: im8to9; bottom: 0; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
-#text8to9 {grid-area: im8to9; bottom: 3.2rem; left: 0.7rem;}
+#text8to9 {grid-area: im8to9; left: 0.7rem;}
 #im9to8 {grid-area: im9to8; bottom: 0; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
-#text9to8 {grid-area: im9to8; bottom: 3.2rem; left: 0.7rem;}
+#text9to8 {grid-area: im9to8; left: 0.7rem;}
 #to-im9-2 {grid-area: to-im9-2; transform: rotateZ(-135deg); right: 0;}
 #to-im9-2:hover {border-color: #ff2f2f #fff transparent transparent; transform: scale(1.4) rotateZ(-135deg);}
 #to-im9-1 {grid-area: to-im9-1; transform: rotateZ(45deg);}
@@ -725,6 +712,61 @@ h5:hover {transform: scale(1.3);}
 #to-im12:hover {border-color: #ff2f2f #fff transparent transparent; transform: scale(1.4) rotateZ(-135deg);}
 #to-im13 {grid-area: to-im13; transform: rotateZ(45deg);}
 #to-im13:hover {border-color: #fff #ff2f2f transparent transparent; transform: scale(1.4) rotateZ(45deg);}
+
+@media screen and (min-width: 1200px) and (orientation: landscape) {
+  #icon-box {
+    grid:
+      "... ... ... ... ... ... ... ... ... ... ... ..."
+      "... im1 ... im4 ... ... ... im8 im10 ... ... ..."
+      "... ... im2 im3 im5 ... im6 im7 ... im11 ... im12"
+      "... ... ... ... ... ... ... ... ... ... ... ..."
+    ;
+    grid-template-rows: 2.7fr repeat(2, 1fr) 3.3fr;
+    grid-template-columns: 2fr repeat(10, 1fr) 2fr;
+  }
+  #im1 {grid-area: im1;}
+  #im2 {grid-area: im2; left: 0.8rem;}
+  #im3 {grid-area: im3; left: -4rem; bottom: -1rem;}
+  #im4 {grid-area: im4; right: 0; bottom: 0;}
+  #im5 {grid-area: im5; top: 1rem; right: 0;}
+  #im6 {grid-area: im6; top: -2rem;}
+  #im7 {grid-area: im7; top: -3.5rem;}
+  #im8 {grid-area: im8; top: 1rem; left: 2rem;}
+  #im9 {display: none;}
+  #im10 {grid-area: im10; bottom: -4rem;}
+  #im11 {grid-area: im11; right: -3rem;}
+  #im12 {grid-area: im12; bottom: 1rem;}
+  #im13 {grid-area: im13;}
+  .not-now {display: none;}
+  h5 {font-size: 3.2em; position: absolute; z-index: 800; text-shadow: 0 0 1rem #000; cursor: pointer; transition: 0.5s;}
+  h5:hover {transform: scale(1.3);}
+  #im1to4 {grid-area: im1to4; bottom: 0; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
+  #text1to4 {grid-area: im1to4; bottom: 3.2rem; left: 0.7rem;}
+  #to-im2-1 {grid-area: to-im2-1; transform: rotateZ(-135deg); right: 0;}
+  #to-im2-1:hover {border-color: #ff2f2f #fff transparent transparent; transform: scale(1.4) rotateZ(-135deg);}
+  #to-im2-2 {grid-area: to-im2-2; transform: rotateZ(45deg);}
+  #to-im2-2:hover {border-color: #fff #ff2f2f transparent transparent; transform: scale(1.4) rotateZ(45deg);}
+  #im3to2 {grid-area: im3to2;}
+  #im4to1 {grid-area: im4to1; top: 3rem; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
+  #text4to1 {grid-area: im4to1; top: 3.8rem; left: 0.7rem;}
+  #im5to3 {grid-area: im5to3; bottom: 0; left: -3rem;}
+  #im6to7 {grid-area: im6to7; bottom: 0;}
+  #im7to10 {grid-area: im7to10; bottom: 0;}
+  #im9to4 {grid-area: im9to4;}
+  #im8to9 {grid-area: im8to9; bottom: 0; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
+  #text8to9 {grid-area: im8to9; bottom: 3.2rem; left: 0.7rem;}
+  #im9to8 {grid-area: im9to8; bottom: 0; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
+  #text9to8 {grid-area: im9to8; bottom: 3.2rem; left: 0.7rem;}
+  #to-im9-2 {grid-area: to-im9-2; transform: rotateZ(-135deg); right: 0;}
+  #to-im9-2:hover {border-color: #ff2f2f #fff transparent transparent; transform: scale(1.4) rotateZ(-135deg);}
+  #to-im9-1 {grid-area: to-im9-1; transform: rotateZ(45deg);}
+  #to-im9-1:hover {border-color: #fff #ff2f2f transparent transparent; transform: scale(1.4) rotateZ(45deg);}
+  #to-im12 {grid-area: to-im12; transform: rotateZ(-135deg); right: 0;}
+  #to-im12:hover {border-color: #ff2f2f #fff transparent transparent; transform: scale(1.4) rotateZ(-135deg);}
+  #to-im13 {grid-area: to-im13; transform: rotateZ(45deg);}
+  #to-im13:hover {border-color: #fff #ff2f2f transparent transparent; transform: scale(1.4) rotateZ(45deg);}
+}
+
 .open {
   animation: 1.5s open;
   animation-fill-mode: forwards;
