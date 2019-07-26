@@ -64,8 +64,8 @@ $('#im1').mousedown(function() {
     $('#cube1to4').css('opacity','1');
     $('#bottom-button').css('display','block');
     $('#bottom-button').addClass('button-spawn');
-    $('#bottom-button').mousedown(typeClose);
-    $('#bottom-button').mousedown(clear1to4);
+    $('#bottom-button').bind('mousedown', typeClose);
+    $('#bottom-button').bind('mousedown', clear1to4);
   }, 6800);
 });
 $('.icon1to4').mousedown(function() {
@@ -76,6 +76,8 @@ $('.icon1to4').mousedown(function() {
   $('#disabled').removeClass('not-now');
   $('#help-180').removeClass('fade-from-down');
   $('#help-180').addClass('fade-to-down');
+  $('#bottom-button').unbind('mousedown', typeClose);
+  $('#bottom-button').unbind('mousedown', clear1to4);
   setTimeout(function() {
     $('#text4to1').removeClass('not-now');
     $('#text4to1').css('opacity','0');
@@ -92,6 +94,8 @@ $('.icon1to4').mousedown(function() {
     $('#disabled').addClass('not-now');
     $('#im4').removeClass('complete');
     $('#im9to4').removeClass('complete');
+    $('#bottom-button').bind('mousedown', typeClose);
+    $('#bottom-button').bind('mousedown', clear1to4);
   }, 14600);
 });
 function clear1to4() {

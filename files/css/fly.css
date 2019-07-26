@@ -655,9 +655,9 @@
 }
 @media screen and (max-width: 1199px) {
   .image-point {
-    width: 4rem;
-    height: 4rem;
-    border-width: 0.8rem;
+    width: 3.7rem;
+    height: 3.7rem;
+    border-width: 0.6rem;
   }
   .to-point {
     width: 2rem;
@@ -665,9 +665,9 @@
     border-width: 0.7rem;
   }
   .complete::before {
-    width: 1.4rem;
-    height: 1.4rem;
-    margin: 0 0 0 4rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin: 0 0 0 3.2rem;
   }
 }
 @media screen and (min-width: 1200px) {
