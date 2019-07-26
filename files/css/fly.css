@@ -655,9 +655,9 @@
 }
 @media screen and (max-width: 1199px) {
   .image-point {
-    width: 3rem;
-    height: 3rem;
-    border-width: 0.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-width: 0.7rem;
   }
   .to-point {
     width: 3rem;
