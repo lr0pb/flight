@@ -14,7 +14,6 @@ $(document).ready(function() {
   $('#log-start').removeClass('not-now');
   $('#img-start').removeClass('not-now');
   $('.blue-line').removeClass('not-now');
-  $('#st-anim-text').addClass('not-now');
   $('.light').addClass('not-now');
   setTimeout(function() {
     $('#transition-layer').css('display','none');
