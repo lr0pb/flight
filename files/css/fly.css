@@ -697,6 +697,9 @@
 #im11 {grid-area: im11;}
 #im12 {grid-area: im12;}
 #im13 {grid-area: im13;}
+.not-now {display: none;}
+h5 {font-size: 3.2em; position: absolute; z-index: 800; text-shadow: 0 0 1rem #000; cursor: pointer; transition: 0.5s;}
+h5:hover {transform: scale(1.3);}
 #im1to4 {grid-area: im1to4; bottom: 0; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
 #text1to4 {grid-area: im1to4; left: 0.7rem;}
 #to-im2-1 {grid-area: to-im2-1; transform: rotateZ(-135deg); right: 0;}
@@ -737,9 +740,6 @@
   #im11 {grid-area: im11; right: -3rem;}
   #im12 {grid-area: im12; bottom: 1rem;}
   #im13 {grid-area: im13;}
-  .not-now {display: none;}
-  h5 {font-size: 3.2em; position: absolute; z-index: 800; text-shadow: 0 0 1rem #000; cursor: pointer; transition: 0.5s;}
-  h5:hover {transform: scale(1.3);}
   #im1to4 {grid-area: im1to4; bottom: 0; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
   #text1to4 {grid-area: im1to4; bottom: 3.2rem; left: 0.7rem;}
   #to-im2-1 {grid-area: to-im2-1; transform: rotateZ(-135deg); right: 0;}
