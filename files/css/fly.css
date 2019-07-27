@@ -706,6 +706,37 @@
 h5 {font-size: 3.2em; position: absolute; z-index: 800; text-shadow: 0 0 1rem #000; cursor: pointer; transition: 0.5s;}
 h5:hover {transform: scale(1.3);}
 
+#im1 {grid-area: im1;}
+#im2 {grid-area: im2;}
+#im3 {grid-area: im3;}
+#im4 {grid-area: im4; right: 0; bottom: 0;}
+#im5 {grid-area: im5; right: 0;}
+#im6 {grid-area: im6;}
+#im7 {grid-area: im7;}
+#im8 {grid-area: im8;}
+#im9 {display: none;}
+#im10 {grid-area: im10;}
+#im11 {grid-area: im11;}
+#im12 {grid-area: im12;}
+#im13 {grid-area: im13;}
+#im1to4 {grid-area: im1to4; bottom: 0; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
+#text1to4 {grid-area: im1to4; left: 0.7rem;}
+#to-im2-1 {grid-area: to-im2-1; transform: rotateZ(-135deg); right: 0;}
+#to-im2-1:hover {border-color: #ff2f2f #fff transparent transparent; transform: scale(1.4) rotateZ(-135deg);}
+#to-im2-2 {grid-area: to-im2-2; transform: rotateZ(45deg);}
+#to-im2-2:hover {border-color: #fff #ff2f2f transparent transparent; transform: scale(1.4) rotateZ(45deg);}
+#im3to2 {grid-area: im3to2;}
+#im4to1 {grid-area: im4to1; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
+#text4to1 {grid-area: im4to1; bottom: 0; left: 0.7rem;}
+#im5to3 {grid-area: im5to3; bottom: 0;}
+#im6to7 {grid-area: im6to7; bottom: 0;}
+#im7to10 {grid-area: im7to10; bottom: 0;}
+#im9to4 {grid-area: im9to4;}
+#im8to9 {grid-area: im8to9; bottom: 0; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
+#text8to9 {grid-area: im8to9; left: 0.7rem;}
+#im9to8 {grid-area: im9to8; bottom: 0; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
+#text9to8 {grid-area: im9to8; left: 0.7rem;}
+
 #to-im9-2 {grid-area: to-im9-2; transform: rotateZ(-135deg); right: 0;}
 #to-im9-2:hover {border-color: #ff2f2f #fff transparent transparent; transform: scale(1.4) rotateZ(-135deg);}
 #to-im9-1 {grid-area: to-im9-1; transform: rotateZ(45deg);}
@@ -717,7 +748,7 @@ h5:hover {transform: scale(1.3);}
 
 @media screen and (max-width: 1439px;) and (orientation: landscape) {
   @media (min-height: 900px;) {
-    #im1 {grid-area: im1;}
+    #im1 {top: 2rem;}
     #im2 {grid-area: im2;}
     #im3 {grid-area: im3;}
     #im4 {grid-area: im4; right: 0; bottom: 0;}
@@ -749,36 +780,6 @@ h5:hover {transform: scale(1.3);}
     #text9to8 {grid-area: im9to8; left: 0.7rem;}
   }
 }
-#im1 {grid-area: im1;}
-#im2 {grid-area: im2;}
-#im3 {grid-area: im3;}
-#im4 {grid-area: im4; right: 0; bottom: 0;}
-#im5 {grid-area: im5; right: 0;}
-#im6 {grid-area: im6;}
-#im7 {grid-area: im7;}
-#im8 {grid-area: im8;}
-#im9 {display: none;}
-#im10 {grid-area: im10;}
-#im11 {grid-area: im11;}
-#im12 {grid-area: im12;}
-#im13 {grid-area: im13;}
-#im1to4 {grid-area: im1to4; bottom: 0; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
-#text1to4 {grid-area: im1to4; left: 0.7rem;}
-#to-im2-1 {grid-area: to-im2-1; transform: rotateZ(-135deg); right: 0;}
-#to-im2-1:hover {border-color: #ff2f2f #fff transparent transparent; transform: scale(1.4) rotateZ(-135deg);}
-#to-im2-2 {grid-area: to-im2-2; transform: rotateZ(45deg);}
-#to-im2-2:hover {border-color: #fff #ff2f2f transparent transparent; transform: scale(1.4) rotateZ(45deg);}
-#im3to2 {grid-area: im3to2;}
-#im4to1 {grid-area: im4to1; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
-#text4to1 {grid-area: im4to1; bottom: 0; left: 0.7rem;}
-#im5to3 {grid-area: im5to3; bottom: 0;}
-#im6to7 {grid-area: im6to7; bottom: 0;}
-#im7to10 {grid-area: im7to10; bottom: 0;}
-#im9to4 {grid-area: im9to4;}
-#im8to9 {grid-area: im8to9; bottom: 0; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
-#text8to9 {grid-area: im8to9; left: 0.7rem;}
-#im9to8 {grid-area: im9to8; bottom: 0; transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
-#text9to8 {grid-area: im9to8; left: 0.7rem;}
 
 @media screen and (min-width: 1440px) and (orientation: landscape) {
   #im1 {grid-area: im1;}
