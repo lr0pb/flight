@@ -745,6 +745,33 @@ h5:hover {transform: scale(1.3);}
 #to-im2-2:hover, #to-im9-1:hover, #to-im13:hover {border-color: #fff #ff2f2f transparent transparent; transform: scale(1.4) rotateZ(45deg);}
 
 @media screen and (max-width: 1439px) and (orientation: landscape) {
+  @media (min-height: 700px) and (max-height: 899px) {
+    #im1 {top: 4rem;}
+    #im2 {top: 1rem; left: 1rem;}
+    #im3 {top: 6.5rem;}
+    #im4 {right: 0; bottom: 0;}
+    #im5 {top: 2rem; right: 0;}
+    #im6 {top: 1rem; left: -3rem;}
+    #im7 {grid-area: im7;}
+    #im8 {top: 6rem; left: 1.5rem;}
+    #im10 {top: 10rem;}
+    #im11 {grid-area: im11;}
+    #im12 {top: 2rem;}
+    #im13 {grid-area: im13;}
+    #im1to4 {bottom: 0;}
+    #text1to4 {left: 0.7rem;}
+    #im3to2 { }
+    #im4to1 { }
+    #text4to1 {bottom: 0; left: 0.7rem;}
+    #im5to3 {bottom: 0;}
+    #im6to7 {bottom: 0;}
+    #im7to10 {bottom: 0;}
+    #im9to4 { }
+    #im8to9 {bottom: 0;}
+    #text8to9 {left: 0.7rem;}
+    #im9to8 {bottom: 0;}
+    #text9to8 {left: 0.7rem;}
+  }
   @media (min-height: 900px) {
     #im1 {top: 4rem;}
     #im2 {top: 1rem; left: 1rem;}
@@ -754,9 +781,9 @@ h5:hover {transform: scale(1.3);}
     #im6 {top: 1rem; left: -3rem;}
     #im7 {grid-area: im7;}
     #im8 {top: 6rem; left: 1.5rem;}
-    #im10 {grid-area: im10;}
+    #im10 {top: 10rem;}
     #im11 {grid-area: im11;}
-    #im12 {grid-area: im12;}
+    #im12 {top: 2rem;}
     #im13 {grid-area: im13;}
     #im1to4 {bottom: 0;}
     #text1to4 {left: 0.7rem;}
