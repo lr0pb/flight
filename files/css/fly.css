@@ -650,7 +650,7 @@
   display: block; content: '';
   border-radius: 50%; background-color: #41b619;
 }
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1399px) {
   .image-point {
     width: 3.7rem;
     height: 3.7rem;
@@ -667,7 +667,24 @@
     margin: 0 0 0 3.4rem;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1400px) and (max-width: 1899px) {
+  .image-point {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-width: 0.85rem;
+  }
+  .to-point {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-width: 0.8rem;
+  }
+  .complete::before {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0 0 0 4.4rem;
+  }
+}
+@media screen and (min-width: 1900px) {
   .image-point {
     width: 6rem;
     height: 6rem;
