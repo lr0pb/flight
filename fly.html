@@ -18,9 +18,22 @@
     <link rel="canonical" href="https://lr0pb.github.io/fly">
     <link rel="shortcut icon" href="image/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:500,800,900&display=swap&subset=cyrillic">
+    <script>
+      function browserName() {
+        var ua = navigator.userAgent;
+        if (ua.search(/Safari/) > 0) return 'Safari';
+        return false;
+      };
+
+      if (browserName() !== 'Safari') {
+        document.write('<link rel="stylesheet" href="files/css/next-gen-images.css">')
+      };
+      if (browserName() == 'Safari') {
+        document.write('<link rel="stylesheet" href="files/css/safari-images.css">')
+      };
+    </script>
     <link rel="stylesheet" href="files/css/fly.css">
     <link rel="stylesheet" href="files/css/main.css">
-    <link rel="prefetch" href="/image/cover.jpeg">
     <link rel="prefetch" href="/image/bg.jpeg">
   </head>
   <body>
@@ -79,7 +92,7 @@
       </footer>
     </div>
     <main id="fly">
-      <div id="rotare-box">
+      <div id="rotate-box">
         <h3 class="portrait-text">Пожалуйста, поверните Ваше <br> устройство горизонтально <br> или воспользуйтесь другим.</h3>
       </div>
       <div id="bg-box">
