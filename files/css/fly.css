@@ -95,7 +95,7 @@
 #bg2-1-spawn {transform-origin: 35vw 50vh;}
 #bg2-2-spawn {transform-origin: 38vw 50vh;}
 #bg3 {z-index: 130; transform-origin: 40vw 58vh;
-  background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(/image/im3.jpeg);
+  background-image: url(/image/im3.jpeg);
 }
 #bg4, #bg4-spawn {transform-origin: center;
   background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(/image/im4.jpeg);
