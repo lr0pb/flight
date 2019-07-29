@@ -50,7 +50,7 @@ header, footer {background-color: hsl(205, 15%, 5%); position: relative; z-index
   .a-burger {display: none;}
   a.left {margin-top: 1rem;}
   a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
-  a.this {border-bottom: 3px solid #41B619;}
+  a.this, a.this:hover {border-bottom: 3px solid #41B619;}
   a.last {margin-bottom: 2.2rem;}
   .fut-text {font-size: 1.8em; margin: 2rem 1.5rem; border-bottom: 3px solid transparent;}
   #burger {position: absolute; right: 0; width: 2.5rem; height: 2.5rem; margin: 1.75rem 2rem 1.75rem; cursor: pointer;}
