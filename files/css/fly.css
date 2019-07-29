@@ -173,7 +173,6 @@
 @media screen and (max-width: 560px) and (orientation: portrait) {
   html {font-size: 9px;}
   body {overflow-x: hidden;}
-  .blue-line {display: none;}
   #start-content {
     width: 100vw; height: auto;
     grid:
@@ -190,7 +189,6 @@
 }
 @media screen and (min-width: 561px) and (max-width: 585px) and (orientation: portrait) {
   html {font-size: 9px;}
-  .blue-line {display: none;}
   #start-content {
     width: 100vw; height: auto; min-height: calc(100vh - 14rem);
     grid:
@@ -205,7 +203,6 @@
 }
 @media screen and (min-width: 586px) and (max-width: 840px) and (orientation: portrait) {
   html {font-size: 10px;}
-  .blue-line {display: none;}
   #start-content {
     width: 100vw; height: auto; min-height: calc(100vh - 14rem);
     grid:
@@ -219,7 +216,6 @@
   }
 }
 @media screen and (min-width: 841px) and (orientation: portrait) {
-  .blue-line {display: none;}
   #start-content {
     width: 100vw; height: auto; min-height: calc(100vh - 14rem);
     grid:
@@ -234,7 +230,6 @@
 }
 @media screen and (max-width: 1145px) and (orientation: landscape) {
   html {font-size: 9px;}
-  .blue-line {display: none;}
   #start-content {
     width: 100vw;
     grid:
@@ -255,13 +250,13 @@
 }
 @media screen and (min-width: 1146px) and (orientation: landscape) {
   #start-content {
-    width: 100vw; min-height: 64rem; max-height: calc(100vh - 14rem);
+    width: 100vw; height: calc(100vh - 14rem);
     grid:
-      "lin1 ... lin2"
-      "lin1 head lin2"
+      "... ... ..."
+      "... head ..."
       "log text img"
     ;
-    grid-template-rows: repeat(2, minmax(17.8rem, 1fr)) 28.5rem;
+    grid-template-rows: repeat(2, minmax(17.8rem, 1fr)) 19.5rem;
     grid-template-columns: 32rem minmax(50rem, calc(100vw - 64rem)) 32rem;
   }
 }
@@ -354,14 +349,6 @@
 #img-start {
   grid-area: img;
   justify-content: center;
-}
-#lin1 {grid-area: lin1;}
-#lin2 {grid-area: lin2;}
-.blue-line {
-  width: 32rem;
-  min-height: 64rem;
-  height: calc(100vh - 14rem);
-  background: rgba(11, 14, 23, 0.65);
 }
 .more-title {
   cursor: pointer;
