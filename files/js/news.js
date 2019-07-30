@@ -1,3 +1,9 @@
+$('body').addClass('overflow-hidden');
+setTimeout(function() {
+  $('#transition-layer').css('display','none');
+  $('body').removeClass('overflow-hidden');
+}, 1000);
+
 $('#news-head').click(back);
 $(document).keydown(function(e) {
   if(e.keyCode===66){
