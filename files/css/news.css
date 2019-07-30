@@ -35,8 +35,6 @@ header, footer {display: none;}
   margin: 0 1.5rem 0 0;
 }
 article {
-  width: 100%;
-  max-width: 960px;
   border-radius: 2rem;
   padding: 3rem;
   margin: 1.5rem auto 1.5rem auto;
