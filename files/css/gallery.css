@@ -83,7 +83,7 @@ header, footer {display: none;}
 img {
   margin: 0 5rem;
   box-shadow: 0 15px 60px rgba(0, 0, 0, 0.3);
-  background-color: #42548a;
+  background-color: #1f2740;
 }
 .container {width: 100vw; height: 12rem; display: flex; grid-area: gl-head;}
 .gl-head-box {width: 1200px; height: inherit;; display: flex; align-items: center; margin-left: auto; margin-right: auto;}
