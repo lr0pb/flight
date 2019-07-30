@@ -9,14 +9,22 @@
 <url>
   <loc>https://lr0pb.github.io/</loc>
   <priority>1.00</priority>
+  <changefreq>weekly<changefreq>
+</url>
+<url>
+  <loc>https://lr0pb.github.io/news</loc>
+  <priority>0.80</priority>
+  <changefreq>weekly<changefreq>
 </url>
 <url>
   <loc>https://lr0pb.github.io/gallery</loc>
   <priority>0.80</priority>
+  <changefreq>weekly<changefreq>
 </url>
 <url>
   <loc>https://lr0pb.github.io/fly</loc>
   <priority>1.00</priority>
+  <changefreq>weekly<changefreq>
 </url>
 
 

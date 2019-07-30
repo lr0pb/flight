@@ -38,8 +38,7 @@ article {
   width: 100%;
   max-width: 720px;
   border-radius: 2rem;
-  padding: 3rem;
-  padding-left: 6rem;
+  padding: 5rem;
   margin: 0 auto 4rem auto;
   background-color: #1f2740;
 }
@@ -49,10 +48,10 @@ article {
 }
 .article-sub-head {
   font-size: 1.8rem;
-  padding: 0.7rem 0;
+  padding: 1.2rem 0;
 }
 .article-text {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 400;
   padding-left: 2rem;
   margin: 0;
