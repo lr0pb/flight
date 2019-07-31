@@ -679,6 +679,20 @@ function close() {
   if (fly.webkitRequestFullscreen) document.exitFullscreen();
   else if (fly.requestFullscreen) document.exitFullscreen();
 };
+$('#log').click(function() {
+  $('body').addClass('overflow-hidden');
+  $('#transition-layer').css({
+    'display':'block',
+    'animation':'1s transition-start-phase'
+  });
+  setTimeout(function() {
+    document.location.href = "https://lr0pb.github.io/news";
+  }, 1000);
+  setTimeout(function() {
+    $('body').addClass('overflow-hidden');
+    $('#transition-layer').css('display','none');
+  }, 1100);
+});
 $('#img').click(function() {
   $('body').addClass('overflow-hidden');
   $('#transition-layer').css({
