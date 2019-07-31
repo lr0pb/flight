@@ -64,5 +64,5 @@ article {
   margin: 0;
 }
 #release-notes {
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.85), rgba(11, 14, 23, 0.85)), url(/image/im7.jpeg);
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.9), rgba(11, 14, 23, 0.75)), url(/image/im7.jpeg);
 }

@@ -88,9 +88,9 @@ a, .fut-text {
   color: #fff;
 }
 footer, #fut-content {display: flex; justify-content: center; align-items: center;}
-@media screen and (max-width: 350px) and (orientation: portrait) {
+@media screen and (max-width: 360px) and (orientation: portrait) {
   html {font-size: 8px;}
 }
-@media screen and (min-width: 351px) and (max-width: 390px) and (orientation: portrait) {
+@media screen and (min-width: 361px) and (max-width: 400px) and (orientation: portrait) {
   html {font-size: 9px;}
 }
