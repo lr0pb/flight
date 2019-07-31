@@ -58,7 +58,8 @@ article {
   padding: 1.2rem 0;
 }
 .article-text {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
+  font-weight: 400;
   padding-left: 2rem;
   margin: 0;
 }
