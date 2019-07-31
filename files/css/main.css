@@ -18,7 +18,7 @@ h1 {
   font-size: 4.8em;
   white-space: nowrap;
 }
-p {font-family: 'Ubuntu', sans-serif; font-weight: 700; color: #fff; line-height: 1.7;}
+p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height: 1.7;}
 #transition-layer {
   position: absolute;
   z-index: 100000;
