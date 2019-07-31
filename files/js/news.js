@@ -18,9 +18,9 @@ function back() {
   });
   setTimeout(function() {
     document.location.href = "https://lr0pb.github.io/fly";
-  }, 1000);
+  }, 1000);/*
   setTimeout(function() {
     $('body').addClass('overflow-hidden');
     $('#transition-layer').css('display','none');
-  }, 1100);
+  }, 1100);*/
 };
