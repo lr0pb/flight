@@ -36,12 +36,18 @@ header, footer {display: none;}
   margin: 0 1.5rem 0 0;
 }
 article {
-  width: 95vw;
-  max-width: 670px;
   border-radius: 2rem;
   padding: 5rem;
   margin: 0 auto 4rem auto;
   background-color: #1f2740;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 729px) {
+  article {width: 90vw;}
+}
+@media screen and (min-width: 730px) {
+  article {width: 670px;}
 }
 .article-head {
   font-size: 2.4rem;
