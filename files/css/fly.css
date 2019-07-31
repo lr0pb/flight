@@ -698,7 +698,6 @@
   }
 }
 
-.not-now {display: none;}
 h5 {font-size: 3.2em; position: absolute; z-index: 800; text-shadow: 0 0 1rem #000; cursor: pointer; transition: 0.5s;}
 h5:hover {transform: scale(1.3);}
 

@@ -39,6 +39,7 @@ p {font-family: 'Ubuntu', sans-serif; font-weight: 700; color: #fff; line-height
   from {top:0;}
   to {top: 100vh;}
 }
+.not-now {display: none;}
 /* Navigation and Footer block */
 header, footer {background-color: hsl(205, 15%, 5%); position: relative; z-index: 20;}
 @media screen and (orientation: portrait) {
