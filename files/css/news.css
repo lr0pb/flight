@@ -43,11 +43,11 @@ article {
   background-size: cover;
   background-repeat: no-repeat;
 }
-@media screen and (max-width: 729px) {
-  article {width: 90vw;}
+@media screen and (max-width: 749px) {
+  article {width: 70vw;}
 }
-@media screen and (min-width: 730px) {
-  article {width: 670px;}
+@media screen and (min-width: 750px) {
+  article {width: 600px;}
 }
 .article-head {
   font-size: 2.4rem;
