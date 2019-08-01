@@ -13,3 +13,45 @@ main {
 @media screen and (orientation: landscape) {
   main {min-height: 500px; height: calc(100vh - 14rem)}
 }
+.promo {
+  display: grid;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin-top: 5rem;
+  background-color: #1f2740;
+}
+@media screen and (max-width: 749px) {
+  .promo {width: 70vw;}
+}
+@media screen and (min-width: 750px) {
+  .promo {width: 600px;}
+}
+#fly-promo {
+  grid:
+    "promo-head promo-button"
+    "promo-image promo-image"
+  ;
+  grid-template-rows: 4rem 12rem;
+  grid-template-columns: 7fr 3fr;
+}
+.promo-head {
+  grid-area: promo-head;
+  font-size: 2.4rem;
+}
+.promo-button {
+  grid-area: promo-button;
+  font-size: 1.8rem;
+  padding: 2rem 1rem;
+  background: #41b619;
+  border: 0.5rem solid #369e13;
+  border-radius: 5rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.promo-button:hover {border: 0.5rem solid #41b619;}
+.promo-image {
+  height: 12rem;
+  width: auto;
+  border-radius: 2rem;
+  background-color: #0b0e17;
+}

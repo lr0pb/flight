@@ -99,6 +99,7 @@ img {
   margin: 0 1.5rem 0 0;
 }
 .image-description {
+  display: none;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.9em;
   font-weight: 500;
