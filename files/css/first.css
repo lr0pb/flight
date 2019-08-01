@@ -21,12 +21,17 @@ main {
   height: 28rem;
   border-radius: 2rem;
   padding: 2rem;
-  margin-top: 5rem;
   box-shadow: 0 0.8rem 2rem rgba(11, 14, 23, 0.9);
   background-color: #1f2740;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.85), rgba(11, 14, 23, 0.6)), url(/image/cover.jpeg);
+  animation: 2s look-at-this;
+  animation-iteration-count: infinite;
+}
+@keyframes look-at-this {
+  from {transform: scale(0.95);}
+  to {transform: scale(1.05);}
 }
 @media screen and (max-width: 749px) {
   .promo {width: 80vw;}
@@ -44,7 +49,7 @@ main {
   text-align: center;
   width: 12rem;
   height: 2rem;
-  margin-top: 6rem;
+  margin-top: 6.5rem;
   padding: 1rem 4rem;
   background: #41b619;
   border: 0.5rem solid #369e13;
