@@ -17,7 +17,8 @@ main {
 .promo {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  height: 28rem;
   border-radius: 2rem;
   padding: 2rem;
   margin-top: 5rem;
@@ -28,22 +29,22 @@ main {
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.85), rgba(11, 14, 23, 0.6)), url(/image/cover.jpeg);
 }
 @media screen and (max-width: 749px) {
-  .promo {width: 80vw; display: none;}
+  .promo {width: 80vw;}
 }
 @media screen and (min-width: 750px) {
-  .promo {width: 600px; height: 28rem;}
+  .promo {width: 600px;}
 }
 .promo-head {
   font-size: 2.8rem;
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 6rem;
 }
 .promo-button {
   font-size: 1.8rem;
   text-align: center;
   width: 12rem;
   height: 2rem;
-  margin-top: 12rem;
+  margin-top: 6rem;
   padding: 1rem 4rem;
   background: #41b619;
   border: 0.5rem solid #369e13;
