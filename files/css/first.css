@@ -28,10 +28,12 @@ main {
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.85), rgba(11, 14, 23, 0.6)), url(/image/cover.jpeg);
   animation: 2s look-at-this;
   animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 @keyframes look-at-this {
-  from {transform: scale(0.95);}
-  to {transform: scale(1.05);}
+  from {transform: scale(1);}
+  50% {transform: scale(1.02);}
+  to {transform: scale(1);}
 }
 @media screen and (max-width: 749px) {
   .promo {width: 80vw;}
