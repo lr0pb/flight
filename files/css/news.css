@@ -49,20 +49,6 @@ article {
 @media screen and (min-width: 750px) {
   article {width: 600px;}
 }
-.article-head {
-  font-size: 2.4rem;
-  padding-bottom: 1.5rem;
-}
-.article-sub-head {
-  font-size: 1.8rem;
-  padding: 1.2rem 0;
-}
-.article-text {
-  font-size: 1.7rem;
-  font-weight: 500;
-  padding-left: 2rem;
-  margin: 0;
-}
 #release-notes {
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.9), rgba(11, 14, 23, 0.75)), url(/image/im7.jpeg);
 }

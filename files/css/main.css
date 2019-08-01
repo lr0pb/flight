@@ -102,3 +102,17 @@ footer, #fut-content {display: flex; justify-content: center; align-items: cente
 @media screen and (min-width: 361px) and (max-width: 400px) and (orientation: portrait) {
   html {font-size: 9px;}
 }
+.article-head {
+  font-size: 2.4rem;
+  padding-bottom: 1.5rem;
+}
+.article-sub-head {
+  font-size: 1.8rem;
+  padding: 1.2rem 0;
+}
+.article-text {
+  font-size: 1.7rem;
+  font-weight: 500;
+  padding-left: 2rem;
+  margin: 0;
+}

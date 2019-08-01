@@ -3,7 +3,7 @@ main {
   width: 100vw;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   background-size: cover; background-position: center center; background-repeat: no-repeat;
   background-image: -webkit-radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)), -webkit-radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/image/main.jpeg);
   background-image: radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)), radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/image/main.jpeg);
@@ -61,3 +61,9 @@ main {
   cursor: pointer;
 }
 .promo-button:hover {border: 0.5rem solid #41b619; box-shadow: 0 0.5rem 1.5rem #41b619;}
+#about-fly {
+  transform: translateY(-2rem);
+  border-radius: 0 2rem 2rem;
+  padding: 5rem;
+  background-color: #1f2740;
+}
