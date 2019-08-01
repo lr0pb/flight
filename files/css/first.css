@@ -28,11 +28,11 @@ main {
 }
 #fly-promo {
   grid:
-    "promo-head promo-button"
-    "promo-image promo-image"
+    "promo-image promo-head"
+    "promo-image promo-button"
   ;
-  grid-template-rows: 4rem 12rem;
-  grid-template-columns: 7fr 3fr;
+  grid-template-rows: 4rem auto;
+  grid-template-columns: 6fr 4fr;
 }
 .promo-head {
   grid-area: promo-head;
@@ -50,7 +50,7 @@ main {
 }
 .promo-button:hover {border: 0.5rem solid #41b619;}
 .promo-image {
-  height: 12rem;
+  height: 28rem;
   width: auto;
   border-radius: 2rem;
   background-color: #0b0e17;
