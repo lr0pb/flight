@@ -15,45 +15,41 @@ main {
   main {min-height: 500px; height: calc(100vh - 14rem)}
 }
 .promo {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-radius: 2rem;
   padding: 2rem;
   margin-top: 5rem;
+  box-shadow: 0 0.8rem 2rem rgba(11, 14, 23, 0.9);
   background-color: #1f2740;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.9), rgba(11, 14, 23, 0.75)), url(/image/cover.jpeg);
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.85), rgba(11, 14, 23, 0.6)), url(/image/cover.jpeg);
 }
 @media screen and (max-width: 749px) {
   .promo {width: 80vw; display: none;}
 }
 @media screen and (min-width: 750px) {
-  .promo {width: 600px; height: 32rem;}
-}
-#fly-promo {
-  grid:
-    "promo-head"
-    "promo-button"
-  ;
-  grid-template-rows: 22.7rem auto;
-  grid-template-columns: 1fr;
+  .promo {width: 600px; height: 28rem;}
 }
 .promo-head {
-  grid-area: promo-head;
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   text-align: center;
+  margin-top: 3rem;
 }
 .promo-button {
-  grid-area: promo-button;
   font-size: 1.8rem;
   text-align: center;
   width: 12rem;
   height: 2rem;
+  margin-top: 12rem;
   padding: 1rem 4rem;
   background: #41b619;
   border: 0.5rem solid #369e13;
+  box-shadow: 0 0.5rem 1.5rem rgba(65, 182, 25, 0.55);
   border-radius: 5rem;
   transition: 0.5s;
   cursor: pointer;
 }
-.promo-button:hover {border: 0.5rem solid #41b619;}
+.promo-button:hover {border: 0.5rem solid #41b619; box-shadow: 0 0.5rem 1.5rem #41b619;}
