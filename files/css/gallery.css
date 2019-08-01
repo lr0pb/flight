@@ -82,6 +82,7 @@ header, footer {display: none;}
 }
 img {
   margin: 0 5rem;
+  margin-bottom: 5rem;
   box-shadow: 0 15px 60px rgba(0, 0, 0, 0.3);
   background-color: #1f2740;
 }

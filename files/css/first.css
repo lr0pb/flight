@@ -3,6 +3,7 @@ main {
   width: 100vw;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   background-size: cover; background-position: center center; background-repeat: no-repeat;
   background-image: -webkit-radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)), -webkit-radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/image/main.jpeg);
   background-image: radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)), radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/image/main.jpeg);
@@ -21,18 +22,18 @@ main {
   background-color: #1f2740;
 }
 @media screen and (max-width: 749px) {
-  .promo {width: 70vw;}
+  .promo {width: 80vw; display: none;}
 }
 @media screen and (min-width: 750px) {
-  .promo {width: 600px;}
+  .promo {width: 600px; height: 28rem;}
 }
 #fly-promo {
   grid:
     "promo-image promo-head"
     "promo-image promo-button"
   ;
-  grid-template-rows: 4rem auto;
-  grid-template-columns: 6fr 4fr;
+  grid-template-rows: 22.7rem auto;
+  grid-template-columns: 6.5fr 3.5fr;
 }
 .promo-head {
   grid-area: promo-head;
@@ -41,7 +42,9 @@ main {
 .promo-button {
   grid-area: promo-button;
   font-size: 1.8rem;
-  padding: 2rem 1rem;
+  width: 12rem;
+  height: 2rem;
+  padding: 1rem 4rem;
   background: #41b619;
   border: 0.5rem solid #369e13;
   border-radius: 5rem;
