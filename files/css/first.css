@@ -8,17 +8,17 @@ main {
   background-image: radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)), radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/image/main.jpeg);
 }
 @media screen and (orientation: portrait) {
-  main {height: calc(100vh - 6rem);}
+  main {min-height: calc(100vh - 6rem);}
 }
 @media screen and (orientation: landscape) {
-  main {min-height: 500px; height: calc(100vh - 14rem)}
+  main {min-height: 650px; height: calc(100vh - 14rem)}
 }
 .promo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 28rem;
-  padding: 2rem;
+  height: 22rem;
+  padding: 5rem;
   box-shadow: 0 0.8rem 2rem rgba(11, 14, 23, 0.9);
   background-color: #1f2740;
   background-size: cover;
@@ -27,17 +27,17 @@ main {
 }
 @media screen and (max-width: 749px) {
   main {flex-direction: column;}
-  .promo {width: 80vw; border-radius: 2rem 2rem 0 0;}
-  .about {width: 70vw; border-radius: 0 0 2rem 2rem; height: 28rem;}
+  .promo {width: 65vw; border-radius: 2rem 2rem 0 0; margin-top: 5rem;}
+  .about {width: 65vw; border-radius: 0 0 2rem 2rem; margin-bottom: 5rem; height: 33rem;}
 }
 @media screen and (min-width: 750px) {
-  .promo {width: 460px; border-radius: 2rem 0 0 2rem;}
+  .promo {width: 400px; border-radius: 2rem 0 0 2rem;}
   .about {width: 400px; border-radius: 0 2rem 2rem 0; height: 22rem;}
 }
 .promo-head {
   font-size: 2.8rem;
   text-align: center;
-  margin-top: 6rem;
+  margin-top: 3.5rem;
 }
 .promo-button {
   font-size: 1.8rem;
