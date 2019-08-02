@@ -165,11 +165,13 @@
 }
 #log {
   border-radius: 2rem 0 0 2rem;
+  padding-right: 4rem;
   transform: translateX(2rem);
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/im7.jpeg);
 }
 #img {
   border-radius: 0 2rem 2rem 0;
+  padding-left: 4rem;
   transform: translateX(-2rem);
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/im1.jpeg);
 }
