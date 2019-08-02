@@ -75,7 +75,7 @@
 #img {background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/im1.jpeg);}
 #about {
   width: 16.4rem;
-  padding: 1.2rem 5.8rem 2.5rem 5.8rem;
+  padding: 1.2rem 5.5rem 2.5rem 5.5rem;
   border: 0.3rem #ddd solid;
   border-radius: 2rem;
   z-index: 10;
