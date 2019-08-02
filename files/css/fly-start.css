@@ -165,13 +165,20 @@
 }
 #log {
   border-radius: 2rem 0 0 2rem;
+  transform: translateX(2rem);
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/im7.jpeg);
 }
 #img {
   border-radius: 0 2rem 2rem 0;
+  transform: translateX(-2rem;);
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/im1.jpeg);
 }
-#about {background-color: #1f2740;}
+#about {
+  padding: 1.2rem 2.7rem 2.5rem 2.7rem;
+  border: 0.3rem white solid;
+  border-radius: 2rem;
+  background-color: #1f2740;
+}
 
 #log::before, #img::before, #about::before {display: block; content: ''; background-size: cover; width: 9rem; height: 9rem; margin: 0 auto 0;}
 #log::before {background-image: url(/image/icons/log-icon.png);}
@@ -194,7 +201,7 @@
       "... cards ..."
     ;
     grid-template-rows: 1fr 17.8rem 1fr;
-    grid-template-columns: 32rem minmax(50rem, calc(100vw - 64rem)) 32rem;
+    grid-template-columns: 1fr minmax(84rem, 5fr) 1fr;
   }
 }
 
