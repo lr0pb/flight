@@ -120,7 +120,7 @@
 
 @media screen and (min-width: 1200px) {
   #start-content {
-    height: calc(100vh - 14rem);
+    min-height: calc(100vh - 14rem);
     grid:
       "... ... ..."
       "... head ..."
