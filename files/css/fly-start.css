@@ -74,7 +74,8 @@
 #log {background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/im7.jpeg);}
 #img {background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/im1.jpeg);}
 #about {
-  padding: 1.2rem 3rem 2.5rem 3rem;
+  width: 16.4rem;
+  padding: 1.2rem 5.8rem 2.5rem 5.8rem;
   border: 0.3rem #ddd solid;
   border-radius: 2rem;
   z-index: 10;
@@ -140,7 +141,6 @@
     padding-left: 4rem;
     transform: translateX(-2rem);
   }
-  #about {width: 21.6rem;}
 }
 
 @media screen and (orientation: portrait) {
