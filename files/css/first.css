@@ -25,12 +25,12 @@ main {
   background-repeat: no-repeat;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.85), rgba(11, 14, 23, 0.6)), url(/image/cover.jpeg);
 }
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 999px) {
   main {flex-direction: column;}
   .promo {width: 65vw; border-radius: 2rem 2rem 0 0; margin-top: 5rem;}
   .about {width: 65vw; border-radius: 0 0 2rem 2rem; margin-bottom: 5rem; height: 33rem;}
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 1000px) {
   .promo {width: 400px; border-radius: 2rem 0 0 2rem;}
   .about {width: 400px; border-radius: 0 2rem 2rem 0; height: 22rem;}
 }
@@ -58,7 +58,7 @@ main {
 }
 @keyframes look-at-this {
   from {transform: scale(1);}
-  50% {transform: scale(1.02);}
+  50% {transform: scale(1.045);}
   to {transform: scale(1);}
 }
 .promo-button:hover {border: 0.5rem solid #41b619; box-shadow: 0 0.5rem 1.5rem #41b619;}
