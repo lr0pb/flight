@@ -365,7 +365,6 @@
   }
 }
 .image-point {
-  display: block;
   position: absolute;
   cursor: pointer;
   z-index: 300;
@@ -379,7 +378,6 @@
   transform: scale(1.3);
 }
 .to-point {
-  display: block;
   position: absolute;
   cursor: pointer;
   z-index: 300;
