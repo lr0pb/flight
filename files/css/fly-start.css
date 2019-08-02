@@ -177,6 +177,7 @@
   padding: 1.2rem 2.7rem 2.5rem 2.7rem;
   border: 0.3rem white solid;
   border-radius: 2rem;
+  z-index: 10;
   background-color: #1f2740;
 }
 
