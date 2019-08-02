@@ -27,101 +27,10 @@
 
 #start-content {
   display: grid;
+  width: 100vw;
   background-size: cover; background-position: center center; background-repeat: no-repeat;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.3)), url(/image/cover.jpeg);
 }
-/*
-@media screen and (max-width: 560px) and (orientation: portrait) {
-  html {font-size: 9px;}
-  body {overflow-x: hidden;}
-  #start-content {
-    width: 100vw; height: auto;
-    grid:
-      "..."
-      "head"
-      "..."
-      "img"
-      "log"
-      "..."
-    ;
-    grid-template-rows: 12rem 18rem 12rem repeat(2, 20rem) 12rem;
-    grid-template-columns: 100vw;
-  }
-}
-@media screen and (min-width: 561px) and (max-width: 585px) and (orientation: portrait) {
-  html {font-size: 9px;}
-  #start-content {
-    width: 100vw; height: auto; min-height: calc(100vh - 14rem);
-    grid:
-      "... ..."
-      "head head"
-      "... ..."
-      "log img"
-    ;
-    grid-template-rows: 12rem 18rem 12rem repeat(2, 20rem);
-    grid-template-columns: repeat(2, 50vw);
-  }
-}
-@media screen and (min-width: 586px) and (max-width: 840px) and (orientation: portrait) {
-  html {font-size: 10px;}
-  #start-content {
-    width: 100vw; height: auto; min-height: calc(100vh - 14rem);
-    grid:
-      "... ..."
-      "head head"
-      "... ..."
-      "log img"
-    ;
-    grid-template-rows: 12rem 18rem 12rem repeat(2, 20rem);
-    grid-template-columns: repeat(2, 50vw);
-  }
-}
-@media screen and (min-width: 841px) and (orientation: portrait) {
-  #start-content {
-    width: 100vw; height: auto; min-height: calc(100vh - 14rem);
-    grid:
-      "... ... ... ..."
-      "... head head ..."
-      "... ... ... ..."
-      "... log img ..."
-    ;
-    grid-template-rows: 20rem 18rem 12rem 20rem;
-    grid-template-columns: 15vw repeat(2, 35vw) 15vw;
-  }
-}
-@media screen and (max-width: 1145px) and (orientation: landscape) {
-  html {font-size: 9px;}
-  #start-content {
-    width: 100vw;
-    grid:
-      "... ... ... ..."
-      "... head head ..."
-      "... ... ... ..."
-      "... log img ..."
-    ;
-    grid-template-rows: 20rem 18rem 5rem 25rem;
-    grid-template-columns: 15vw repeat(2, 35vw) 15vw;
-  }
-}
-@media screen and (max-height: 84rem) and (orientation: landscape) {
-  #start-content {height: auto; min-height: calc(100vh - 14rem);}
-}
-@media screen and (min-height: 85rem) and (orientation: landscape) {
-  #start-content {height: calc(100vh - 14rem);}
-}
-@media screen and (min-width: 1146px) and (orientation: landscape) {
-  #start-content {
-    width: 100vw; height: calc(100vh - 14rem);
-    grid:
-      "... ... ..."
-      "... head ..."
-      "log text img"
-    ;
-    grid-template-rows: repeat(2, minmax(17.8rem, 1fr)) 19.5rem;
-    grid-template-columns: 32rem minmax(50rem, calc(100vw - 64rem)) 32rem;
-  }
-}*/
-
 #green-line {
   width: 35.5em;
   height: 0.9em;
@@ -155,18 +64,23 @@
 
 .flex-center {display: flex; flex-direction: column; align-items: center;}
 
-#log {
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/im7.jpeg);
+.more-title {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.8em;
+  width: 22rem;
+  background-size: cover; background-position: center center; background-repeat: no-repeat;
 }
-#img {
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/im1.jpeg);
-}
+#log {background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/im7.jpeg);}
+#img {background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/im1.jpeg);}
 #about {
+  padding: 1.2rem 3rem 2.5rem 3rem;
+  border: 0.3rem #ddd solid;
+  border-radius: 2rem;
   z-index: 10;
   background-color: #1f2740;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/obull.jpeg);
 }
-
 #log::before, #img::before, #about::before {display: block; content: ''; background-size: cover; width: 9rem; height: 9rem; margin: 0 auto 0;}
 #log::before {background-image: url(/image/icons/log-icon.png);}
 #img::before {background-image: url(/image/icons/img-icon.png);}
@@ -181,24 +95,17 @@
 }
 @media screen and (max-width: 1199px) {
   #start-content {
-    width: 100vw; height: calc(100vh - 12rem);
+    min-height: calc(100vh - 12rem);
     grid:
       "..."
       "head"
       "cards"
     ;
-    grid-template-rows: 7rem 17.8rem 1fr;
+    grid-template-rows: 5rem 23rem 1fr;
     grid-template-columns: 100vw;
   }
   #cards-block {flex-direction: column;}
-  .more-title {
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 1.8em;
-    width: 22rem;
-    padding: 1.5rem 3rem 2.8rem 3rem;
-    background-size: cover; background-position: center center; background-repeat: no-repeat;
-  }
+  .more-title {padding: 1.5rem 3rem 2.8rem 3rem;}
   #log {
     border-radius: 2rem 2rem 0 0;
     padding-bottom: 3.7rem;
@@ -209,17 +116,11 @@
     padding-top: 3.7rem;
     transform: translateY(-2rem);
   }
-  #about {
-    padding: 1.2rem 3rem 2.5rem 3rem;
-    border: 0.3rem #ddd solid;
-    width: 22rem;
-    border-radius: 2rem;
-  }
 }
 
 @media screen and (min-width: 1200px) {
   #start-content {
-    width: 100vw; height: calc(100vh - 14rem);
+    height: calc(100vh - 14rem);
     grid:
       "... ... ..."
       "... head ..."
@@ -228,15 +129,7 @@
     grid-template-rows: 1fr 17.8rem 1fr;
     grid-template-columns: 1fr minmax(84rem, 5fr) 1fr;
   }
-  .more-title {
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 1.8em;
-    width: 22rem;
-    padding: 1.5rem 2.4rem 2.8rem 2.4rem;
-    margin-top: 3rem;
-    background-size: cover; background-position: center center; background-repeat: no-repeat;
-  }
+  .more-title {padding: 1.5rem 2.4rem 2.8rem 2.4rem; margin-top: 3rem;}
   #log {
     border-radius: 2rem 0 0 2rem;
     padding-right: 4rem;
@@ -247,12 +140,7 @@
     padding-left: 4rem;
     transform: translateX(-2rem);
   }
-  #about {
-    padding: 1.2rem 3rem 2.5rem 3rem;
-    border: 0.3rem #ddd solid;
-    width: 21.6rem;
-    border-radius: 2rem;
-  }
+  #about {width: 21.6rem;}
 }
 
 @media screen and (orientation: portrait) {
