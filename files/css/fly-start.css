@@ -178,9 +178,11 @@
 #about {
   padding: 1.2rem 2.7rem 2.5rem 2.7rem;
   border: 0.3rem white solid;
+  width: 21.6rem;
   border-radius: 2rem;
   z-index: 10;
   background-color: #1f2740;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/obull.jpeg);
 }
 
 #log::before, #img::before, #about::before {display: block; content: ''; background-size: cover; width: 9rem; height: 9rem; margin: 0 auto 0;}
