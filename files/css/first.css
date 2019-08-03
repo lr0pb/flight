@@ -23,7 +23,7 @@ main {
   background-color: #1f2740;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.85), rgba(11, 14, 23, 0.6)), url(/image/cover.jpeg);
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.5)), url(/image/cover.jpeg);
 }
 @media screen and (max-width: 999px) {
   main {flex-direction: column;}
