@@ -456,7 +456,7 @@ img {
   }
 }
 @media screen and (min-width: 1900px) {
-  .image-point {
+  .image-point-new {
     width: 6rem;
     height: 6rem;
     border-width: 1rem;
