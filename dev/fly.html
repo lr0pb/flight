@@ -19,7 +19,7 @@
     <meta property="og:image" content="https://lr0pb.github.io/image/previews/fly.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--<link rel="canonical" href="https://lr0pb.github.io/fly">-->
-    <link rel="shortcut icon" href="image/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/image/icons/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:500,800,900&display=swap&subset=cyrillic">
     <link rel="stylesheet" href="/dev/files/css/fly-start.css">
     <link rel="stylesheet" href="/dev/files/css/main.css">
@@ -82,7 +82,25 @@
       <div id="rotate-box">
         <h3 class="portrait-text">Пожалуйста, поверните Ваше <br> устройство горизонтально <br> или воспользуйтесь другим.</h3>
       </div>
-      <div id="bg-box">
+      <div id="text-box">
+        <h2 class="top-text">Новый Полёт: цветущая весна</h2>
+        <h3 id="help-point" class="bottom-text">Жми на значки, чтобы перемещаться</h3>
+        <h3 id="help-180" class="bottom-text">180° - перемещение в точку и оборот на 180°</h3>
+        <img id="cross" src="/image/icons/cross-icon.png" alt="Cross icon">
+        <div>
+          <h4 id="bottom-button">В начало</h4>
+          <div id="disabled" class="not-now"></div>
+        </div>
+      </div>
+      <div class="view-container">
+        <div class="original-container">
+          <!-- IMAGES -->
+          <img id="bgo-new" src="/image/bgo.jpeg" alt="Main image">
+          <!-- ICONS -->
+          <div id="im1-new" class="image-point-new 2 3 4 5 6 7 8 10 11 12 180-point"></div>
+        </div>
+      </div>
+      <!--<div id="bg-box">
         <div id="cubes">
           <div id="cube1to4" class="cube">
             <div id="bg1" class="bg-image bg-top"></div>
@@ -128,16 +146,6 @@
         <div id="bg11" class="bg-image bg-center"></div>
         <div id="bg12-spawn" class="bg-image bg-center"></div>
         <div id="bg13-spawn" class="bg-image bg-center"></div>
-      </div>
-      <div id="text-box">
-        <h2 class="top-text">Новый Полёт: цветущая весна</h2>
-        <h3 id="help-point" class="bottom-text">Жми на значки, чтобы перемещаться</h3>
-        <h3 id="help-180" class="bottom-text">180° - перемещение в точку и оборот на 180°</h3>
-        <img id="cross" src="/image/icons/cross-icon.png" alt="Cross icon">
-        <div>
-          <h4 id="bottom-button">В начало</h4>
-          <div id="disabled" class="not-now"></div>
-        </div>
       </div>
       <div id="icon-box" class="icon-box">
         <div id="im1" class="image-point 2 3 4 5 6 7 8 10 11 12 180-point"></div>
@@ -200,7 +208,7 @@
           <div id="to-im12" class="to-point icon12 not-now"></div>
           <div id="to-im13" class="to-point icon12 not-now"></div>
         </div>
-      </div>
+      </div>-->
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="/dev/files/js/fly.js"></script>
