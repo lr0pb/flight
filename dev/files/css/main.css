@@ -1,0 +1,118 @@
+html {
+  background-color: #0b0e17;
+  font-size: 10px;
+}
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+.overflow-hidden {overflow: hidden;}
+h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+}
+h4 {font-size: 1.8em;}
+h1 {
+  font-size: 4.8em;
+  white-space: nowrap;
+}
+p {font-family: 'Ubuntu', sans-serif; font-weight: 700; color: #fff; line-height: 1.7;}
+#transition-layer {
+  position: absolute;
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: -webkit-linear-gradient(bottom, rgb(11, 14, 23) 98.5%, #000 98.6%);
+  animation: 1s transition-end-phase;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+@keyframes transition-start-phase {
+  from {top:100vh;}
+  to {top: 0;}
+}
+@keyframes transition-end-phase {
+  from {top:0;}
+  to {top: 100vh;}
+}
+.not-now {display: none; opacity: 0;}
+/* Navigation and Footer block */
+header, footer {background-color: hsl(205, 15%, 5%); position: relative; z-index: 20;}
+@media screen and (orientation: portrait) {
+  nav {flex-direction: column; height: 6rem;}
+  .nav-burger, footer, header {height: auto;}
+  #fut-content {height: 6rem;}
+  a.big {font-size: 2.4em; margin: 1.55rem auto 1.55rem 2rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
+  a.norm {font-size: 2em; margin: 1rem 0 1rem; border-bottom: 3px solid transparent;}
+  .a-burger {display: none;}
+  a.left {margin-top: 1rem;}
+  a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
+  a.this, a.this:hover {border-bottom: 3px solid #41B619;}
+  a.last {margin-bottom: 2.2rem;}
+  .fut-text {font-size: 1.8em; margin: 2rem 1.5rem; border-bottom: 3px solid transparent;}
+  #burger {position: absolute; right: 0; width: 2.5rem; height: 2.5rem; margin: 1.75rem 2rem 1.75rem; cursor: pointer;}
+  #burger span {display: block; width: 2.5rem; height: 0.3rem; background-color: #fff;}
+  .margin-top-2 {margin-top: -0.25rem;}
+  .margin-top4 {margin-top: 0.4rem;}
+  .margin-top8 {margin-top: 0.8rem;}
+  .cross-left {transform: rotateZ(-45deg);}
+  .cross-right {transform: rotateZ(45deg);}
+}
+@media screen and (orientation: landscape) {
+  a.big {font-size: 2.7em; margin: 0 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
+  a.norm {font-size: 1.9em; margin: 0 1.5rem; border-bottom: 3px solid transparent;}
+  a.left {margin-left: auto;}
+  a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
+  a.this, a.this:hover {border-bottom: 3px solid #41B619;}
+  a.last {margin-right: 3rem;}
+  .fut-text {font-size: 1.6em; margin: 0 1.5rem; border-bottom: 3px solid transparent;}
+  nav, footer, header, #fut-content {height: 7rem;}
+  #burger, span {display: none;}
+}
+@media screen and (max-width: 1199px) and (orientation: landscape) {
+  nav, #fut-content {width: 100vw;}
+}
+.desktop {display: none;}
+@media screen and (min-width: 1200px) and (orientation: landscape) {
+  nav, #fut-content {width: 1200px;}
+  .desktop {display: inline-block;}
+}
+nav {
+  display: flex;
+  position: relative;
+  z-index: 25;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+a, .fut-text {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+}
+footer, #fut-content {display: flex; justify-content: center; align-items: center;}
+@media screen and (max-width: 360px) and (orientation: portrait) {
+  html {font-size: 8px;}
+}
+@media screen and (min-width: 361px) and (max-width: 400px) and (orientation: portrait) {
+  html {font-size: 9px;}
+}
+.article-head {
+  font-size: 2.4rem;
+  padding-bottom: 1.5rem;
+}
+.article-sub-head {
+  font-size: 1.8rem;
+  padding: 1.2rem 0;
+}
+.article-text {
+  font-size: 1.7rem;
+  font-weight: 500;
+  padding-left: 2rem;
+  margin: 0;
+}
