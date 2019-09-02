@@ -1,5 +1,5 @@
 #rotate-box {
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 30%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 15%), url(https://lr0pb.github.io/image/bg.jpeg);
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 30%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 15%), url(/image/bg.jpeg);
 }
 
 .light {width: 100vw; height: 100vh; background-color: rgba(11, 14, 23, 0.6);}
@@ -29,7 +29,7 @@
   display: grid;
   width: 100vw;
   background-size: cover; background-position: center center; background-repeat: no-repeat;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.3)), url(https://lr0pb.github.io//image/cover.jpeg);
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.3)), url(/image/cover.jpeg);
 }
 #green-line {
   width: 35.5em;
@@ -71,8 +71,8 @@
   width: 22rem;
   background-size: cover; background-position: center center; background-repeat: no-repeat;
 }
-#log {background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(https://lr0pb.github.io//image/im7.jpeg);}
-#img {background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(https://lr0pb.github.io//image/im1.jpeg);}
+#log {background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/im7.jpeg);}
+#img {background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/im1.jpeg);}
 #about {
   width: 16.4rem;
   padding: 1.2rem 5.5rem 2.5rem 5.5rem;
@@ -83,9 +83,9 @@
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/image/obull.jpeg);
 }
 #log::before, #img::before, #about::before {display: block; content: ''; background-size: cover; width: 9rem; height: 9rem; margin: 0 auto 0;}
-#log::before {background-image: url(https://lr0pb.github.io//image/icons/log-icon.png);}
-#img::before {background-image: url(https://lr0pb.github.io//image/icons/img-icon.png);}
-#about::before {background-image: url(https://lr0pb.github.io//image/icons/logotype.png);}
+#log::before {background-image: url(/image/icons/log-icon.png);}
+#img::before {background-image: url(/image/icons/img-icon.png);}
+#about::before {background-image: url(/image/icons/logotype.png);}
 
 #fly-start {grid-area: head;}
 #cards-block {
