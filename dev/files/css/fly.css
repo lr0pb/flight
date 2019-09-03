@@ -17,19 +17,19 @@ img {
   width: 100vw;
   height: 75vw;
 }
-.image-point-new {
+.image-point {
   position: relative;
   cursor: pointer;
   border-radius: 50%;
   border-style: solid;
   border-color: transparent #fff;
-  transition: 0.5s;
+  /*transition: 0.5s;*/
 }
-.image-point-new:hover {
+.image-point:hover {
   border-color: /*#ff2f2f*/ #fff;
   transform: scale(1.3);
 }
-#im1-new {top: 40vh; left: 16.5vw;}
+#im1 {top: 30.5vw; left: 16.5vw;}
 
 #bg1to4-1-1 {
   background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(/image/cube1to4/cube1to4-1-1.jpg);
@@ -397,19 +397,6 @@ img {
     grid-template-columns: 1fr 5fr 1fr;
   }
 }
-.image-point {
-  position: absolute;
-  cursor: pointer;
-  z-index: 300;
-  border-radius: 50%;
-  border-style: solid;
-  border-color: transparent #fff;
-  transition: 0.5s;
-}
-.image-point:hover {
-  border-color: /*#ff2f2f*/ #fff;
-  transform: scale(1.3);
-}
 .to-point {
   position: absolute;
   cursor: pointer;
@@ -476,7 +463,7 @@ img {
 
 h5 {font-size: 3.2em; position: absolute; z-index: 800; text-shadow: 0 0 1rem #000; cursor: pointer; transition: 0.5s;}
 h5:hover {transform: scale(1.3);}
-
+/*
 #im1 {grid-area: im1;}
 #im2 {grid-area: im2;}
 #im3 {grid-area: im3;}
@@ -654,7 +641,7 @@ h5:hover {transform: scale(1.3);}
   #im9to8 {bottom: 0;}
   #text9to8 {bottom: 3.2rem; left: 0.7rem;}
 }
-
+*/
 .open {
   animation: 1.5s open;
   animation-fill-mode: forwards;
