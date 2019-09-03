@@ -7,16 +7,12 @@
   justify-content: center;
   align-items: center;
 }
-.original-container {
-  width: 100vw;
-  height: 75vw;
-}
 img {
   width: 100vw;
   height: 75vw;
   background-color: #0b0e17;
 }
-.icons {
+.images-container, .icons-container {
   position: absolute;
   width: 100vw;
   height: 75vw;
