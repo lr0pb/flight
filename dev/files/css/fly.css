@@ -410,7 +410,7 @@ img {
   border-radius: 50%; background-color: #41b619;
 }
 @media screen and (max-width: 1399px) {
-  .image-point-new {
+  .image-point {
     width: 3.7rem;
     height: 3.7rem;
     border-width: 0.7rem;
@@ -427,7 +427,7 @@ img {
   }
 }
 @media screen and (min-width: 1400px) and (max-width: 1899px) {
-  .image-point-new {
+  .image-point {
     width: 4.8rem;
     height: 4.8rem;
     border-width: 0.85rem;
@@ -444,7 +444,7 @@ img {
   }
 }
 @media screen and (min-width: 1900px) {
-  .image-point-new {
+  .image-point {
     width: 6rem;
     height: 6rem;
     border-width: 1rem;
