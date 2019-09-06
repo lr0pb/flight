@@ -30,6 +30,16 @@ img {
   transform: scale(1.3);
 }
 #im1 {top: 30.5vw; left: 16.5vw;}
+#im2 {top: 31.3vw; left: 22vw;}
+#im3 {top: ; left: ;}
+#im4 {top: ; left: ;}
+#im5 {top: ; left: ;}
+#im6 {top: ; left: ;}
+#im7 {top: ; left: ;}
+#im8 {top: ; left: ;}
+#im10 {top: ; left: ;}
+#im11 {top: ; left: ;}
+#im12 {top: ; left: ;}
 
 #bg1to4-1-1 {
   background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(/image/cube1to4/cube1to4-1-1.jpg);
