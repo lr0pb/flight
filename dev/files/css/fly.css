@@ -18,7 +18,7 @@ img {
   height: 75vw;
 }
 .image-point {
-  position: relative;
+  position: absolute;
   cursor: pointer;
   border-radius: 50%;
   border-style: solid;
@@ -29,7 +29,7 @@ img {
   border-color: /*#ff2f2f*/ #fff;
   transform: scale(1.3);
 }
-#im1 {top: 30.5vw; left: 16.5vw;}
+#im1 {top: 30.5vw; left: 16.5vw;}/*
 #im2 {top: 31.3vw; left: 22vw;}
 #im3 {top: 30.5vw; left: 27vw;}
 #im4 {top: 18.7vw; left: 35vw;}
@@ -40,7 +40,7 @@ img {
 #im9 {display: none;}
 #im10 {left: 63.3vw;}
 #im11 {top: -2.5vw; left: 76vw;}
-#im12 {top: -5vw; left: 85vw;}
+#im12 {top: -5vw; left: 85vw;}*/
 
 #bg1to4-1-1 {
   background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(/image/cube1to4/cube1to4-1-1.jpg);
