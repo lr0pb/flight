@@ -8,10 +8,12 @@
   align-items: center;
 }
 img {
+  opacity: 0;
   width: 100vw;
   height: 75vw;
   background-color: #0b0e17;
 }
+#bgo {opacity: 1;}
 .images-container, .icons-container {
   position: absolute;
   width: 100vw;
@@ -23,7 +25,7 @@ img {
   border-radius: 50%;
   border-style: solid;
   border-color: transparent #fff;
-  /*transition: 0.5s;*/
+  transition: 0.5s;
 }
 .image-point:hover {
   border-color: /*#ff2f2f*/ #fff;
@@ -41,7 +43,7 @@ img {
 #im10 {top: 33vw; left: 63.3vw;}
 #im11 {top: 36vw; left: 76vw;}
 #im12 {top: 38.5vw; left: 85vw;}
-
+/*
 #bg1to4-1-1 {
   background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(/image/cube1to4/cube1to4-1-1.jpg);
 }
@@ -124,7 +126,7 @@ img {
   background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(/image/im13.jpeg);
 }
 #bg13-spawn {transform-origin: 40vw 45vh;}
-
+*/
 #bg-box {
   display: block;
 }
