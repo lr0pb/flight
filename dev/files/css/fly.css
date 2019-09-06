@@ -31,15 +31,16 @@ img {
 }
 #im1 {top: 30.5vw; left: 16.5vw;}
 #im2 {top: 31.3vw; left: 22vw;}
-#im3 {top: ; left: ;}
-#im4 {top: ; left: ;}
-#im5 {top: ; left: ;}
-#im6 {top: ; left: ;}
-#im7 {top: ; left: ;}
-#im8 {top: ; left: ;}
-#im10 {top: ; left: ;}
-#im11 {top: ; left: ;}
-#im12 {top: ; left: ;}
+#im3 {top: 30.5vw; left: 27vw;}
+#im4 {top: 18.7vw; left: 35vw;}
+#im5 {top: 19vw; left: 38.5vw;}
+#im6 {top: 13vw; left: 48vw;}
+#im7 {top: 10vw; left: 54vw;}
+#im8 {top: 1vw; left: 59vw;}
+#im9 {display: none;}
+#im10 {left: 63.3vw;}
+#im11 {top: -2.5vw; left: 76vw;}
+#im12 {top: -5vw; left: 85vw;}
 
 #bg1to4-1-1 {
   background-image: -webkit-linear-gradient(top, rgba(0, 14, 168, 0.34) 0%, rgba(0, 0, 0, 0.0) 15%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%), url(/image/cube1to4/cube1to4-1-1.jpg);
