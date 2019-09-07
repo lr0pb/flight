@@ -1,5 +1,6 @@
 #rotate-box {
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 30%), -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 15%), url(/image/bg.jpeg);
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 30%),
+  -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 15%), url(/image/bg.jpeg);
 }
 
 .light {width: 100vw; height: 100vh; background-color: rgba(11, 14, 23, 0.6);}
@@ -9,8 +10,8 @@
   top: 45%;
   text-align: center;
   line-height: 1.6;
-  font-size: 2em;
-  background-color: rgb(11, 14, 23);
+  font-size: 24px;
+  background-color: #0b0e17;
 }
 #start-box {
   display: none;
@@ -143,7 +144,7 @@
   }
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (orientation: portrait) or (orientation: landscape) and (max-aspect-ratio: 3.99/3) {
   #rotate-box {
     position: absolute;
     z-index: 900;
@@ -163,7 +164,7 @@
     line-height: 1.6;
   }
 }
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape) or (orientation: landscape) and (min-aspect-ratio: 4/3) {
   .portrait-text {display: none;}
 }
 

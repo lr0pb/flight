@@ -655,7 +655,7 @@ function typeClose() {
   $('#bottom-button').css('display','none');
   $('#bottom-button').removeClass('button-spawn');
   $('.image-point').removeClass('open');
-  $('.bg-image').removeClass('bg-open');
+  $('img').removeClass('bg-open');
   $('#bgo').removeClass('bgo-open');
 };
 

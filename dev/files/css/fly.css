@@ -56,32 +56,9 @@ img {
 #im11 {top: 36vw; left: 76vw;}
 #im12 {top: 38.5vw; left: 85vw;}
 
-.bg-image {
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  backface-visibility: hidden;
-}
 .cube-image {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 50vw;
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  backface-visibility: hidden;
-}
-.bg-center {
-  background-position: center center;
-}
-.bg-top {
-  background-position: center top;
+  height: 75vw;
 }
 
 #cross {
@@ -191,12 +168,9 @@ img {
   #disabled {
     position: absolute;
     z-index: 241;
-    width: 9rem;
-    height: 2.2rem;
+    width: 9rem; height: 2.2rem;
     padding: 1.6rem 4.5rem;
-    bottom: 2vh;
-    right: 2vw;
-    background-color: transparent;
+    bottom: 2vh; right: 2vw;
   }
   .icon-box {position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; display: grid;}
   #box1to4 {
@@ -536,15 +510,13 @@ h5:hover {transform: scale(1.3);}
 }
 .cube {
   position: absolute;
-  z-index: 204;
   opacity: 0;
   width: 100vw;
-  height: 100vh;
+  height: 75vw;
   transform-style: preserve-3d;
 }
-#cube1to4 {
-  transform: translateX(74vw);
-}
+#cube1to4 {transform: translateX(74vw);}
+
 #bg1 {opacity: 1; transform: translateX(-74vw) translateZ(97vw);}
 #bg1to4-1-1 {transform: rotateY(15deg) translateZ(93vw);}
 #bg1to4-1-2 {transform: rotateY(45deg) translateZ(93vw);}
