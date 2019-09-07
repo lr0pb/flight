@@ -1,3 +1,33 @@
+#fly {
+  display: none;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0b0e17;
+}
+#fly:-moz-full-screen {display: block;}
+#fly:-webkit-full-screen {display: block;}
+
+@media screen and (min-width: 567px) and (max-width: 800px) and (orientation: landscape) {
+  #fly {font-size: 6px;}
+}
+@media screen and (min-width: 801px) and (max-width: 1199px) and (orientation: landscape) {
+  #fly {font-size: 8px;}
+}
+@media screen and (min-width: 1200px) and (max-width: 1921px) and (orientation: landscape) {
+  #fly {font-size: 10px;}
+}
+@media screen and (min-width: 1922px) and (max-width: 2900px) and (orientation: landscape) {
+  html, #fly {font-size: 15px;}
+}
+@media screen and (min-width: 2901px) and (max-width: 3900px) and (orientation: landscape) {
+  html, #fly {font-size: 20px;}
+}
+@media screen and (min-width: 3901px) and (orientation: landscape) {
+  html, #fly {font-size: 24px;}
+}
+
 .view-container {
   position: absolute;
   top: 0; left: 0;
@@ -16,6 +46,18 @@ img {
   backface-visibility: hidden;
 }
 #bgo {opacity: 1;}
+
+#bg2-1-spawn {transform-origin: 35vw 50vh;}
+#bg2-2-spawn {transform-origin: 38vw 50vh;}
+#bg3 {transform-origin: 40vw 58vh;}
+#bg5 {transform-origin: 45vw 55vh;}
+#bg7 {transform-origin: 55vw 48vh;}
+#bg9-1-spawn {transform-origin: 70vw 45vh;}
+#bg10-spawn {transform-origin: 60vw 51vh;}
+#bg11 {transform-origin: 77vw 54vh;}
+#bg12-spawn {transform-origin: 75vw 55vh;}
+#bg13-spawn {transform-origin: 40vw 45vh;}
+
 .images-container, .icons-container {
   position: absolute;
   width: 100vw;
@@ -92,35 +134,7 @@ img {
   from {opacity: 1; bottom: 2vh;}
   to {opacity: 0; bottom: -7vh;}
 }
-#fly {
-  display: none;
-  position: absolute;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #0b0e17;
-}
-#fly:-moz-full-screen {display: block;}
-#fly:-webkit-full-screen {display: block;}
 
-@media screen and (min-width: 567px) and (max-width: 800px) and (orientation: landscape) {
-  #fly {font-size: 6px;}
-}
-@media screen and (min-width: 801px) and (max-width: 1199px) and (orientation: landscape) {
-  #fly {font-size: 8px;}
-}
-@media screen and (min-width: 1200px) and (max-width: 1921px) and (orientation: landscape) {
-  #fly {font-size: 10px;}
-}
-@media screen and (min-width: 1922px) and (max-width: 2900px) and (orientation: landscape) {
-  html, #fly {font-size: 15px;}
-}
-@media screen and (min-width: 2901px) and (max-width: 3900px) and (orientation: landscape) {
-  html, #fly {font-size: 20px;}
-}
-@media screen and (min-width: 3901px) and (orientation: landscape) {
-  html, #fly {font-size: 24px;}
-}
 @media screen and (min-width: 567px) and (orientation: landscape) {
   .top-text {
     position: absolute;
