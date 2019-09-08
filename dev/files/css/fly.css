@@ -105,6 +105,21 @@ img {
 #im9to4 {top: vw; left: vw;}
 #im13 {top: 31vw; left: 36vw;}
 
+#im1to4 {top: vw; left: vw;}
+#text1to4 {top: vw; left: vw;}
+#to-im2-1 {top: vw; left: vw;}
+#to-im2-2 {top: vw; left: vw;}
+#im4to1 {top: vw; left: vw;}
+#text4to1 {top: vw; left: vw;}
+#im8to9 {top: vw; left: vw;}
+#text8to9 {top: vw; left: vw;}
+#im9to8 {top: vw; left: vw;}
+#text9to8 {top: vw; left: vw;}
+#to-im9-1 {top: vw; left: vw;}
+#to-im9-2 {top: vw; left: vw;}
+#to-im12 {top: vw; left: vw;}
+#to-im13 {top: vw; left: vw;}
+
 .cube-image {
   width: 50vw;
   height: 75vw;
@@ -193,120 +208,6 @@ img {
     padding: 1.6rem 4.5rem;
     bottom: 2vh; right: 2vw;
   }
-  .icon-box {position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; display: grid;}
-  #box1to4 {
-    grid:
-      "... ... ..."
-      "... ... im1to4"
-      "... ... ..."
-    ;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: 2.8fr repeat(2, 1.1fr);
-  }
-  #box2 {
-    grid:
-      "... ... ..."
-      "to-im2-1 ... to-im2-2"
-    ;
-    grid-template-rows: 1.4fr 1.6fr;
-    grid-template-columns: 1fr 5fr 1fr;
-  }
-  #box3to2 {
-    grid:
-      "... ... ..."
-      "... im3to2 ..."
-      "... ... ..."
-    ;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: 2.7fr repeat(2, 1.15fr);
-  }
-  #box4to1 {
-    grid:
-      "... ... ..."
-      "... im4to1 ..."
-      "... ... ..."
-    ;
-    grid-template-rows: repeat(2, 1.1fr) 0.8fr;
-    grid-template-columns: 1.7fr repeat(2, 1.65fr);
-  }
-  #box5to3 {
-    grid:
-      "... ... ..."
-      "... im5to3 ..."
-      "... ... ..."
-    ;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: 2.7fr repeat(2, 1.15fr);
-  }
-  #box6to7 {
-    grid:
-      "... im6to7 ..."
-      "... ... ..."
-      "... ... ..."
-    ;
-    grid-template-rows: 1.5fr repeat(2, 0.75fr);
-    grid-template-columns: 2.5fr repeat(2, 1.25fr);
-  }
-  #box7to10 {
-    grid:
-      "... ... ..."
-      "... im7to10 ..."
-      "... ... ..."
-    ;
-    grid-template-rows: repeat(2, 0.9fr) 1.2fr;
-    grid-template-columns: 2fr repeat(2, 1.5fr);
-  }
-  #box8to9 {
-    grid:
-      "... im8to9"
-      "... ..."
-    ;
-    grid-template-rows: 1.2fr 1.8fr;
-    grid-template-columns: 1.77fr 1.23fr;
-  }
-  #box9to8 {
-    grid:
-      "... ... ..."
-      "... im9to8 ..."
-      "... ... ..."
-    ;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: 0.9fr repeat(2, 1.05fr);
-  }
-  #box9 {
-    grid:
-      "... ... ..."
-      "to-im9-2 ... to-im9-1"
-    ;
-    grid-template-rows: 1.4fr 1.6fr;
-    grid-template-columns: 1fr 5fr 1fr;
-  }
-  #box9to4 {
-    grid:
-      "... ..."
-      "... im9to4"
-      "... ..."
-    ;
-    grid-template-rows: 1.2fr repeat(2, 0.9fr);
-    grid-template-columns: 1.9fr 1.1fr;
-  }
-  #box11 {
-    grid:
-      "... ... ..."
-      "... im13 ..."
-      "... ... ..."
-    ;
-    grid-template-rows: 1.1fr repeat(2, 0.95fr);
-    grid-template-columns: repeat(3, 1fr);
-  }
-  #box12 {
-    grid:
-      "... ... ..."
-      "to-im12 ... to-im13"
-    ;
-    grid-template-rows: 1.4fr 1.6fr;
-    grid-template-columns: 1fr 5fr 1fr;
-  }
 }
 .to-point {
   position: absolute;
@@ -374,7 +275,6 @@ img {
 
 h5 {font-size: 3.2em; position: absolute; z-index: 800; text-shadow: 0 0 1rem #000; cursor: pointer; transition: 0.5s;}
 h5:hover {transform: scale(1.3);}
-/*
 
 #im1to4, #im4to1, #im8to9, #im9to8 {transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
 
@@ -383,85 +283,6 @@ h5:hover {transform: scale(1.3);}
 #to-im2-2, #to-im9-1, #to-im13 {transform: rotateZ(45deg);}
 #to-im2-2:hover, #to-im9-1:hover, #to-im13:hover {border-color: #fff #ff2f2f transparent transparent; transform: scale(1.4) rotateZ(45deg);}
 
-@media screen and (max-width: 1439px) and (orientation: landscape) {
-  @media (max-height: 449px) {
-    #im1to4 {bottom: -5rem;}
-    #text1to4 {left: -0.4rem; bottom: -3rem;}
-    #im3to2 {left: -1.5rem; top: -1rem;}
-    #im4to1 {top: 1rem;}
-    #text4to1 {left: -0.4rem; top: 1rem;}
-    #im5to3 {bottom: -1rem;; left: -2rem;}
-    #im6to7 {bottom: -1rem; left: -1rem;}
-    #im7to10 {bottom: -1.5rem; left: -0.5rem;}
-    #im9to4 { }
-    #im8to9 {bottom: 0.5rem;;}
-    #text8to9 {left: -0.4rem; bottom: 2.3rem;}
-    #im9to8 {bottom: -1rem;}
-    #text9to8 {left: -0.4rem; bottom: 1rem;}
-  }
-  @media (min-height: 450px) and (max-height: 569px) {
-    #im1to4 {bottom: 0;}
-    #text1to4 {left: -0.4rem; bottom: 1.7rem;}
-    #im3to2 {left: -1rem;}
-    #im4to1 {top: 1.8rem;}
-    #text4to1 {left: -0.4rem; top: 2rem;}
-    #im5to3 {bottom: 0; left: -2rem;}
-    #im6to7 {bottom: -1rem; left: -1rem;}
-    #im7to10 {bottom: 0;}
-    #im9to4 {top: 0.5rem;}
-    #im8to9 {bottom: 0.5rem;;}
-    #text8to9 {left: -0.4rem; bottom: 2.3rem;}
-    #im9to8 {bottom: 1rem;}
-    #text9to8 {left: -0.4rem; bottom: 2.7rem;}
-  }
-  @media (min-height: 570px) and (max-height: 699px) {
-    #im1to4 {bottom: 0;}
-    #text1to4 {left: -0.6rem; bottom: 1.7rem;}
-    #im3to2 { }
-    #im4to1 {top: 3rem;}
-    #text4to1 {left: -0.6rem; top: 3rem;}
-    #im5to3 {bottom: 0; left: -2rem;}
-    #im6to7 {bottom: 0;}
-    #im7to10 {bottom: 0;}
-    #im9to4 {top: 1rem;}
-    #im8to9 {bottom: 0.5rem;;}
-    #text8to9 {left: -0.6rem; bottom: 2.3rem;}
-    #im9to8 {bottom: 1rem;}
-    #text9to8 {left: -0.6rem; bottom: 2.7rem;}
-  }
-  @media (min-height: 700px) {
-    #im1to4 {bottom: 0;}
-    #text1to4 {left: -1rem; bottom: 2rem;}
-    #im3to2 {top: 1rem;}
-    #im4to1 {top: 3rem;}
-    #text4to1 {top: 2.3rem; left: -1rem;}
-    #im5to3 {bottom: 1.5rem; left: -2rem;}
-    #im6to7 {bottom: 0;}
-    #im7to10 {bottom: 0;}
-    #im9to4 {top: 2rem;}
-    #im8to9 {bottom: 0.5rem;;}
-    #text8to9 {left: -1rem; bottom: 2.3rem;}
-    #im9to8 {bottom: 1rem;}
-    #text9to8 {left: -1rem; bottom: 2.7rem;}
-  }
-}
-
-@media screen and (min-width: 1440px) and (orientation: landscape) {
-  #im1to4 {bottom: 0;}
-  #text1to4 {bottom: 3.2rem; left: 0.7rem;}
-  #im3to2 { }
-  #im4to1 {top: 3rem;}
-  #text4to1 {top: 3.8rem; left: 0.7rem;}
-  #im5to3 {bottom: 0; left: -3rem;}
-  #im6to7 {bottom: 0;}
-  #im7to10 {bottom: 0;}
-  #im9to4 { }
-  #im8to9 {bottom: 0;}
-  #text8to9 {bottom: 3.2rem; left: 0.7rem;}
-  #im9to8 {bottom: 0;}
-  #text9to8 {bottom: 3.2rem; left: 0.7rem;}
-}
-*/
 .open {
   animation: 1.5s open;
   animation-fill-mode: forwards;
