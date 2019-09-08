@@ -102,19 +102,19 @@ img {
 #im5to3 {top: 42vw; left: 53vw;}
 #im6to7 {top: 34vw; left: 50vw;}
 #im7to10 {top: vw; left: vw;}
-#im9to4 {top: vw; left: vw;}
+#im9to4 {top: 32vw; left: 65vw;}
 #im13 {top: 31vw; left: 36vw;}
 
 #text1to4 {top: 34.5vw; left: 78.3vw;}
-#to-im2-1 {top: vw; left: vw;}
-#to-im2-2 {top: vw; left: vw;}
-#text4to1 {top: vw; left: vw;}
-#text8to9 {top: vw; left: vw;}
-#text9to8 {top: vw; left: vw;}
-#to-im9-1 {top: vw; left: vw;}
-#to-im9-2 {top: vw; left: vw;}
-#to-im12 {top: vw; left: vw;}
-#to-im13 {top: vw; left: vw;}
+#text4to1 {top: 31vw; left: 34vw;}
+#to-im2-1 {top: 36vw; left: 7vw;}
+#to-im2-2 {top: 36vw; left: 90vw;}
+#text8to9 {top: 26vw; left: 58vw;}
+#text9to8 {top: 42vw; left: 31vw;}
+#to-im9-1 {top: 36vw; left: 90vw;}
+#to-im9-2 {top: 36vw; left: 7vw;}
+#to-im12 {top: 36vw; left: 7vw;}
+#to-im13 {top: 36vw; left: 90vw;}
 
 .cube-image {
   width: 50vw;
