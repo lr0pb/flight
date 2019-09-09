@@ -45,6 +45,7 @@ $(document).ready(function() {
     }, 6010);
   });
 });
+
 $('#im1').mousedown(function() {
   $('#im1').addClass('open');
   $('#im1').removeClass('complete');
@@ -69,6 +70,7 @@ $('#im1').mousedown(function() {
     $('#bottom-button').mousedown(clear1to4);
   }, 6800);
 });
+
 $('.icon1to4').mousedown(function() {
   $('#text1to4').addClass('open');
   $('#im1to4').addClass('not-now');
@@ -95,6 +97,7 @@ $('.icon1to4').mousedown(function() {
     $('#im9to4').removeClass('complete');
   }, 14600);
 });
+
 function clear1to4() {
   $('h5').addClass('not-now');
   $('h5').removeClass('open');
@@ -109,6 +112,7 @@ function clear1to4() {
   $('#cube1to4').removeClass('rotate4to1');
   $('#cube1to4').css('transform','rotateY(0) scale(1.015) translateX(74vw)');
 };
+
 $('#im2').mousedown(function() {
   $('#im2').addClass('open');
   $('#im2').removeClass('complete');
@@ -134,6 +138,7 @@ $('#im2').mousedown(function() {
     $('#im3to2').removeClass('complete');
   }, 6010);
 });
+
 $('#to-im2-1').mousedown(function() {
   $('#to-im2-1').addClass('not-now');
   $('#cube2').removeClass('rotate-90');
@@ -144,6 +149,7 @@ $('#to-im2-1').mousedown(function() {
     $('#disabled').addClass('not-now');
   }, 3000);
 });
+
 $('#to-im2-2').mousedown(function() {
   $('#to-im2-2').addClass('not-now');
   $('#cube2').removeClass('rotate0');
@@ -154,6 +160,7 @@ $('#to-im2-2').mousedown(function() {
     $('#disabled').addClass('not-now');
   }, 3000);
 });
+
 $('#im3').mousedown(function() {
   $('#im3').addClass('open');
   $('#im3').removeClass('complete');
@@ -178,6 +185,7 @@ $('#im3').mousedown(function() {
     $('#im5to3').removeClass('complete');
   }, 6710);
 });
+
 $('#im3to2').mousedown(function() {
   $('#im3to2').addClass('open');
   $('#im3to2').removeClass('complete');
@@ -206,6 +214,7 @@ $('#im3to2').mousedown(function() {
     $('#im2').removeClass('complete');
   }, 7010);
 });
+
 $('#im4').mousedown(function() {
   $('#im4').addClass('open');
   $('#im4').removeClass('complete');
@@ -232,6 +241,7 @@ $('#im4').mousedown(function() {
     $('#im9to4').removeClass('complete');
   }, 6800);
 });
+
 $('.icon4to1').mousedown(function() {
   $('#text4to1').addClass('open');
   $('#im4to1').addClass('not-now');
@@ -257,6 +267,7 @@ $('.icon4to1').mousedown(function() {
     $('#im1').removeClass('complete');
   }, 14600);
 });
+
 $('#im5').mousedown(function() {
   $('#im5').addClass('open');
   $('#im5').removeClass('complete');
@@ -280,6 +291,7 @@ $('#im5').mousedown(function() {
     });
   }, 6710);
 });
+
 $('#im5to3').mousedown(function() {
   $('#im5to3').addClass('open');
   $('#im5to3').removeClass('complete');
@@ -306,6 +318,7 @@ $('#im5to3').mousedown(function() {
     $('#im3').removeClass('complete');
   }, 6710);
 });
+
 $('#im6').mousedown(function() {
   $('#im6').addClass('open');
   $('#im6').removeClass('complete');
@@ -338,6 +351,7 @@ $('#im6').mousedown(function() {
     });
   }, 6710);
 });
+
 $('#im6to7').mousedown(function() {
   $('#im6to7').addClass('open');
   $('#im6to7').removeClass('complete');
@@ -349,6 +363,7 @@ $('#im6to7').mousedown(function() {
     $('#im7').removeClass('complete');
   }, 3000);
 });
+
 $('#im7').mousedown(function() {
   $('#im7').addClass('open');
   $('#im7').removeClass('complete');
@@ -382,6 +397,7 @@ $('#im7').mousedown(function() {
     $('#im6to7').removeClass('complete');
   }, 6710);
 });
+
 $('#im7to10').mousedown(function() {
   $('#im7to10').addClass('open');
   $('#im7to10').removeClass('complete');
@@ -390,6 +406,7 @@ $('#im7to10').mousedown(function() {
   $('#cube6').addClass('rotate0');
   $('#im10').removeClass('complete');
 });
+
 $('#im10').mousedown(function() {
   $('#im10').addClass('open');
   $('#im10').removeClass('complete');
@@ -408,6 +425,7 @@ $('#im10').mousedown(function() {
     $('#im7to10').removeClass('complete');
   }, 6010);
 });
+
 $('#im8').mousedown(function() {
   $('#im8').addClass('open');
   $('#im8').removeClass('complete');
@@ -444,6 +462,7 @@ $('#im8').mousedown(function() {
     });
   }, 6800);
 });
+
 $('.icon8to9').mousedown(function() {
   $('#text8to9').addClass('open');
   $('#im8to9').addClass('not-now');
@@ -473,6 +492,7 @@ $('.icon8to9').mousedown(function() {
     $('#disabled').addClass('not-now');
   }, 6800);
 });
+
 $('.icon9to8').mousedown(function() {
   $('#text9to8').addClass('open');
   $('#im9to8').addClass('not-now');
@@ -497,6 +517,7 @@ $('.icon9to8').mousedown(function() {
     $('#disabled').addClass('not-now');
   }, 6800);
 });
+
 $('#to-im9-2').mousedown(function() {
   $('#to-im9-2').addClass('not-now');
   $('#text9to8').addClass('not-now');
@@ -510,6 +531,7 @@ $('#to-im9-2').mousedown(function() {
     $('#disabled').addClass('not-now');
   }, 3600);
 });
+
 $('#to-im9-1').mousedown(function() {
   $('#to-im9-1').addClass('not-now');
   $('#cube8to9').removeClass('rotate-to-im9-2');
@@ -523,6 +545,7 @@ $('#to-im9-1').mousedown(function() {
     $('#disabled').addClass('not-now');
   }, 3600);
 });
+
 $('#im9to4').mousedown(function() {
   $('#im9to4').addClass('open');
   $('#im9to4').removeClass('complete');
@@ -556,6 +579,7 @@ $('#im9to4').mousedown(function() {
     $('#im4').removeClass('complete');
   }, 6800);
 });
+
 $('#im11').mousedown(function() {
   $('#im11').addClass('open');
   $('#im11').removeClass('complete');
@@ -586,6 +610,7 @@ $('#im11').mousedown(function() {
     });
   }, 6710);
 });
+
 $('#im12').mousedown(function() {
   $('#im12').addClass('open');
   $('#im12').removeClass('complete');
@@ -612,6 +637,7 @@ $('#im12').mousedown(function() {
     $('#im13').removeClass('complete');
   }, 6010);
 });
+
 $('#im13').mousedown(function() {
   $('#im13').addClass('open');
   $('#im13').removeClass('complete');
@@ -631,6 +657,7 @@ $('#im13').mousedown(function() {
     $('#im12').removeClass('complete');
   }, 6010);
 });
+
 $('#to-im12').mousedown(function() {
   $('#to-im12').addClass('not-now');
   $('#cube12').removeClass('rotate13');
@@ -641,6 +668,7 @@ $('#to-im12').mousedown(function() {
     $('#disabled').addClass('not-now');
   }, 3000);
 });
+
 $('#to-im13').mousedown(function() {
   $('#to-im13').addClass('not-now');
   $('#cube12').removeClass('rotate12');
@@ -651,6 +679,7 @@ $('#to-im13').mousedown(function() {
     $('#disabled').addClass('not-now');
   }, 3000);
 });
+
 function typeClose() {
   $('#bottom-button').css('display','none');
   $('#bottom-button').removeClass('button-spawn');
