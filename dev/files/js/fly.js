@@ -160,11 +160,11 @@ $('#im3').mousedown(function() {
   $('#bgo').addClass('bgo-open');
   $('.n').addClass('not-now');
   $('#bg3').addClass('bg-open');
+  if (parseInt( $('#bg3').css('opacity') ) == 1) {
+    $('#im3to2').removeClass('not-now');
+    $('#im3to2').addClass('spawn');
+  };
 });
-if (parseInt( $('#bg3').css('opacity') ) == 1) {
-  $('#im3to2').removeClass('not-now');
-  $('#im3to2').addClass('spawn');
-};
 
 /*
 $('#im3').mousedown(function() {
