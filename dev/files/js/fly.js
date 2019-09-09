@@ -161,7 +161,7 @@ $('#im3').mousedown(function() {
   $('.n').addClass('not-now');
   $('#bg3').addClass('bg-open');
 });
-if ( $('#bg3').css('opacity','1') ) {
+if ( $('#bg3').css('opacity') == 1 ) {
   $('#im3to2').removeClass('not-now');
   $('#im3to2').addClass('spawn');
 };
