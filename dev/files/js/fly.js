@@ -578,11 +578,17 @@ function closeWork() {
 };
 
 function closeAnimation() {
-  if ( $(window).width() > /*144*/0 ) {
+  if ( $(window).width() < 1440 ) {
     $('.close-box').css({'display':'flex','opacity':'1'});
     setTimeout(function() {
       $('.close-box').css({'display':'none','opacity':'0'});
-    }, 3000);
+    }, 2500);
+  };
+  if ( $(window).width() > 1440 ) {
+    $('.close-box').css({'display':'flex','opacity':'1'});
+    setTimeout(function() {
+      $('.close-box').css({'display':'none','opacity':'0'});
+    }, 1200);
   };
 };
 
@@ -622,6 +628,14 @@ function realClose() {
 
   $('h5').addClass('not-now');
   $('h5').removeClass('open');
+  $('.icon1to4').addClass('not-now');
+  $('.icon4to1').addClass('not-now');
+  $('.icon2').addClass('not-now');
+  $('.icon8to9').addClass('not-now');
+  $('.icon9to8').addClass('not-now');
+  $('.icon9').addClass('not-now');
+  $('.icon12').addClass('not-now');
+
   $('#cube1to4').removeClass('rotate1to4');
   $('#cube1to4').removeClass('rotate4to1');
   $('#cube1to4').css('transform','rotateY(0) translateX(74vw)');
