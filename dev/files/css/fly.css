@@ -74,6 +74,7 @@ img {
 .icons-container {z-index: 102;}
 .close-box {
   z-index: 103;
+  display: none;
   opacity: 0;
   transition: 0.4s;
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 30%),

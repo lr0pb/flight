@@ -579,9 +579,9 @@ function closeWork() {
 
 function closeAnimation() {
   if ( $(window).width() > /*144*/0 ) {
-    $('.close-box').css('opacity','1');
+    $('.close-box').css({'display':'flex','opacity':'1'});
     setTimeout(function() {
-      $('.close-box').css('opacity','0');
+      $('.close-box').css({'display':'none','opacity':'0'});
     }, 3000);
   };
 };
