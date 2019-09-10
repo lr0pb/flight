@@ -584,21 +584,21 @@ $('#to-im13').mousedown(function() {
 
 function closeWork() {
   closeAnimation();
-  setTimeout(realClose, 500);
+  setTimeout(realClose, 400);
 };
 
 function closeAnimation() {
-  if ( $(window).width() < 1440 ) {
+  if ( $(window).width() < 1439 ) {
     $('.close-box').css({'display':'flex','opacity':'1'});
     setTimeout(function() {
       $('.close-box').css({'display':'none','opacity':'0'});
-    }, 2500);
+    }, 4500);
   };
   if ( $(window).width() > 1440 ) {
     $('.close-box').css({'display':'flex','opacity':'1'});
     setTimeout(function() {
       $('.close-box').css({'display':'none','opacity':'0'});
-    }, 1200);
+    }, 1000);
   };
 };
 
