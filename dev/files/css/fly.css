@@ -28,7 +28,7 @@
   html, #fly {font-size: 24px;}
 }
 
-.view-container {
+.view-container, .close-box {
   position: absolute;
   top: 0; left: 0;
   width: 100vw;
@@ -72,6 +72,14 @@ img {
   -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%);
 }
 .icons-container {z-index: 102;}
+.close-box {
+  z-index: 103;
+  opacity: 0;
+  transition: 0.4s;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 30%),
+  -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 15%), url(/image/bg.jpeg);
+}
+.close-text {font-size: 1.9em;}
 .image-point {
   position: absolute;
   cursor: pointer;
