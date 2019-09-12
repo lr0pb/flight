@@ -328,18 +328,19 @@ h5:hover {transform: scale(1.3);}
   from {transform: scale(1);}
   to {transform: scale(5);}
 }
-.im1-open {transform-origin: 5vw 34vh;}
-.im2-open {transform-origin: 19vw 50vh;}
-.im3-open {transform-origin: 25vw 57vh;}
-.im4-open {transform-origin: 25vw 38vh;}
-.im5-open {transform-origin: 37vw 50vh;}
+.im1-open {transform-origin: 5vw 20vw;}
+.im2-open {transform-origin: 19vw 30vw;}
+.im3-open {transform-origin: 25vw 32vw;}
+.im4-open {transform-origin: 25vw 24vw;}
+.im5-open {transform-origin: 37vw 30vw;}
 .im6-open {transform-origin: center;}
-.im7-open {transform-origin: 60vw 45vh;}
-.im8-open {transform-origin: 63vw 35vh;}
-.im10-open {transform-origin: 70vw 42vh;}
-.im11-open {transform-origin: 80vw 50vh;}
-.im12-open {transform-origin: 92vw 55vh;}
+.im7-open {transform-origin: 60vw 18vw;}
+.im8-open {transform-origin: 63vw 20vw;}
+.im10-open {transform-origin: 70vw 26vw;}
+.im11-open {transform-origin: 80vw 30vw;}
+.im12-open {transform-origin: 92vw 32vw;}
 .bg-open {
+  height: 100vh;
   animation: 3.2s bg-open;
   animation-delay: 2.8s;
   animation-fill-mode: forwards;
