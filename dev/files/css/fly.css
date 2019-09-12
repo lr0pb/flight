@@ -292,7 +292,7 @@ h5:hover {transform: scale(1.3);}
 #to-im2-2:hover, #to-im9-1:hover, #to-im13:hover {border-color: #fff #ff2f2f transparent transparent; transform: scale(1.4) rotateZ(45deg);}
 
 .open {
-  animation: 1.2s open;
+  animation: 1.3s open;
   animation-fill-mode: forwards;
 }
 @keyframes open {
@@ -301,8 +301,8 @@ h5:hover {transform: scale(1.3);}
   to {transform: scale(0.01); opacity: 0;}
 }
 .spawn {
-  animation: 1.3s spawn;
-  animation-delay: 3s;
+  animation: 1.5s spawn;
+  animation-delay: 4s;
   animation-fill-mode: forwards;
 }
 @keyframes spawn {
@@ -312,7 +312,7 @@ h5:hover {transform: scale(1.3);}
 }
 .fade {
   animation: 1.3s fade;
-  animation-delay: 3s;
+  animation-delay: 4s;
   animation-fill-mode: forwards;
 }
 @keyframes fade {
@@ -320,7 +320,7 @@ h5:hover {transform: scale(1.3);}
   to {opacity: 1; transform: rotateX(75deg) translateX(-0.5em) scale(1.4);}
 }
 .bgo-open {
-  animation: 4s bgo-open;
+  animation: 5s bgo-open;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
 }
@@ -340,8 +340,8 @@ h5:hover {transform: scale(1.3);}
 .im11-open {transform-origin: 80vw 40vw;}
 .im12-open {transform-origin: 92vw 42vw;}
 .bg-open {
-  animation: 2.1s bg-open;
-  animation-delay: 1.9s;
+  animation: 2.7s bg-open;
+  animation-delay: 2.3s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
 }
@@ -350,7 +350,7 @@ h5:hover {transform: scale(1.3);}
   to {transform: scale(1); opacity: 1;}
 }
 .bg-close {
-  animation: 2.1s bg-close;
+  animation: 2.7s bg-close;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
 }
@@ -376,7 +376,7 @@ h5:hover {transform: scale(1.3);}
 #bg1to4-3-2 {transform: rotateY(165deg) translateZ(93vw);}
 #bg4 {opacity: 1; transform: translateX(-74vw) rotateY(180deg) translateZ(97vw);}
 .rotate1to4 {
-  animation: 13s rotate1to4;
+  animation: 10s rotate1to4;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -385,7 +385,7 @@ h5:hover {transform: scale(1.3);}
   to {transform: rotateY(-180deg) translateX(74vw);}
 }
 .rotate4to1 {
-  animation: 13s rotate4to1;
+  animation: 10s rotate4to1;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
