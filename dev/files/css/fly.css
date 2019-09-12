@@ -292,7 +292,7 @@ h5:hover {transform: scale(1.3);}
 #to-im2-2:hover, #to-im9-1:hover, #to-im13:hover {border-color: #fff #ff2f2f transparent transparent; transform: scale(1.4) rotateZ(45deg);}
 
 .open {
-  animation: 1.5s open;
+  animation: 1.2s open;
   animation-fill-mode: forwards;
 }
 @keyframes open {
@@ -301,8 +301,8 @@ h5:hover {transform: scale(1.3);}
   to {transform: scale(0.01); opacity: 0;}
 }
 .spawn {
-  animation: 1.7s spawn;
-  animation-delay: 5s;
+  animation: 1.3s spawn;
+  animation-delay: 3s;
   animation-fill-mode: forwards;
 }
 @keyframes spawn {
@@ -311,8 +311,8 @@ h5:hover {transform: scale(1.3);}
   to {transform: scale(1); opacity: 1;}
 }
 .fade {
-  animation: 1.7s fade;
-  animation-delay: 5s;
+  animation: 1.3s fade;
+  animation-delay: 3s;
   animation-fill-mode: forwards;
 }
 @keyframes fade {
@@ -320,7 +320,7 @@ h5:hover {transform: scale(1.3);}
   to {opacity: 1; transform: rotateX(75deg) translateX(-0.5em) scale(1.4);}
 }
 .bgo-open {
-  animation: 6s bgo-open;
+  animation: 4s bgo-open;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
 }
@@ -334,14 +334,14 @@ h5:hover {transform: scale(1.3);}
 .im4-open {transform-origin: 25vw 34vw;}
 .im5-open {transform-origin: 37vw 40vw;}
 .im6-open {transform-origin: center;}
-.im7-open {transform-origin: 60vw 28vw;}
+.im7-open {transform-origin: 60vw 35vw;}
 .im8-open {transform-origin: 63vw 30vw;}
 .im10-open {transform-origin: 70vw 36vw;}
 .im11-open {transform-origin: 80vw 40vw;}
 .im12-open {transform-origin: 92vw 42vw;}
 .bg-open {
-  animation: 3.2s bg-open;
-  animation-delay: 2.8s;
+  animation: 2.1s bg-open;
+  animation-delay: 1.9s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
 }
@@ -350,7 +350,7 @@ h5:hover {transform: scale(1.3);}
   to {transform: scale(1); opacity: 1;}
 }
 .bg-close {
-  animation: 3.2s bg-close;
+  animation: 2.1s bg-close;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
 }
