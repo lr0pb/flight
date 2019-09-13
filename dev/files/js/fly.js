@@ -1,39 +1,15 @@
 $(document).ready(function() {
-  if ( $(window).width() > 1440 ) {
+  /*if ( $(window).width() > 1440 ) {
     $("#fly").on('mousemove', (e) => {
       const cx = $(window).width() / 2;
       const cy = $(window).height() / 2;
 
       const x = ((cx - e.pageX) / cx) * 10;
       const y = ((cy - e.pageY) / cy) * 10;
-      /*$(".bgo").css('transform',`translate(${x}px, ${y}px)`);*/
+      $(".bgo").css('transform',`translate(${x}px, ${y}px)`);
     });
-  };
-  $('body').addClass('overflow-hidden');
-  $('#fly-start').removeClass('not-now');
-  $('#log-start').removeClass('not-now');
-  $('#img-start').removeClass('not-now');
-  $('.blue-line').removeClass('not-now');
-  $('#st-anim-text').addClass('not-now');
-  $('.light').addClass('not-now');
-  setTimeout(function() {
-    $('#transition-layer').css('display','none');
-    $('body').removeClass('overflow-hidden');
-  }, 1000);/*
-  setTimeout(function() {
-    $('#fly-start').removeClass('not-now');
-    $('#log-start').removeClass('not-now');
-    $('#img-start').removeClass('not-now');
-    $('.blue-line').removeClass('not-now');
-    $('#st-anim-text').addClass('not-now');
-    $('.light').addClass('not-now');
-    $('body').removeClass('overflow-hidden');
-  }, 12500);*/
+  };*/
   $('.image-point').addClass('complete');
-  $('#im1to4').removeClass('complete');
-  $('#im4to1').removeClass('complete');
-  $('#im8to9').removeClass('complete');
-  $('#im9to8').removeClass('complete');
   $('#help-point').addClass('fade-from-down');
   $('.image-point').mousedown(function() {
     $('#help-point').removeClass('fade-from-down');
@@ -87,7 +63,7 @@ $('.icon1to4').mousedown(function() {
     $('#disabled').addClass('not-now');
     $('#im4').removeClass('complete');
     $('#im9to4').removeClass('complete');
-  }, 11600);
+  }, 13600);
 });
 
 $('#im2').mousedown(function() {
@@ -213,7 +189,7 @@ $('.icon4to1').mousedown(function() {
     $('#text1to4').css('opacity','1');
     $('#disabled').addClass('not-now');
     $('#im1').removeClass('complete');
-  }, 11600);
+  }, 13600);
 });
 
 $('#im5').mousedown(function() {
@@ -362,7 +338,6 @@ $('#im8').mousedown(function() {
 
 $('.icon8to9').mousedown(function() {
   $('#text8to9').addClass('open');
-  $('#im8to9').addClass('not-now');
   $('#cube8to9').removeClass('rotate9to8');
   $('#cube8to9').addClass('rotate8to9');
   $('#text9to8').removeClass('not-now');
@@ -375,7 +350,6 @@ $('.icon8to9').mousedown(function() {
   $('#help-180').removeClass('fade-from-down');
   $('#help-180').addClass('fade-to-down');
   setTimeout(function() {
-    $('#im9to8').removeClass('not-now');
     $('#to-im9-2').removeClass('not-now');
     $('#text8to9').removeClass('open');
     $('#text8to9').addClass('not-now');
@@ -392,7 +366,6 @@ $('.icon8to9').mousedown(function() {
 
 $('.icon9to8').mousedown(function() {
   $('#text9to8').addClass('open');
-  $('#im9to8').addClass('not-now');
   $('#im9to4').addClass('not-now');
   $('#to-im9-2').addClass('not-now');
   $('#cube8to9').removeClass('rotate-to-im9-2');
@@ -404,7 +377,6 @@ $('.icon9to8').mousedown(function() {
   $('#text8to9').addClass('spawn');
   $('#disabled').removeClass('not-now');
   setTimeout(function() {
-    $('#im8to9').removeClass('not-now');
     $('#text9to8').removeClass('open');
     $('#text9to8').addClass('not-now');
   }, 5000);
@@ -418,7 +390,6 @@ $('.icon9to8').mousedown(function() {
 $('#to-im9-2').mousedown(function() {
   $('#to-im9-2').addClass('not-now');
   $('#text9to8').addClass('not-now');
-  $('#im9to8').addClass('not-now');
   $('#im9to4').addClass('not-now');
   $('#cube8to9').removeClass('rotate-to-im9-1');
   $('#cube8to9').addClass('rotate-to-im9-2');
@@ -437,7 +408,6 @@ $('#to-im9-1').mousedown(function() {
   setTimeout(function() {
     $('#to-im9-2').removeClass('not-now');
     $('#text9to8').removeClass('not-now');
-    $('#im9to8').removeClass('not-now');
     $('#im9to4').removeClass('not-now');
     $('#disabled').addClass('not-now');
   }, 3600);
@@ -584,8 +554,8 @@ function realClose() {
   $('#bgo').removeClass('ride5to3');
   $('.1').removeClass('not-now');
   $('.4').removeClass('not-now');
-  /*$('#bg6').css('opacity','1');
-  $('#bg11').css('opacity','0');*/
+  $('#bg6').css('opacity','1');
+  /*$('#bg11').css('opacity','0');*/
   $('#bg9-1-spawn').css('opacity','0');
 
   $('#bgo').removeClass('im1-open');

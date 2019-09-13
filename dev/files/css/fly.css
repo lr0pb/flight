@@ -376,7 +376,7 @@ h5:hover {transform: scale(1.3);}
 #bg1to4-3-2 {transform: rotateY(165deg) translateZ(93vw);}
 #bg4 {opacity: 1; transform: translateX(-74vw) rotateY(180deg) translateZ(97vw);}
 .rotate1to4 {
-  animation: 10s rotate1to4;
+  animation: 12s rotate1to4;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -385,7 +385,7 @@ h5:hover {transform: scale(1.3);}
   to {transform: rotateY(-180deg) translateX(74vw);}
 }
 .rotate4to1 {
-  animation: 10s rotate4to1;
+  animation: 12s rotate4to1;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
