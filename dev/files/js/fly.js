@@ -619,7 +619,7 @@ function open() {
   if (fly.webkitRequestFullscreen) fly.webkitRequestFullscreen();
   else if (fly.requestFullscreen) fly.requestFullscreen();
 };
-$('#cross').mousedown(close);
+$('#cross').click(close);
 function close() {
   if (fly.webkitRequestFullscreen) document.exitFullscreen();
   else if (fly.requestFullscreen) document.exitFullscreen();
