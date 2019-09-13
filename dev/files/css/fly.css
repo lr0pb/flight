@@ -144,8 +144,8 @@ img {
   width: 5em;
 }
 #cross span {display: block; width: 5rem; height: 0.6rem; background-color: #fff;}
-.cr-margin-top-2 {margin-top: -0.25rem;}
-.cr-margin-top8 {margin-top: 0.8rem;}
+.cr-margin-top2 {margin-top: 2rem;}
+.cr-margin-top-1 {margin-top: -0.5rem;}
 .cr-cross-left {transform: rotateZ(-45deg);}
 .cr-cross-right {transform: rotateZ(45deg);}
 
