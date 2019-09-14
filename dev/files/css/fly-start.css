@@ -1,6 +1,6 @@
 #rotate-box {
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 30%),
-  -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 15%), url(/image/bg.jpeg);
+  -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 15%), url(/images/jpg-small/bg.jpg);
 }
 
 .light {width: 100vw; height: 100vh; background-color: rgba(11, 14, 23, 0.6);}
@@ -30,7 +30,7 @@
   display: grid;
   width: 100vw;
   background-size: cover; background-position: center center; background-repeat: no-repeat;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.3)), url(/image/cover.jpeg);
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.3)), url(/images/cover.jpg);
 }
 #green-line {
   width: 35.5em;
