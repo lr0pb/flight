@@ -532,12 +532,12 @@ function closeAnimation() {
   $('#bottom-button').css('display','none');
   $('.close-box').css({'display':'flex','opacity':'1'});
 
-  if ( $(window).width() < 1439 ) {
+  if ( $(window).width() < 1000 ) {
     setTimeout(function() {
       $('.close-box').css({'display':'none','opacity':'0'});
-    }, 2500);
+    }, 2100);
   };
-  if ( $(window).width() > 1440 ) {
+  if ( $(window).width() >= 1000 ) {
     setTimeout(function() {
       $('.close-box').css({'display':'none','opacity':'0'});
     }, 900);
