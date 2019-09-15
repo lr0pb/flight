@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="/dev/files/css/fly.css">
     <link rel="prefetch" href="/images/cover.jpg">
   </head>
-  <body>
+  <body class="overflow-hidden">
     <div id="support-box">
       <h5>
         Ваш браузер или устройство устарели и не поддерживают новые технологии, которые используются в Полёте.<br>
@@ -56,7 +56,7 @@
       <div id="start-content">
         <div class="light"></div>
         <div id="fly-start" class="flex-center">
-          <h1>Новый Полёт 11:24</h1>
+          <h1>Новый Полёт 11:28</h1>
           <div id="green-line"></div>
           <h4 id="fly-open">СТАРТ</h4>
         </div>
@@ -185,26 +185,6 @@
       </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script type="text/javascript">
-      $('body').addClass('overflow-hidden');
-      $('#fly-start').removeClass('not-now');
-      $('#log-start').removeClass('not-now');
-      $('#img-start').removeClass('not-now');
-      $('#st-anim-text').addClass('not-now');
-      $('.light').addClass('not-now');
-      setTimeout(function() {
-        $('#transition-layer').css('display','none');
-        $('body').removeClass('overflow-hidden');
-      }, 1000);/*
-      setTimeout(function() {
-        $('#fly-start').removeClass('not-now');
-        $('#log-start').removeClass('not-now');
-        $('#img-start').removeClass('not-now');
-        $('#st-anim-text').addClass('not-now');
-        $('.light').addClass('not-now');
-        $('body').removeClass('overflow-hidden');
-      }, 12500);*/
-    </script>
     <script src="/dev/files/js/fly.js"></script>
     <script src="/dev/files/js/main.js"></script>
   </body>

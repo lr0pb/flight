@@ -9,6 +9,25 @@ $(document).ready(function() {
       $(".bgo").css('transform',`translate(${x}px, ${y}px)`);
     });
   };*/
+
+  $('#fly-start').removeClass('not-now');
+  $('#log-start').removeClass('not-now');
+  $('#img-start').removeClass('not-now');
+  $('#st-anim-text').addClass('not-now');
+  $('.light').addClass('not-now');
+  setTimeout(function() {
+    $('#transition-layer').css('display','none');
+    $('body').removeClass('overflow-hidden');
+  }, 1000);/*
+  setTimeout(function() {
+    $('#fly-start').removeClass('not-now');
+    $('#log-start').removeClass('not-now');
+    $('#img-start').removeClass('not-now');
+    $('#st-anim-text').addClass('not-now');
+    $('.light').addClass('not-now');
+    $('body').removeClass('overflow-hidden');
+  }, 12500);*/
+
   $('.image-point').addClass('complete');
   $('#help-point').addClass('fade-from-down');
   $('.image-point').mousedown(function() {
