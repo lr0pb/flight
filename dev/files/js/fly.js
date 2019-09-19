@@ -18,6 +18,8 @@ $(document).ready(function() {
   setTimeout(function() {
     $('#fly-start').removeClass('not-now');
     $('#cards-block').removeClass('not-now');
+    $('.light').addClass('not-now');
+    $('#first-load-view').addClass('not-now;')
     $('body').removeClass('overflow-hidden');
   }, 12500);
 
