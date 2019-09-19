@@ -10,21 +10,15 @@ $(document).ready(function() {
     });
   };*/
 
-  $('#fly-start').removeClass('not-now');
-  $('#log-start').removeClass('not-now');
-  $('#img-start').removeClass('not-now');
-  $('#st-anim-text').addClass('not-now');
-  $('.light').addClass('not-now');
+  $('#fly-start').addClass('not-now');
+  $('#cards-block').addClass('not-now');
   setTimeout(function() {
     $('#transition-layer').css('display','none');
     $('body').removeClass('overflow-hidden');
   }, 1000);/*
   setTimeout(function() {
     $('#fly-start').removeClass('not-now');
-    $('#log-start').removeClass('not-now');
-    $('#img-start').removeClass('not-now');
-    $('#st-anim-text').addClass('not-now');
-    $('.light').addClass('not-now');
+    $('#cards-block').removeClass('not-now');
     $('body').removeClass('overflow-hidden');
   }, 12500);*/
 
