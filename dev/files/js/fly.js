@@ -14,13 +14,12 @@ $(document).ready(function() {
   $('#cards-block').addClass('not-now');
   setTimeout(function() {
     $('#transition-layer').css('display','none');
-    $('body').removeClass('overflow-hidden');
-  }, 1000);/*
+  }, 1000);
   setTimeout(function() {
     $('#fly-start').removeClass('not-now');
     $('#cards-block').removeClass('not-now');
     $('body').removeClass('overflow-hidden');
-  }, 12500);*/
+  }, 12500);
 
   $('.image-point').addClass('complete');
   $('#help-point').addClass('fade-from-down');

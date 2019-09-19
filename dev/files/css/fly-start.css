@@ -96,6 +96,7 @@
   justify-content: center;
 }
 @media screen and (max-width: 1199px) {
+  .st-anim-text-container {min-height: calc(100vh - 12rem);}
   #start-content {
     min-height: calc(100vh - 12rem);
     grid:
@@ -121,6 +122,7 @@
 }
 
 @media screen and (min-width: 1200px) {
+  .st-anim-text-container {min-height: calc(100vh - 14rem);}
   #start-content {
     min-height: calc(100vh - 14rem);
     grid:
