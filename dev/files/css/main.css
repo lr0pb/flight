@@ -41,7 +41,7 @@ p {font-family: 'Ubuntu', sans-serif; font-weight: 700; color: #fff; line-height
 }
 .not-now {display: none; opacity: 0;}
 /* Navigation and Footer block */
-header, footer {background-color: hsla(205, 15%, 5%, 0.4); position: absolute; z-index: 20;}
+header, footer {background-color: hsla(205, 15%, 5%, 0.4); position: absolute; width: 100vw; z-index: 20;}
 @media screen and (orientation: portrait) {
   nav {flex-direction: column; height: 6rem;}
   .nav-burger, footer, header {height: auto;}
