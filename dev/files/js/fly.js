@@ -9,7 +9,7 @@ $(document).ready(function() {
       $(".bgo").css('transform',`translate(${x}px, ${y}px)`);
     });
   };*/
-
+  localStorage.clear();
   if ( localStorage.getItem('isFirstEntry') == 1 ) {
     $('.light').addClass('not-now');
     $('#first-load-view').addClass('not-now');
@@ -22,6 +22,17 @@ $(document).ready(function() {
     $('#cards-block').addClass('not-now');
     $('header').addClass('not-now');
     $('footer').addClass('not-now');
+    setTimeout(function() {
+      $('#fly').css({
+        'display':'block',
+        'z-index':'1',
+      })
+    }, 1000);
+    setTimeout(function() {
+      $('#fly').css({
+        'display':'none'
+      })
+    }, 11000);
     setTimeout(function() {
       $('#fly-start').removeClass('not-now');
       $('#cards-block').removeClass('not-now');
