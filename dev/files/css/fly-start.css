@@ -29,6 +29,7 @@
 #start-content {
   display: grid;
   width: 100vw;
+  height: 100vh;
   background-size: cover; background-position: center center; background-repeat: no-repeat;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.3)), url(/images/cover.jpg);
 }
@@ -96,9 +97,7 @@
   justify-content: center;
 }
 @media screen and (max-width: 1199px) {
-  #first-load-view, .st-anim-text-container {min-height: calc(100vh - 12rem);}
   #start-content {
-    min-height: calc(100vh - 12rem);
     grid:
       "..."
       "head"
@@ -122,9 +121,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-  #first-load-view, .st-anim-text-container {min-height: calc(100vh - 14rem);}
   #start-content {
-    min-height: calc(100vh - 14rem);
     grid:
       "... ... ..."
       "... head ..."
@@ -170,13 +167,12 @@
   .portrait-text {display: none;}
 }
 
-#first-load-view {
+#first-load-view, .st-anim-text-container {
   position: absolute;
   width: 100vw;
+  height: 100vh;
 }
 .st-anim-text-container {
-  position: absolute;
-  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -198,7 +194,7 @@
   to {opacity: 0;}
 }
 .anim-text-2 {
-  animation: 6s anim-text-2;
+  animation: 5s anim-text-2;
   animation-delay: 4.5s;
 }
 @keyframes anim-text-2 {
@@ -209,7 +205,7 @@
 }
 .anim-text-3 {
   animation: 2s anim-text-3;
-  animation-delay: 10.5s;
+  animation-delay: 9.5s;
 }
 @keyframes anim-text-3 {
   from {opacity: 0;}

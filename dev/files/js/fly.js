@@ -21,7 +21,7 @@ $(document).ready(function() {
     $('.light').addClass('not-now');
     $('#first-load-view').addClass('not-now');
     $('body').removeClass('overflow-hidden');
-  }, 12500);
+  }, 11500);
 
   $('.image-point').addClass('complete');
   $('#help-point').addClass('fade-from-down');
@@ -229,12 +229,12 @@ $('#im5to3').mousedown(function() {
   $('#im5to3').removeClass('complete');
   $('#bg5').addClass('bg-close');
   $('#bgo').addClass('ride5to3');
-  $('#im3to2').removeClass('not-now');
-  $('#im3to2').css('opacity','0');
-  $('#im3to2').addClass('spawn');
   $('#disabled').removeClass('not-now');
   setTimeout(function() {
     $('#bg3').addClass('bg-open');
+    $('#im3to2').removeClass('not-now');
+    $('#im3to2').css('opacity','0');
+    $('#im3to2').addClass('spawn');
   }, 1000);
   setTimeout(function() {
     $('#im3to2').removeClass('spawn');
