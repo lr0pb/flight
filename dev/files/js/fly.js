@@ -11,7 +11,7 @@ $(document).ready(function() {
   };*/
 
   localStorage.clear();
-  if ( localStorage.getItem('isFirstEntry') == no ) {
+  if ( localStorage.getItem('isFirstEntry') == 1 ) {
     $('.light').addClass('not-now');
     $('#first-load-view').addClass('not-now');
     setTimeout(function() {
@@ -39,7 +39,7 @@ $(document).ready(function() {
       $('.light').addClass('not-now');
       $('#first-load-view').addClass('not-now');
       $('body').removeClass('overflow-hidden');
-      localStorage.setItem('isFirstEntry', no); //1 - no
+      localStorage.setItem('isFirstEntry', 1); //1 - no
     }, 11500);
   }
   console.log( localStorage.getItem('isFirstEntry') );
