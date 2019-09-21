@@ -36,9 +36,15 @@
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 999px) {
+  .large {display: none;}
+}
+@media screen and (min-width: 1000px) {
+  .small {display: none;}
+}
+picture {opacity: 0;}
 img {
   position: absolute;
-  opacity: 0;
   width: 100vw;
   height: 75vw;
   background-color: #0b0e17;
