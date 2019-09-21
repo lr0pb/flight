@@ -10,7 +10,6 @@ $(document).ready(function() {
     });
   };*/
 
-  localStorage.clear();
   if ( localStorage.getItem('isFirstEntry') == 1 ) {
     $('.light').addClass('not-now');
     $('#first-load-view').addClass('not-now');
@@ -41,7 +40,7 @@ $(document).ready(function() {
       $('body').removeClass('overflow-hidden');
       localStorage.setItem('isFirstEntry', 1); //1 - no
     }, 11500);
-  } 
+  }
   console.log( localStorage.getItem('isFirstEntry') );
 
   setTimeout(function() {
