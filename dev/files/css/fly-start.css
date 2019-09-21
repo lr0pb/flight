@@ -173,6 +173,7 @@
   .portrait-text {display: none;}
 }
 
+.invisible-loading {display: block; z-index: 1;}
 #first-load-view, .st-anim-text-container {
   position: absolute;
   width: 100vw;

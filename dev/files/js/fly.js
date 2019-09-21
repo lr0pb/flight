@@ -11,7 +11,7 @@ $(document).ready(function() {
   };*/
 
   localStorage.clear();
-  if ( localStorage.getItem('isFirstEntry') == 1 ) {
+  if ( localStorage.getItem('isFirstEntry') == no ) {
     $('.light').addClass('not-now');
     $('#first-load-view').addClass('not-now');
     setTimeout(function() {
@@ -24,10 +24,12 @@ $(document).ready(function() {
     $('header').addClass('not-now');
     $('footer').addClass('not-now');
     setTimeout(function() {
+      $('#fly').removeClass('not-now');
       $('#fly').addClass('invisible-loading');
     }, 1000);
     setTimeout(function() {
       $('#fly').removeClass('invisible-loading');
+      $('#fly').addClass('not-now');
     }, 11000);
     setTimeout(function() {
       $('#fly-start').removeClass('not-now');
@@ -37,9 +39,10 @@ $(document).ready(function() {
       $('.light').addClass('not-now');
       $('#first-load-view').addClass('not-now');
       $('body').removeClass('overflow-hidden');
-      localStorage.setItem('isFirstEntry', 1); //1 - no
+      localStorage.setItem('isFirstEntry', no); //1 - no
     }, 11500);
   }
+  console.log( localStorage.getItem('isFirstEntry') );
 
   setTimeout(function() {
     $('#transition-layer').css('display','none');
