@@ -27,7 +27,6 @@
   #start-box {display: block;}
 }
 
-.invisible-loading {display: block; z-index: 1;}
 #start-content {
   display: grid;
   width: 100vw;
@@ -174,6 +173,7 @@
   .portrait-text {display: none;}
 }
 
+.invisible-loading {display: block; z-index: 1;}
 #first-load-view, .st-anim-text-container {
   position: absolute;
   width: 100vw;
@@ -188,6 +188,7 @@
   font-size: 3.2em;
   line-height: 1.7;
   opacity: 0;
+  text-align: center;
   animation-fill-mode: forwards;
 }
 .anim-text-1 {
