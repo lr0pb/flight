@@ -18,6 +18,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
   width: 100vw;
   min-height: 100vh;
 }
@@ -26,11 +27,12 @@
   #start-box {display: block;}
 }
 
+.invisible-loading {display: block; z-index: 1;}
 #start-content {
   display: grid;
   width: 100vw;
   height: 100vh;
-  background-color: #0b0e17; z-index: 2;
+  background-color: #0b0e17;
   background-size: cover; background-position: center center; background-repeat: no-repeat;/*
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.3)), url(/images/cover.jpg);*/
   background-image: -webkit-radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)),

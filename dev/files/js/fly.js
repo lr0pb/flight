@@ -23,15 +23,10 @@ $(document).ready(function() {
     $('header').addClass('not-now');
     $('footer').addClass('not-now');
     setTimeout(function() {
-      $('#fly').css({
-        'display':'block',
-        'z-index':'1',
-      })
+      $('#fly').addClass('invisible-loading');
     }, 1000);
     setTimeout(function() {
-      $('#fly').css({
-        'display':'none'
-      })
+      $('#fly').removeClass('invisible-loading');
     }, 11000);
     setTimeout(function() {
       $('#fly-start').removeClass('not-now');
