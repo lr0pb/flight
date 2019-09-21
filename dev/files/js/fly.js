@@ -41,7 +41,7 @@ $(document).ready(function() {
       $('body').removeClass('overflow-hidden');
       localStorage.setItem('isFirstEntry', 1); //1 - no
     }, 11500);
-  }
+  } 
   console.log( localStorage.getItem('isFirstEntry') );
 
   setTimeout(function() {
