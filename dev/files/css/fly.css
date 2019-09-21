@@ -8,6 +8,7 @@
 }
 #fly:-moz-full-screen {display: block;}
 #fly:-webkit-full-screen {display: block;}
+.invisible-loading {display: block; z-index: 1;}
 
 @media screen and (min-width: 567px) and (max-width: 800px) and (orientation: landscape) {
   #fly {font-size: 6px;}
