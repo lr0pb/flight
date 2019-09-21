@@ -43,7 +43,7 @@
   .small {display: none;}
 }
 picture {opacity: 0;}
-img {
+picture, img {
   position: absolute;
   width: 100vw;
   height: 75vw;

@@ -39,6 +39,7 @@ $(document).ready(function() {
       $('#first-load-view').addClass('not-now');
       $('body').removeClass('overflow-hidden');
       localStorage.setItem('isFirstEntry', 1); //1 - no
+      localStorage.setItem('whatIsVersion', 1); //Version list - /version.txt
     }, 11500);
   }
   console.log( localStorage.getItem('isFirstEntry') );
