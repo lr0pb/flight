@@ -43,12 +43,12 @@
   .small {display: none;}
 }
 picture {opacity: 0;}
+img {backface-visibility: hidden;}
 picture, img {
   position: absolute;
   width: 100vw;
   height: 75vw;
   background-color: #0b0e17;
-  backface-visibility: hidden;
 }
 #bgo {opacity: 1;}
 

@@ -574,7 +574,7 @@ function closeAnimation() {
   if ( $(window).width() < 1000 ) {
     setTimeout(function() {
       $('.close-box').css({'display':'none','opacity':'0'});
-    }, 2100);
+    }, 1900);
   };
   if ( $(window).width() >= 1000 ) {
     setTimeout(function() {
@@ -586,8 +586,8 @@ function closeAnimation() {
 function realClose() {
   $('#bottom-button').removeClass('button-spawn');
   $('.image-point').removeClass('open');
-  $('img').removeClass('bg-open');
-  $('img').removeClass('bg-close');
+  $('picture').removeClass('bg-open');
+  $('picture').removeClass('bg-close');
   $('#bgo').removeClass('bgo-open');
   $('#bgo').removeClass('ride3to2');
   $('#bgo').removeClass('ride5to3');
