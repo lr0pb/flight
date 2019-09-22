@@ -43,7 +43,7 @@
   .small {display: none;}
 }
 picture {opacity: 0;}
-img {backface-visibility: hidden; background-color: #0b0e17;}
+img {background-color: #0b0e17;}
 #bgo {opacity: 1;}
 
 #bg2-1-spawn {transform-origin: 35vw 30vw;}
@@ -59,6 +59,7 @@ img {backface-visibility: hidden; background-color: #0b0e17;}
   position: absolute;
   width: 100vw;
   height: 75vw;
+  backface-visibility: hidden;
 }
 .images-container {z-index: 100;}
 .gradient-box {
