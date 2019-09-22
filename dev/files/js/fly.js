@@ -489,7 +489,7 @@ $('#im11').mousedown(function() {
   $('#bgo').addClass('im11-open');
   $('#bgo').addClass('bgo-open');
   $('.11').addClass('not-now');
-  $('#bg11').css('transform-origin','77vw 54vh');
+  $('#bg11').css('transform-origin','77vw 33vw');
   $('#bg11').addClass('bg-open');
   $('#im13').removeClass('not-now');
   $('#im13').css('opacity','0');
@@ -524,7 +524,7 @@ $('#im13').mousedown(function() {
   $('#im13').addClass('open');
   $('#im13').removeClass('complete');
   $('#bg11').removeClass('bg-open');
-  $('#bg11').css({'transform-origin':'35vw 40vh','opacity':'1'});
+  $('#bg11').css({'transform-origin':'35vw 32vw','opacity':'1'});
   $('#bg11').addClass('bgo-open');
   $('#bg13-spawn').addClass('bg-open');
   $('#cube12').css('transform','rotateY(90deg)');

@@ -43,26 +43,19 @@
   .small {display: none;}
 }
 picture {opacity: 0;}
-img {backface-visibility: hidden;}
-picture, img {
-  position: absolute;
-  width: 100vw;
-  height: 75vw;
-  background-color: #0b0e17;
-}
+img {backface-visibility: hidden; background-color: #0b0e17;}
 #bgo {opacity: 1;}
 
-#bg2-1-spawn {transform-origin: 35vw 50vh;}
-#bg2-2-spawn {transform-origin: 38vw 50vh;}
-#bg3 {transform-origin: 40vw 58vh;}
-#bg5 {transform-origin: 45vw 55vh;}
-#bg9-1-spawn {transform-origin: 70vw 45vh;}
-#bg10-spawn {transform-origin: 60vw 51vh;}
-#bg11 {transform-origin: 77vw 54vh;}
-#bg12-spawn {transform-origin: 75vw 55vh;}
-#bg13-spawn {transform-origin: 40vw 45vh;}
+#bg2-1-spawn {transform-origin: 35vw 30vw;}
+#bg2-2-spawn {transform-origin: 38vw 32vw;}
+#bg3 {transform-origin: 40vw 40vw;}
+#bg5 {transform-origin: 45vw 33vw;}
+#bg9-1-spawn {transform-origin: 70vw 36vw;}
+#bg10-spawn {transform-origin: 60vw 32vw;}
+#bg12-spawn {transform-origin: 75vw 38vw;}
+#bg13-spawn {transform-origin: 40vw 29vw;}
 
-.images-container, .icons-container {
+.images-container, .icons-container, picture, img {
   position: absolute;
   width: 100vw;
   height: 75vw;
