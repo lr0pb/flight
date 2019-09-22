@@ -104,28 +104,46 @@
     "... ... ... ... ..."
   ;
   /*ttl - title, new - news, img - gallery, abt - about, hot - hot keys, fut - footer */
-  grid-template-rows: 1.3fr 4rem 36rem 6rem 15rem 4rem 1fr;
-  grid-template-columns: 1fr repeat(3, 2fr) 1fr;
-  grid-gap: 0.5rem;
+  grid-template-rows: 1.7fr 4rem 36rem 6rem 15rem 4rem 1fr;
+  grid-template-columns: 1.2fr repeat(3, 1fr) 1.2fr;
+  grid-gap: 1rem;
 }
 
-#header-block, #fly-block, #news-block, #gallery-block, #about-fly, #hot-keys, #footer-block {
-  background-color: #1f2740; border-radius: 1.5rem;
+#fly-block, #news-block, #gallery-block, #about-fly, #hot-keys {
+  background-color: #1f2740; border-radius: 1.2rem;
 }
 #header-block {
   grid-area: ttl;
 }
 #fly-block {
   grid-area: fly;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 #news-block {
   grid-area: new;
+  display: flex;
+}
+.update-title {
+  margin-top: auto;
+  padding: 0 0 3rem 3rem;
 }
 #gallery-block {
   grid-area: img;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #about-fly {
   grid-area: abt;
+}
+.about-title {
+  padding: 2rem 0 0.5rem 2rem;
+}
+.about-text {
+  padding: 0 2rem 2rem;
 }
 #hot-keys {
   grid-area: hot;
