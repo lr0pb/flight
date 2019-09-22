@@ -104,12 +104,35 @@
     "... ... ... ... ..."
   ;
   /*ttl - title, new - news, img - gallery, abt - about, hot - hot keys, fut - footer */
-  grid-template-rows: 1fr 5rem 36rem 8rem 15rem 5rem 1fr;
+  grid-template-rows: 1.3fr 4rem 36rem 6rem 15rem 4rem 1fr;
   grid-template-columns: 1fr repeat(3, 2fr) 1fr;
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
 }
 
-
+#header-block, #fly-block, #news-block, #gallery-block, #about-fly, #hot-keys, #footer-block {
+  background-color: #1f2740; border-radius: 1.5rem;
+}
+#header-block {
+  grid-area: ttl;
+}
+#fly-block {
+  grid-area: fly;
+}
+#news-block {
+  grid-area: new;
+}
+#gallery-block {
+  grid-area: img;
+}
+#about-fly {
+  grid-area: abt;
+}
+#hot-keys {
+  grid-area: hot;
+}
+#footer-block {
+  grid-area: fut;
+}
 
 #fly-open {
   cursor: pointer;
