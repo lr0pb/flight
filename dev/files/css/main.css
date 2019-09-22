@@ -39,7 +39,6 @@ p {font-family: 'Ubuntu', sans-serif; font-weight: 700; color: #fff; line-height
   from {top:0;}
   to {top: 100vh;}
 }
-.not-now {display: none;}
 /* Navigation and Footer block */
 header, footer {background-color: hsla(205, 15%, 5%, 0.4); position: absolute; width: 100vw; z-index: 20;}
 @media screen and (orientation: portrait) {
@@ -102,6 +101,7 @@ footer, #fut-content {display: flex; justify-content: center; align-items: cente
 @media screen and (min-width: 361px) and (max-width: 400px) and (orientation: portrait) {
   html {font-size: 9px;}
 }
+.not-now {display: none;}
 .article-head {
   font-size: 2.4rem;
   padding-bottom: 1.5rem;
