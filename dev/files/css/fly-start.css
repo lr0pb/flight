@@ -110,6 +110,7 @@
 }
 
 #fly-block, #news-block, #gallery-block, #about-fly, #hot-keys {
+  background-size: cover; background-position: center center; background-repeat: no-repeat;
   background-color: #1f2740; border-radius: 1.2rem;
 }
 #header-block {
@@ -121,10 +122,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.5)),
+  url(/images/cover.jpg);
 }
 #news-block {
   grid-area: new;
   display: flex;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.5)),
+  url(/images/jpg-small/im7.jpg);
 }
 .update-title {
   margin-top: auto;
@@ -135,9 +140,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.5)),
+  url(/images/jpg-small/im1.jpg);
 }
 #about-fly {
   grid-area: abt;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.5)),
+  url(/images/obull.jpg);
 }
 .about-title {
   padding: 2rem 0 0.5rem 2rem;
@@ -147,6 +156,8 @@
 }
 #hot-keys {
   grid-area: hot;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.5)),
+  url(/images/jpg-small/im11.jpg);
 }
 #footer-block {
   grid-area: fut;
