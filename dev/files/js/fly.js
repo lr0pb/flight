@@ -662,7 +662,7 @@ $('#cross').click(close);
 function close() {
   if (fly.webkitRequestFullscreen) document.exitFullscreen();
   else if (fly.requestFullscreen) document.exitFullscreen();
-};
+};/*
 $('#about').click(function() {
   $('body').addClass('overflow-hidden');
   $('#transition-layer').css({
@@ -672,29 +672,29 @@ $('#about').click(function() {
   setTimeout(function() {
     document.location.href = "https://lr0pb.github.io";
   }, 1000);
-});
-$('#log').click(function() {
+});*/
+$('#news-block').click(function() {
   $('body').addClass('overflow-hidden');
   $('#transition-layer').css({
     'display':'block',
     'animation':'1s transition-start-phase'
   });
   setTimeout(function() {
-    document.location.href = "https://lr0pb.github.io/news";
+    document.location.href = "https://lr0pb.pp.ua/news";
   }, 1000);/*
   setTimeout(function() {
     $('body').removeClass('overflow-hidden');
     $('#transition-layer').css('display','none');
   }, 1100);*/
 });
-$('#img').click(function() {
+$('#gallery-block').click(function() {
   $('body').addClass('overflow-hidden');
   $('#transition-layer').css({
     'display':'block',
     'animation':'1s transition-start-phase'
   });
   setTimeout(function() {
-    document.location.href = "https://lr0pb.github.io/gallery";
+    document.location.href = "https://lr0pb.pp.ua/gallery";
   }, 1000);/*
   setTimeout(function() {
     $('body').removeClass('overflow-hidden');

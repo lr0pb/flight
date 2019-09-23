@@ -27,18 +27,7 @@
   #start-box {display: block;}
 }
 
-#start-content {
-  display: grid;
-  width: 100vw;
-  height: 100vh;
-  background-color: #0b0e17;
-  background-size: cover; background-position: center center; background-repeat: no-repeat;/*
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.3)), url(/images/cover.jpg);*/
-  background-image: -webkit-radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)),
-  -webkit-radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/images/main.jpg);
-  background-image: radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)),
-  radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/images/main.jpg);
-}/*
+/*
 #green-line {
   width: 35.5em;
   height: 0.9em;
@@ -91,9 +80,20 @@
 
 #start-content {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
   display: grid;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #0b0e17;
+  background-size: cover; background-position: center center; background-repeat: no-repeat;/*
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.3)), url(/images/cover.jpg);
+  background-image: -webkit-radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)),
+  -webkit-radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/images/main.jpg);
+  background-image: radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)),
+  radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/images/main.jpg);*/
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.8)),
+  url(/images/main.jpg);
+}
+#start-content {
   grid:
     "... ... ... ... ..."
     "... ttl ttl ttl ..."
@@ -104,8 +104,8 @@
     "... ... ... ... ..."
   ;
   /*ttl - title, new - news, img - gallery, abt - about, hot - hot keys, fut - footer */
-  grid-template-rows: 1.7fr 4rem 36rem 6rem 15rem 4rem 1fr;
-  grid-template-columns: 1.2fr repeat(3, 1fr) 1.2fr;
+  grid-template-rows: 1.7fr 4rem 36rem 6rem 16rem 4rem 1fr;
+  grid-template-columns: 1fr repeat(3, 35rem) 1fr;
   grid-gap: 1rem;
 }
 
@@ -113,6 +113,7 @@
   background-size: cover; background-position: center center; background-repeat: no-repeat;
   background-color: #1f2740; border-radius: 1.2rem;
 }
+#news-block, #gallery-block {cursor: pointer;}
 #header-block {
   grid-area: ttl;
 }
@@ -122,37 +123,41 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.5)),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
   url(/images/cover.jpg);
 }
 #news-block {
   grid-area: new;
   display: flex;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.5)),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.7)),
   url(/images/jpg-small/im7.jpg);
 }
 .update-title {
   margin-top: auto;
-  padding: 0 0 3rem 3rem;
+  padding: 0 0 3rem 3.2rem;
+  font-size: 2.5em;
 }
 #gallery-block {
   grid-area: img;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.5)),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.5)),
   url(/images/jpg-small/im1.jpg);
 }
+.gallery-title {font-size: 1.8em;}
 #about-fly {
   grid-area: abt;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.5)),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.7), rgba(11, 14, 23, 0.5)),
   url(/images/obull.jpg);
 }
 .about-title {
-  padding: 2rem 0 0.5rem 2rem;
+  padding: 2.5rem 0 0.5rem 2.5rem;
+  font-size: 2em;
 }
 .about-text {
-  padding: 0 2rem 2rem;
+  padding: 0 2.5rem;
+  font-size: 1.3em;
 }
 #hot-keys {
   grid-area: hot;
@@ -168,61 +173,15 @@
   font-weight: 900;
   font-size: 1.8em;
   padding: 1.1rem 7.5rem;
-  background: #41b619;
-  border: 0.5rem solid #369e13;
+  margin-top: 2rem;
+  background-color: #318613;
+  border: 0.5rem solid #41b619;
   border-radius: 5rem;
   box-shadow: 0 0.5rem 1.5rem rgba(65, 182, 25, 0.55);
   transition: 0.5s;
 }
-#fly-open:hover {box-shadow: 0 0.5rem 1.5rem #41B619; border: 0.5rem solid #41b619;
+#fly-open:hover {box-shadow: 0 0.5rem 1.5rem #41B619;
   /*background: -webkit-linear-gradient(75deg, #41B619, #CBE724)*/;}
-
-/*@media screen and (max-width: 1199px) {
-  #start-content {
-    grid:
-      "..."
-      "head"
-      "cards"
-    ;
-    grid-template-rows: 5rem 23rem 1fr;
-    grid-template-columns: 100vw;
-  }
-  #cards-block {flex-direction: column;}
-  .more-title {padding: 1.5rem 3rem 2.8rem 3rem;}
-  #log {
-    border-radius: 2rem 2rem 0 0;
-    padding-bottom: 3.7rem;
-    transform: translateY(2rem);
-  }
-  #img {
-    border-radius: 0 0 2rem 2rem;
-    padding-top: 3.7rem;
-    transform: translateY(-2rem);
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  #start-content {
-    grid:
-      "... ... ..."
-      "... head ..."
-      "... cards ..."
-    ;
-    grid-template-rows: 1fr 17.8rem 1fr;
-    grid-template-columns: 1fr minmax(84rem, 5fr) 1fr;
-  }
-  .more-title {padding: 1.5rem 2.4rem 2.8rem 2.4rem; margin-top: 3rem;}
-  #log {
-    border-radius: 2rem 0 0 2rem;
-    padding-right: 4rem;
-    transform: translateX(2rem);
-  }
-  #img {
-    border-radius: 0 2rem 2rem 0;
-    padding-left: 4rem;
-    transform: translateX(-2rem);
-  }
-}*/
 
 @media screen and (max-aspect-ratio: 4/3) {
   #rotate-box {
