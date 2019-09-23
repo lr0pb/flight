@@ -90,23 +90,43 @@
   -webkit-radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/images/main.jpg);
   background-image: radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)),
   radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/images/main.jpg);*/
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.8)),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.7), rgba(11, 14, 23, 0.8)),
   url(/images/main.jpg);
 }
-#start-content {
-  grid:
-    "... ... ... ... ..."
-    "... ttl ttl ttl ..."
-    "... fly fly new ..."
-    "... img img img ..."
-    "... abt abt hot ..."
-    "... fut fut fut ..."
-    "... ... ... ... ..."
-  ;
-  /*ttl - title, new - news, img - gallery, abt - about, hot - hot keys, fut - footer */
-  grid-template-rows: 1.7fr 4rem 36rem 6rem 16rem 4rem 1fr;
-  grid-template-columns: 1fr repeat(3, 35rem) 1fr;
-  grid-gap: 1rem;
+@media screen and (min-width: 1100px) {
+  #start-content {
+    grid:
+      "... ... ... ... ..."
+      "... ttl ttl ttl ..."
+      "... fly fly new ..."
+      "... img img img ..."
+      "... abt abt hot ..."
+      "... fut fut fut ..."
+      "... ... ... ... ..."
+    ;
+    /*ttl - title, new - news, img - gallery, abt - about, hot - hot keys, fut - footer */
+    grid-template-rows: 1.7fr 4rem 36rem 6rem 16rem 4rem 1fr;
+    grid-template-columns: 1fr repeat(3, 35rem) 1fr;
+    grid-gap: 1rem;
+  }
+  #gallery-block {display: flex;}
+}
+@media screen and (max-width: 1099px) {
+  #start-content {
+    grid:
+      "ttl"
+      "fly"
+      "abt"
+      "new"
+      "fut"
+      "nav"
+    ;
+    /*ttl - title, new - news, abt - about, fut - footer, nav - menu */
+    grid-template-rows: 4rem 24rem 24rem 16rem 4rem 3rem;
+    grid-template-columns: calc(1fr - 2rem);
+    grid-gap: 1rem;
+  }
+  #gallery-block, #hot-keys {display: none;}
 }
 
 #fly-block, #news-block, #gallery-block, #about-fly, #hot-keys {
@@ -139,7 +159,6 @@
 }
 #gallery-block {
   grid-area: img;
-  display: flex;
   justify-content: center;
   align-items: center;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.5)),
@@ -148,7 +167,7 @@
 .gallery-title {font-size: 1.8em;}
 #about-fly {
   grid-area: abt;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.7), rgba(11, 14, 23, 0.5)),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.5)),
   url(/images/obull.jpg);
 }
 .about-title {
