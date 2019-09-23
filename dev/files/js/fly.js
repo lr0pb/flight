@@ -18,10 +18,7 @@ $(document).ready(function() {
     }, 1000);
   }
   else {
-    $('#fly-start').addClass('not-now');
-    $('#cards-block').addClass('not-now');
-    $('header').addClass('not-now');
-    $('footer').addClass('not-now');
+    $('.first-entry').addClass('not-now');
     setTimeout(function() {
       $('#fly').removeClass('not-now');
       $('#fly').addClass('invisible-loading');
@@ -31,10 +28,7 @@ $(document).ready(function() {
       $('#fly').addClass('not-now');
     }, 11000);
     setTimeout(function() {
-      $('#fly-start').removeClass('not-now');
-      $('#cards-block').removeClass('not-now');
-      $('header').removeClass('not-now');
-      $('footer').removeClass('not-now');
+      $('#first-entry').removeClass('not-now');
       $('.light').addClass('not-now');
       $('#first-load-view').addClass('not-now');
       $('body').removeClass('overflow-hidden');
