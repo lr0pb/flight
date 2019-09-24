@@ -114,17 +114,18 @@
 @media screen and (max-width: 1099px) {
   #start-content {
     grid:
-      "ttl"
-      "fly"
-      "abt"
-      "new"
-      "fut"
-      "nav"
+      "... ... ..."
+      "... ttl ..."
+      "... fly ..."
+      "... abt ..."
+      "... new ..."
+      "... fut ..."
+      "... ... ..."
     ;
     /*ttl - title, new - news, abt - about, fut - footer, nav - menu */
-    grid-template-rows: 4rem 24rem 24rem 16rem 4rem 3rem;
-    grid-template-columns: calc(1fr - 2rem);
-    grid-gap: 1rem;
+    grid-template-rows: minmax(1rem, 1fr) 4rem 24rem 20rem 16rem 2rem 1fr;
+    grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
+    grid-gap: 1.5rem;
   }
   #gallery-block, #hot-keys {display: none;}
 }
