@@ -27,57 +27,6 @@
   #start-box {display: block;}
 }
 
-/*
-#green-line {
-  width: 35.5em;
-  height: 0.9em;
-  margin: 0.4rem 0 5.5rem 0;
-  background: -webkit-linear-gradient(181.97deg, #CBE724 -9.3%, #41B619 135.79%);
-}
-#help {
-  font-weight: 500;
-  font-size: 2.4em;
-  text-align: center;
-  margin-top: 14vh;
-  padding: 3.8rem 3.5rem;
-  border-radius: 2rem;
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.8);
-  background-color: rgba(11, 14, 23, 0.9);
-}
-
-.flex-center {display: flex; flex-direction: column; align-items: center;}
-
-.more-title {
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 1.8em;
-  width: 22rem;
-  background-size: cover; background-position: center center; background-repeat: no-repeat;
-}
-#log {background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/images/jpg-small/im7.jpg);}
-#img {background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/images/jpg-small/im1.jpg);}
-#about {
-  width: 16.4rem;
-  padding: 1.2rem 5.5rem 2.5rem 5.5rem;
-  border: 0.3rem #ddd solid;
-  border-radius: 2rem;
-  z-index: 10;
-  background-color: #1f2740;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.45)), url(/images/obull.jpg);
-}
-#log::before, #img::before, #about::before {display: block; content: ''; background-size: cover; width: 9rem; height: 9rem; margin: 0 auto 0;}
-#log::before {background-image: url(/images/icons/log-icon.png);}
-#img::before {background-image: url(/images/icons/img-icon.png);}
-#about::before {background-image: url(/images/icons/fly-icon.png);}
-
-#fly-start {grid-area: head;}
-#cards-block {
-  grid-area: cards;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}*/
-
 #start-content {
   position: absolute;
   display: grid;
@@ -123,7 +72,7 @@
       "... ... ..."
     ;
     /*ttl - title, new - news, abt - about, fut - footer, nav - menu */
-    grid-template-rows: minmax(1rem, 1fr) 4rem 24rem 20rem 16rem 2rem 1fr;
+    grid-template-rows: minmax(1rem, 1fr) 4rem 26rem 18rem 16rem 2rem 1fr;
     grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
     grid-gap: 1.5rem;
   }
