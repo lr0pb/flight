@@ -43,6 +43,7 @@
   url(/images/main.jpg);
 }
 @media screen and (min-width: 1100px) {
+  .small {display: none;}
   #start-content {
     grid:
       "... ... ... ... ..."
@@ -61,6 +62,7 @@
   #gallery-block {display: flex;}
 }
 @media screen and (max-width: 1099px) {
+  .large {display: none;}
   #start-content {
     grid:
       "... ... ..."

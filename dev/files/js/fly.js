@@ -36,23 +36,20 @@ $(document).ready(function() {
       localStorage.setItem('whatIsVersion', 1); //Version list - /version.txt
     }, 11500);
   }
-  console.log( localStorage.getItem('isFirstEntry') );
 
   setTimeout(function() {
     $('#transition-layer').css('display','none');
   }, 1000);
+});
 
-  $('.image-point').addClass('complete');
-  $('#help-point').addClass('fade-from-down');
-  $('.image-point').mousedown(function() {
-    $('#help-point').removeClass('fade-from-down');
-    $('#help-point').addClass('fade-to-down');
-  });
-  $('.180-point').mousedown(function() {
-    setTimeout(function() {
-      $('#help-180').addClass('fade-from-down');
-    }, 4010);
-  });
+$('.image-point').mousedown(function() {
+  $('#help-point').removeClass('fade-from-down');
+  $('#help-point').addClass('fade-to-down');
+});
+$('.180-point').mousedown(function() {
+  setTimeout(function() {
+    $('#help-180').addClass('fade-from-down');
+  }, 4010);
 });
 
 $('#im1').mousedown(function() {
@@ -77,7 +74,6 @@ $('#im1').mousedown(function() {
 
 $('.icon1to4').mousedown(function() {
   $('#text1to4').addClass('open');
-  $('#im1to4').addClass('not-now');
   $('#cube1to4').removeClass('rotate4to1');
   $('#cube1to4').addClass('rotate1to4');
   $('#disabled').removeClass('not-now');
@@ -204,7 +200,6 @@ $('#im4').mousedown(function() {
 
 $('.icon4to1').mousedown(function() {
   $('#text4to1').addClass('open');
-  $('#im4to1').addClass('not-now');
   $('#cube1to4').removeClass('rotate1to4');
   $('#cube1to4').addClass('rotate4to1');
   $('#disabled').removeClass('not-now');
@@ -565,12 +560,12 @@ function closeAnimation() {
   $('#bottom-button').css('display','none');
   $('.close-box').css({'display':'flex','opacity':'1'});
 
-  if ( $(window).width() < 1000 ) {
+  if ( $(window).width() < 1100 ) {
     setTimeout(function() {
       $('.close-box').css({'display':'none','opacity':'0'});
     }, 1900);
   };
-  if ( $(window).width() >= 1000 ) {
+  if ( $(window).width() >= 1100 ) {
     setTimeout(function() {
       $('.close-box').css({'display':'none','opacity':'0'});
     }, 900);
@@ -656,17 +651,7 @@ $('#cross').click(close);
 function close() {
   if (fly.webkitRequestFullscreen) document.exitFullscreen();
   else if (fly.requestFullscreen) document.exitFullscreen();
-};/*
-$('#about').click(function() {
-  $('body').addClass('overflow-hidden');
-  $('#transition-layer').css({
-    'display':'block',
-    'animation':'1s transition-start-phase'
-  });
-  setTimeout(function() {
-    document.location.href = "https://lr0pb.github.io";
-  }, 1000);
-});*/
+};
 $('#news-block').click(function() {
   $('body').addClass('overflow-hidden');
   $('#transition-layer').css({
@@ -675,11 +660,7 @@ $('#news-block').click(function() {
   });
   setTimeout(function() {
     document.location.href = "https://lr0pb.pp.ua/news";
-  }, 1000);/*
-  setTimeout(function() {
-    $('body').removeClass('overflow-hidden');
-    $('#transition-layer').css('display','none');
-  }, 1100);*/
+  }, 1000);
 });
 $('#gallery-block').click(function() {
   $('body').addClass('overflow-hidden');
@@ -689,9 +670,5 @@ $('#gallery-block').click(function() {
   });
   setTimeout(function() {
     document.location.href = "https://lr0pb.pp.ua/gallery";
-  }, 1000);/*
-  setTimeout(function() {
-    $('body').removeClass('overflow-hidden');
-    $('#transition-layer').css('display','none');
-  }, 1100);*/
+  }, 1000);
 });

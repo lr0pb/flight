@@ -36,12 +36,6 @@
   justify-content: center;
   align-items: center;
 }
-@media screen and (max-width: 999px) {
-  .large {display: none;}
-}
-@media screen and (min-width: 1000px) {
-  .small {display: none;}
-}
 picture {opacity: 0;}
 img {background-color: #0b0e17;}
 #bgo {opacity: 1;}
