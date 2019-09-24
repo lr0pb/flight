@@ -31,7 +31,7 @@
   position: absolute;
   display: grid;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #0b0e17;
   background-size: cover; background-position: center center; background-repeat: no-repeat;/*
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.3)), url(/images/cover.jpg);
@@ -119,8 +119,7 @@
 .gallery-title {font-size: 1.8em;}
 #about-fly {
   grid-area: abt;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.5)),
-  url(/images/obull.jpg);
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
 }
 .about-title {
   padding: 2.5rem 0 0.5rem 2.5rem;
@@ -132,8 +131,7 @@
 }
 #hot-keys {
   grid-area: hot;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.5)),
-  url(/images/jpg-small/im11.jpg);
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
 }
 #footer-block {
   grid-area: fut;

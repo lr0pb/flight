@@ -10,8 +10,8 @@ $(document).ready(function() {
     });
   };*/
 
-  if ( localStorage.getItem('isFirstEntry') == 1 ) {
-    $('.light').addClass('not-now');
+  if ( localStorage.getItem('isFirstEntry') == 1 ) {/*
+    $('.light').addClass('not-now');*/
     $('#first-load-view').addClass('not-now');
     setTimeout(function() {
       $('body').removeClass('overflow-hidden');
@@ -28,8 +28,8 @@ $(document).ready(function() {
       $('#fly').addClass('not-now');
     }, 11000);
     setTimeout(function() {
-      $('#first-entry').removeClass('not-now');
-      $('.light').addClass('not-now');
+      $('.first-entry').removeClass('not-now');/*
+      $('.light').addClass('not-now');*/
       $('#first-load-view').addClass('not-now');
       $('body').removeClass('overflow-hidden');
       localStorage.setItem('isFirstEntry', 1); //1 - no
