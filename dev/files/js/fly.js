@@ -38,6 +38,15 @@ $(document).ready(function() {
   setTimeout(function() {
     $('#transition-layer').css('display','none');
   }, 1000);
+
+  const bgo = $('#bgo');
+  if ( $(window).width() >= 1100 ) {
+    bgo.src = "/images/jpg-large/bg.jpg"
+  }
+  if ( $(window).width() < 1099 ) {
+    bgo.src = "/images/jpg-small/bg.jpg"
+  }
+
 });
 
 $('.image-point').mousedown(function() {
