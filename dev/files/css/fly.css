@@ -36,7 +36,7 @@
   justify-content: center;
   align-items: center;
 }
-picture {opacity: 0;}
+picture, .picture {opacity: 0;}
 img {background-color: #0b0e17;}
 #bgo {opacity: 1;}
 
@@ -49,7 +49,7 @@ img {background-color: #0b0e17;}
 #bg12-spawn {transform-origin: 75vw 38vw;}
 #bg13-spawn {transform-origin: 40vw 29vw;}
 
-.images-container, .icons-container, picture, img {
+.images-container, .icons-container, picture, .picture, img {
   position: absolute;
   width: 100vw;
   height: 75vw;
