@@ -41,10 +41,10 @@ $(document).ready(function() {
 
   const bgo = $('#bgo');
   if ( $(window).width() >= 1100 ) {
-    bgo.src = "/images/jpg-large/bg.jpg"
+    bgo.src="/images/jpg-large/bg.jpg";
   }
   if ( $(window).width() < 1099 ) {
-    bgo.src = "/images/jpg-small/bg.jpg"
+    bgo.src="/images/jpg-small/bg.jpg";
   }
 
 });
