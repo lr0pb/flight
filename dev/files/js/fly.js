@@ -39,12 +39,12 @@ $(document).ready(function() {
     $('#transition-layer').css('display','none');
   }, 1000);
 
-  const bgo = $('#bgo');
+  var bgo = document.getElementById('bgo');
   if ( $(window).width() >= 1100 ) {
-    bgo.src="/images/jpg-large/bg.jpg";
+    bgo.src="https://lr0pb.pp.ua/images/jpg-large/bg.jpg";
   }
   if ( $(window).width() < 1099 ) {
-    bgo.src="/images/jpg-small/bg.jpg";
+    bgo.src="https://lr0pb.pp.ua/images/jpg-small/bg.jpg";
   }
 
 });
