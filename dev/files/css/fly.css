@@ -39,6 +39,12 @@
 picture, .picture {opacity: 0;}
 img {background-color: #0b0e17;}
 #bgo {opacity: 1;}
+@media screen and (max-width: 1099px) and (orientation: landscape) {
+  .small {display: none;}
+}
+@media screen and (min-width: 1100px) and (orientation: landscape) {
+  .large {display: none;}
+}
 
 #bg2-1-spawn {transform-origin: 35vw 30vw;}
 #bg2-2-spawn {transform-origin: 38vw 32vw;}
