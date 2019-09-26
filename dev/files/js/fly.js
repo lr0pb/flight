@@ -39,9 +39,9 @@ $(document).ready(function() {
     $('#transition-layer').css('display','none');
   }, 1000);
 
-  var bgo = document.getElementById('bgo');
+  const bgo = document.getElementById('bgo');
   if ( $(window).width() >= 1100 ) {
-    bgo.src="https://lr0pb.pp.ua/images/jpg-large/bg.jpg";
+    bgo.src="../images/jpg-large/bg.jpg";
   }
   if ( $(window).width() < 1099 ) {
     bgo.src="https://lr0pb.pp.ua/images/jpg-small/bg.jpg";
