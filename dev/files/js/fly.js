@@ -77,8 +77,8 @@ $(document).ready(function() {
 
   function responsiveImages() {
     if ( $(window).width() >= 1100 ) {
-      bgo.src="../images/jpg-large/bg.jpg";
-      bg1.src="../images/jpg-large/im1.jpg";
+      bgo.src="/images/jpg-large/bg.jpg";
+      $('#bg1').src="../images/jpg-large/im1.jpg";
       bg1to411.src="../images/jpg-large/cube1to4/cube1to4-1-1.jpg";
       bg1to412.src="../images/jpg-large/cube1to4/cube1to4-1-2.jpg";
       bg1to421.src="../images/jpg-large/cube1to4/cube1to4-2-1.jpg";
@@ -112,8 +112,8 @@ $(document).ready(function() {
       bg13spawn.src="../images/jpg-large/im13.jpg";
     }
     if ( $(window).width() < 1099 ) {
-      bgo.src="../images/jpg-small/bg.jpg";
-      bg1.src="../images/jpg-small/im1.jpg";
+      bgo.src="/images/jpg-small/bg.jpg";
+      $('bg1').src="../images/jpg-small/im1.jpg";
       bg1to411.src="../images/jpg-small/cube1to4/cube1to4-1-1.jpg";
       bg1to412.src="../images/jpg-small/cube1to4/cube1to4-1-2.jpg";
       bg1to421.src="../images/jpg-small/cube1to4/cube1to4-2-1.jpg";
@@ -755,7 +755,7 @@ function open() {
   if (fly.webkitRequestFullscreen) fly.webkitRequestFullscreen();
   else if (fly.requestFullscreen) fly.requestFullscreen();
   if ( $(window).width() < 1100 ) {
-    if ( localStorage.getItem('isMobileDevice') == 0 ) {
+    if ( localStorage.getItem('isMobileDevice') == 1 ) {
       $('#im4').css('display','none');
       $('#im2').css('display','none');
       $('#im3').css('display','none');
@@ -764,12 +764,12 @@ function open() {
       $('#im12').css('display','none');
     }
     else {
-      $('#im4').css({'top':'29.5vw','left':'16.5'});
-      $('#im2').css({'top':'36vw','left':'38.5'});
-      $('#im3').css({'top':'36vw','left':'38.5'});
-      $('#im7').css({'top':'34.5vw','left':'48'});
-      $('#im10').css({'top':'34.5vw','left':'48'});
-      $('#im12').css({'top':'35vw','left':'76'});
+      $('#im4').css({'top':'29.5vw','left':'16.5','transition':'1.6s'});
+      $('#im2').css({'top':'36vw','left':'38.5','transition':'1.6s'});
+      $('#im3').css({'top':'36vw','left':'38.5','transition':'1.6s'});
+      $('#im7').css({'top':'34.5vw','left':'48','transition':'1.6s'});
+      $('#im10').css({'top':'34.5vw','left':'48','transition':'1.6s'});
+      $('#im12').css({'top':'35vw','left':'76','transition':'1.6s'});
       setTimeout(function() {
         $('#im4').css('display','none');
         $('#im2').css('display','none');
@@ -778,7 +778,7 @@ function open() {
         $('#im10').css('display','none');
         $('#im12').css('display','none');
         localStorage.setItem('isMobileDevice', 0); //0 - yes
-      }, 510);
+      }, 1610);
     }
   };
 };
