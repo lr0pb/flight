@@ -113,6 +113,5 @@ footer, #fut-content {display: flex; justify-content: center; align-items: cente
 .article-text {
   font-size: 1.7rem;
   font-weight: 500;
-  padding-left: 2rem;
   margin: 0;
 }

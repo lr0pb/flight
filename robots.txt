@@ -1,6 +1,6 @@
-Host: https://lr0pb.github.io
+Host: https://lr0pb.pp.ua
 
 User-agent: *
-Disallow:
+Disallow: /dev/
 
-Sitemap: https://lr0pb.github.io/sitemap.xml
+Sitemap: https://lr0pb.pp.ua/sitemap.xml
