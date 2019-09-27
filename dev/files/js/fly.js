@@ -78,73 +78,73 @@ $(document).ready(function() {
   function responsiveImages() {
     if ( $(window).width() >= 1100 ) {
       bgo.src="/images/jpg-large/bg.jpg";
-      $('#bg1').src="../images/jpg-large/im1.jpg";
-      bg1to411.src="../images/jpg-large/cube1to4/cube1to4-1-1.jpg";
-      bg1to412.src="../images/jpg-large/cube1to4/cube1to4-1-2.jpg";
-      bg1to421.src="../images/jpg-large/cube1to4/cube1to4-2-1.jpg";
-      bg1to422.src="../images/jpg-large/cube1to4/cube1to4-2-2.jpg";
-      bg1to431.src="../images/jpg-large/cube1to4/cube1to4-3-1.jpg";
-      bg1to432.src="../images/jpg-large/cube1to4/cube1to4-3-2.jpg";
-      bg4.src="../images/jpg-large/im4.jpg";
-      bg21.src="../images/jpg-large/im2-1.jpg";
-      bg22.src="../images/jpg-large/im2-2.jpg";
-      bg6.src="../images/jpg-large/im6.jpg";
-      bg7.src="../images/jpg-large/im7.jpg";
-      bg10.src="../images/jpg-large/im10.jpg";
-      bg8.src="../images/jpg-large/im8.jpg";
-      bg8to9.src="../images/jpg-large/im8to9.jpg";
-      bg91.src="../images/jpg-large/im9-1.jpg";
-      bg92.src="../images/jpg-large/im9-2.jpg";
-      bg12.src="../images/jpg-large/im12.jpg";
-      bg13.src="../images/jpg-large/im13.jpg";
-      bg1spawn.src="../images/jpg-large/im1.jpg";
-      bg21spawn.src="../images/jpg-large/im2-1.jpg";
-      bg22spawn.src="../images/jpg-large/im2-2.jpg";
-      bg3.src="../images/jpg-large/im3.jpg";
-      bg5.src="../images/jpg-large/im5.jpg";
-      bg6spawn.src="../images/jpg-large/im6.jpg";
-      bg7spawn.src="../images/jpg-large/im7.jpg";
-      bg91spawn.src="../images/jpg-large/im9-1.jpg";
-      bg4spawn.src="../images/jpg-large/im4.jpg";
-      bg10spawn.src="../images/jpg-large/im10.jpg";
-      bg11.src="../images/jpg-large/im11.jpg";
-      bg12spawn.src="../images/jpg-large/im12.jpg";
-      bg13spawn.src="../images/jpg-large/im13.jpg";
+      bg1.src="/images/jpg-large/im1.jpg";
+      bg1to411.src="/images/jpg-large/cube1to4/cube1to4-1-1.jpg";
+      bg1to412.src="/images/jpg-large/cube1to4/cube1to4-1-2.jpg";
+      bg1to421.src="/images/jpg-large/cube1to4/cube1to4-2-1.jpg";
+      bg1to422.src="/images/jpg-large/cube1to4/cube1to4-2-2.jpg";
+      bg1to431.src="/images/jpg-large/cube1to4/cube1to4-3-1.jpg";
+      bg1to432.src="/images/jpg-large/cube1to4/cube1to4-3-2.jpg";
+      bg4.src="/images/jpg-large/im4.jpg";
+      bg21.src="/images/jpg-large/im2-1.jpg";
+      bg22.src="/images/jpg-large/im2-2.jpg";
+      bg6.src="/images/jpg-large/im6.jpg";
+      bg7.src="/images/jpg-large/im7.jpg";
+      bg10.src="/images/jpg-large/im10.jpg";
+      bg8.src="/images/jpg-large/im8.jpg";
+      bg8to9.src="/images/jpg-large/im8to9.jpg";
+      bg91.src="/images/jpg-large/im9-1.jpg";
+      bg92.src="/images/jpg-large/im9-2.jpg";
+      bg12.src="/images/jpg-large/im12.jpg";
+      bg13.src="/images/jpg-large/im13.jpg";
+      bg1spawn.src="/images/jpg-large/im1.jpg";
+      bg21spawn.src="/images/jpg-large/im2-1.jpg";
+      bg22spawn.src="/images/jpg-large/im2-2.jpg";
+      bg3.src="/images/jpg-large/im3.jpg";
+      bg5.src="/images/jpg-large/im5.jpg";
+      bg6spawn.src="/images/jpg-large/im6.jpg";
+      bg7spawn.src="/images/jpg-large/im7.jpg";
+      bg91spawn.src="/images/jpg-large/im9-1.jpg";
+      bg4spawn.src="/images/jpg-large/im4.jpg";
+      bg10spawn.src="/images/jpg-large/im10.jpg";
+      bg11.src="/images/jpg-large/im11.jpg";
+      bg12spawn.src="/images/jpg-large/im12.jpg";
+      bg13spawn.src="/images/jpg-large/im13.jpg";
     }
     if ( $(window).width() < 1099 ) {
       bgo.src="/images/jpg-small/bg.jpg";
-      $('bg1').src="../images/jpg-small/im1.jpg";
-      bg1to411.src="../images/jpg-small/cube1to4/cube1to4-1-1.jpg";
-      bg1to412.src="../images/jpg-small/cube1to4/cube1to4-1-2.jpg";
-      bg1to421.src="../images/jpg-small/cube1to4/cube1to4-2-1.jpg";
-      bg1to422.src="../images/jpg-small/cube1to4/cube1to4-2-2.jpg";
-      bg1to431.src="../images/jpg-small/cube1to4/cube1to4-3-1.jpg";
-      bg1to432.src="../images/jpg-small/cube1to4/cube1to4-3-2.jpg";
-      bg4.src="../images/jpg-small/im4.jpg";
-      bg21.src="../images/jpg-small/im2-1.jpg";
-      bg22.src="../images/jpg-small/im2-2.jpg";
-      bg6.src="../images/jpg-small/im6.jpg";
-      bg7.src="../images/jpg-small/im7.jpg";
-      bg10.src="../images/jpg-small/im10.jpg";
-      bg8.src="../images/jpg-small/im8.jpg";
-      bg8to9.src="../images/jpg-small/im8to9.jpg";
-      bg91.src="../images/jpg-small/im9-1.jpg";
-      bg92.src="../images/jpg-small/im9-2.jpg";
-      bg12.src="../images/jpg-small/im12.jpg";
-      bg13.src="../images/jpg-small/im13.jpg";
-      bg1spawn.src="../images/jpg-small/im1.jpg";
-      bg21spawn.src="../images/jpg-small/im2-1.jpg";
-      bg22spawn.src="../images/jpg-small/im2-2.jpg";
-      bg3.src="../images/jpg-small/im3.jpg";
-      bg5.src="../images/jpg-small/im5.jpg";
-      bg6spawn.src="../images/jpg-small/im6.jpg";
-      bg7spawn.src="../images/jpg-small/im7.jpg";
-      bg91spawn.src="../images/jpg-small/im9-1.jpg";
-      bg4spawn.src="../images/jpg-small/im4.jpg";
-      bg10spawn.src="../images/jpg-small/im10.jpg";
-      bg11.src="../images/jpg-small/im11.jpg";
-      bg12spawn.src="../images/jpg-small/im12.jpg";
-      bg13spawn.src="../images/jpg-small/im13.jpg";
+      bg1.src="/images/jpg-small/im1.jpg";
+      bg1to411.src="/images/jpg-small/cube1to4/cube1to4-1-1.jpg";
+      bg1to412.src="/images/jpg-small/cube1to4/cube1to4-1-2.jpg";
+      bg1to421.src="/images/jpg-small/cube1to4/cube1to4-2-1.jpg";
+      bg1to422.src="/images/jpg-small/cube1to4/cube1to4-2-2.jpg";
+      bg1to431.src="/images/jpg-small/cube1to4/cube1to4-3-1.jpg";
+      bg1to432.src="/images/jpg-small/cube1to4/cube1to4-3-2.jpg";
+      bg4.src="/images/jpg-small/im4.jpg";
+      bg21.src="/images/jpg-small/im2-1.jpg";
+      bg22.src="/images/jpg-small/im2-2.jpg";
+      bg6.src="/images/jpg-small/im6.jpg";
+      bg7.src="/images/jpg-small/im7.jpg";
+      bg10.src="/images/jpg-small/im10.jpg";
+      bg8.src="/images/jpg-small/im8.jpg";
+      bg8to9.src="/images/jpg-small/im8to9.jpg";
+      bg91.src="/images/jpg-small/im9-1.jpg";
+      bg92.src="/images/jpg-small/im9-2.jpg";
+      bg12.src="/images/jpg-small/im12.jpg";
+      bg13.src="/images/jpg-small/im13.jpg";
+      bg1spawn.src="/images/jpg-small/im1.jpg";
+      bg21spawn.src="/images/jpg-small/im2-1.jpg";
+      bg22spawn.src="/images/jpg-small/im2-2.jpg";
+      bg3.src="/images/jpg-small/im3.jpg";
+      bg5.src="/images/jpg-small/im5.jpg";
+      bg6spawn.src="/images/jpg-small/im6.jpg";
+      bg7spawn.src="/images/jpg-small/im7.jpg";
+      bg91spawn.src="/images/jpg-small/im9-1.jpg";
+      bg4spawn.src="/images/jpg-small/im4.jpg";
+      bg10spawn.src="/images/jpg-small/im10.jpg";
+      bg11.src="/images/jpg-small/im11.jpg";
+      bg12spawn.src="/images/jpg-small/im12.jpg";
+      bg13spawn.src="/images/jpg-small/im13.jpg";
     }
   };
 
@@ -745,15 +745,24 @@ var fly = document.getElementById('fly');
 $(document).keydown(function(e) {
   if(e.keyCode===83){
     open();
+    mobileDevice();
   };
   if(e.keyCode===69){
     close();
   };
 });
 $('#fly-open').mousedown(open);
+$('#fly-open').mousedown(mobileDevice);
 function open() {
   if (fly.webkitRequestFullscreen) fly.webkitRequestFullscreen();
   else if (fly.requestFullscreen) fly.requestFullscreen();
+};
+$('#cross').click(close);
+function close() {
+  if (fly.webkitRequestFullscreen) document.exitFullscreen();
+  else if (fly.requestFullscreen) document.exitFullscreen();
+};
+function mobileDevice() {
   if ( $(window).width() < 1100 ) {
     if ( localStorage.getItem('isMobileDevice') == 1 ) {
       $('#im4').css('display','none');
@@ -781,11 +790,6 @@ function open() {
       }, 1610);
     }
   };
-};
-$('#cross').click(close);
-function close() {
-  if (fly.webkitRequestFullscreen) document.exitFullscreen();
-  else if (fly.requestFullscreen) document.exitFullscreen();
 };
 $('#news-block').click(function() {
   $('body').addClass('overflow-hidden');
