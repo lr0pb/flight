@@ -78,8 +78,10 @@ function back() {
   }, 1000);
 };
 
-const bg13 = document.getElementsByClass('bg13');
-const bg1 = document.getElementsByClass('bg1');
+const bg131 = document.getElementById('bg13-1');
+const bg111 = document.getElementById('bg1-1');
+const bg132 = document.getElementById('bg13-2');
+const bg112 = document.getElementById('bg1-2');
 const gl1 = document.getElementById('gl1');
 const gl2 = document.getElementById('gl2');
 const gl3 = document.getElementById('gl3');
@@ -102,7 +104,8 @@ $(window).resize(responsiveImages);
 
 function responsiveImages() {
   if ( $(window).width() >= 1100 ) {
-    bg1.src="/images/jpg-large/im1.jpg";
+    bg111.src="/images/jpg-large/im1.jpg";
+    bg112.src="/images/jpg-large/im1.jpg";
     gl1.src="/images/jpg-large/gl1.jpg";
     gl2.src="/images/jpg-large/gl2.jpg";
     gl3.src="/images/jpg-large/gl3.jpg";
@@ -117,13 +120,15 @@ function responsiveImages() {
     bg91.src="/images/jpg-large/im9-1.jpg";
     bg92.src="/images/jpg-large/im9-2.jpg";
     bg12.src="/images/jpg-large/im12.jpg";
-    bg13.src="/images/jpg-large/im13.jpg";
+    bg131.src="/images/jpg-large/im13.jpg";
+    bg132.src="/images/jpg-large/im13.jpg";
     bg3.src="/images/jpg-large/im3.jpg";
     bg5.src="/images/jpg-large/im5.jpg";
     bg11.src="/images/jpg-large/im11.jpg";
   }
   if ( $(window).width() < 1099 ) {
-    bg1.src="/images/jpg-small/im1.jpg";
+    bg111.src="/images/jpg-small/im1.jpg";
+    bg112.src="/images/jpg-small/im1.jpg";
     gl1.src="/images/jpg-small/gl1.jpg";
     gl2.src="/images/jpg-small/gl2.jpg";
     gl3.src="/images/jpg-small/gl3.jpg";
@@ -138,7 +143,8 @@ function responsiveImages() {
     bg91.src="/images/jpg-small/im9-1.jpg";
     bg92.src="/images/jpg-small/im9-2.jpg";
     bg12.src="/images/jpg-small/im12.jpg";
-    bg13.src="/images/jpg-small/im13.jpg";
+    bg131.src="/images/jpg-small/im13.jpg";
+    bg132.src="/images/jpg-small/im13.jpg";
     bg3.src="/images/jpg-small/im3.jpg";
     bg5.src="/images/jpg-small/im5.jpg";
     bg11.src="/images/jpg-small/im11.jpg";
