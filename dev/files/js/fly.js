@@ -773,12 +773,12 @@ function mobileDevice() {
       $('#im12').css('display','none');
     }
     else {
-      $('#im4').css({'top':'29.5vw','left':'16.5','transition':'1.6s'});
-      $('#im2').css({'top':'36vw','left':'38.5','transition':'1.6s'});
-      $('#im3').css({'top':'36vw','left':'38.5','transition':'1.6s'});
-      $('#im7').css({'top':'34.5vw','left':'48','transition':'1.6s'});
-      $('#im10').css({'top':'34.5vw','left':'48','transition':'1.6s'});
-      $('#im12').css({'top':'35vw','left':'76','transition':'1.6s'});
+      $('#im4').css({'transform':'translate(-18.5vw, -1.2vw)','transition':'1.6s'});
+      $('#im2').css({'transform':'translate(16.5vw, 0.7vw)','transition':'1.6s'});
+      $('#im3').css({'transform':'translate(11.5vw, -3.5vw)','transition':'1.6s'});
+      $('#im7').css({'transform':'translate(-6vw, -1vw)','transition':'1.6s'});
+      $('#im10').css({'transform':'translate(-28.8vw, 2.5vw)','transition':'1.6s'});
+      $('#im12').css({'transform':'translate(-9vw, -3vw)','transition':'1.6s'});
       setTimeout(function() {
         $('#im4').css('display','none');
         $('#im2').css('display','none');
