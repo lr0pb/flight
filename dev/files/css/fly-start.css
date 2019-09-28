@@ -23,6 +23,7 @@
   -webkit-radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/images/main.jpg);
   background-image: radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)),
   radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/images/main.jpg);*/
+  background-color: #0b0e17;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.7), rgba(11, 14, 23, 0.8)),
   url(/images/main.jpg);
 }
