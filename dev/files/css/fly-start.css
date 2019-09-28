@@ -95,11 +95,18 @@
 #news-block {
   grid-area: new;
   display: flex;
+  flex-direction: column;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.7)),
   url(/images/jpg-small/im7.jpg);
 }
-.update-title {
+.update-action {
   margin-top: auto;
+  padding: 0 0 0.5rem 3rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.7em;
+  font-weight: 600;
+}
+.update-title {
   padding: 0 0 3rem 3.2rem;
   font-size: 2.5em;
 }
