@@ -101,7 +101,7 @@
 }
 .update-action {
   margin-top: auto;
-  padding: 0 0 0.5rem 3rem;
+  padding: 0 0 0.5rem 3.2rem;
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.7em;
   font-weight: 600;
@@ -128,7 +128,7 @@
 }
 .about-text {
   padding: 0 2.5rem;
-  font-size: 1.3em;
+  font-size: 1.34em;
 }
 #hot-keys {
   grid-area: hot;
