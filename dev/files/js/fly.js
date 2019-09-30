@@ -149,12 +149,22 @@ $(document).ready(function() {
     }
   };
   function mobileDevice() {
-    $('#im4').css('display','none');
-    $('#im2').css('display','none');
-    $('#im3').css('display','none');
-    $('#im7').css('display','none');
-    $('#im10').css('display','none');
-    $('#im12').css('display','none');
+    if ( $(window).width() >= 1100 ) {
+      $('#im4').css('display','block');
+      $('#im2').css('display','block');
+      $('#im3').css('display','block');
+      $('#im7').css('display','block');
+      $('#im10').css('display','block');
+      $('#im12').css('display','block');
+    }
+    if ( $(window).width() < 1099 ) {
+      $('#im4').css('display','none');
+      $('#im2').css('display','none');
+      $('#im3').css('display','none');
+      $('#im7').css('display','none');
+      $('#im10').css('display','none');
+      $('#im12').css('display','none');
+    }
   };
 
 });

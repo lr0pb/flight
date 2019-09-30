@@ -128,7 +128,7 @@
 }
 .about-text {
   padding: 0 2.5rem;
-  font-size: 1.34em;
+  font-size: 1.35em;
 }
 #hot-keys {
   grid-area: hot;
@@ -145,9 +145,9 @@
   padding: 1.1rem 7.5rem;
   margin-top: 2rem;
   background-color: #318613;
-  border: 0.5rem solid #41b619;
+  border: 0.6rem solid #41b619;
   border-radius: 5rem;
-  box-shadow: 0 0.5rem 1.5rem rgba(65, 182, 25, 0.55);
+  box-shadow: 0 0.5rem 1.5rem rgba(65, 182, 25, 0.6);
   transition: 0.5s;
 }
 #fly-open:hover {box-shadow: 0 0.5rem 1.5rem #41B619;
