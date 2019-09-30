@@ -68,7 +68,7 @@ header, footer {background-color: hsla(205, 15%, 5%, 0.4); position: relative; w
   a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
   a.this, a.this:hover {border-bottom: 3px solid #41B619;}
   a.last {margin-right: 3rem;}
-  .fut-text {font-size: 1.6em; border-bottom: 3px solid transparent;}
+  .fut-text {font-size: 1.6em; margin-right: 3rem; border-bottom: 3px solid transparent;}
   nav, footer, header, #fut-content {height: 7rem;}
   #burger, span {display: none;}
 }
