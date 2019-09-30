@@ -61,23 +61,6 @@ function prev() {
   };
 };
 
-$('#gl-head').click(back);
-$(document).keydown(function(e) {
-  if(e.keyCode===66){
-    back();
-  };
-});
-function back() {
-  $('body').addClass('overflow-hidden');
-  $('#transition-layer').css({
-    'display':'block',
-    'animation':'1s transition-start-phase'
-  });
-  setTimeout(function() {
-    document.location.href = "https://lr0pb.pp.ua/fly";
-  }, 1000);
-};
-
 const bg131 = document.getElementById('bg13-1');
 const bg111 = document.getElementById('bg1-1');
 const bg132 = document.getElementById('bg13-2');
@@ -149,4 +132,21 @@ function responsiveImages() {
     bg5.src="/images/jpg-small/im5.jpg";
     bg11.src="/images/jpg-small/im11.jpg";
   }
+};
+
+$('#gl-head').click(back);
+$(document).keydown(function(e) {
+  if(e.keyCode===66){
+    back();
+  };
+});
+function back() {
+  $('body').addClass('overflow-hidden');
+  $('#transition-layer').css({
+    'display':'block',
+    'animation':'1s transition-start-phase'
+  });
+  setTimeout(function() {
+    document.location.href = "https://lr0pb.pp.ua/";
+  }, 1000);
 };
