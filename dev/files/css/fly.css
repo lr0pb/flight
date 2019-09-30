@@ -130,16 +130,25 @@ img {background-color: #0b0e17; opacity: 0;}
   position: absolute;
   cursor: pointer;
   z-index: 910;
-  top: 1.5em;;
+  top: 1.5em;
   right: 1.5em;
-  height: 5em;
-  width: 5em;
 }
-#cross span {display: block; width: 5rem; height: 0.6rem; background-color: #fff;}
-.cr-margin-top2 {margin-top: 2rem;}
-.cr-margin-top-1 {margin-top: -0.5rem;}
+#cross span {display: block; background-color: #fff;}
 .cr-cross-left {transform: rotateZ(-45deg);}
 .cr-cross-right {transform: rotateZ(45deg);}
+
+@media (max-width: 1099px) and (orientation: landscape) {
+  #cross {height: 3rem; width: 3rem;}
+  #cross span {width: 3rem; height: 0.5rem;}
+  .cr-margin-top2 {margin-top: 1.2rem;}
+  .cr-margin-top-1 {margin-top: -0.5rem;}
+}
+@media (min-width: 1100px) or (orientation: portrait) {
+  #cross {height: 5rem; width: 5rem;}
+  #cross span {width: 5rem; height: 0.6rem;}
+  .cr-margin-top2 {margin-top: 2rem;}
+  .cr-margin-top-1 {margin-top: -0.5rem;}
+}
 
 @keyframes fade-up {
   from {opacity: 0; top: -7vh;}
@@ -281,13 +290,13 @@ img {background-color: #0b0e17; opacity: 0;}
 
 h5 {font-size: 3.2em; position: absolute; z-index: 800; text-shadow: 0 0 1rem #000; cursor: pointer; transition: 0.5s;}
 h5:hover {transform: scale(1.3);}
-
+/*
 #im1to4, #im4to1, #im8to9, #im9to8 {transform: rotateX(75deg) translateX(-0.5rem) scale(1.4); border-color: #fff #fff #ff742f #fff;}
-
+*/
 #to-im2-1, #to-im9-2, #to-im12 {transform: rotateZ(-135deg); right: 0;}
-#to-im2-1:hover, #to-im9-2:hover, #to-im12:hover {border-color: #ff2f2f #fff transparent transparent; transform: scale(1.4) rotateZ(-135deg);}
+#to-im2-1:hover, #to-im9-2:hover, #to-im12:hover {transform: scale(1.4) rotateZ(-135deg);}
 #to-im2-2, #to-im9-1, #to-im13 {transform: rotateZ(45deg);}
-#to-im2-2:hover, #to-im9-1:hover, #to-im13:hover {border-color: #fff #ff2f2f transparent transparent; transform: scale(1.4) rotateZ(45deg);}
+#to-im2-2:hover, #to-im9-1:hover, #to-im13:hover {transform: scale(1.4) rotateZ(45deg);}
 
 .open {
   animation: 1.3s open;
