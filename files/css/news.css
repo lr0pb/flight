@@ -1,11 +1,9 @@
 #support-box {
-  display: block;
   position: absolute;
-  top: 45%;
-  text-align: center;
-  line-height: 1.6;
-  font-size: 2em;
-  background-color: rgb(11, 14, 23);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }
 #news {
   width: 100vw;
@@ -50,5 +48,6 @@ article {
   article {width: 700px;}
 }
 #release-notes {
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.9), rgba(11, 14, 23, 0.75)), url(/image/im7.jpeg);
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.9), rgba(11, 14, 23, 0.75)),
+  url(/images/jpg-small/im7.jpg);
 }
