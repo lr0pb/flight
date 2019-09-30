@@ -41,11 +41,11 @@ article {
   background-size: cover;
   background-repeat: no-repeat;
 }
-@media screen and (max-width: 849px) {
+@media screen and (max-width: 749px) {
   article {width: 70vw;}
 }
-@media screen and (min-width: 850px) {
-  article {width: 700px;}
+@media screen and (min-width: 750px) {
+  article {width: 600px;}
 }
 #release-notes {
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.9), rgba(11, 14, 23, 0.75)),

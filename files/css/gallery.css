@@ -1,11 +1,9 @@
 #support-box {
-  display: block;
   position: absolute;
-  top: 45%;
-  text-align: center;
-  line-height: 1.6;
-  font-size: 2em;
-  background-color: rgb(11, 14, 23);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }
 #gallery {
   display: none;
