@@ -17,6 +17,6 @@ function back() {
     'animation':'1s transition-start-phase'
   });
   setTimeout(function() {
-    document.location.href = "https://lr0pb.github.io/";
+    document.location.href = "https://lr0pb.pp.ua/";
   }, 1000);
 };
