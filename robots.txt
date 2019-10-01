@@ -1,6 +1,6 @@
-Host: https://lr0pb.pp.ua
+Host: https://flight.pp.ua
 
 User-agent: *
 Disallow: /dev/
 
-Sitemap: https://lr0pb.pp.ua/sitemap.xml
+Sitemap: https://flight.pp.ua/sitemap.xml
