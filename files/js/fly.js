@@ -778,7 +778,7 @@ $('#news-block').click(function() {
     'animation':'1s transition-start-phase'
   });
   setTimeout(function() {
-    document.location.href = "https://lr0pb.pp.ua/news";
+    document.location.href = "https://flight.pp.ua/news";
   }, 1000);
 });
 $('#gallery-block').click(function() {
@@ -788,6 +788,6 @@ $('#gallery-block').click(function() {
     'animation':'1s transition-start-phase'
   });
   setTimeout(function() {
-    document.location.href = "https://lr0pb.pp.ua/gallery";
+    document.location.href = "https://flight.pp.ua/gallery";
   }, 1000);
 });
