@@ -7,15 +7,15 @@
 
 
 <url>
-  <loc>https://lr0pb.pp.ua/</loc>
+  <loc>https://flight.pp.ua/</loc>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://lr0pb.pp.ua/news</loc>
+  <loc>https://flight.pp.ua/news</loc>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://lr0pb.pp.ua/gallery</loc>
+  <loc>https://flight.pp.ua/gallery</loc>
   <priority>0.80</priority>
 </url>
 
