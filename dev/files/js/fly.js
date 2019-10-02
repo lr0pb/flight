@@ -271,11 +271,13 @@ $('#im3').mousedown(function() {
   }, 5710);
 });*/
 
-document.getElementById("im3").addEventListener("mousedown", typeOpening() );
+document.getElementById("im3").addEventListener("mousedown", typeOpening );
 
 function typeOpening() {
-  let imID = this.value;
+  let imID = this;
   console.log(imID);
+  let op = 'open';
+  this.classList.replace("complete",`${op}`);
 };
 
 $('#im3to2').mousedown(function() {
