@@ -274,10 +274,9 @@ $('#im3').mousedown(function() {
 document.getElementById("im3").addEventListener("mousedown", typeOpening );
 
 function typeOpening() {
-  let imID = this;
+  let imID = parseInt(this.id);
   console.log(imID);
-  let op = 'open';
-  this.classList.replace("complete",`${op}`);
+  this.classList.replace("complete","open");
 };
 
 $('#im3to2').mousedown(function() {
