@@ -274,7 +274,7 @@ $('#im3').mousedown(function() {
 document.getElementById("im3").addEventListener("mousedown", typeOpening() );
 
 function typeOpening() {
-  let imID = this.value();
+  let imID = this.value;
   console.log(imID);
 };
 
