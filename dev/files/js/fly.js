@@ -251,7 +251,7 @@ $('#to-im2-2').mousedown(function() {
     $('#disabled').addClass('not-now');
   }, 3000);
 });
-
+/*
 $('#im3').mousedown(function() {
   $('#im3').addClass('open');
   $('#im3').removeClass('complete');
@@ -269,7 +269,14 @@ $('#im3').mousedown(function() {
     $('#bottom-button').addClass('button-spawn');
     $('#im5to3').removeClass('complete');
   }, 5710);
-});
+});*/
+
+document.getElementById("im3").addEventListener("mousedown", typeOpening() );
+
+function typeOpening() {
+  let imID = this.value();
+  console.log(imID);
+};
 
 $('#im3to2').mousedown(function() {
   $('#im3to2').addClass('open');
