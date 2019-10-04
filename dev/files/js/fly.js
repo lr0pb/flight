@@ -276,12 +276,11 @@ const closeButton = document.getElementById('bottom-button');
 
 function typeOpening() {
   let imID = this.id.match(/\d/g).join('');
-  console.log(imID);
   this.classList.replace("complete","open");
-  //document.getElementsByClassName(`${imID}`).style.display = "none";
   bgo.classList.add('bgo-open',`im${imID}-open`);
   document.getElementById(`bg${imID}`).classList.add('bg-open');
   closeButton.classList.add('button-spawn');
+  document.getElementsByClassName(`${imID}`).classList.add('not-now');
 };
 
 $('#im3to2').mousedown(function() {

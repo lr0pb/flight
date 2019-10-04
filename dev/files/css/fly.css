@@ -192,7 +192,6 @@ img {background-color: #0b0e17; opacity: 0;}
     left: 1vw;
   }
   #bottom-button {
-    display: none;
     position: absolute;
     cursor: pointer;
     z-index: 240;
@@ -213,6 +212,7 @@ img {background-color: #0b0e17; opacity: 0;}
   }
   .button-spawn {
     animation-name: fade-from-down;
+    animation-delay: 5.1s;
     animation-duration: 1s;
     animation-fill-mode: forwards;
   }
