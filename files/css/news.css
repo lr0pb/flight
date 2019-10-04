@@ -51,3 +51,7 @@ article {
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.9), rgba(11, 14, 23, 0.75)),
   url(/images/jpg-small/im7.jpg);
 }
+#first-autumn {
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.9), rgba(11, 14, 23, 0.75)),
+  url(/images/autumn.jpg);
+}
