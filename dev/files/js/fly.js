@@ -280,7 +280,7 @@ function typeOpening() {
   bgo.classList.add('bgo-open',`im${imID}-open`);
   document.getElementById(`bg${imID}`).classList.add('bg-open');
   closeButton.classList.add('button-spawn');
-  document.getElementsByClassName(`${imID}`).classList.add('not-now');
+  document.getElementsByClassName('3').hide();
 };
 
 $('#im3to2').mousedown(function() {
