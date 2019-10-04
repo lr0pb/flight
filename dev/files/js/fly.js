@@ -276,11 +276,15 @@ var closeButton = document.getElementById('bottom-button');
 
 function typeOpening() {
   let imID = this.id.match(/\d/g).join('');
-  this.classList.replace('complete','open'); || this.classList.add('open');
+  if ( this.classList.contains('complete') ) {
+    this.classList.add('open');
+  } else {
+    this.classList.replace('complete','open');
+  };
   bgo.classList.add('bgo-open',`im${imID}-open`);
   document.getElementById(`bg${imID}`).classList.add('bg-open');
   closeButton.classList.add('button-spawn');
-  document.getElementsByClassName(`${imID}`);
+  document.querySelectorAll(`.${imID}`).classList.add('not-now');
 };
 
 $('#im3to2').mousedown(function() {
