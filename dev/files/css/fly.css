@@ -213,7 +213,7 @@ img {background-color: #0b0e17; opacity: 0;}
   .button-spawn {
     animation-name: fade-from-down;
     animation-delay: 5.1s;
-    animation-duration: 1s;
+    animation-duration: 1.3s;
     animation-fill-mode: forwards;
   }
   #disabled {
