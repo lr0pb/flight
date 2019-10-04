@@ -277,14 +277,14 @@ var closeButton = document.getElementById('bottom-button');
 function typeOpening() {
   let imID = this.id.match(/\d/g).join('');
   if ( this.classList.contains('complete') ) {
-    this.classList.add('open');
-  } else {
     this.classList.replace('complete','open');
+  } else {
+    this.classList.add('open');
   };
   bgo.classList.add('bgo-open',`im${imID}-open`);
   document.getElementById(`bg${imID}`).classList.add('bg-open');
-  closeButton.classList.add('fade-from-down');
-  document.querySelectorAll(`.${imID}`).classList.add('not-now');
+  closeButton.classList.add('button-spawn');
+  document.querySelectorAll(`.${imID}`).style.display = "none";
 };
 
 $('#im3to2').mousedown(function() {
@@ -692,7 +692,7 @@ $('#bottom-button').click(function() {
 });
 
 function closeAnimation() {
-  closeButton.classList.replace('fade-from-down','fade-to-down');
+  closeButton.classList.remove('button-spawn');
   $('.close-box').css({'display':'flex','opacity':'1'});
 
   if ( $(window).width() < 1100 ) {
