@@ -271,10 +271,10 @@ $('#im3').mousedown(function() {
   }, 5710);
 });*/
 
-document.getElementById('im3').addEventListener("mousedown", typeOpening );
+document.getElementById('im3').addEventListener("mousedown", openImage(3, '3to2') );
 var closeButton = document.getElementById('bottom-button');
 
-function typeOpening() {
+/*function typeOpening() {
   let imID = this.id.match(/\d/g).join('');
   if ( this.classList.contains('complete') ) {
     this.classList.replace('complete','open');
@@ -285,6 +285,17 @@ function typeOpening() {
   document.getElementById(`bg${imID}`).classList.add('bg-open');
   closeButton.classList.add('button-spawn');
   document.querySelectorAll(`.${imID}`).style.display = "none";
+};*/
+
+function openImage(imID, spawnID) {
+  if ( this.classList.contains('complete') ) {
+    this.classList.replace('complete','open');
+  } else {
+    this.classList.add('open');
+  };
+  bgo.classList.add('bgo-open',`im${imID}-open`);
+  document.getElementById(`bg${imID}`).classList.add('bg-open');
+  closeButton.classList.add('button-spawn');
 };
 
 $('#im3to2').mousedown(function() {
