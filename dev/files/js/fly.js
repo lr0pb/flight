@@ -272,7 +272,7 @@ $('#im3').mousedown(function() {
 });*/
 
 document.getElementById('im3').addEventListener("mousedown", typeOpening );
-const closeButton = document.getElementById('bottom-button');
+var closeButton = document.getElementById('bottom-button');
 
 function typeOpening() {
   let imID = this.id.match(/\d/g).join('');
