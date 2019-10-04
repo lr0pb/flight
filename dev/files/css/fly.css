@@ -155,21 +155,21 @@ img {background-color: #0b0e17; opacity: 0;}
   to {opacity: 1; top: 2vh;}
 }
 .fade-from-down {
-  animation: 1s fade-from-down;
+  animation: 1.3s fade-from-down;
   animation-delay: 0.3s;
   animation-fill-mode: forwards;
 }
 @keyframes fade-from-down {
-  from {opacity: 0; bottom: -7vh;}
+  from {opacity: 0; bottom: -20vh;}
   to {opacity: 1; bottom: 2vh;}
 }
 .fade-to-down {
-  animation: 1s fade-to-down;
+  animation: 1.3s fade-to-down;
   animation-fill-mode: forwards;
 }
 @keyframes fade-to-down {
   from {opacity: 1; bottom: 2vh;}
-  to {opacity: 0; bottom: -7vh;}
+  to {opacity: 0; bottom: -20vh;}
 }
 
 @media screen and (min-width: 567px) and (orientation: landscape) {
@@ -196,8 +196,8 @@ img {background-color: #0b0e17; opacity: 0;}
     cursor: pointer;
     z-index: 240;
     padding: 1.1rem 4rem;
-    bottom: -7vh;
-    right: 2vw;
+    bottom: -20vh;
+    right: 2vw
     color: #eee;
     background-color: rgba(0, 0, 0, 0.5);
     border: 5px solid #41B619;
