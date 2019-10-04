@@ -39,7 +39,7 @@ $(document).ready(function() {
     $('#transition-layer').css('display','none');
   }, 1000);
 
-  const bgo = document.getElementById('bgo');
+  var bgo = document.getElementById('bgo');
   const bg1 = document.getElementById('bg1');
   const bg1to411 = document.getElementById('bg1to4-1-1');
   const bg1to412 = document.getElementById('bg1to4-1-2');
@@ -271,14 +271,17 @@ $('#im3').mousedown(function() {
   }, 5710);
 });*/
 
-document.getElementById("im3").addEventListener("mousedown", typeOpening );
+document.getElementById('im3').addEventListener("mousedown", typeOpening );
+const closeButton = document.getElementById('bottom-button');
 
 function typeOpening() {
-  let imID = this.id;
-  console.log(imID);
-  imID = imID.match(/\d/g).join('');
+  let imID = this.id.match(/\d/g).join('');
   console.log(imID);
   this.classList.replace("complete","open");
+  document.getElementsByClassName(`${imID}`).classList.add('not-now');
+  bgo.classList.add('bgo-open',`im${imID}-open`);
+  document.getElementById(`bg${imID}`).classList.add('bg-open');
+  closeButton.classList.add('button-spawn');
 };
 
 $('#im3to2').mousedown(function() {
