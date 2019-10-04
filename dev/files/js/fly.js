@@ -276,7 +276,7 @@ const closeButton = document.getElementById('bottom-button');
 
 function typeOpening() {
   let imID = this.id.match(/\d/g).join('');
-  this.classList.replace("complete","open");
+  this.classList.replace('complete','open'); || this.classList.add('open');
   bgo.classList.add('bgo-open',`im${imID}-open`);
   document.getElementById(`bg${imID}`).classList.add('bg-open');
   closeButton.classList.add('button-spawn');
@@ -688,7 +688,7 @@ $('#bottom-button').click(function() {
 });
 
 function closeAnimation() {
-  $('#bottom-button').css('display','none');
+  closeButton.classList.remove('button-spawn');
   $('.close-box').css({'display':'flex','opacity':'1'});
 
   if ( $(window).width() < 1100 ) {
@@ -704,7 +704,6 @@ function closeAnimation() {
 };
 
 function realClose() {
-  $('#bottom-button').removeClass('button-spawn');
   $('.image-point').removeClass('open');
   $('img').removeClass('bg-open');
   $('img').removeClass('bg-close');
