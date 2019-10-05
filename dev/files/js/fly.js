@@ -273,6 +273,11 @@ $('#im3').mousedown(function() {
 
 var closeButton = document.getElementById('bottom-button');
 
+document.getElementById('im3').addEventListener("mousedown", () => {
+  let spawnID = '3to2';
+  openImage;
+} );
+
 function openImage(spawnID) {
   let imID = this.id.match(/\d/g).join('');
   if ( this.classList.contains('complete') ) {
@@ -285,11 +290,6 @@ function openImage(spawnID) {
   closeButton.classList.add('button-spawn');
   console.log(spawnID);
 };
-
-document.getElementById('im3').addEventListener("mousedown", () => {
-  let spawnID = '3to2';
-  openImage(spawnID);
-} );
 
 $('#im3to2').mousedown(function() {
   $('#im3to2').addClass('open');
