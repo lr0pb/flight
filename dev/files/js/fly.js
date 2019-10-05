@@ -273,14 +273,13 @@ $('#im3').mousedown(function() {
 
 var closeButton = document.getElementById('bottom-button');
 
-document.getElementById('im3').addEventListener("mousedown", function() {
-  //let imID = this.id.match(/\d/g).join('');
-  //let spawnID = '3to2';
-  //console.log(spawnID);
-  openImage(3, '3to2');
-} );
-
+document.getElementById('im3').addEventListener("mousedown", openImage(3, '3to2') );
+//let imID = this.id.match(/\d/g).join('');
+//let spawnID = '3to2';
+//console.log(spawnID);
 function openImage(imID, spawnID) {
+  console.log(imID);
+  console.log(spawnID);
   if ( this.classList.contains('complete') ) {
     this.classList.replace('complete','open');
   } else {
@@ -289,7 +288,6 @@ function openImage(imID, spawnID) {
   bgo.classList.add('bgo-open','im' + imID + '-open');
   document.getElementById('bg' + imID).classList.add('bg-open');
   closeButton.classList.add('button-spawn');
-  console.log(spawnID);
 };
 
 $('#im3to2').mousedown(function() {
