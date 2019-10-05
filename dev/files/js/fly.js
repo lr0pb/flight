@@ -288,7 +288,7 @@ function openImage(imID, spawnID, elem) {
   document.getElementById('bg' + imID).classList.add('bg-open');
   document.getElementById('im' + spawnID).classList.replace('not-now','spawn');
   closeButton.classList.add('button-spawn');
-  document.querySelectorAll('.' + imID).style.display = "none";
+  document.getElementsByName(imID).style.display = "none";
 };
 
 $('#im3to2').mousedown(function() {

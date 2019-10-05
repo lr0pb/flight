@@ -84,7 +84,7 @@ img {background-color: #0b0e17; opacity: 0;}
   border-color: transparent #fff;
   transition: 0.5s;
 }
-.image-point:hover {
+.image-point:hover, .spawn:hover {
   border-color: /*#ff2f2f*/ #fff;
   transform: scale(1.3);
 }
