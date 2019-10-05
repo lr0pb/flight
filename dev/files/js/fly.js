@@ -273,21 +273,26 @@ $('#im3').mousedown(function() {
 
 var closeButton = document.getElementById('bottom-button');
 
-document.getElementById('im3').addEventListener("mousedown", openImage(3, '3to2') );
+document.getElementById('im3').addEventListener("mousedown", function() {
+  let elem = this;
+  openImage(3, '3to2', elem);
+});
 //let imID = this.id.match(/\d/g).join('');
 //let spawnID = '3to2';
 //console.log(spawnID);
-function openImage(imID, spawnID) {
+function openImage(imID, spawnID, elem) {
   console.log(imID);
   console.log(spawnID);
-  if ( this.classList.contains('complete') ) {
-    this.classList.replace('complete','open');
-  } else {
-    this.classList.add('open');
-  };
+  console.log(elem);
   bgo.classList.add('bgo-open','im' + imID + '-open');
   document.getElementById('bg' + imID).classList.add('bg-open');
   closeButton.classList.add('button-spawn');
+  
+  if ( elem.classList.contains('complete') ) {
+    elem.classList.replace('complete','open');
+  } else {
+    elem.classList.add('open');
+  };
 };
 
 $('#im3to2').mousedown(function() {
