@@ -308,6 +308,7 @@ h5:hover {transform: scale(1.3);}
   to {transform: scale(0.01); opacity: 0;}
 }
 .spawn {
+  opacity: 0;
   animation: 1.5s spawn;
   animation-delay: 4s;
   animation-fill-mode: forwards;

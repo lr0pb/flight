@@ -277,22 +277,18 @@ document.getElementById('im3').addEventListener("mousedown", function() {
   let elem = this;
   openImage(3, '3to2', elem);
 });
-//let imID = this.id.match(/\d/g).join('');
-//let spawnID = '3to2';
-//console.log(spawnID);
+
 function openImage(imID, spawnID, elem) {
-  console.log(imID);
-  console.log(spawnID);
-  console.log(elem);
-  bgo.classList.add('bgo-open','im' + imID + '-open');
-  document.getElementById('bg' + imID).classList.add('bg-open');
-  closeButton.classList.add('button-spawn');
-  
   if ( elem.classList.contains('complete') ) {
     elem.classList.replace('complete','open');
   } else {
     elem.classList.add('open');
   };
+  bgo.classList.add('bgo-open','im' + imID + '-open');
+  document.getElementById('bg' + imID).classList.add('bg-open');
+  document.getElementById('im' + spawnID).classList.replace('not-now','spawn');
+  closeButton.classList.add('button-spawn');
+  document.querySelectorAll('.' + imID).style.display = "none";
 };
 
 $('#im3to2').mousedown(function() {
@@ -717,6 +713,8 @@ function closeAnimation() {
 
 function realClose() {
   $('.image-point').removeClass('open');
+  $('.image-point').removeClass('spawn');
+  $('h5').removeClass('spawn');
   $('img').removeClass('bg-open');
   $('img').removeClass('bg-close');
   $('#bgo').removeClass('bgo-open');
