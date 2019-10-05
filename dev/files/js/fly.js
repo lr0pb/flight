@@ -274,10 +274,10 @@ $('#im3').mousedown(function() {
 var closeButton = document.getElementById('bottom-button');
 
 document.getElementById('im3').addEventListener("mousedown", function() {
-  let imID = this.id.match(/\d/g).join('');
-  let spawnID = '3to2';
-  console.log(spawnID);
-  openImage(imID, spawnID);
+  //let imID = this.id.match(/\d/g).join('');
+  //let spawnID = '3to2';
+  //console.log(spawnID);
+  openImage(3, '3to2');
 } );
 
 function openImage(imID, spawnID) {
