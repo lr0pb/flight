@@ -274,13 +274,13 @@ $('#im3').mousedown(function() {
 var closeButton = document.getElementById('bottom-button');
 
 document.getElementById('im3').addEventListener("mousedown", function() {
+  let imID = this.id.match(/\d/g).join('');
   let spawnID = '3to2';
   console.log(spawnID);
-  openImage(spawnID);
+  openImage(imID, spawnID);
 } );
 
-function openImage(spawnID) {
-  let imID = this.id.match(/\d/g).join('');
+function openImage(imID, spawnID) {
   if ( this.classList.contains('complete') ) {
     this.classList.replace('complete','open');
   } else {
