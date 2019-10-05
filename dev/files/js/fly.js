@@ -271,8 +271,10 @@ $('#im3').mousedown(function() {
   }, 5710);
 });*/
 
-function openImage(imID, spawnID) {
-  //let imID = this.id.match(/\d/g).join('');
+var closeButton = document.getElementById('bottom-button');
+
+function openImage(spawnID) {
+  let imID = this.id.match(/\d/g).join('');
   if ( this.classList.contains('complete') ) {
     this.classList.replace('complete','open');
   } else {
@@ -281,10 +283,13 @@ function openImage(imID, spawnID) {
   bgo.classList.add('bgo-open','im' + imID + '-open');
   document.getElementById('bg' + imID).classList.add('bg-open');
   closeButton.classList.add('button-spawn');
+  console.log(spawnID);
 };
 
-document.getElementById('im3').addEventListener("mousedown", () => openImage(3, '3to2') );
-var closeButton = document.getElementById('bottom-button');
+document.getElementById('im3').addEventListener("mousedown", () => {
+  let spawnID = '3to2';
+  openImage(spawnID);
+} );
 
 $('#im3to2').mousedown(function() {
   $('#im3to2').addClass('open');
