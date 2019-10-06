@@ -29,6 +29,38 @@ header, footer {display: none;}
   grid-template-columns: 1fr repeat(3, 35rem) 1fr;
   grid-gap: 1rem;
 }
+#to-flight, #to-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-size: cover; background-position: center center; background-repeat: no-repeat;
+  background-color: #1f2740; border-radius: 1.2rem;
+}
+#header-block {
+  grid-area: ttl;
+}
+.header-text {font-size: 1.8em;}
+#to-flight {
+  grid-area: fly;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.5)),
+  url(/images/cover.jpg);
+}
+#to-gallery {
+  grid-area: img;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.5)),
+  url(/images/jpg-small/im1.jpg);
+}
+#news-block {
+  grid-area: new;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#footer-block {
+  grid-area: fut;
+}
 
 article {
   border-radius: 2rem;
