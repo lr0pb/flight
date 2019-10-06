@@ -770,23 +770,3 @@ function close() {
   if (fly.webkitRequestFullscreen) document.exitFullscreen();
   else if (fly.requestFullscreen) document.exitFullscreen();
 };
-$('#news-block').click(function() {
-  $('body').addClass('overflow-hidden');
-  $('#transition-layer').css({
-    'display':'block',
-    'animation':'1s transition-start-phase'
-  });
-  setTimeout(function() {
-    document.location.href = "https://flight.pp.ua/news";
-  }, 1000);
-});
-$('#gallery-block').click(function() {
-  $('body').addClass('overflow-hidden');
-  $('#transition-layer').css({
-    'display':'block',
-    'animation':'1s transition-start-phase'
-  });
-  setTimeout(function() {
-    document.location.href = "https://flight.pp.ua/gallery";
-  }, 1000);
-});
