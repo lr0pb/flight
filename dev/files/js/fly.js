@@ -59,15 +59,15 @@ $(document).ready(function() {
   const bg92 = document.getElementById('bg9-2');
   const bg12 = document.getElementById('bg12');
   const bg13 = document.getElementById('bg13');
-  var bg1spawn = document.getElementById('bg1-spawn');
+  const bg1spawn = document.getElementById('bg1-spawn');
   const bg21spawn = document.getElementById('bg2-1-spawn');
   const bg22spawn = document.getElementById('bg2-2-spawn');
   const bg3spawn = document.getElementById('bg3-spawn');
   const bg5spawn = document.getElementById('bg5-spawn');
-  var bg6spawn = document.getElementById('bg6-spawn');
+  const bg6spawn = document.getElementById('bg6-spawn');
   const bg7spawn = document.getElementById('bg7-spawn');
   const bg91spawn = document.getElementById('bg9-1-spawn');
-  var bg4spawn = document.getElementById('bg4-spawn');
+  const bg4spawn = document.getElementById('bg4-spawn');
   const bg10spawn = document.getElementById('bg10-spawn');
   const bg11spawn = document.getElementById('bg11-spawn');
   const bg12spawn = document.getElementById('bg12-spawn');
@@ -176,10 +176,8 @@ document.getElementById('im1').addEventListener("mousedown", function() {
   openImage(1, '1to4', elem);
 
   setTimeout( () => {
-    bg1spawn.classList.remove('bg-open');
+    document.getElementById('bg1-spawn').classList.remove('bg-open');
     document.getElementById('cube1to4').style.opacity = "1";
-    //$('#bg1-spawn').removeClass('bg-open');
-    //$('#cube1to4').css('opacity','1');
   }, 5710 );
 });
 
@@ -300,10 +298,8 @@ document.getElementById('im4').addEventListener("mousedown", function() {
   openImage(4, '4to1', elem);
 
   setTimeout( () => {
-    bg4spawn.classList.remove('bg-open');
+    document.getElementById('bg4-spawn').classList.remove('bg-open');
     document.getElementById('cube1to4').style.opacity = "1";
-    //$('#bg4-spawn').removeClass('bg-open');
-    //$('#cube1to4').css('opacity','1');
   }, 5710 );
 });
 
@@ -379,7 +375,7 @@ document.getElementById('im6').addEventListener("mousedown", function() {
   openImage(6, '6to7', elem);
 
   setTimeout( () => {
-    bg6spawn.classList.remove('bg-open');
+    document.getElementById('bg6-spawn').classList.remove('bg-open');
     document.getElementById('cube6').style.opacity = "1";
   }, 5710 );
 });
@@ -425,7 +421,7 @@ document.getElementById('im7').addEventListener("mousedown", function() {
   openImage(7, '7to10', elem);
 
   setTimeout( () => {
-    bg7spawn.classList.remove('bg-open');
+    document.getElementById('bg7-spawn').classList.remove('bg-open');
     document.getElementById('cube6').style.opacity = "1";
   }, 5710 );
 });
@@ -466,8 +462,6 @@ document.getElementById('im8').addEventListener("mousedown", function() {
   setTimeout( () => {
     $('#cube8to9').removeClass('bg-open');
     $('#cube8to9').css('opacity','1');
-    //bg6spawn.classList.remove('bg-open');
-    //document.getElementById('cube6').style.opacity = "1";
   }, 5710 );
 });
 
@@ -669,8 +663,8 @@ function openImage(imID, spawnID, elem) {
   $('.' + imID).addClass('not-now');
   bgo.classList.add('bgo-open','im' + imID + '-open');
   document.getElementById('bg' + imID + '-spawn').classList.add('bg-open');
-  document.getElementById('icon' + spawnID).classList.replace('not-now','spawn');
   closeButton.classList.add('button-spawn');
+  document.getElementById('icon' + spawnID).classList.replace('not-now','spawn');
   setTimeout( () => {
     document.getElementById('icon' + spawnID).classList.remove('spawn');
   }, 5710 );
@@ -724,14 +718,12 @@ function realClose() {
   $('#bgo').removeClass('im11-open');
   $('#bgo').removeClass('im12-open');
 
-  $('#im1to4').addClass('not-now');
-  $('#im4to1').addClass('not-now');
-  $('#im3to2').addClass('not-now');
-  $('#im5to3').addClass('not-now');
-  $('#im6to7').addClass('not-now');
-  $('#im7to10').addClass('not-now');
-  $('#im9to4').addClass('not-now');
-  $('#im13').addClass('not-now');
+  $('#icon3to2').addClass('not-now');
+  $('#icon5to3').addClass('not-now');
+  $('#icon6to7').addClass('not-now');
+  $('#icon7to10').addClass('not-now');
+  $('#icon9to4').addClass('not-now');
+  $('#icon13').addClass('not-now');
 
   $('h5').addClass('not-now');
   $('h5').removeClass('open');
