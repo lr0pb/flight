@@ -1,4 +1,4 @@
-$('#news-block').click(function() {
+/*$('#news-block').click(function() {
   $('body').addClass('overflow-hidden');
   $('#transition-layer').css({
     'display':'block',
@@ -30,4 +30,4 @@ $('#gallery-block').click(function() {
   setTimeout(function() {
     document.location.href = "https://flight.pp.ua/gallery";
   }, 1000);
-});
+});*/
