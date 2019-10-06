@@ -420,7 +420,7 @@ $('#im7').mousedown(function() {
   }, 5710);
 });*/
 
-document.getElementById('im6').addEventListener("mousedown", function() {
+document.getElementById('im7').addEventListener("mousedown", function() {
   let elem = this;
   openImage(7, '7to10', elem);
 
@@ -669,12 +669,10 @@ function openImage(imID, spawnID, elem) {
   $('.' + imID).addClass('not-now');
   bgo.classList.add('bgo-open','im' + imID + '-open');
   document.getElementById('bg' + imID + '-spawn').classList.add('bg-open');
-  document.getElementById('im' + spawnID).classList.replace('not-now','spawn');
-  document.getElementById('text' + spawnID).classList.replace('not-now','spawn');
+  document.getElementsByClassName('icon' + spawnID).classList.replace('not-now','spawn');
   closeButton.classList.add('button-spawn');
   setTimeout( () => {
-    document.getElementById('im' + spawnID).classList.remove('spawn');
-    document.getElementById('text' + spawnID).classList.remove('spawn');
+    document.getElementsByClassName('icon' + spawnID).classList.remove('spawn');
   }, 5710 );
 };
 
