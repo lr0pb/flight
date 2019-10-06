@@ -249,7 +249,7 @@ document.getElementById('im3').addEventListener("mousedown", function() {
   openImage(3, '3to2', elem);
 });
 
-$('#im3to2').mousedown(function() {
+$('#icon3to2').mousedown(function() {
   $('#im3to2').addClass('open');
   $('#im3to2').removeClass('complete');
   $('#bg3').addClass('bg-close');
@@ -352,7 +352,7 @@ document.getElementById('im5').addEventListener("mousedown", function() {
   openImage(5, '5to3', elem);
 });
 
-$('#im5to3').mousedown(function() {
+$('#icon5to3').mousedown(function() {
   $('#im5to3').addClass('open');
   $('#im5to3').removeClass('complete');
   $('#bg5').addClass('bg-close');
@@ -384,7 +384,7 @@ document.getElementById('im6').addEventListener("mousedown", function() {
   }, 5710 );
 });
 
-$('#im6to7').mousedown(function() {
+$('#icon6to7').mousedown(function() {
   $('#im6to7').addClass('open');
   $('#im6to7').removeClass('complete');
   $('#cube6').addClass('rotate-90');
@@ -430,7 +430,7 @@ document.getElementById('im7').addEventListener("mousedown", function() {
   }, 5710 );
 });
 
-$('#im7to10').mousedown(function() {
+$('#icon7to10').mousedown(function() {
   $('#im7to10').addClass('open');
   $('#im7to10').removeClass('complete');
   $('#bg6').css('opacity','0');
@@ -548,7 +548,7 @@ $('#to-im9-1').mousedown(function() {
   }, 3600);
 });
 
-$('#im9to4').mousedown(function() {
+$('#icon9to4').mousedown(function() {
   $('#im9to4').addClass('open');
   $('#im9to4').removeClass('complete');
   $('#to-im9-2').addClass('not-now');
@@ -616,7 +616,7 @@ $('#im12').mousedown(function() {
   }, 5010);
 });
 
-$('#im13').mousedown(function() {
+$('#icon13').mousedown(function() {
   $('#im13').addClass('open');
   $('#im13').removeClass('complete');
   $('#bg11').removeClass('bg-open');
@@ -669,10 +669,10 @@ function openImage(imID, spawnID, elem) {
   $('.' + imID).addClass('not-now');
   bgo.classList.add('bgo-open','im' + imID + '-open');
   document.getElementById('bg' + imID + '-spawn').classList.add('bg-open');
-  document.getElementsByClassName('icon' + spawnID).classList.replace('not-now','spawn');
+  document.getElementById('icon' + spawnID).classList.replace('not-now','spawn');
   closeButton.classList.add('button-spawn');
   setTimeout( () => {
-    document.getElementsByClassName('icon' + spawnID).classList.remove('spawn');
+    document.getElementById('icon' + spawnID).classList.remove('spawn');
   }, 5710 );
 };
 
