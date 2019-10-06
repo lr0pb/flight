@@ -32,6 +32,17 @@
   #start-box {display: block;}
 }
 
+#circle {
+  position: absolute;
+  z-index: 998;
+  opacity: 0;
+  width: 20vw;
+  height: 20vw;
+  background-color: #0b0e17;
+  border-radius: 50%;
+  transition: transform 2s;
+}
+
 #start-content {
   position: absolute;
   display: grid;
@@ -83,6 +94,7 @@
 #header-block {
   grid-area: ttl;
 }
+.big {z-index: 999;}
 #fly-block {
   grid-area: fly;
   display: flex;
