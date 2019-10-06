@@ -5,34 +5,31 @@
   align-items: center;
   font-size: 2rem;
 }
-#news {
+#news-page {
   width: 100vw;
   height: auto;
   background-color: #0b0e17;
   display: none;
-  flex-direction: column;
-  align-items: center;
-  min-height: calc(100vh - 14rem);
 }
 header, footer {display: none;}
 @supports (display: grid) {
   #support-box {display: none;}
-  #news {display: flex;}
+  #news-page {display: grid;}
   header, footer {display: block;}
 }
-.container {width: 100vw; height: 12rem; display: flex;}
-.news-head-box {width: 1200px; height: inherit; display: flex; align-items: center; margin-left: auto; margin-right: auto;}
-#news-head {position: absolute; font-size: 3.6em; margin-left: 3rem; white-space: nowrap; cursor: pointer;}
-#news-head::before {
-  display: inline-block;
-  content: ' < ';
-  background-color: #eee;
-  color: #000;
-  font-size: 0.7em;
-  line-height: 1.2;
-  border-radius: 50%;
-  margin: 0 1.5rem 0 0;
+
+#news-page {
+  grid:
+    "... ttl fly img ..."
+    "... new new new ..."
+    "... fut fut fut ..."
+  ;
+  /*ttl - title, fly - to fly, img - to gallery, new - news list, fut - footer */
+  grid-template-rows: 4rem 1fr 4rem;
+  grid-template-columns: 1fr repeat(3, 35rem) 1fr;
+  grid-gap: 1rem;
 }
+
 article {
   border-radius: 2rem;
   padding: 5rem;
