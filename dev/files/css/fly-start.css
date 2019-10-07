@@ -24,7 +24,7 @@
   background-image: radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)),
   radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/images/main.jpg);*/
   background-color: #0b0e17;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.7), rgba(11, 14, 23, 0.8)),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.7), rgba(11, 14, 23, 0.9)),
   url(/images/main.jpg);
 }
 @supports (display: grid) {
@@ -55,15 +55,15 @@
       "... ... ... ... ..."
       "... ttl ttl set ..."
       "... fly fly new ..."
-      "... fly fly hot ..."
-      "... abt abt img ..."
+      "... fly fly img ..."
+      "... abt abt hot ..."
       "... fut fut fut ..."
       "... ... ... ... ..."
     ;
     /*ttl - title, set - language setting, abt - about, hot - hot keys, new - news, img - gallery, fut - footer */
-    grid-template-rows: 1.7fr 4rem 24.5rem 12.5rem 14rem 4rem 1fr;
+    grid-template-rows: 1.7fr 4rem 27rem 9rem 15rem 4rem 1fr;
     grid-template-columns: 1fr repeat(3, 35rem) 1fr;
-    grid-gap: 1rem;
+    grid-gap: 1.2rem;
   }
   #gallery-block {display: flex;}
 }
@@ -113,23 +113,25 @@
 }
 .update-action {
   margin-top: auto;
-  padding: 0 0 0.5rem 3.2rem;
+  padding: 0 0 0.5rem 2.5rem;
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.7em;
   font-weight: 600;
 }
 .update-title {
-  padding: 0 0 2rem 3.2rem;
+  padding: 0 0 2rem 2.5rem;
   font-size: 2.5em;
 }
 #gallery-block {
   grid-area: img;
-  justify-content: center;
-  align-items: center;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.5)),
   url(/images/jpg-small/im1.jpg);
 }
-.gallery-title {font-size: 1.8em;}
+.gallery-title {
+  font-size: 2em;
+  margin-top: auto;
+  padding: 0 2rem 2rem 2.5rem;
+}
 #about-fly {
   grid-area: abt;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
@@ -140,7 +142,7 @@
 }
 .about-text {
   padding: 0 2.5rem;
-  font-size: 1.35em;
+  font-size: 1.4em;
 }
 #hot-keys {
   grid-area: hot;

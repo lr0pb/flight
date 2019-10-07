@@ -21,7 +21,7 @@ header, footer {display: none;}
 #news-page {
   grid:
     "... ... ... ... ..."
-    "... ttl img ... ..."
+    "... ttl ttl set ..."
     "... new new hot ..."
     "... fut fut fut ..."
   ;
@@ -64,7 +64,8 @@ header, footer {display: none;}
 }
 #hot-keys {
   grid-area: hot;
-  height: 15rem;
+  height: 10rem;
+  border-radius: 1.2rem;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
 }
 #footer-block {
@@ -72,19 +73,20 @@ header, footer {display: none;}
 }
 
 article {
-  border-radius: 1.6rem;
-  margin-bottom: 4rem;
+  width: 100%;
+  border-radius: 1.2rem;
+  margin-bottom: 3rem;
   background-color: #1f2740;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .article-head {
   font-size: 2.4rem;
-  padding: 3rem 0 1.5rem 3rem;
+  padding: 4rem 0 2rem 4rem;
 }
 .article-text {
   font-size: 1.7rem;
-  padding: 0 2rem 2rem 5rem;
+  padding: 0 4rem 4rem 6rem;
 }
 #release-notes {
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.9), rgba(11, 14, 23, 0.75)),
