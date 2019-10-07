@@ -25,7 +25,7 @@ header, footer {display: none;}
     "... new new hot ..."
     "... fut fut fut ..."
   ;
-  /*ttl - title, img - to gallery, new - news list, fut - footer */
+  /*ttl - title, img - to gallery, new - news list, hot - hot keys, fut - footer */
   grid-template-rows: 0 4rem 1fr 4rem;
   grid-template-columns: 1fr 15rem 75rem 15rem 1fr;
   grid-gap: 1rem;
@@ -64,6 +64,7 @@ header, footer {display: none;}
 }
 #hot-keys {
   grid-area: hot;
+  height: 10rem;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
 }
 #footer-block {
