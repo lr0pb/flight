@@ -1,4 +1,4 @@
-$('#news-block').click(function() {
+/*$('#news-block').click(function() {
   $('body').addClass('overflow-hidden');
   $('#transition-layer').css({
     'display':'block',
@@ -7,7 +7,7 @@ $('#news-block').click(function() {
   setTimeout(function() {
     document.location.href = "https://flight.pp.ua/news";
   }, 1000);
-});
+});*/
 
 var circle = document.getElementById('circle');
 
