@@ -22,7 +22,7 @@ header, footer {display: none;}
   grid:
     "... ... ... ... ..."
     "... ttl img ... ..."
-    "... new new new ..."
+    "... new new hot ..."
     "... fut fut fut ..."
   ;
   /*ttl - title, img - to gallery, new - news list, fut - footer */
@@ -53,6 +53,18 @@ header, footer {display: none;}
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.about-title {
+  padding: 2.5rem 0 0.5rem 2.5rem;
+  font-size: 2em;
+}
+.about-text {
+  padding: 0 2.5rem;
+  font-size: 1.35em;
+}
+#hot-keys {
+  grid-area: hot;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
 }
 #footer-block {
   grid-area: fut;
