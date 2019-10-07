@@ -72,18 +72,19 @@ header, footer {display: none;}
 }
 
 article {
-  border-radius: 2rem;
-  padding: 5rem;
-  margin: 0 auto 4rem auto;
+  border-radius: 1.6rem;
+  margin-bottom: 4rem;
   background-color: #1f2740;
   background-size: cover;
   background-repeat: no-repeat;
 }
-@media screen and (max-width: 749px) {
-  article {width: 70vw;}
+.article-head {
+  font-size: 2.4rem;
+  padding: 3rem 0 1.5rem 3rem;
 }
-@media screen and (min-width: 750px) {
-  article {width: 600px;}
+.article-text {
+  font-size: 1.7rem;
+  padding: 0 2rem 2rem 5rem;
 }
 #release-notes {
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.9), rgba(11, 14, 23, 0.75)),
