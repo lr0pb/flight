@@ -54,14 +54,14 @@
     grid:
       "... ... ... ... ..."
       "... ttl ttl set ..."
-      "... fly fly abt ..."
+      "... fly fly new ..."
       "... fly fly hot ..."
-      "... new img img ..."
+      "... abt abt img ..."
       "... fut fut fut ..."
       "... ... ... ... ..."
     ;
     /*ttl - title, set - language setting, abt - about, hot - hot keys, new - news, img - gallery, fut - footer */
-    grid-template-rows: 1.7fr 4rem 21rem 14rem 12rem 4rem 1fr;
+    grid-template-rows: 1.7fr 4rem 23rem 12rem 14rem 4rem 1fr;
     grid-template-columns: 1fr repeat(3, 35rem) 1fr;
     grid-gap: 1rem;
   }
@@ -119,7 +119,7 @@
   font-weight: 600;
 }
 .update-title {
-  padding: 0 0 3rem 3.2rem;
+  padding: 0 0 2rem 3.2rem;
   font-size: 2.5em;
 }
 #gallery-block {
