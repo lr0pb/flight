@@ -53,14 +53,14 @@
   #start-content {
     grid:
       "... ... ... ... ..."
-      "... ttl ttl ttl ..."
+      "... ttl ttl set ..."
       "... fly fly abt ..."
       "... fly fly hot ..."
       "... new img img ..."
       "... fut fut fut ..."
       "... ... ... ... ..."
     ;
-    /*ttl - title, new - news, img - gallery, abt - about, hot - hot keys, fut - footer */
+    /*ttl - title, set - language setting, abt - about, hot - hot keys, new - news, img - gallery, fut - footer */
     grid-template-rows: 1.7fr 4rem 21rem 14rem 12rem 4rem 1fr;
     grid-template-columns: 1fr repeat(3, 35rem) 1fr;
     grid-gap: 1rem;
