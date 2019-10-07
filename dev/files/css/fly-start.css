@@ -61,7 +61,7 @@
       "... ... ... ... ..."
     ;
     /*ttl - title, set - language setting, abt - about, hot - hot keys, new - news, img - gallery, fut - footer */
-    grid-template-rows: 1.7fr 4rem 23rem 12rem 14rem 4rem 1fr;
+    grid-template-rows: 1.7fr 4rem 24.5rem 12.5rem 14rem 4rem 1fr;
     grid-template-columns: 1fr repeat(3, 35rem) 1fr;
     grid-gap: 1rem;
   }
