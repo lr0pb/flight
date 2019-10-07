@@ -62,7 +62,7 @@
     ;
     /*ttl - title, set - language setting, abt - about, hot - hot keys, new - news, img - gallery, fut - footer */
     grid-template-rows: 1.7fr 4rem 26rem 9rem 14rem 4rem 1fr;
-    grid-template-columns: 1fr repeat(3, 35rem) 1fr;
+    grid-template-columns: 1fr repeat(3, 34rem) 1fr;
     grid-gap: 1rem;
   }
   #gallery-block {display: flex;}
