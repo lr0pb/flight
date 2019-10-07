@@ -54,14 +54,14 @@
     grid:
       "... ... ... ... ..."
       "... ttl ttl ttl ..."
-      "... fly fly new ..."
-      "... img img img ..."
-      "... abt abt hot ..."
+      "... fly fly abt ..."
+      "... fly fly hot ..."
+      "... new img img ..."
       "... fut fut fut ..."
       "... ... ... ... ..."
     ;
     /*ttl - title, new - news, img - gallery, abt - about, hot - hot keys, fut - footer */
-    grid-template-rows: 1.7fr 4rem 36rem 6rem 16rem 4rem 1fr;
+    grid-template-rows: 1.7fr 4rem 21rem 14rem 12rem 4rem 1fr;
     grid-template-columns: 1fr repeat(3, 35rem) 1fr;
     grid-gap: 1rem;
   }
