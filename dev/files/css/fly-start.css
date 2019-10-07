@@ -61,9 +61,9 @@
       "... ... ... ... ..."
     ;
     /*ttl - title, set - language setting, abt - about, hot - hot keys, new - news, img - gallery, fut - footer */
-    grid-template-rows: 1.7fr 4rem 27rem 9rem 15rem 4rem 1fr;
+    grid-template-rows: 1.7fr 4rem 26rem 9rem 14rem 4rem 1fr;
     grid-template-columns: 1fr repeat(3, 35rem) 1fr;
-    grid-gap: 1.2rem;
+    grid-gap: 1rem;
   }
   #gallery-block {display: flex;}
 }
@@ -88,7 +88,7 @@
 
 #fly-block, #news-block, #gallery-block, #about-fly, #hot-keys {
   background-size: cover; background-position: center center; background-repeat: no-repeat;
-  background-color: #1f2740; border-radius: 1.2rem;
+  background-color: #1f2740; border-radius: 1.5rem;
 }
 #news-block, #gallery-block {cursor: pointer;}
 #header-block {
@@ -116,7 +116,7 @@
   padding: 0 0 0.5rem 2.5rem;
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.7em;
-  font-weight: 600;
+  font-weight: 500;
 }
 .update-title {
   padding: 0 0 2rem 2.5rem;
@@ -156,7 +156,7 @@
   cursor: pointer;
   font-weight: 900;
   font-size: 1.8em;
-  padding: 1.1rem 7.5rem;
+  padding: 1rem 6.5rem;
   margin-top: 2rem;
   background-color: #318613;
   border: 0.6rem solid #41b619;
