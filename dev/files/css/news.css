@@ -22,12 +22,12 @@ header, footer {display: none;}
   grid:
     "... ... ... ... ..."
     "... ttl ttl set ..."
-    "... new new new ..."
+    "... new new pln ..."
     "... img img hot ..."
     "... fut fut fut ..."
     "... ... ... ... ..."
   ;
-  /*ttl - title, img - to gallery, new - news list, hot - hot keys, fut - footer */
+  /*ttl - title, img - to gallery, new - last news, pln - plan, hot - hot keys, fut - footer */
   grid-template-rows: 1.7fr 4rem 40rem 10rem 4rem 1fr;
   grid-template-columns: 1fr repeat(3, 34rem) 1fr;
   grid-gap: 1rem;
@@ -55,6 +55,17 @@ header, footer {display: none;}
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.news-title {
+  font-size: 2.3em;
+  padding: 3rem 0 1.5rem 3.5rem;
+}
+.news-text {
+  font-size: 1.6em;
+  padding: 0 4rem 4rem 5rem;
+}
+#future-block {
+  grid-area: pln;
 }
 .about-title {
   padding: 2.5rem 0 0.5rem 2.5rem;
