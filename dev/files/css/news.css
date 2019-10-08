@@ -32,7 +32,7 @@ header, footer {display: none;}
   grid-template-columns: 1fr repeat(3, 34rem) 1fr;
   grid-gap: 1rem;
 }
-#to-gallery, #hot-keys {
+#news-block, #future-block, #to-gallery, #hot-keys {
   background-color: #1f2740; border-radius: 1.5rem;
 }
 #header-block {
@@ -51,10 +51,6 @@ header, footer {display: none;}
 .gallery-title {font-size: 2em;}
 #news-block {
   grid-area: new;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .news-title {
   font-size: 2.3em;
