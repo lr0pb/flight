@@ -22,7 +22,7 @@ header, footer {display: none;}
   grid:
     "... ... ... ... ..."
     "... ttl ttl set ..."
-    "... pln pln new ..."
+    "... new new pln ..."
     "... img img hot ..."
     "... fut fut fut ..."
     "... ... ... ... ..."
@@ -62,16 +62,16 @@ header, footer {display: none;}
   font-weight: 800;
 }
 .news-subtitle {
-  padding: 0 4.5rem 1rem 2.5rem;
+  padding: 1rem 4.5rem 1rem 2.5rem;
   font-size: 2em;
 }
 .news-text {
   padding: 0 4.5rem 0 2.5rem;
-  font-size: 1.4em;
+  font-size: 1.45em;
 }
 .news-button-container {
   width: 100%;
-  height: 26%;
+  height: 27.7%;
   background-image: -webkit-linear-gradient(top, transparent, rgba(11, 14, 23, 0.8));
 }
 #news-button {
@@ -85,7 +85,7 @@ header, footer {display: none;}
   transition: 0.5s;
 }
 #news-button:hover {
-  box-shadow: 0 0.2rem 1.5rem #41B619;
+  box-shadow: 0 0 2rem #41B619;
 }
 #future-block {
   grid-area: pln;
