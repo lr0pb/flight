@@ -22,7 +22,7 @@ header, footer {display: none;}
   grid:
     "... ... ... ... ..."
     "... ttl ttl set ..."
-    "... new new pln ..."
+    "... pln pln new ..."
     "... img img hot ..."
     "... fut fut fut ..."
     "... ... ... ... ..."
@@ -54,11 +54,15 @@ header, footer {display: none;}
 }
 .news-title {
   font-size: 2.3em;
-  padding: 3rem 0 1.5rem 3.5rem;
+  padding: 2.5rem 0 1.5rem 2.5rem;
+}
+.news-subtitle {
+  font-size: 2em;
+  padding: 0 4.5rem 1.5rem 2.5rem;
 }
 .news-text {
-  font-size: 1.6em;
-  padding: 0 4rem 4rem 5rem;
+  font-size: 1.5em;
+  padding: 0 4.5rem 0 2.5rem;
 }
 #future-block {
   grid-area: pln;
