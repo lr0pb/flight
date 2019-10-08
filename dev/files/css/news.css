@@ -8,8 +8,10 @@
 #news-page {
   width: 100vw;
   height: 100vh;
-  background-color: #0b0e17;
   display: none;
+  background-color: #0b0e17;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.65), rgba(11, 14, 23, 1)),
+  url(/images/main.jpg);
 }
 header, footer {display: none;}
 @supports (display: grid) {
@@ -43,7 +45,7 @@ header, footer {display: none;}
   justify-content: center;
   align-items: center;
 }
-#to-gallery, #news-block {
+#news-page, #to-gallery, #news-block {
   background-size: cover; background-position: center center; background-repeat: no-repeat;
 }
 #to-gallery {
@@ -57,21 +59,22 @@ header, footer {display: none;}
   grid-area: new;
 }
 .news-title {
-  padding: 3rem 0 2.5rem 2.5rem;
+  padding: 3rem 0 1.5rem 4.5rem;
   font-size: 2.3em;
   font-weight: 800;
 }
 .news-subtitle {
-  padding: 1rem 4.5rem 1rem 2.5rem;
+  padding: 2rem 4.5rem 1rem 4.5rem;
   font-size: 2em;
 }
 .news-text {
-  padding: 0 4.5rem 0 2.5rem;
+  padding: 0 4.5rem 0 4.5rem;
   font-size: 1.45em;
 }
 .news-button-container {
   width: 100%;
   height: 27.7%;
+  border-radius: 1.5rem;
   background-image: -webkit-linear-gradient(top, transparent, rgba(11, 14, 23, 0.8));
 }
 #news-button {
@@ -126,7 +129,11 @@ article {
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.9), rgba(11, 14, 23, 0.75)),
   url(/images/jpg-small/im7.jpg);
 }
-#first-autumn, #news-block {
+#news-block {
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.8)),
+  url(/images/autumn.jpg);
+}
+#first-autumn {
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.9), rgba(11, 14, 23, 0.75)),
   url(/images/autumn.jpg);
 }
