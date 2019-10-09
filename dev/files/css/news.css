@@ -59,16 +59,16 @@ header, footer {display: none;}
   grid-area: new;
 }
 .news-title {
-  padding: 3rem 0 1.5rem 4.5rem;
+  padding: 3.5rem 0 1rem 4rem;
   font-size: 2.3em;
   font-weight: 800;
 }
 .news-subtitle {
-  padding: 2rem 4.5rem 1rem 4.5rem;
+  padding: 2rem 4rem 1rem 4rem;
   font-size: 2em;
 }
 .news-text {
-  padding: 0 4.5rem 0 4.5rem;
+  padding: 0 4rem 0 4rem;
   font-size: 1.45em;
 }
 .news-button-container {
@@ -81,7 +81,7 @@ header, footer {display: none;}
   cursor: pointer;
   font-weight: 800;
   font-size: 1.8em;
-  padding: 1rem 4.5rem;
+  padding: 1rem 4rem;
   border: 0.5rem solid #41b619;
   border-radius: 5rem;
   box-shadow: 0 0.5rem 1rem rgba(65, 182, 25, 0.6);
@@ -92,6 +92,27 @@ header, footer {display: none;}
 }
 #future-block {
   grid-area: pln;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.8));
+}
+.plan-container {
+  width: 100%;
+  height: 82%;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+}
+.plan-line {
+  width: 5rem;
+  background-image: -webkit-linear-gradient(top, #41b619, #ca6e1b);
+}
+.plan-text-container {
+  padding-left: 4rem;
+  display: flex;
+}
+.plan-text:nth-child(2) {margin: auto 0 auto 0;}
+#hot-keys {
+  grid-area: hot;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
 }
 .about-title {
   padding: 2.5rem 0 0.5rem 2.5rem;
@@ -100,10 +121,6 @@ header, footer {display: none;}
 .about-text {
   padding: 0 2.5rem;
   font-size: 1.4em;
-}
-#hot-keys {
-  grid-area: hot;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
 }
 #footer-block {
   grid-area: fut;
@@ -130,7 +147,7 @@ article {
   url(/images/jpg-small/im7.jpg);
 }
 #news-block {
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.8)),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8)),
   url(/images/autumn.jpg);
 }
 #first-autumn {
