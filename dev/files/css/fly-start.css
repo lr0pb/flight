@@ -79,7 +79,7 @@
       "... ... ..."
     ;
     /*ttl - title, abt - about, new - news, img - gallery, fut - footer */
-    grid-template-rows: minmax(1rem, 1fr) 4rem 26rem 19rem 16rem 9rem 2rem 1fr;
+    grid-template-rows: minmax(1rem, 1fr) 4rem 26rem 20rem 16rem 9rem 2rem 1fr;
     grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
     grid-gap: 1.5rem;
   }
