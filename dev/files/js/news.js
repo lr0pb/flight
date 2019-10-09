@@ -4,7 +4,10 @@ setTimeout(function() {
   $('body').removeClass('overflow-hidden');
 }, 1000);
 
-$('#news-head').click(back);
+document.getElementById('news-button').addEventListener('click', () =>
+  document.getElementById('news-list').scrollIntoView({block: "center", behavior: "smooth"});
+);
+
 $(document).keydown(function(e) {
   if(e.keyCode===66){
     back();
