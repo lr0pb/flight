@@ -128,13 +128,22 @@ header, footer {display: none;}
   grid-area: fut;
 }
 
+#news-list {
+  display: flex;
+  align-items: center;
+}
 article {
-  width: 100%;
   border-radius: 1.2rem;
   margin-bottom: 3rem;
   background-color: #1f2740;
   background-size: cover;
   background-repeat: no-repeat;
+}
+@media screen and (max-width: 749px) {
+  article {width: 70vw;}
+}
+@media screen and (min-width: 750px) {
+  article {width: 600px;}
 }
 .article-head {
   font-size: 2.4rem;
