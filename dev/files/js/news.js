@@ -4,9 +4,9 @@ setTimeout(function() {
   $('body').removeClass('overflow-hidden');
 }, 1000);
 
-document.getElementById('news-button').addEventListener('click', () =>
+document.getElementById('news-button').addEventListener('click', function() {
   document.getElementById('news-list').scrollIntoView({block: "center", behavior: "smooth"});
-);
+})
 
 $(document).keydown(function(e) {
   if(e.keyCode===66){
