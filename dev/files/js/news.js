@@ -4,7 +4,7 @@ setTimeout(function() {
 }, 1000);
 
 document.getElementById('news-button').addEventListener('click', function() {
-  document.getElementById('news-list').scrollIntoView({block: "start", behavior: "smooth"});
+  document.getElementById('footer-block').scrollIntoView({block: "end", behavior: "smooth"});
 })
 
 $(document).keydown(function(e) {
