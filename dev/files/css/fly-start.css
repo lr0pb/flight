@@ -65,7 +65,6 @@
     grid-template-columns: 1fr repeat(3, 34rem) 1fr;
     grid-gap: 1rem;
   }
-  #gallery-block {display: flex;}
 }
 @media screen and (max-width: 1099px) {
   #start-content {
@@ -75,15 +74,16 @@
       "... fly ..."
       "... abt ..."
       "... new ..."
+      "... img ..."
       "... fut ..."
       "... ... ..."
     ;
-    /*ttl - title, new - news, abt - about, fut - footer, nav - menu */
-    grid-template-rows: minmax(1rem, 1fr) 4rem 26rem 18rem 16rem 2rem 1fr;
+    /*ttl - title, abt - about, new - news, img - gallery, fut - footer */
+    grid-template-rows: minmax(1rem, 1fr) 4rem 26rem 19rem 16rem 9rem 2rem 1fr;
     grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
     grid-gap: 1.5rem;
   }
-  #gallery-block, #hot-keys {display: none;}
+  #hot-keys {display: none;}
 }
 
 #fly-block, #news-block, #gallery-block, #about-fly, #hot-keys {
@@ -125,6 +125,7 @@
 }
 #gallery-block {
   grid-area: img;
+  display: flex;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.6)),
   url(/images/jpg-small/im1.jpg);
 }
