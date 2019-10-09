@@ -35,6 +35,10 @@ header, footer {display: none;}
     grid-template-columns: 1fr repeat(3, 34rem) 1fr;
     grid-gap: 1rem;
   }
+  .news-subtitle {padding: 2rem 4rem 1rem 4rem;}
+  .news-button-container {height: 27.7%;}
+  .plan-container {width: 24rem;}
+  article {width: 62rem;}
 }
 @media screen and (max-width: 1099px) {
   #news-page {
@@ -48,11 +52,19 @@ header, footer {display: none;}
       "... ... ..."
     ;
     /*ttl - title, img - to gallery, new - last news, pln - plan, fut - footer */
-    grid-template-rows: minmax(1rem, 1fr) 4rem 16rem 24rem 8rem 4rem 1fr;
+    grid-template-rows: minmax(1rem, 1fr) 4rem 22rem 36rem 9rem 4rem 1fr;
     grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
     grid-gap: 1.5rem;
   }
   #hot-keys, .news-text {display: none;}
+  .news-subtitle {padding: 0.5rem 4rem 0 4rem;}
+  .news-button-container {height: 53%;}
+  #news-button {margin-bottom: 2rem;}
+  .plan-container {width: 20rem;}
+  article {
+    width: calc(100vw - 3rem);
+    max-width: 55rem;
+  }
 }
 
 #news-block, #future-block, #to-gallery, #hot-keys {
@@ -66,7 +78,7 @@ header, footer {display: none;}
   justify-content: center;
   align-items: center;
 }
-#news-page, #to-gallery, #news-block {
+#news-page, #to-gallery, #news-block, article {
   background-size: cover; background-position: center center; background-repeat: no-repeat;
 }
 #to-gallery {
@@ -84,17 +96,12 @@ header, footer {display: none;}
   font-size: 2.3em;
   font-weight: 800;
 }
-.news-subtitle {
-  padding: 2rem 4rem 1rem 4rem;
-  font-size: 2em;
-}
+.news-subtitle {font-size: 2em;}
 .news-text {
   padding: 0 4rem 0 4rem;
   font-size: 1.45em;
 }
 .news-button-container {
-  width: 100%;
-  height: 27.7%;
   border-radius: 1.5rem;
   background-image: -webkit-linear-gradient(top, transparent, rgba(11, 14, 23, 0.8));
 }
@@ -116,8 +123,6 @@ header, footer {display: none;}
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.8));
 }
 .plan-container {
-  width: 76%;
-  height: 58%;
   display: flex;
   padding: 4rem;
 }
@@ -159,14 +164,6 @@ article {
   border-radius: 1.2rem;
   margin-bottom: 3rem;
   background-color: #1f2740;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-@media screen and (max-width: 749px) {
-  article {width: 70vw;}
-}
-@media screen and (min-width: 750px) {
-  article {width: 600px;}
 }
 .article-head {
   font-size: 2.4rem;
@@ -175,7 +172,7 @@ article {
 }
 .article-text {
   font-size: 1.6rem;
-  padding: 0 4rem 4rem 6rem;
+  padding: 0 4rem 4rem 4rem;
 }
 #release-notes {
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.85), rgba(11, 14, 23, 0.75)),
