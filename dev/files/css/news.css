@@ -7,7 +7,7 @@
 }
 #news-page {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: none;
   background-color: #0b0e17;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.65), rgba(11, 14, 23, 1)),
@@ -20,20 +20,41 @@ header, footer {display: none;}
   header, footer {display: block;}
 }
 
-#news-page {
-  grid:
-    "... ... ... ... ..."
-    "... ttl ttl set ..."
-    "... new new pln ..."
-    "... img img hot ..."
-    "... fut fut fut ..."
-    "... ... ... ... ..."
-  ;
-  /*ttl - title, img - to gallery, new - last news, pln - plan, hot - hot keys, fut - footer */
-  grid-template-rows: 1.7fr 4rem 40rem 10rem 4rem 1fr;
-  grid-template-columns: 1fr repeat(3, 34rem) 1fr;
-  grid-gap: 1rem;
+@media screen and (min-width: 1100px) {
+  #news-page {
+    grid:
+      "... ... ... ... ..."
+      "... ttl ttl set ..."
+      "... new new pln ..."
+      "... img img hot ..."
+      "... fut fut fut ..."
+      "... ... ... ... ..."
+    ;
+    /*ttl - title, img - to gallery, new - last news, pln - plan, hot - hot keys, fut - footer */
+    grid-template-rows: 1.7fr 4rem 40rem 10rem 4rem 1fr;
+    grid-template-columns: 1fr repeat(3, 34rem) 1fr;
+    grid-gap: 1rem;
+  }
 }
+@media screen and (max-width: 1099px) {
+  #news-page {
+    grid:
+      "... ... ..."
+      "... ttl ..."
+      "... new ..."
+      "... pln ..."
+      "... img ..."
+      "... fut ..."
+      "... ... ..."
+    ;
+    /*ttl - title, img - to gallery, new - last news, pln - plan, fut - footer */
+    grid-template-rows: minmax(1rem, 1fr) 4rem 16rem 24rem 8rem 4rem 1fr;
+    grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
+    grid-gap: 1.5rem;
+  }
+  #hot-keys, .news-text {display: none;}
+}
+
 #news-block, #future-block, #to-gallery, #hot-keys {
   background-color: #1f2740; border-radius: 1.5rem;
 }
