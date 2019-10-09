@@ -97,12 +97,12 @@ a, .fut-text {
 }
 footer, #fut-content {display: flex; justify-content: center; align-items: center; bottom: 0;}
 @media screen and (max-width: 360px) and (orientation: portrait) {
-  html {font-size: 7px;}
+  html {font-size: 6px;}
 }
 @media screen and (min-width: 361px) and (max-width: 400px) and (orientation: portrait) {
-  html {font-size: 8px;}
+  html {font-size: 7px;}
 }
 @media screen and (min-width: 401px) and (max-width: 500px) and (orientation: portrait) {
-  html {font-size: 9px;}
+  html {font-size: 8px;}
 }
 .not-now {display: none;}
