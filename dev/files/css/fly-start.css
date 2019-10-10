@@ -121,7 +121,6 @@
 .update-title {
   padding: 0 0 2rem 2.5rem;
   font-size: 2.5em;
-  font-weight: 800;
 }
 #gallery-block {
   grid-area: img;
@@ -133,6 +132,7 @@
   font-size: 2em;
   margin-top: auto;
   padding: 0 2rem 2rem 2.5rem;
+  font-weight: 700;
 }
 #about-fly {
   grid-area: abt;
@@ -141,6 +141,7 @@
 .about-title {
   padding: 2.5rem 0 0.5rem 2.5rem;
   font-size: 2em;
+  font-weight: 700;
 }
 .about-text {
   padding: 0 2.5rem;
