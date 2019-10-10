@@ -37,7 +37,10 @@ header, footer {display: none;}
   }
   .news-subtitle {padding: 2rem 4rem 1rem 4rem;}
   .news-button-container {height: 27.7%;}
-  .plan-container {width: 24rem;}
+  .plan-container {
+    width: 24rem;
+    height: 26rem;
+  }
   article {width: 62rem;}
 }
 @media screen and (max-width: 1099px) {
@@ -60,7 +63,10 @@ header, footer {display: none;}
   .news-subtitle {padding: 0.5rem 4rem 0 4rem;}
   .news-button-container {height: 53%;}
   #news-button {margin-bottom: 2rem;}
-  .plan-container {width: 20rem;}
+  .plan-container {
+    width: 80%;
+    height: 20rem;
+  }
   article {
     width: calc(100vw - 3rem);
     max-width: 55rem;
@@ -158,7 +164,7 @@ header, footer {display: none;}
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 7rem 0 4rem 0;
+  padding: 7rem 0 4rem 0;
 }
 article {
   border-radius: 1.2rem;
@@ -168,7 +174,7 @@ article {
 .article-head {
   font-size: 2.4rem;
   font-weight: 800;
-  padding: 4rem 0 2rem 4rem;
+  padding: 4rem 4rem 2rem 4rem;
 }
 .article-text {
   font-size: 1.6rem;
