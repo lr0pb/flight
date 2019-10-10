@@ -14,7 +14,7 @@ var circle = document.getElementById('circle');
 document.getElementById('news-block').addEventListener('click', function(e) {
   const x = e.pageX;
   const y = e.pageY;
-  circle.css({
+  $('#circle').css({
     'opacity':'1',
     'transform-origin':`${x}, ${y}`,
     'transform':'scale(5)'
