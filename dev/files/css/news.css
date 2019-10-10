@@ -67,6 +67,10 @@ header, footer {display: none;}
     width: 80%;
     height: 20rem;
   }
+  .gallery-title {
+    margin-top: auto;
+    padding: 0 2rem 2rem 2.5rem;
+  }
   article {
     width: calc(100vw - 3rem);
     max-width: 55rem;
