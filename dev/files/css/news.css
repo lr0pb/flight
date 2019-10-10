@@ -38,8 +38,8 @@ header, footer {display: none;}
   .news-subtitle {padding: 2rem 4rem 1rem 4rem;}
   .news-button-container {height: 27.7%;}
   .plan-container {
-    width: 24rem;
-    height: 26rem;
+    width: 26rem;
+    height: 24rem;
   }
   article {width: 62rem;}
 }
