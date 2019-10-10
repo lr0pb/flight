@@ -11,7 +11,7 @@
 
 var circle = document.getElementById('circle');
 
-document.getElementById('news-block').addEventListener('click', function() {
+document.getElementById('news-block').addEventListener('click', function(e) {
   const x = e.pageX;
   const y = e.pageY;
   circle.css({
