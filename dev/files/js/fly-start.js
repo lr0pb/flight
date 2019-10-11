@@ -16,7 +16,7 @@ document.getElementById('news-block').addEventListener('click', function(e) {
   const y = e.pageY;
   $('#circle').css({
     'opacity':'1',
-    'transform-origin':`${x}, ${y}`,
+    'transform-origin':`${x}px, ${y}px`,
     'transform':'scale(5)'
   });
 });

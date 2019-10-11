@@ -36,8 +36,8 @@
   position: absolute;
   z-index: 998;
   opacity: 0;
-  width: 20vw;
-  height: 20vw;
+  width: 50vw;
+  height: 50vw;
   background-color: #0b0e17;
   border-radius: 50%;
   transition: transform 2s;
@@ -79,7 +79,7 @@
       "... ... ..."
     ;
     /*ttl - title, abt - about, new - news, img - gallery, fut - footer */
-    grid-template-rows: minmax(1rem, 1fr) 4rem 26rem 22rem 16rem 2rem 1fr;
+    grid-template-rows: minmax(1rem, 1fr) 4rem 26rem 21rem 16rem 2rem 1fr;
     grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
     grid-gap: 1.5rem;
   }
