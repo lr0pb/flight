@@ -147,6 +147,6 @@ function back() {
     'animation':'1s transition-start-phase'
   });
   setTimeout(function() {
-    document.location.href = "htts://flight.pp.ua/";
+    document.location.href = "https://flight.pp.ua/";
   }, 1000);
 };
