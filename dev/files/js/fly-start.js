@@ -14,11 +14,14 @@ var circle = document.getElementById('circle');
 document.getElementById('news-block').addEventListener('click', function(e) {
   const x = e.pageX;
   const y = e.pageY;
-  $('#circle').css({
-    'opacity':'1',
-    'transform-origin':`${x}px, ${y}px`,
-    'transform':'scale(5)'
-  });
+  $('#circle').css('transform-origin',`${x}px, ${y}px`);
+  $('#circle').css('display','block');
+  setTimeout(function() {
+    $('#circle').css({
+      'opacity':'1',
+      'transform':'scale(5)'
+    });
+  }, 15);
 });
 
 $('#gallery-block').click(function() {
