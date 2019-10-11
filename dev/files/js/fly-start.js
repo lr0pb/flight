@@ -19,7 +19,7 @@ document.getElementById('news-block').addEventListener('click', function(e) {
   setTimeout(function() {
     $('#circle').css({
       'opacity':'1',
-      'transform':'scale(5)'
+      'transform':'scale(2.5)'
     });
   }, 15);
 });
