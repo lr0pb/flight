@@ -48,7 +48,7 @@ $(document).ready(function() {
   const bg1to431 = document.getElementById('bg1to4-3-1');
   const bg1to432 = document.getElementById('bg1to4-3-2');
   const bg4 = document.getElementById('bg4');
-  const bg2 = document.getElementById('bg2');
+  const bg21 = document.getElementById('bg2-1');
   const bg22 = document.getElementById('bg2-2');
   const bg6 = document.getElementById('bg6');
   const bg7 = document.getElementById('bg7');
@@ -60,7 +60,7 @@ $(document).ready(function() {
   const bg12 = document.getElementById('bg12');
   const bg13 = document.getElementById('bg13');
   const bg1spawn = document.getElementById('bg1-spawn');
-  const bg21spawn = document.getElementById('bg2-1-spawn');
+  const bg2spawn = document.getElementById('bg2-spawn');
   const bg22spawn = document.getElementById('bg2-2-spawn');
   const bg3spawn = document.getElementById('bg3-spawn');
   const bg5spawn = document.getElementById('bg5-spawn');
@@ -88,7 +88,7 @@ $(document).ready(function() {
       bg1to431.src="/images/jpg-large/cube1to4/cube1to4-3-1.jpg";
       bg1to432.src="/images/jpg-large/cube1to4/cube1to4-3-2.jpg";
       bg4.src="/images/jpg-large/im4.jpg";
-      bg2.src="/images/jpg-large/im2-1.jpg";
+      bg21.src="/images/jpg-large/im2-1.jpg";
       bg22.src="/images/jpg-large/im2-2.jpg";
       bg6.src="/images/jpg-large/im6.jpg";
       bg7.src="/images/jpg-large/im7.jpg";
@@ -100,7 +100,7 @@ $(document).ready(function() {
       bg12.src="/images/jpg-large/im12.jpg";
       bg13.src="/images/jpg-large/im13.jpg";
       bg1spawn.src="/images/jpg-large/im1.jpg";
-      bg21spawn.src="/images/jpg-large/im2-1.jpg";
+      bg2spawn.src="/images/jpg-large/im2-1.jpg";
       bg22spawn.src="/images/jpg-large/im2-2.jpg";
       bg3spawn.src="/images/jpg-large/im3.jpg";
       bg5spawn.src="/images/jpg-large/im5.jpg";
@@ -124,7 +124,7 @@ $(document).ready(function() {
       bg1to431.src="/images/jpg-small/cube1to4/cube1to4-3-1.jpg";
       bg1to432.src="/images/jpg-small/cube1to4/cube1to4-3-2.jpg";
       bg4.src="/images/jpg-small/im4.jpg";
-      bg2.src="/images/jpg-small/im2-1.jpg";
+      bg21.src="/images/jpg-small/im2-1.jpg";
       bg22.src="/images/jpg-small/im2-2.jpg";
       bg6.src="/images/jpg-small/im6.jpg";
       bg7.src="/images/jpg-small/im7.jpg";
@@ -136,7 +136,7 @@ $(document).ready(function() {
       bg12.src="/images/jpg-small/im12.jpg";
       bg13.src="/images/jpg-small/im13.jpg";
       bg1spawn.src="/images/jpg-small/im1.jpg";
-      bg21spawn.src="/images/jpg-small/im2-1.jpg";
+      bg2spawn.src="/images/jpg-small/im2-1.jpg";
       bg22spawn.src="/images/jpg-small/im2-2.jpg";
       bg3spawn.src="/images/jpg-small/im3.jpg";
       bg5spawn.src="/images/jpg-small/im5.jpg";
