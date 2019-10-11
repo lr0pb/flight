@@ -16,7 +16,7 @@ document.getElementById('news-block').addEventListener('click', function(e) {
   const y = e.pageY;
   console.log(x);
   console.log(y);
-  circle.style = 'transform-origin:' + `${x}px, ${y}px`;
+  circle.style.transformOrigin = `${x}px, ${y}px`;
   //$('#circle').css('transform-origin',`${x}px, ${y}px`);
   $('#circle').css('display','block');
   setTimeout(function() {
