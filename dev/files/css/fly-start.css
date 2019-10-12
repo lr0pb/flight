@@ -95,8 +95,8 @@
 #news-block, #gallery-block {cursor: pointer;}
 #header-block {
   grid-area: ttl;
+  z-index: 999;
 }
-.big {z-index: 999;}
 #fly-block {
   grid-area: fly;
   display: flex;
