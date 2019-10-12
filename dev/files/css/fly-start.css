@@ -36,12 +36,13 @@
   position: absolute;
   z-index: 998;
   display: none;
-  opacity: 0;
+  opacity: 1;
   width: 50vw;
   height: 50vw;
   background-color: #0b0e17;
   border-radius: 50%;
   transform: translate(-50%);
+  transition: transform 1.5s;
 }
 
 #start-content {

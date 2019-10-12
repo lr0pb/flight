@@ -12,10 +12,9 @@
 const circle = document.getElementById('circle');
 
 document.getElementById('news-block').addEventListener('click', function(e) {
-  circle.style.cssText = 'display: block; opacity: 1; transform: translate(-50%) scale(5); transition: transform 1.5s;';
+  circle.style.cssText = 'display: block; transform: translate(-50%) scale(4);';
   circle.style.left = e.pageX + 'px';
   circle.style.top = e.pageY + 'px';
-  console.log(circle.style.cssText);
 });
 
 $('#gallery-block').click(function() {
