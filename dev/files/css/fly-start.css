@@ -42,7 +42,6 @@
   background-color: #0b0e17;
   border-radius: 50%;
   transform: translate(-50%);
-  transition: transform 1.5s;
 }
 
 #start-content {

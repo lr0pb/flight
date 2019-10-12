@@ -12,10 +12,9 @@
 const circle = document.getElementById('circle');
 
 document.getElementById('news-block').addEventListener('click', function(e) {
-  circle.style.cssText = 'opacity: 1; transform: translate(-50%) scale(5);';
+  circle.style.cssText = 'display: block; opacity: 1; transform: translate(-50%) scale(5); transition: transform 1.5s;';
   circle.style.left = e.pageX + 'px';
   circle.style.top = e.pageY + 'px';
-  circle.style.display = 'block';
   console.log(circle.style.cssText);
 });
 
