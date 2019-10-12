@@ -9,12 +9,16 @@
   }, 1000);
 });*/
 
-var circle = document.getElementById('circle');
+const circle = document.getElementById('circle');
+let circleX = circle.style.left;
+let circleY = circle.style.top;
 
 document.getElementById('news-block').addEventListener('click', function(e) {
-  circle.style.cssText = 'left: ' + e.pageX + 'px; top: ' + e.pageY + 'px;';
+  circleX = e.pageX + 'px';
+  circleY = e.pageY + 'px';
+  circle.style.display = 'block';
   setTimeout(function() {
-    circle.style.cssText = 'display: block; opacity: 1; transform: translate(-50%) scale(3);';
+    circle.style.cssText = 'opacity: 1; transform: translate(-50%) scale(3);';
   }, 15);
 });
 
