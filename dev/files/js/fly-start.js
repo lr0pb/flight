@@ -14,16 +14,9 @@ var circle = document.getElementById('circle');
 document.getElementById('news-block').addEventListener('click', function(e) {
   const x = e.pageX;
   const y = e.pageY;
-  console.log(x);
-  console.log(y);
-  //circle.style.transformOrigin = "600px, 600px";
-  $('#circle').css('transform-origin','600px, 600px');
-  $('#circle').css('display','block');
+  circle.style.cssText = `display: block; left: ${x}; top: ${y};`;
   setTimeout(function() {
-    $('#circle').css({
-      'opacity':'1',
-      'transform':'scale(2.5)'
-    });
+    circle.style.cssText = `opacity: 1; transform: translate(-50%) scale(3);`;
   }, 15);
 });
 
