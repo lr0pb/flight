@@ -10,16 +10,18 @@
 });*/
 
 const circle = document.getElementById('circle');
-let circleX = circle.style.left;
-let circleY = circle.style.top;
 
 document.getElementById('news-block').addEventListener('click', function(e) {
-  circleX = e.pageX + 'px';
-  circleY = e.pageY + 'px';
+  circle.style.left = e.pageX + 'px';
+  circle.style.top = e.pageY + 'px';
+  console.log(circle.style.left);
+  console.log(circle.style.top);
   circle.style.display = 'block';
   setTimeout(function() {
     circle.style.cssText = 'opacity: 1; transform: translate(-50%) scale(3);';
+    console.log(circle.style.display);
   }, 15);
+  console.log(circle.style.display);
 });
 
 $('#gallery-block').click(function() {
