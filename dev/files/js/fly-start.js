@@ -17,11 +17,11 @@ document.getElementById('news-block').addEventListener('click', function(e) {
   console.log(circle.style.left);
   console.log(circle.style.top);
   circle.style.display = 'block';
+  console.log(circle.style.display);
   setTimeout(function() {
     circle.style.cssText = 'opacity: 1; transform: translate(-50%) scale(3);';
     console.log(circle.style.display);
   }, 15);
-  console.log(circle.style.display);
 });
 
 $('#gallery-block').click(function() {
