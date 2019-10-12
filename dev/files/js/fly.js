@@ -215,7 +215,7 @@ document.getElementById('im2').addEventListener("mousedown", function() {
     document.getElementById('bg2-spawn').classList.remove('bg-open');
     document.getElementById('cube2').style.opacity = "1";
     document.getElementById('to-im2-2').classList.remove('not-now');
-    document.getElementById('im3to2').classList.remove('complete');
+    document.getElementById('icon3to2').classList.remove('complete');
   }, 5710 );
 });
 
@@ -243,7 +243,7 @@ $('#to-im2-2').mousedown(function() {
 document.getElementById('im3').addEventListener("mousedown", function() {
   let elem = this;
   openImage(3, '3to2', elem);
-  document.getElementById('im5to3').classList.remove('complete');
+  document.getElementById('icon5to3').classList.remove('complete');
 });
 
 $('#icon3to2').mousedown(function() {
@@ -355,7 +355,7 @@ document.getElementById('im7').addEventListener("mousedown", function() {
   setTimeout( () => {
     document.getElementById('bg7-spawn').classList.remove('bg-open');
     document.getElementById('cube6').style.opacity = "1";
-    document.getElementById('im6to7').classList.remove('complete');
+    document.getElementById('icon6to7').classList.remove('complete');
   }, 5710 );
 });
 
@@ -371,7 +371,7 @@ $('#icon7to10').mousedown(function() {
 document.getElementById('im10').addEventListener("mousedown", function() {
   let elem = this;
   openImage(10, '-', elem);
-  document.getElementById('im7to10').classList.remove('complete');
+  document.getElementById('icon7to10').classList.remove('complete');
 });
 
 document.getElementById('im8').addEventListener("mousedown", function() {
@@ -504,9 +504,9 @@ document.getElementById('im12').addEventListener("mousedown", function() {
 
   setTimeout( () => {
     document.getElementById('bg12-spawn').classList.remove('bg-open');
-    document.getElementById('cube12').style.opacity = "1";
+    document.getElementById('cube12').style.cssText = 'opacity: 1; transform: rotateY(180deg)';
     document.getElementById('to-im13').classList.remove('not-now');
-    document.getElementById('im13').classList.remove('complete');
+    document.getElementById('icon13').classList.remove('complete');
   }, 5710 );
 });
 
