@@ -14,7 +14,7 @@ var circle = document.getElementById('circle');
 document.getElementById('news-block').addEventListener('click', function(e) {
   const x = e.pageX;
   const y = e.pageY;
-  circle.style.cssText = `display: block; left: ${x}; top: ${y};`;
+  circle.style.cssText = 'display: block; left: ' + x + '; top: ' + y + ';';
   setTimeout(function() {
     circle.style.cssText = 'opacity: 1; transform: translate(-50%) scale(3);';
   }, 15);
