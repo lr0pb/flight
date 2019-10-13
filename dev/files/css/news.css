@@ -166,6 +166,8 @@ header, footer {display: none;}
 
 #news-list {
   position: relative;
+  top: 100vh;
+  transform: translateY(-11.5rem);
   display: flex;
   align-items: center;
   flex-direction: column;
