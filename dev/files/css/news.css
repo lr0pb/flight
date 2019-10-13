@@ -6,10 +6,11 @@
   font-size: 2rem;
 }
 #news-page {
+  position: absolute;
+  top 0;
   width: 100vw;
   min-height: 100vh;
   display: none;
-  background-color: #0b0e17;
 }
 header, footer {display: none;}
 @supports (display: grid) {
@@ -164,6 +165,7 @@ header, footer {display: none;}
 }
 
 #news-list {
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
