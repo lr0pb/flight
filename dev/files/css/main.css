@@ -40,6 +40,19 @@ p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height
   from {top:0;}
   to {top: 100vh;}
 }
+
+#circle {
+  position: absolute;
+  z-index: 998;
+  display: none;
+  opacity: 1;
+  width: 35vw;
+  height: 35vw;
+  background-color: #0b0e17;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: transform 1.5s;
+}
 /* Navigation and Footer block */
 header, footer {background-color: hsla(205, 15%, 5%, 0.4); position: relative; width: 100vw; z-index: 20;}
 @media screen and (orientation: portrait) {
