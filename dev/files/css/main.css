@@ -42,7 +42,7 @@ p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height
 }
 
 #cover {
-  position: fixed;
+  position: fixed; 
   width: 100vw;
   height: 100vh;
   filter: blur(2rem);
