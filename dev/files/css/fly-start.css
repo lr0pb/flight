@@ -17,15 +17,7 @@
   z-index: 2;
   width: 100vw;
   height: 100vh;
-  background-size: cover; background-position: center center; background-repeat: no-repeat;/*
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.3), rgba(11, 14, 23, 0.3)), url(/images/cover.jpg);
-  background-image: -webkit-radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)),
-  -webkit-radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/images/main.jpg);
-  background-image: radial-gradient(ellipse at top left, transparent, rgba(11, 14, 23, 0.2)),
-  radial-gradient(ellipse at bottom right, transparent, rgba(11, 14, 23, 0.1)), url(/images/main.jpg);*/
   background-color: #0b0e17;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.65), rgba(11, 14, 23, 1)),
-  url(/images/main.jpg);
 }
 @supports (display: grid) {
   #support-box {display: none;}
@@ -93,6 +85,21 @@
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
   url(/images/cover.jpg);
 }
+#fly-open {
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1.8em;
+  padding: 1rem 6.5rem;
+  margin-top: 2rem;
+  background-color: #318613;
+  border: 0.6rem solid #41b619;
+  border-radius: 5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(65, 182, 25, 0.6);
+  transition: 0.5s;
+}
+#fly-open:hover {
+  box-shadow: 0 0 3rem #41B619; /*
+  background: -webkit-linear-gradient(75deg, #41B619, #CBE724)*/;}
 #news-block {
   grid-area: new;
   display: flex;
@@ -142,23 +149,6 @@
 #footer-block {
   grid-area: fut;
 }
-
-#fly-open {
-  cursor: pointer;
-  font-weight: 800;
-  font-size: 1.8em;
-  padding: 1rem 6.5rem;
-  margin-top: 2rem;
-  background-color: #318613;
-  border: 0.6rem solid #41b619;
-  border-radius: 5rem;
-  box-shadow: 0 0.5rem 1.5rem rgba(65, 182, 25, 0.6);
-  transition: 0.5s;
-}
-#fly-open:hover {
-  box-shadow: 0 0 2rem #41B619; /*
-  box-shadow: 0 0.5rem 1.5rem #41B619;
-  background: -webkit-linear-gradient(75deg, #41B619, #CBE724)*/;}
 
 @media screen and (max-aspect-ratio: 4/3) {
   #rotate-box {

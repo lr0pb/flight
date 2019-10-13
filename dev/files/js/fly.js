@@ -14,7 +14,7 @@ $(document).ready(function() {
     $('#first-load-view').addClass('not-now');
     setTimeout(function() {
       $('body').removeClass('overflow-hidden');
-    }, 1000);
+    }, 1500);
   }
   else {
     $('#start-content').css('display','none');
@@ -37,7 +37,7 @@ $(document).ready(function() {
 
   setTimeout(function() {
     $('#transition-layer').css('display','none');
-  }, 1000);
+  }, 1500);
 
   var bgo = document.getElementById('bgo');
   const bg1 = document.getElementById('bg1');

@@ -16,7 +16,7 @@ document.getElementById('news-block').addEventListener('click', function(e) {
   circle.style.display = 'block';
   circle.style.left = e.pageX + 'px';
   circle.style.top = e.pageY + 'px';
-  setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(5)'}, 15 );
+  setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(5)'; circle.style.opacity = '1'}, 15 );
   setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/news'}, 1200 );
 });
 
