@@ -42,7 +42,8 @@ p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height
 }
 
 #cover {
-  position: fixed; 
+  position: sticky;
+  top: 0; left: 0;
   width: 100vw;
   height: 100vh;
   filter: blur(2rem);
