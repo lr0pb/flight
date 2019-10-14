@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('cover').style.filter = 'blur(1rem)';
     document.getElementsByClassName('all').style.opacity = '1';
   }, 1500 );
+  localStorage.setItem('isFirstEntry', 'no');
+  console.log( localStorage.getItem('isFirstEntry') );
 });
 
 document.getElementById('news-block').addEventListener('click', function(e) {

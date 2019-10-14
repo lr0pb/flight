@@ -10,7 +10,7 @@ $(document).ready(function() {
     });
   };*/
 
-  if ( localStorage.getItem('isFirstEntry') == 1 ) {
+  /*if ( localStorage.getItem('isFirstEntry') == 1 ) {
     $('#first-load-view').addClass('not-now');
     setTimeout(function() {
       $('body').removeClass('overflow-hidden');
@@ -33,7 +33,7 @@ $(document).ready(function() {
       localStorage.setItem('isFirstEntry', 1); //1 - no
       localStorage.setItem('whatIsVersion', 1); //Version list - /version.txt
     }, 11500);
-  }
+  }*/
 
   setTimeout(function() {
     $('#transition-layer').css('display','none');
