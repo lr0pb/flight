@@ -4,11 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
   circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
   circle.style.opacity = '0';
   setTimeout( () => {
+    document.getElementById('cover').style.filter = 'blur(1rem)';
+    document.getElementById('start-content').style.opacity = '1';
+  }, 1000 );
+  setTimeout( () => {
     circle.style.display = 'none';
     circle.style.transition = 'transform 1.5s, opacity 0.5s';
     document.querySelector('body').classList.remove('overflow-hidden');
-    document.getElementById('cover').style.filter = 'blur(1rem)';
-    document.getElementsByClassName('all').style.opacity = '1';
   }, 1500 );
   localStorage.setItem('isFirstEntry', 'no');
   console.log( localStorage.getItem('isFirstEntry') );
