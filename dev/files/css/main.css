@@ -56,8 +56,7 @@ p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height
 #circle {
   position: absolute;
   z-index: 998;
-  display: block;
-  opacity: 0;
+  display: block; opacity: 1;
   top: 25vh; left: 25vw;
   width: 35vw; height: 35vw;
   background-color: #0b0e17;
