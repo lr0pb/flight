@@ -25,5 +25,5 @@ function back() {
   document.querySelector('body').classList.add('overflow-hidden');
   circle.style.display = 'block';
   setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(5)';circle.style.opacity = '1'}, 15);
-  setTimeout( () => {document.location.href = "https://flight.pp.ua/";}, 1200 );
+  setTimeout( () => {document.location.href = "https://flight.pp.ua/dev/fly";}, 1200 );
 };
