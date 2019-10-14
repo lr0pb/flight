@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     circle.style.transition = 'transform 1.5s, opacity 0.5s';
     document.querySelector('body').classList.remove('overflow-hidden');
     document.getElementById('cover').css.filter = 'blur(1rem)';
-    document.getElementsByClassName('all').css.opacity = '1';
+    document.getElementById('news-page').css.opacity = '1';
   }, 1500 );
 });
 
