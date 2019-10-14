@@ -28,7 +28,7 @@ header, footer {display: none;}
       "... ... ... ... ..."
     ;
     /*ttl - title, img - to gallery, new - last news, pln - plan, hot - hot keys, fut - footer */
-    grid-template-rows: 1.7fr 4rem 40rem 10rem 4rem 1fr;
+    grid-template-rows: 1.5fr 4rem 40rem 10rem 4rem 1fr;
     grid-template-columns: 1fr repeat(3, 34rem) 1fr;
     grid-gap: 1rem;
   }

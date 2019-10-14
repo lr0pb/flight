@@ -1,4 +1,4 @@
-var circle = document.getElementById('circle');
+const circle = document.getElementById('circle');
 
 document.addEventListener('DOMContentLoaded', () => {
   circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
