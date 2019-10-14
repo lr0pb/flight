@@ -52,7 +52,6 @@ p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.65), rgba(11, 14, 23, 1)),
   url(/images/main.jpg);
 }
-.all {opacity: 0; transition: opacity 1.5s ease-in;}
 #circle {
   position: absolute;
   z-index: 998;

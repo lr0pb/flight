@@ -4,14 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
   circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
   circle.style.opacity = '0';
   setTimeout( () => {
-    document.getElementById('cover').style.filter = 'blur(1rem)';
-    document.getElementById('news-page').style.opacity = '1';
-    document.getElementById('news-list').style.opacity = '1';
-  }, 1000 );
-  setTimeout( () => {
     circle.style.display = 'none';
     circle.style.transition = 'transform 1.5s, opacity 0.5s';
     document.querySelector('body').classList.remove('overflow-hidden');
+    document.getElementById('cover').style.filter = 'blur(1rem)';
   }, 1500 );
 });
 
