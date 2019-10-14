@@ -9,11 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 1500 );
 });
 
-setTimeout(function() {
-  $('#transition-layer').css('display','none');
-  $('body').removeClass('overflow-hidden');
-}, 1000);
-
 document.getElementById('news-button').addEventListener('click', function() {
   document.getElementById('news-list').scrollIntoView({block: "start", behavior: "smooth"});
 })
