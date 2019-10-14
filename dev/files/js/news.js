@@ -2,7 +2,7 @@ var circle = document.getElementById('circle');
 
 document.addEventListener('DOMContentLoaded', () => {
   circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
-  circle.style.opacity = '0';
+  setTimeout( () => {circle.style.opacity = '0';}, 750 );
   setTimeout( () => {
     circle.style.display = 'none';
     circle.style.transition = 'transform 1.5s, opacity 0.5s';
@@ -17,7 +17,7 @@ document.getElementById('news-button').addEventListener('click', function() {
 
 document.getElementById('to-gallery').addEventListener('click', function(e) {
   click(e);
-  setTimeout( () => {document.location.href = 'https://flight.pp.ua/gallery'}, 1200 );
+  setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/gallery'}, 1200 );
 });
 
 function click(e) {
@@ -36,5 +36,5 @@ function back() {
   document.querySelector('body').classList.add('overflow-hidden');
   circle.style.display = 'block';
   setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(5)';circle.style.opacity = '1'}, 15);
-  setTimeout( () => {document.location.href = "https://flight.pp.ua/fly";}, 1200 );
+  setTimeout( () => {document.location.href = "https://flight.pp.ua/dev/fly";}, 1200 );
 };
