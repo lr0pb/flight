@@ -14,7 +14,10 @@ const circle = document.getElementById('circle');
 document.addEventListener('DOMContentLoaded', () => {
   circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
   setTimeout( () => {circle.style.opacity = '0'}, 1000 );
-  setTimeout( () => {circle.style.display = 'none'}, 1500 );
+  setTimeout( () => {
+    circle.style.display = 'none';
+    document.querySelector('body').classList.remove('overflow-hidden');
+  }, 1500 );
 });
 
 document.getElementById('news-block').addEventListener('click', function(e) {
