@@ -652,20 +652,18 @@ function realClose() {
 
 var fly = document.getElementById('fly');
 
-$(document).keydown(function(e) {
-  if(e.keyCode===83){
-    open();
-  };
-  if(e.keyCode===69){
-    close();
-  };
+document.addEventListener('keydown', function(e) {
+  if(e.keyCode===83) open();
+  if(e.keyCode===69) close();
 });
-$('#fly-open').mousedown(open);
+
+document.getElementById('fly-open').addEventListener('mousedown', open);
+document.getElementById('cross').addEventListener('mousedown', close);
+
 function open() {
   if (fly.webkitRequestFullscreen) fly.webkitRequestFullscreen();
   else if (fly.requestFullscreen) fly.requestFullscreen();
 };
-$('#cross').click(close);
 function close() {
   if (fly.webkitRequestFullscreen) document.exitFullscreen();
   else if (fly.requestFullscreen) document.exitFullscreen();
