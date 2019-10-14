@@ -56,13 +56,13 @@ p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height
 #circle {
   position: absolute;
   z-index: 998;
-  display: none;
+  display: block;
   opacity: 0;
-  width: 35vw;
-  height: 35vw;
+  top: 25vh; left: 25vw;
+  width: 35vw; height: 35vw;
   background-color: #0b0e17;
   border-radius: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%) scale(5);
   transition: transform 1.5s, opacity 0.5s;
 }
 /* Navigation and Footer block */

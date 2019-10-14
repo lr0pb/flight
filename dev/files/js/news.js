@@ -1,3 +1,11 @@
+const circle = document.getElementById('circle');
+
+document.addEventListener('DOMContentLoaded', () => {
+  circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
+  setTimeout( () => {circle.style.opacity = '0'}, 1000 );
+  setTimeout( () => {circle.style.display = 'none'}, 1500 );
+});
+
 setTimeout(function() {
   $('#transition-layer').css('display','none');
   $('body').removeClass('overflow-hidden');

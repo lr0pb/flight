@@ -167,6 +167,7 @@ header, footer {display: none;}
   align-items: center;
   flex-direction: column;
   padding: 7rem 0 4rem 0;
+  z-index: 4;
 }
 article {
   border-radius: 1.2rem;
