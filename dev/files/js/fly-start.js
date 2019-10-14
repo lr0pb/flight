@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout( () => {
     circle.style.opacity = '0';
     document.getElementById('cover').style.filter = 'blur(1rem)';
-  }, 750 );
+  }, 500 );
   setTimeout( () => {
     circle.style.display = 'none';
     circle.style.transition = 'transform 1.5s, opacity 0.5s';
