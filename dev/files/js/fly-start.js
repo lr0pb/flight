@@ -2,12 +2,14 @@ var circle = document.getElementById('circle');
 
 document.addEventListener('DOMContentLoaded', () => {
   circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
-  setTimeout( () => {circle.style.opacity = '0';}, 750 );
+  setTimeout( () => {
+    circle.style.opacity = '0';
+    document.getElementById('cover').style.filter = 'blur(1rem)';
+  }, 750 );
   setTimeout( () => {
     circle.style.display = 'none';
     circle.style.transition = 'transform 1.5s, opacity 0.5s';
     document.querySelector('body').classList.remove('overflow-hidden');
-    document.getElementById('cover').style.filter = 'blur(1rem)';
   }, 1500 );
 });
 
