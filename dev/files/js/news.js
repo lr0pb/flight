@@ -13,18 +13,13 @@ document.getElementById('news-button').addEventListener('click', function() {
   document.getElementById('news-list').scrollIntoView({block: "start", behavior: "smooth"});
 })
 
-$(document).keydown(function(e) {
-  if(e.keyCode===66){
-    back();
-  };
+document.addEventListener('keydown', function(e) {
+  if(e.keyCode===66) back();
 });
+
 function back() {
-  $('body').addClass('overflow-hidden');
-  $('#transition-layer').css({
-    'display':'block',
-    'animation':'1s transition-start-phase'
-  });
-  setTimeout(function() {
-    document.location.href = "https://flight.pp.ua/";
-  }, 1000);
+  document.querySelector('body').classList.add('overflow-hidden');
+  circle.style.display = 'block';
+  setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(5)';circle.style.opacity = '1'}, 15);
+  setTimeout( () => {document.location.href = "https://flight.pp.ua/";}, 1200 );
 };
