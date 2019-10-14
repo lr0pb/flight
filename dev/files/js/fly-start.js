@@ -2,10 +2,7 @@ var circle = document.getElementById('circle');
 
 document.addEventListener('DOMContentLoaded', () => {
   circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
-  setTimeout( () => {
-    circle.style.opacity = '0';
-    circle.style.transition = 'transform 1.5s, opacity 1s';
-  }, 500 );
+  circle.style.opacity = '0';
   setTimeout( () => {
     circle.style.display = 'none';
     circle.style.transition = 'transform 1.5s, opacity 0.5s';
