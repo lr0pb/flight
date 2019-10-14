@@ -14,7 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('news-block').addEventListener('click', function(e) {
   click(e);
-  setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/news'}, 1200 );
+  setTimeout( () => {document.location.href = 'https://flight.pp.ua/news'}, 1200 );
+});
+
+document.getElementById('gallery-block').addEventListener('click', function(e) {
+  click(e);
+  setTimeout( () => {document.location.href = 'https://flight.pp.ua/gallery'}, 1200 );
 });
 
 function click(e) {
@@ -24,14 +29,3 @@ function click(e) {
   circle.style.left = e.pageX + 'px';
   setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(5)';circle.style.opacity = '1'}, 15);
 };
-
-$('#gallery-block').click(function() {
-  $('body').addClass('overflow-hidden');
-  $('#transition-layer').css({
-    'display':'block',
-    'animation':'1s transition-start-phase'
-  });
-  setTimeout(function() {
-    document.location.href = "https://flight.pp.ua/gallery";
-  }, 1000);
-});
