@@ -536,10 +536,10 @@ document.getElementById('cross').addEventListener('mousedown', close);
 function open() {
   if (fly.webkitRequestFullscreen) fly.webkitRequestFullscreen();
   else if (fly.requestFullscreen) fly.requestFullscreen();
-  
-  if (screen.width < 1099px) {
+
+  if (screen.width < 1099) {
     document.getElementById('images-container').append( document.getElementById('spring19-small').content.cloneNode(true) );
-  } else if (screen.width >= 1100px) {
+  } else if (screen.width >= 1100) {
     document.getElementById('images-container').append( document.getElementById('spring19-large').content.cloneNode(true) );
   };
 };
