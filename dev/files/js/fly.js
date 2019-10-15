@@ -433,7 +433,10 @@ function openImage(imID, spawnID, elem) {
   } else {
     elem.classList.add('open');
   };
-  $('.' + imID).addClass('not-now');
+  let icon;
+  for ( icon in document.querySelectorAll(`.${imID}`) ) {
+    icon.classLists.add('not-now');
+  };
   bgo.classList.add('bgo-open','im' + imID + '-open');
   document.getElementById('bg' + imID + '-spawn').classList.add('bg-open');
   closeButton.classList.add('button-spawn');
