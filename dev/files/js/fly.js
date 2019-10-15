@@ -36,12 +36,20 @@ $(document).ready(function() {
   }*/
 });
 
-document.querySelectorAll('.image-point').addEventListener('mousedown', () => {
-  document.getElementById('help-point').classList.replace('fade-from-down','fade-to-down');
-});
-document.querySelectorAll('.180-point').addEventListener('mousedown', () => {
-  setTimeout( () => {document.getElementById('help-180').classList.add('fade-from-down')}, 4000 );
-});
+let imagePoint;
+for ( imagePoint in document.querySelectorAll('.image-point') ) {
+  imagePoint.addEventListener('mousedown', () => {
+    document.getElementById('help-point').classList.replace('fade-from-down','fade-to-down');
+  });
+};
+
+let point180;
+for ( point180 in document.querySelectorAll('.180-point') ) {
+  point180.addEventListener('mousedown', () => {
+    setTimeout( () => {document.getElementById('help-180').classList.add('fade-from-down')}, 4000 );
+  });
+};
+
 /*
 $('.image-point').mousedown(function() {
   $('#help-point').removeClass('fade-from-down');
