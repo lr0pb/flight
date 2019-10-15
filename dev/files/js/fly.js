@@ -36,6 +36,13 @@ $(document).ready(function() {
   }*/
 });
 
+document.querySelectorAll('.image-point').addEventListener('mousedown', () => {
+  document.getElementById('help-point').classList.replace('fade-from-down','fade-to-down');
+});
+document.querySelectorAll('.180-point').addEventListener('mousedown', () => {
+  setTimeout( () => {document.getElementById('help-180').classList.add('fade-from-down')}, 4000 );
+});
+/*
 $('.image-point').mousedown(function() {
   $('#help-point').removeClass('fade-from-down');
   $('#help-point').addClass('fade-to-down');
@@ -44,7 +51,7 @@ $('.180-point').mousedown(function() {
   setTimeout(function() {
     $('#help-180').addClass('fade-from-down');
   }, 4010);
-});
+});*/
 
 document.getElementById('im1').addEventListener("mousedown", function() {
   let elem = this;
@@ -437,7 +444,7 @@ function openImage(imID, spawnID, elem) {
   let iconArray = document.querySelectorAll(`.${imID}`);
   console.log(iconArray);
   for (icon in iconArray) {
-    icon.classLists.add('not-now');
+    icon.classList.add('not-now');
   };
   bgo.classList.add('bgo-open','im' + imID + '-open');
   document.getElementById('bg' + imID + '-spawn').classList.add('bg-open');
