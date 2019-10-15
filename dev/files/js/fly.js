@@ -37,11 +37,15 @@ $(document).ready(function() {
 });
 
 for (let i = document.querySelectorAll('.image-point')[0]; i.lenght <= 12; i++) {
-  i.addEventListener('mousedown', () => document.getElementById('help-point').classList.replace('fade-from-down','fade-to-down'); );
+  i.addEventListener('mousedown', () => {
+    document.getElementById('help-point').classList.replace('fade-from-down','fade-to-down');
+  });
 };
 
 for (let i = document.querySelectorAll('.180-point')[0]; i.lenght <= 3; i++) {
-  i.addEventListener('mousedown', () => setTimeout( () => document.getElementById('help-180').classList.add('fade-from-down'), 4000 ); );
+  i.addEventListener('mousedown', () => {
+    setTimeout( () => {document.getElementById('help-180').classList.add('fade-from-down');}, 4000 );
+  });
 };
 
 /*
