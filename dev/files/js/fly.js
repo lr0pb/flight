@@ -434,7 +434,9 @@ function openImage(imID, spawnID, elem) {
     elem.classList.add('open');
   };
   let icon;
-  for ( icon in document.querySelectorAll(`.${imID}`) ) {
+  let iconArray = document.querySelectorAll(`.${imID}`);
+  console.log(iconArray);
+  for (icon in iconArray) {
     icon.classLists.add('not-now');
   };
   bgo.classList.add('bgo-open','im' + imID + '-open');
