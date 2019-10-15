@@ -34,134 +34,6 @@ $(document).ready(function() {
       localStorage.setItem('whatIsVersion', 1); //Version list - /version.txt
     }, 11500);
   }*/
-
-  setTimeout(function() {
-    $('#transition-layer').css('display','none');
-  }, 1500);
-
-  var bgo = document.getElementById('bgo');
-  const bg1 = document.getElementById('bg1');
-  const bg1to411 = document.getElementById('bg1to4-1-1');
-  const bg1to412 = document.getElementById('bg1to4-1-2');
-  const bg1to421 = document.getElementById('bg1to4-2-1');
-  const bg1to422 = document.getElementById('bg1to4-2-2');
-  const bg1to431 = document.getElementById('bg1to4-3-1');
-  const bg1to432 = document.getElementById('bg1to4-3-2');
-  const bg4 = document.getElementById('bg4');
-  const bg21 = document.getElementById('bg2-1');
-  const bg22 = document.getElementById('bg2-2');
-  const bg6 = document.getElementById('bg6');
-  const bg7 = document.getElementById('bg7');
-  const bg10 = document.getElementById('bg10');
-  const bg8 = document.getElementById('bg8');
-  const bg8to9 = document.getElementById('bg8to9');
-  const bg91 = document.getElementById('bg9-1');
-  const bg92 = document.getElementById('bg9-2');
-  const bg12 = document.getElementById('bg12');
-  const bg13 = document.getElementById('bg13');
-  const bg1spawn = document.getElementById('bg1-spawn');
-  const bg2spawn = document.getElementById('bg2-spawn');
-  const bg22spawn = document.getElementById('bg2-2-spawn');
-  const bg3spawn = document.getElementById('bg3-spawn');
-  const bg5spawn = document.getElementById('bg5-spawn');
-  const bg6spawn = document.getElementById('bg6-spawn');
-  const bg7spawn = document.getElementById('bg7-spawn');
-  const bg8spawn = document.getElementById('bg8-spawn');
-  const bg91spawn = document.getElementById('bg9-1-spawn');
-  const bg4spawn = document.getElementById('bg4-spawn');
-  const bg10spawn = document.getElementById('bg10-spawn');
-  const bg11spawn = document.getElementById('bg11-spawn');
-  const bg12spawn = document.getElementById('bg12-spawn');
-  const bg13spawn = document.getElementById('bg13-spawn');
-
-  $(window).resize(responsiveImages);
-  //$(window).resize(mobileDevice);
-
-  function responsiveImages() {
-    if ( $(window).width() >= 1100 ) {
-      bgo.src="/images/jpg-large/bg.jpg";
-      bg1.src="/images/jpg-large/im1.jpg";
-      bg1to411.src="/images/jpg-large/cube1to4/cube1to4-1-1.jpg";
-      bg1to412.src="/images/jpg-large/cube1to4/cube1to4-1-2.jpg";
-      bg1to421.src="/images/jpg-large/cube1to4/cube1to4-2-1.jpg";
-      bg1to422.src="/images/jpg-large/cube1to4/cube1to4-2-2.jpg";
-      bg1to431.src="/images/jpg-large/cube1to4/cube1to4-3-1.jpg";
-      bg1to432.src="/images/jpg-large/cube1to4/cube1to4-3-2.jpg";
-      bg4.src="/images/jpg-large/im4.jpg";
-      bg21.src="/images/jpg-large/im2-1.jpg";
-      bg22.src="/images/jpg-large/im2-2.jpg";
-      bg6.src="/images/jpg-large/im6.jpg";
-      bg7.src="/images/jpg-large/im7.jpg";
-      bg10.src="/images/jpg-large/im10.jpg";
-      bg8.src="/images/jpg-large/im8.jpg";
-      bg8to9.src="/images/jpg-large/im8to9.jpg";
-      bg91.src="/images/jpg-large/im9-1.jpg";
-      bg92.src="/images/jpg-large/im9-2.jpg";
-      bg12.src="/images/jpg-large/im12.jpg";
-      bg13.src="/images/jpg-large/im13.jpg";
-      bg1spawn.src="/images/jpg-large/im1.jpg";
-      bg2spawn.src="/images/jpg-large/im2-1.jpg";
-      bg22spawn.src="/images/jpg-large/im2-2.jpg";
-      bg3spawn.src="/images/jpg-large/im3.jpg";
-      bg5spawn.src="/images/jpg-large/im5.jpg";
-      bg6spawn.src="/images/jpg-large/im6.jpg";
-      bg7spawn.src="/images/jpg-large/im7.jpg";
-      bg8spawn.src="/images/jpg-large/im8.jpg";
-      bg91spawn.src="/images/jpg-large/im9-1.jpg";
-      bg4spawn.src="/images/jpg-large/im4.jpg";
-      bg10spawn.src="/images/jpg-large/im10.jpg";
-      bg11spawn.src="/images/jpg-large/im11.jpg";
-      bg12spawn.src="/images/jpg-large/im12.jpg";
-      bg13spawn.src="/images/jpg-large/im13.jpg";
-    }
-    if ( $(window).width() < 1099 ) {
-      bgo.src="/images/jpg-small/bg.jpg";
-      bg1.src="/images/jpg-small/im1.jpg";
-      bg1to411.src="/images/jpg-small/cube1to4/cube1to4-1-1.jpg";
-      bg1to412.src="/images/jpg-small/cube1to4/cube1to4-1-2.jpg";
-      bg1to421.src="/images/jpg-small/cube1to4/cube1to4-2-1.jpg";
-      bg1to422.src="/images/jpg-small/cube1to4/cube1to4-2-2.jpg";
-      bg1to431.src="/images/jpg-small/cube1to4/cube1to4-3-1.jpg";
-      bg1to432.src="/images/jpg-small/cube1to4/cube1to4-3-2.jpg";
-      bg4.src="/images/jpg-small/im4.jpg";
-      bg21.src="/images/jpg-small/im2-1.jpg";
-      bg22.src="/images/jpg-small/im2-2.jpg";
-      bg6.src="/images/jpg-small/im6.jpg";
-      bg7.src="/images/jpg-small/im7.jpg";
-      bg10.src="/images/jpg-small/im10.jpg";
-      bg8.src="/images/jpg-small/im8.jpg";
-      bg8to9.src="/images/jpg-small/im8to9.jpg";
-      bg91.src="/images/jpg-small/im9-1.jpg";
-      bg92.src="/images/jpg-small/im9-2.jpg";
-      bg12.src="/images/jpg-small/im12.jpg";
-      bg13.src="/images/jpg-small/im13.jpg";
-      bg1spawn.src="/images/jpg-small/im1.jpg";
-      bg2spawn.src="/images/jpg-small/im2-1.jpg";
-      bg22spawn.src="/images/jpg-small/im2-2.jpg";
-      bg3spawn.src="/images/jpg-small/im3.jpg";
-      bg5spawn.src="/images/jpg-small/im5.jpg";
-      bg6spawn.src="/images/jpg-small/im6.jpg";
-      bg7spawn.src="/images/jpg-small/im7.jpg";
-      bg8spawn.src="/images/jpg-small/im8.jpg";
-      bg91spawn.src="/images/jpg-small/im9-1.jpg";
-      bg4spawn.src="/images/jpg-small/im4.jpg";
-      bg10spawn.src="/images/jpg-small/im10.jpg";
-      bg11spawn.src="/images/jpg-small/im11.jpg";
-      bg12spawn.src="/images/jpg-small/im12.jpg";
-      bg13spawn.src="/images/jpg-small/im13.jpg";
-    }
-  };/*
-  function mobileDevice() {
-    if ( $(window).width() < 1099 ) {
-      $('#im4').css('display','none');
-      $('#im2').css('display','none');
-      $('#im3').css('display','none');
-      $('#im7').css('display','none');
-      $('#im10').css('display','none');
-      $('#im12').css('display','none');
-    }
-  };*/
-
 });
 
 $('.image-point').mousedown(function() {
@@ -552,7 +424,8 @@ $('#to-im13').mousedown(function() {
   }, 3000);
 });
 
-var closeButton = document.getElementById('bottom-button');
+const bgo = document.getElementById('bgo');
+const closeButton = document.getElementById('bottom-button');
 
 function openImage(imID, spawnID, elem) {
   if ( elem.classList.contains('complete') ) {
@@ -650,7 +523,7 @@ function realClose() {
   $('#cube12').removeClass('rotate13');
 };
 
-var fly = document.getElementById('fly');
+const fly = document.getElementById('fly');
 
 document.addEventListener('keydown', function(e) {
   if(e.keyCode===83) open();
@@ -663,6 +536,12 @@ document.getElementById('cross').addEventListener('mousedown', close);
 function open() {
   if (fly.webkitRequestFullscreen) fly.webkitRequestFullscreen();
   else if (fly.requestFullscreen) fly.requestFullscreen();
+  
+  if (screen.width < 1099px) {
+    document.getElementById('images-container').append( document.getElementById('spring19-small').content.cloneNode(true) );
+  } else if (screen.width >= 1100px) {
+    document.getElementById('images-container').append( document.getElementById('spring19-large').content.cloneNode(true) );
+  };
 };
 function close() {
   if (fly.webkitRequestFullscreen) document.exitFullscreen();
