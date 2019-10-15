@@ -36,13 +36,13 @@ $(document).ready(function() {
   }*/
 });
 
-for (let i = document.querySelectorAll('.image-point')[0]; i.lenght <= 12; i++) {
+for (let i = document.querySelectorAll('.image-point')[0]; i <= 12; i++) {
   i.addEventListener('mousedown', () => {
     document.getElementById('help-point').classList.replace('fade-from-down','fade-to-down');
   });
 };
 
-for (let i = document.querySelectorAll('.180-point')[0]; i.lenght <= 3; i++) {
+for (let i = document.querySelectorAll('.point-180')[0]; i <= 3; i++) {
   i.addEventListener('mousedown', () => {
     setTimeout( () => {document.getElementById('help-180').classList.add('fade-from-down');}, 4000 );
   });
