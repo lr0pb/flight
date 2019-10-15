@@ -541,9 +541,9 @@ function open() {
   else if (fly.requestFullscreen) fly.requestFullscreen();
 
   if (screen.width < 1099) {
-    document.querySelector('images-container').append( document.getElementById('spring19-small').content.cloneNode(true) );
+    document.querySelector('.images-container').append( document.getElementById('spring19-small').content.cloneNode(true) );
   } else if (screen.width >= 1100) {
-    document.querySelector('images-container').append( document.getElementById('spring19-large').content.cloneNode(true) );
+    document.querySelector('.images-container').append( document.getElementById('spring19-large').content.cloneNode(true) );
   };
 };
 function close() {
