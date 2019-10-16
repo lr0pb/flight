@@ -59,9 +59,9 @@ function openImage(imID, spawnID, elem) {
   } else {
     elem.classList.add('open');
   };
-  for (let i = document.querySelectorAll(`.${imID}`)[0]; i <= 10; i++) {
-    i.classList.add('not-now');
-  };
+  //for (let i = document.querySelectorAll(`.${imID}`)[0]; i <= 10; i++) {
+  //  i.classList.add('not-now');
+  //};
   bgo.classList.add('bgo-open','im' + imID + '-open');
   document.getElementById('bg' + imID + '-spawn').classList.add('bg-open');
   closeButton.classList.add('button-spawn');
