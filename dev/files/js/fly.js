@@ -37,14 +37,14 @@ $(document).ready(function() {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  for (let i = document.querySelectorAll('.image-point')[0]; i <= 12; i++) {
-    i.addEventListener('mousedown', () => {
+  for (let i = 0; i < document.querySelectorAll('.image-point').lenght; i++) {
+    document.querySelectorAll('.image-point')[i].addEventListener('mousedown', () => {
       document.getElementById('help-point').classList.replace('fade-from-down','fade-to-down');
     });
   };
 
-  for (let i = document.querySelectorAll('.point-180')[0]; i <= 3; i++) {
-    i.addEventListener('mousedown', () => {
+  for (let i = 0; i < document.querySelectorAll('.point-180').lenght; i++) {
+    document.querySelectorAll('.point-180')[i].addEventListener('mousedown', () => {
       setTimeout( () => {document.getElementById('help-180').classList.add('fade-from-down');}, 4000 );
     });
   };
@@ -477,7 +477,7 @@ $('#bottom-button').click(function() {
 });
 
 function closeAnimation() {
-  closeButton.classList.remove('button-spawn');
+  document.getElementById('bottom-button').classList.remove('button-spawn');
   $('.close-box').css({'display':'flex','opacity':'1'});
 
   if ( $(window).width() < 1100 ) {
