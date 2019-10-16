@@ -36,12 +36,10 @@ $(document).ready(function() {
   }*/
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  for (let i = 0; i < document.querySelectorAll('.image-point').lenght; i++) {
-    document.querySelectorAll('.image-point')[i].addEventListener('mousedown', () => {
-      document.getElementById('help-point').classList.replace('fade-from-down','fade-to-down');
-    });
-  };
+document.addEventListener('DOMContentLoad', () => {
+  document.querySelectorAll('.image-point').forEach(function(element) {
+    element.addEventListener('mousedown', () => {document.getElementById('help-point').classList.replace('fade-from-down','fade-to-down')});
+  });
 
   for (let i = 0; i < document.querySelectorAll('.point-180').lenght; i++) {
     document.querySelectorAll('.point-180')[i].addEventListener('mousedown', () => {
