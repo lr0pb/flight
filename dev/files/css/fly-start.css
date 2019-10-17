@@ -82,13 +82,19 @@
   justify-content: center;
   align-items: center;
   background-image: /*-webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
-  url(/images/cover.jpg)*/
+  url(/images/cover.jpg)*/;
+}
+.gradient-light {
+  position: absolute;
+  width: 104rem; height: 42rem;
+  background-image:
   -webkit-linear-gradient(352.66deg, #CACE12 1.65%, rgba(202, 206, 18, 0) 75.97%),
   -webkit-linear-gradient(18.23deg, #367720 16.16%, rgba(63, 176, 25, 0) 45.29%),
   -webkit-linear-gradient(206.7deg, #E8651B 3.41%, rgba(232, 101, 27, 0) 80.34%),
   -webkit-linear-gradient(155.56deg, #C82626 3.7%, rgba(200, 38, 38, 0) 72.86%),
   -webkit-linear-gradient(90.56deg, #C82626 3.7%, rgba(38, 38, 38, 0) 72.86%);
   background-size: 150% 150%;
+  filter: blur(13rem);
   animation: 10s infinite gradient;
 }
 @keyframes gradient {
@@ -96,10 +102,12 @@
   25%, 75% {background-position: 50% 50%;}
   50% {background-position: 100% 100%;}
 }
+h1 {z-index: 4;}
 #fly-open {
   cursor: pointer;
   font-weight: 800;
   font-size: 1.8em;
+  z-index: 4;
   padding: 1rem 6rem;
   margin-top: 2rem;
   background-color: #318613;
