@@ -86,7 +86,8 @@
   -webkit-linear-gradient(352.66deg, #CACE12 1.65%, rgba(202, 206, 18, 0) 75.97%),
   -webkit-linear-gradient(18.23deg, #367720 16.16%, rgba(63, 176, 25, 0) 45.29%),
   -webkit-linear-gradient(206.7deg, #E8651B 3.41%, rgba(232, 101, 27, 0) 80.34%),
-  -webkit-linear-gradient(155.56deg, #C82626 3.7%, rgba(200, 38, 38, 0) 72.86%);
+  -webkit-linear-gradient(155.56deg, #C82626 3.7%, rgba(200, 38, 38, 0) 72.86%),
+  -webkit-linear-gradient(90.56deg, #C82626 3.7%, rgba(38, 38, 38, 0) 72.86%);
   background-size: 150% 150%;
   animation: 10s infinite gradient;
 }
@@ -99,7 +100,7 @@
   cursor: pointer;
   font-weight: 800;
   font-size: 1.8em;
-  padding: 1rem 6.5rem;
+  padding: 1rem 6rem;
   margin-top: 2rem;
   background-color: #318613;
   border: 0.6rem solid #41b619;
