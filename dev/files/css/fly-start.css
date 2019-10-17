@@ -34,14 +34,14 @@
     grid:
       "... ... ... ... ..."
       "... ttl ttl set ..."
-      "... fly fly new ..."
-      "... fly fly img ..."
+      "... new new img ..."
+      "... fly fly fly ..."
       "... abt abt hot ..."
       "... fut fut fut ..."
       "... ... ... ... ..."
     ;
     /*ttl - title, set - language setting, abt - about, hot - hot keys, new - news, img - gallery, fut - footer */
-    grid-template-rows: 1.5fr 4rem 26rem 9rem 14rem 4rem 1fr;
+    grid-template-rows: 1.5fr 4rem 12rem 42rem 18rem 4rem 1fr;
     grid-template-columns: 1fr repeat(3, 34rem) 1fr;
     grid-gap: 1rem;
   }
@@ -83,10 +83,17 @@
   align-items: center;
   background-image: /*-webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
   url(/images/cover.jpg)*/
-  -webkit-linear-gradient(352.66deg, #CACE12 1.65%, rgba(202, 206, 18, 0) 85.97%),
-  -webkit-linear-gradient(18.23deg, #367720 16.16%, rgba(63, 176, 25, 0) 35.29%),
+  -webkit-linear-gradient(352.66deg, #CACE12 1.65%, rgba(202, 206, 18, 0) 75.97%),
+  -webkit-linear-gradient(18.23deg, #367720 16.16%, rgba(63, 176, 25, 0) 45.29%),
   -webkit-linear-gradient(206.7deg, #E8651B 3.41%, rgba(232, 101, 27, 0) 80.34%),
   -webkit-linear-gradient(155.56deg, #C82626 3.7%, rgba(200, 38, 38, 0) 72.86%);
+  background-size: 150% 150%;
+  animation: 10s infinite gradient;
+}
+@keyframes gradient {
+  0%, 100% {background-position: 0 25%;}
+  25%, 75% {background-position: 50% 50%;}
+  50% {background-position: 100% 100%;}
 }
 #fly-open {
   cursor: pointer;
@@ -107,7 +114,7 @@
   grid-area: new;
   display: flex;
   flex-direction: column;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.7)),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8)),
   url(/images/jpg-small/im7.jpg);
 }
 .update-action {
@@ -134,19 +141,24 @@
 }
 #about-fly {
   grid-area: abt;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
+  display: flex;
+  flex-direction: column;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.9)), url(/images/cover.jpg);
 }
 .about-title {
-  padding: 2.5rem 0 0.5rem 2.5rem;
+  padding: 0rem 0 1rem 2.5rem;
   font-size: 2em;
   font-weight: 700;
+  margin-top: auto;
 }
 .about-text {
-  padding: 0 2.5rem;
+  padding: 0 2.5rem 2.5rem;
   font-size: 1.45em;
 }
 #hot-keys {
   grid-area: hot;
+  display: flex;
+  flex-direction: column;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
 }
 #footer-block {
