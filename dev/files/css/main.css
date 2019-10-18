@@ -19,7 +19,7 @@ h1 {
   white-space: nowrap;
   font-weight: 800;
 }
-p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height: 1.6; margin: 0;}
+p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height: 1.5; margin: 0;}
 
 #cover {
   position: absolute;
@@ -56,7 +56,6 @@ header, footer {background-color: hsla(205, 15%, 5%, 0.4); position: relative; w
   a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
   a.this, a.this:hover {border-bottom: 3px solid #41B619;}
   a.last {margin-bottom: 2.2rem;}
-  .fut-text {font-size: 1.8em; border-bottom: 3px solid transparent;}
   #burger {position: absolute; right: 0; width: 2.5rem; height: 2.5rem; margin: 1.75rem 2rem 1.75rem; cursor: pointer;}
   #burger span {display: block; width: 2.5rem; height: 0.3rem; background-color: #fff;}
   .margin-top-2 {margin-top: -0.25rem;}
@@ -72,7 +71,6 @@ header, footer {background-color: hsla(205, 15%, 5%, 0.4); position: relative; w
   a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
   a.this, a.this:hover {border-bottom: 3px solid #41B619;}
   a.last {margin-right: 3rem;}
-  .fut-text {font-size: 1.6em; margin-right: 3rem; border-bottom: 3px solid transparent;}
   nav, footer, header, #fut-content {height: 7rem;}
   #burger, span {display: none;}
 }
@@ -94,9 +92,13 @@ nav {
 }
 a, .fut-text {
   font-family: 'Ubuntu', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
   color: #fff;
+}
+.fut-text {
+  font-size: 1.4em;
+  margin: 0 1.5rem;
 }
 footer, #fut-content {display: flex; justify-content: center; align-items: center; bottom: 0;}
 @media screen and (max-width: 360px) and (orientation: portrait) {

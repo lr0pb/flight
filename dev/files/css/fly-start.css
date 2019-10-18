@@ -41,11 +41,11 @@
       "... ... ... ... ..."
     ;
     /*ttl - title, set - language setting, abt - about, hot - hot keys, new - news, img - gallery, fut - footer */
-    grid-template-rows: 1.5fr 4rem 12rem 42rem 18rem 4rem 1fr;
+    grid-template-rows: 1.5fr 4rem 12rem 42rem 18rem 2rem 1fr;
     grid-template-columns: 1fr repeat(3, 34rem) 1fr;
     grid-gap: 1rem;
   }
-  #gallery-block {display: flex;}
+  #gallery-block, #hot-keys {display: flex;}
 }
 @media screen and (max-width: 1099px) {
   #start-content {
@@ -157,21 +157,19 @@ h1 {z-index: 4;}
 .about-title {
   padding: 0rem 0 1rem 2.5rem;
   font-size: 2em;
-  font-weight: 700;
   margin-top: auto;
 }
 .about-text {
   padding: 0 2.5rem 2.5rem;
-  font-size: 1.45em;
+  font-size: 1.6em;
 }
 #hot-keys {
   grid-area: hot;
-  display: flex;
   flex-direction: column;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
 }
 #footer-block {
-  grid-area: fut; z-index: 4;
+  grid-area: fut; display: flex; z-index: 4;
 }
 
 @media screen and (max-aspect-ratio: 4/3) {
