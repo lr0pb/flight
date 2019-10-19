@@ -37,9 +37,10 @@ p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height
   z-index: 998;
   display: block; opacity: 1;
   width: 35vmax; height: 35vmax;
+  top: 25vh; left: 25vw;
   background-color: #0b0e17;
   border-radius: 50%;
-  transform: translateX(-50%) translateY(-50%) scale(5);
+  transform: translateX(-50%) translateY(-50%) scale(6);
   transition: transform 1.5s, opacity 1s;
 }
 /* Navigation and Footer block */

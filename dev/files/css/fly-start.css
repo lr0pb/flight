@@ -46,6 +46,14 @@
     grid-gap: 1rem;
   }
   #gallery-block, #hot-keys {display: flex;}
+  .large-about-block {
+    position: absolute;
+    width: 60rem;
+    height: 26rem;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
   .norm-about-block {
     width: 69rem;
     height: 18rem;
@@ -159,14 +167,6 @@ h1 {z-index: 4;}
   flex-direction: column;
   transition: all 2s;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.9)), url(/images/cover.jpg);
-}
-.large-about-block {
-  position: absolute;
-  width: 60rem;
-  height: 26rem;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
 }
 .about-title {
   padding: 0rem 0 1rem 2.5rem;

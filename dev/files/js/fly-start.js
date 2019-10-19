@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   circle.style.left = document.querySelector('.big').offsetLeft + 'px';
   setTimeout( () => {
     circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
-  },10);
+  }, 10 );
   setTimeout( () => {
     circle.style.opacity = '0';
     document.getElementById('cover').style.filter = 'blur(1rem)';
@@ -17,10 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 1510 );
 
   if (localStorage.getItem('isFirstEntry')!=='no') {
-    let arr = document.querySelectorAll('.for-hide');
     for (let i = 0; i < 5; i++) {
-      console.log(i);
-      console.log(document.querySelectorAll('.for-hide')[i]);
+      document.querySelectorAll('.for-hide')[i].classList.add('not-now');
     };
     document.getElementById('about-fly').classList.add('large-about-block');
     document.getElementById('understand').classList.remove('not-now');
@@ -29,7 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('understand').addEventListener('click', function() {
   this.classList.add('not-now');
-  document.getElementById('about-fly').classList.replace('large-about-block','norm-about-block');
+  document.getElementById('about-fly').classList.add('norm-about-block');
+  for (let i = 0; i < 5; i++) {
+    document.querySelectorAll('.for-hide')[i].classList.remove('not-now');
+  };
 });
 
 document.getElementById('news-block').addEventListener('click', function(e) {
@@ -47,5 +48,5 @@ function click(e) {
   circle.style.display = 'block';
   circle.style.top = e.pageY + 'px';
   circle.style.left = e.pageX + 'px';
-  setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(5)';circle.style.opacity = '1'}, 15);
+  setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(6)';circle.style.opacity = '1'}, 15);
 };
