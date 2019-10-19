@@ -46,6 +46,11 @@
     grid-gap: 1rem;
   }
   #gallery-block, #hot-keys {display: flex;}
+  #about-fly {
+    width: 69rem;
+    height: 18rem;
+    top: 0; left: 0;
+  }
 }
 @media screen and (max-width: 1099px) {
   #start-content {
@@ -152,7 +157,16 @@ h1 {z-index: 4;}
   grid-area: abt;
   display: flex;
   flex-direction: column;
+  transition: all 2s;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.9)), url(/images/cover.jpg);
+}
+.large-about-block {
+  position: absolute;
+  width: 60rem;
+  height: 26rem;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
 }
 .about-title {
   padding: 0rem 0 1rem 2.5rem;
@@ -163,6 +177,16 @@ h1 {z-index: 4;}
   padding: 0 2.5rem 2.5rem;
   font-size: 1.6em;
 }
+#understand {
+  background-color: #1f2740;
+  border-radius: 1.2rem;
+  padding: 0.5rem 2.5rem;
+  cursor: pointer;
+  margin: -2rem 3rem 2.5rem auto;
+  border: 0.3rem solid #f0ffffa1;
+  font-size: 1.5em;
+}
+#understand:hover {border: 0.3rem solid azure}
 #hot-keys {
   grid-area: hot;
   flex-direction: column;
