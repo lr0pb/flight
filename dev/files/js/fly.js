@@ -48,6 +48,12 @@ document.addEventListener('DOMContentLoad', () => {
       setTimeout( () => {document.getElementById('help-180').classList.add('fade-from-down');}, 4000 );
     });
   };
+
+  if (screen.width < 1099) {
+    document.querySelector('.images-container').append( document.getElementById('spring19-small').content.cloneNode(true) );
+  } else if (screen.width >= 1100) {
+    document.querySelector('.images-container').append( document.getElementById('spring19-large').content.cloneNode(true) );
+  };
 });
 
 const fly = document.getElementById('fly');
@@ -63,12 +69,6 @@ document.getElementById('cross').addEventListener('mousedown', close);
 function open() {
   if (fly.webkitRequestFullscreen) fly.webkitRequestFullscreen();
   else if (fly.requestFullscreen) fly.requestFullscreen();
-
-  if (screen.width < 1099) {
-    document.querySelector('.images-container').append( document.getElementById('spring19-small').content.cloneNode(true) );
-  } else if (screen.width >= 1100) {
-    document.querySelector('.images-container').append( document.getElementById('spring19-large').content.cloneNode(true) );
-  };
 };
 function close() {
   if (fly.webkitRequestFullscreen) document.exitFullscreen();
@@ -88,7 +88,7 @@ function openImage(imID, spawnID, elem) {
   setTimeout( () => {
     document.getElementById('icon' + spawnID).classList.remove('spawn');
   }, 5710 );
-  
+
   for (let i = 0; i < 10; i++) {
     document.querySelectorAll(`.${imID}`)[i].classList.add('not-now');
   };
