@@ -36,7 +36,6 @@ p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height
   position: absolute;
   z-index: 998;
   display: block; opacity: 1;
-  top: 25vh; left: 25vw;
   width: 35vmax; height: 35vmax;
   background-color: #0b0e17;
   border-radius: 50%;

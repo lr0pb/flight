@@ -1,6 +1,8 @@
 const circle = document.getElementById('circle');
 
 document.addEventListener('DOMContentLoaded', () => {
+  circle.style.top = document.querySelector('.big').style.top + 'px';
+  circle.style.left = document.querySelector('.big').style.left + 'px';
   circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
   setTimeout( () => {
     circle.style.opacity = '0';
@@ -11,6 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
     circle.style.transition = 'transform 1.5s, opacity 0.5s';
     document.querySelector('body').classList.remove('overflow-hidden');
   }, 1500 );
+
+  if (localStorage.getItem('isFirstEntry')!=='no') {
+    
+  };
 });
 
 document.getElementById('news-block').addEventListener('click', function(e) {

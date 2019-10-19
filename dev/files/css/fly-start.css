@@ -46,7 +46,7 @@
     grid-gap: 1rem;
   }
   #gallery-block, #hot-keys {display: flex;}
-  #about-fly {
+  .norm-about-block {
     width: 69rem;
     height: 18rem;
     top: 0; left: 0;
