@@ -15,7 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 1500 );
 
   if (localStorage.getItem('isFirstEntry')!=='no') {
-
+    let arr = document.querySelectorAll('.for-hide');
+    for (let i = 0; ; i++) {
+      console.log(i);
+      console.log(document.querySelectorAll('.for-hide')[i]);
+    };
     document.getElementById('about-fly').classList.add('large-about-block');
     document.getElementById('understand').classList.remove('not-now');
   };
