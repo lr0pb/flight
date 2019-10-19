@@ -37,14 +37,13 @@ $(document).ready(function() {
 });
 
 document.addEventListener('DOMContentLoad', () => {
-  document.querySelectorAll('.image-point').forEach(function(item) {
-    console.log(item);
-    item.addEventListener('mousedown', () => {
+  for (let i = 0; i < 11; i++) {
+    document.querySelectorAll('.image-point')[i].addEventListener('mousedown', () => {
       document.getElementById('help-point').classList.replace('fade-from-down','fade-to-down');
     });
-  });
+  };
 
-  for (let i = 0; i < document.querySelectorAll('.point-180').lenght; i++) {
+  for (let i = 0; i < 3; i++) {
     document.querySelectorAll('.point-180')[i].addEventListener('mousedown', () => {
       setTimeout( () => {document.getElementById('help-180').classList.add('fade-from-down');}, 4000 );
     });
@@ -82,9 +81,6 @@ function openImage(imID, spawnID, elem) {
   } else {
     elem.classList.add('open');
   };
-  //for (let i = document.querySelectorAll(`.${imID}`)[0]; i <= 10; i++) {
-  //  i.classList.add('not-now');
-  //};
   document.getElementById('bgo').classList.add('bgo-open','im' + imID + '-open');
   document.getElementById('bg' + imID + '-spawn').classList.add('bg-open');
   document.getElementById('bottom-button').classList.add('button-spawn');
@@ -92,6 +88,10 @@ function openImage(imID, spawnID, elem) {
   setTimeout( () => {
     document.getElementById('icon' + spawnID).classList.remove('spawn');
   }, 5710 );
+  
+  for (let i = 0; i < 10; i++) {
+    document.querySelectorAll(`.${imID}`)[i].classList.add('not-now');
+  };
 };
 
 document.getElementById('im1').addEventListener("mousedown", function() {
