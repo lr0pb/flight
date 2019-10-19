@@ -1,8 +1,8 @@
 const circle = document.getElementById('circle');
 
 document.addEventListener('DOMContentLoaded', () => {
-  circle.style.top = document.querySelector('.big').style.top + 'px';
-  circle.style.left = document.querySelector('.big').style.left + 'px';
+  circle.style.top = document.querySelector('.big').offsetTop + 'px';
+  circle.style.left = document.querySelector('.big').offsetLeft + 'px';
   circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
   setTimeout( () => {
     circle.style.opacity = '0';
@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 1500 );
 
   if (localStorage.getItem('isFirstEntry')!=='no') {
-    
+
+    document.getElementById('about-fly').classList.add('large-about-block');
+    document.getElementById('understand').classList.remove('not-now');
   };
 });
 
