@@ -192,6 +192,11 @@ h1 {z-index: 4;}
   flex-direction: column;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
 }
+.hot-key-button {
+  font-size: 1.7em;
+  padding: 0.2rem 0.3rem;
+  border: 0.1rem solid #f0ffffa1;
+}
 #footer-block {
   grid-area: fut; display: flex; z-index: 4;
 }
