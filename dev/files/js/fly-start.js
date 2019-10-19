@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 });
 
+document.getElementById('understand').addEventListener('click', function() {
+  this.classList.add('not-now');
+  document.getElementById('about-fly').classList.replace('large-about-block','norm-about-block');
+});
+
 document.getElementById('news-block').addEventListener('click', function(e) {
   click(e);
   setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/news'}, 1200 );
