@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 1510 );
 
   if (localStorage.getItem('isFirstEntry')!=='no') {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
       document.querySelectorAll('.for-hide')[i].classList.add('not-now');
     };
     document.getElementById('about-fly').classList.add('large-about-block');
