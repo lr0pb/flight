@@ -503,8 +503,8 @@ function realClose() {
   $('#bgo').removeClass('bgo-open');
   $('#bgo').removeClass('ride3to2');
   $('#bgo').removeClass('ride5to3');
-  $('.1').removeClass('not-now');
-  $('.4').removeClass('not-now');
+  $('.n1').removeClass('not-now');
+  $('.n4').removeClass('not-now');
   $('#bg6').css('opacity','1');
   /*$('#bg11').css('opacity','0');*/
   $('#bg9-1-spawn').css('opacity','0');
