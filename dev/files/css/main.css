@@ -110,4 +110,4 @@ footer, #fut-content {display: flex; justify-content: center; align-items: cente
 @media screen and (min-width: 401px) and (max-width: 500px) and (orientation: portrait) {
   html {font-size: 9px;}
 }
-.not-now {display: none;}
+.not-now {display: none; opacity: 0;}

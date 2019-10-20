@@ -55,9 +55,11 @@
     transform: translate(-50%, -50%);
   }
   .norm-about-block {
+    position: relative;
     width: 69rem;
     height: 18rem;
     top: 0; left: 0;
+    transform: translate(0, 0);
   }
 }
 @media screen and (max-width: 1099px) {
