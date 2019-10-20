@@ -36,7 +36,7 @@ $(document).ready(function() {
   }*/
 });
 
-document.addEventListener('DOMContentLoad', () => {
+document.addEventListener('DOMContentLoaded', () => {
   for (let i = 0; i < 11; i++) {
     document.querySelectorAll('.image-point')[i].addEventListener('mousedown', () => {
       document.getElementById('help-point').classList.replace('fade-from-down','fade-to-down');
@@ -67,10 +67,12 @@ document.getElementById('fly-open').addEventListener('mousedown', open);
 document.getElementById('cross').addEventListener('mousedown', close);
 
 function open() {
+  fly.classList.remove('not-now');
   if (fly.webkitRequestFullscreen) fly.webkitRequestFullscreen();
   else if (fly.requestFullscreen) fly.requestFullscreen();
 };
 function close() {
+  fly.classList.add('not-now');
   if (fly.webkitRequestFullscreen) document.exitFullscreen();
   else if (fly.requestFullscreen) document.exitFullscreen();
 };

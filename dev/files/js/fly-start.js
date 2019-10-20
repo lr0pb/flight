@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('understand').addEventListener('click', function() {
   this.classList.add('not-now');
-  document.getElementById('about-fly').classList.add('norm-about-block');
+  document.getElementById('about-fly').classList.remove('large-about-block');
   for (let i = 0; i < 4; i++) {
     document.querySelectorAll('.for-hide')[i].classList.remove('not-now');
   };
