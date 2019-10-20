@@ -90,9 +90,8 @@ function openImage(imID, spawnID, elem) {
   setTimeout( () => {
     document.getElementById('icon' + spawnID).classList.remove('spawn');
   }, 5710 );
-
   for (let i = 0; i < 10; i++) {
-    document.querySelectorAll(`.${imID}`)[i].classList.add('not-now');
+    document.querySelectorAll(`.n${imID}`)[i].classList.add('not-now');
   };
 };
 
