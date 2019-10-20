@@ -194,7 +194,7 @@ document.getElementById('im4').addEventListener("mousedown", function() {
 
   setTimeout( () => {
     document.getElementById('bg4-spawn').classList.remove('bg-open');
-    document.getElementById('cube1to4').style.opacity = "1";
+    document.getElementById('cube1to4').style.cssText = 'opacity: 1; transform: rotateY(-180deg) translateX(74vw);';
   }, 5710 );
 });
 
