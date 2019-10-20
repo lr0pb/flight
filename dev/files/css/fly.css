@@ -18,13 +18,13 @@
   #fly {font-size: 10px;}
 }
 @media screen and (min-width: 1922px) and (max-width: 2900px) and (orientation: landscape) {
-  html, #fly {font-size: 15px;}
+  #fly {font-size: 15px;}
 }
 @media screen and (min-width: 2901px) and (max-width: 3900px) and (orientation: landscape) {
-  html, #fly {font-size: 20px;}
+  #fly {font-size: 20px;}
 }
 @media screen and (min-width: 3901px) and (orientation: landscape) {
-  html, #fly {font-size: 24px;}
+  #fly {font-size: 24px;}
 }
 
 .view-container, .close-box {
