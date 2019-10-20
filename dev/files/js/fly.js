@@ -83,6 +83,9 @@ function openImage(imID, spawnID, elem) {
   } else {
     elem.classList.add('open');
   };
+  for (let i = 0; i < 10; i++) {
+    document.querySelectorAll(`.n${imID}`)[i].classList.add('not-now');
+  };
   document.getElementById('bgo').classList.add('bgo-open','im' + imID + '-open');
   document.getElementById('bg' + imID + '-spawn').classList.add('bg-open');
   document.getElementById('bottom-button').classList.add('button-spawn');
@@ -90,9 +93,6 @@ function openImage(imID, spawnID, elem) {
   setTimeout( () => {
     document.getElementById('icon' + spawnID).classList.remove('spawn');
   }, 5710 );
-  for (let i = 0; i < 10; i++) {
-    document.querySelectorAll(`.n${imID}`)[i].classList.add('not-now');
-  };
 };
 
 document.getElementById('im1').addEventListener("mousedown", function() {

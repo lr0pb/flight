@@ -96,8 +96,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: /*-webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
-  url(/images/cover.jpg)*/;
+  /*background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
+  url(/images/cover.jpg);*/
 }
 .gradient-light {
   position: absolute;
@@ -151,6 +151,13 @@ h1 {z-index: 4;}
 .update-title {
   padding: 0 0 2rem 2.5rem;
   font-size: 2.5em;
+}
+.look-here {animation: 1.5s look-here;}
+@keyframes look-here {
+  from {border: 0.0rem solid azure;}
+  33% {border: 0.4rem solid azure;}
+  67% {border: 0.4rem solid azure;}
+  to {border: 0.0rem solid azure;}
 }
 #gallery-block {
   grid-area: img;

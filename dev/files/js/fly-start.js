@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('body').classList.remove('overflow-hidden');
   }, 1510 );
 
+  localStorage.setItem('whatIsVersion', 1); //Version list - /version.txt
+
+  if (localStorage.getItem('whatIsVersion')==1) {
+    localStorage.setItem('isFirstEntry','no');
+    document.getElementById('news-block').classList.add('look-here');
+    localStorage.setItem('whatIsVersion', 2); //Version list - /version.txt
+  };
+
   if (localStorage.getItem('isFirstEntry')!=='no') {
     for (let i = 0; i < 4; i++) {
       document.querySelectorAll('.for-hide')[i].classList.add('not-now');
