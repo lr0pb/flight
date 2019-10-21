@@ -58,13 +58,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const fly = document.getElementById('fly');
 
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keypress', function(e) {
+  console.log(e);
   if(e.keyCode===83) open();
   if(e.keyCode===69) close();
 });
 
-document.getElementById('fly-open').addEventListener('mousedown', open);
-document.getElementById('cross').addEventListener('mousedown', close);
+document.getElementById('fly-open').addEventListener('click', open);
+document.getElementById('cross').addEventListener('click', close);
 
 function open() {
   fly.classList.remove('not-now');
