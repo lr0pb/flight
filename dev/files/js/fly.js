@@ -96,7 +96,7 @@ function openImage(imID, spawnID, elem) {
   }, 5710 );
 };
 
-document.getElementById('im1').addEventListener("mousedown", function() {
+document.getElementById('im1').addEventListener('mousedown', function() {
   let elem = this;
   openImage(1, '1to4', elem);
 
@@ -129,7 +129,7 @@ $('.icon1to4').mousedown(function() {
   }, 14600);
 });
 
-document.getElementById('im2').addEventListener("mousedown", function() {
+document.getElementById('im2').addEventListener('mousedown', function() {
   let elem = this;
   openImage(2, '-', elem);
 
@@ -141,6 +141,26 @@ document.getElementById('im2').addEventListener("mousedown", function() {
   }, 5710 );
 });
 
+document.getElementById('to-im2-1').addEventListener('mousedown', function() {
+  this.classList.add('not-now');
+  document.getElementById('cube2').classList.replace('rotate-90','rotate0');
+  document.getElementById('disabled').classList.remove('not-now');
+  setTimeout( () => {
+    document.getElementById('to-im2-2').classList.remove('not-now');
+    document.getElementById('disabled').classList.add('not-now');
+  }, 3000 )
+});
+
+document.getElementById('to-im2-2').addEventListener('mousedown', function() {
+  this.classList.add('not-now');
+  document.getElementById('cube2').classList.replace('rotate0','rotate-90');
+  document.getElementById('disabled').classList.remove('not-now');
+  setTimeout( () => {
+    document.getElementById('to-im2-1').classList.remove('not-now');
+    document.getElementById('disabled').classList.add('not-now');
+  }, 3000 )
+});
+/*
 $('#to-im2-1').mousedown(function() {
   $('#to-im2-1').addClass('not-now');
   $('#cube2').removeClass('rotate-90');
@@ -160,9 +180,9 @@ $('#to-im2-2').mousedown(function() {
     $('#to-im2-1').removeClass('not-now');
     $('#disabled').addClass('not-now');
   }, 3000);
-});
+});*/
 
-document.getElementById('im3').addEventListener("mousedown", function() {
+document.getElementById('im3').addEventListener(mousedown, function() {
   let elem = this;
   openImage(3, '3to2', elem);
   document.getElementById('icon5to3').classList.remove('complete');

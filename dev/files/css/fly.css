@@ -219,8 +219,7 @@ img {background-color: #0b0e17; opacity: 0;}
   #disabled {
     position: absolute;
     z-index: 241;
-    width: 9rem; height: 2.2rem;
-    padding: 1.6rem 4.5rem;
+    size: 20rem 10rem;
     bottom: 2vh; right: 2vw;
   }
 }
