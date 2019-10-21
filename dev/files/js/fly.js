@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const fly = document.getElementById('fly');
 
-document.addEventListener('keypress', function(e) {
+document.addEventListener('keydown', function(e) {
   console.log(e);
   if(e.keyCode===83) open();
   if(e.keyCode===69) close();

@@ -30,7 +30,7 @@ function click(e) {
   setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(5)';circle.style.opacity = '1'}, 15);
 };
 
-document.addEventListener('keypress', function(e) {
+document.addEventListener('keydown', function(e) {
   if(e.keyCode===66) back();
 });
 
