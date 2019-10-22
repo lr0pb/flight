@@ -176,7 +176,7 @@ document.getElementById('icon3to2').addEventListener('mousedown', function() {
   this.classList.remove('complete');
   document.getElementById('bg3').classList.replace('bg-open','bg-close');
   bgo.classList.add('im3-open','ride3to2');
-  document.getElementById('cube2').classList.add('rotate0');
+  document.getElementById('cube2').classList.add('rotate-90');
   document.getElementById('disabled').classList.remove('not-now');
   setTimeout( () => {document.getElementById('bg2-2-spawn').classList.add('bg-open');}, 1000 );
   setTimeout( () => {
