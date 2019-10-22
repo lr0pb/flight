@@ -129,10 +129,12 @@ $('.icon1to4').mousedown(function() {
   }, 14600);
 });
 
+//__IMAGE 2__\\
+
 document.getElementById('im2').addEventListener('mousedown', function() {
   let elem = this;
   openImage(2, '-', elem);
-  document.getElementById('cube2').classList.add('rotate-90');
+  document.getElementById('cube2').classList.add('rotate0');
   setTimeout( () => {
     document.getElementById('bg2-spawn').classList.remove('bg-open');
     document.getElementById('cube2').style.opacity = "1";
@@ -160,6 +162,31 @@ document.getElementById('to-im2-2').addEventListener('mousedown', function() {
     document.getElementById('disabled').classList.add('not-now');
   }, 3000 )
 });
+
+//__IMAGE 3__\\
+
+document.getElementById('im3').addEventListener('mousedown', function() {
+  let elem = this;
+  openImage(3, '3to2', elem);
+  document.getElementById('icon5to3').classList.remove('complete');
+});
+
+document.getElementById('icon3to2').addEventListener('mousedown', function() {
+  this.classList.add('open');
+  this.classList.remove('complete');
+  document.getElementById('bg3').classList.replace('bg-open','bg-close');
+  bgo.classList.add('im3-open','ride3to2');
+  document.getElementById('cube2').classList.add('rotate0');
+  document.getElementById('disabled').classList.remove('not-now');
+  setTimeout( () => {document.getElementById('bg2-2-spawn').classList.add('bg-open');}, 1000 );
+  setTimeout( () => {
+    document.getElementById('to-im2-1').classList.remove('not-now');
+    document.getElementById('cube2').style.opacity = '1';
+    document.getElementById('bg2-2-spawn').classList.add('bg-open');
+    document.getElementById('disabled').classList.add('not-now');
+    document.getElementById('im2').classList.remove('complete');
+  }, 6010 );
+});
 /*
 $('#to-im2-1').mousedown(function() {
   $('#to-im2-1').addClass('not-now');
@@ -180,31 +207,8 @@ $('#to-im2-2').mousedown(function() {
     $('#to-im2-1').removeClass('not-now');
     $('#disabled').addClass('not-now');
   }, 3000);
-});*/
-
-document.getElementById('im3').addEventListener('mousedown', function() {
-  let elem = this;
-  openImage(3, '3to2', elem);
-  document.getElementById('icon5to3').classList.remove('complete');
 });
 
-document.getElementById('icon3to2').addEventListener('mousedown', function() {
-  this.classList.add('open');
-  this.classList.remove('complete');
-  document.getElementById('bg3').classList.add('bg-close');
-  bgo.classList.add('im3-open','ride3to2');
-  document.getElementById('cube2').classList.add('rotate0');
-  document.getElementById('disabled').classList.remove('not-now');
-  setTimeout( () => {document.getElementById('bg2-2-spawn').classList.add('bg-open');}, 1000 );
-  setTimeout( () => {
-    document.getElementById('to-im2-1').classList.remove('not-now');
-    document.getElementById('cube2').style.opacity = '1';
-    document.getElementById('bg2-2-spawn').classList.add('bg-open');
-    document.getElementById('disabled').classList.add('not-now');
-    document.getElementById('im2').classList.remove('complete');
-  }, 6010 );
-});
-/*
 $('#icon3to2').mousedown(function() {
   $('#im3to2').addClass('open');
   $('#im3to2').removeClass('complete');
