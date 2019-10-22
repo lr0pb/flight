@@ -182,7 +182,7 @@ $('#to-im2-2').mousedown(function() {
   }, 3000);
 });*/
 
-document.getElementById('im3').addEventListener(mousedown, function() {
+document.getElementById('im3').addEventListener('mousedown', function() {
   let elem = this;
   openImage(3, '3to2', elem);
   document.getElementById('icon5to3').classList.remove('complete');
@@ -209,7 +209,7 @@ $('#icon3to2').mousedown(function() {
   }, 6010);
 });
 
-document.getElementById('im4').addEventListener("mousedown", function() {
+document.getElementById('im4').addEventListener('mousedown', function() {
   let elem = this;
   openImage(4, '4to1', elem);
 
@@ -241,7 +241,7 @@ $('.icon4to1').mousedown(function() {
   }, 14600);
 });
 
-document.getElementById('im5').addEventListener("mousedown", function() {
+document.getElementById('im5').addEventListener('mousedown', function() {
   let elem = this;
   openImage(5, '5to3', elem);
 });
@@ -268,7 +268,7 @@ $('#icon5to3').mousedown(function() {
   }, 5710);
 });
 
-document.getElementById('im6').addEventListener("mousedown", function() {
+document.getElementById('im6').addEventListener('mousedown', function() {
   let elem = this;
   openImage(6, '6to7', elem);
 
@@ -290,7 +290,7 @@ $('#icon6to7').mousedown(function() {
   }, 3000);
 });
 
-document.getElementById('im7').addEventListener("mousedown", function() {
+document.getElementById('im7').addEventListener('mousedown', function() {
   let elem = this;
   openImage(7, '7to10', elem);
 
@@ -310,13 +310,13 @@ $('#icon7to10').mousedown(function() {
   $('#im10').removeClass('complete');
 });
 
-document.getElementById('im10').addEventListener("mousedown", function() {
+document.getElementById('im10').addEventListener('mousedown', function() {
   let elem = this;
   openImage(10, '-', elem);
   document.getElementById('icon7to10').classList.remove('complete');
 });
 
-document.getElementById('im8').addEventListener("mousedown", function() {
+document.getElementById('im8').addEventListener('mousedown', function() {
   let elem = this;
   openImage(8, '8to9', elem);
 
@@ -434,13 +434,13 @@ $('#icon9to4').mousedown(function() {
   }, 5710);
 });
 
-document.getElementById('im11').addEventListener("mousedown", function() {
+document.getElementById('im11').addEventListener('mousedown', function() {
   let elem = this;
   openImage(11, '13', elem);
   document.getElementById('bg11-spawn').style.transformOrigin = '77vw 33vw';
 });
 
-document.getElementById('im12').addEventListener("mousedown", function() {
+document.getElementById('im12').addEventListener('mousedown', function() {
   let elem = this;
   openImage(12, '-', elem);
 
