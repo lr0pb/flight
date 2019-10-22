@@ -174,7 +174,7 @@ document.getElementById('im3').addEventListener('mousedown', function() {
 document.getElementById('icon3to2').addEventListener('mousedown', function() {
   this.classList.add('open');
   this.classList.remove('complete');
-  document.getElementById('bg3').classList.replace('bg-open','bg-close');
+  document.getElementById('bg3-spawn').classList.replace('bg-open','bg-close');
   bgo.classList.add('im3-open','ride3to2');
   document.getElementById('cube2').classList.add('rotate-90');
   document.getElementById('disabled').classList.remove('not-now');
