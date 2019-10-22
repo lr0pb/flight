@@ -1,15 +1,4 @@
 $(document).ready(function() {
-  /*if ( $(window).width() > 1440 ) {
-    $("#fly").on('mousemove', (e) => {
-      const cx = $(window).width() / 2;
-      const cy = $(window).height() / 2;
-
-      const x = ((cx - e.pageX) / cx) * 10;
-      const y = ((cy - e.pageY) / cy) * 10;
-      $(".bgo").css('transform',`translate(${x}px, ${y}px)`);
-    });
-  };*/
-
   /*if ( localStorage.getItem('isFirstEntry') == 1 ) {
     $('#first-load-view').addClass('not-now');
     setTimeout(function() {
@@ -62,6 +51,7 @@ document.addEventListener('keydown', function(e) {
   console.log(e);
   if(e.keyCode===83) open();
   if(e.keyCode===69) close();
+  if(e.keyCode===122) close();
 });
 
 document.getElementById('fly-open').addEventListener('click', open);
@@ -96,37 +86,39 @@ function openImage(imID, spawnID, elem) {
   }, 5710 );
 };
 
+//__IMAGE 1__\\
+
 document.getElementById('im1').addEventListener('mousedown', function() {
   let elem = this;
   openImage(1, '1to4', elem);
+  document.getElementById('cube1to4').classList.add('rotate4to1');
+  document.querySelector('rotate4to1').style.animation = '0';
 
   setTimeout( () => {
     document.getElementById('bg1-spawn').classList.remove('bg-open');
+    document.querySelector('rotate4to1').style.animation = '';
     document.getElementById('cube1to4').style.opacity = "1";
   }, 5710 );
 });
 
-$('.icon1to4').mousedown(function() {
-  $('#text1to4').addClass('open');
-  $('#cube1to4').removeClass('rotate4to1');
-  $('#cube1to4').addClass('rotate1to4');
-  $('#disabled').removeClass('not-now');
-  $('#help-180').removeClass('fade-from-down');
-  $('#help-180').addClass('fade-to-down');
-  setTimeout(function() {
-    $('#text4to1').removeClass('not-now');
-    $('#text4to1').css('opacity','0');
-    $('#text4to1').addClass('spawn');
-  }, 8710);
-  setTimeout(function() {
-    $('#text1to4').css('opacity','0')
-    $('#text1to4').removeClass('open');
-    $('#text4to1').removeClass('spawn');
-    $('#text4to1').css('opacity','1');
-    $('#disabled').addClass('not-now');
-    $('#im4').removeClass('complete');
-    $('#im9to4').removeClass('complete');
-  }, 14600);
+document.getElementById('icon1to4').addEventListener('mousedown', function() {
+  this.classList.add('open');
+  document.getElementById('disabled').classList.remove('not-now');
+  document.getElementById('cube1to4').classList.replace('rotate4to1','rotate1to4');
+  document.getElementById('help-180').classList.replace('fade-from-down','fade-to-down');
+  setTimeout( () => {
+    document.getElementById('icon4to1').classList.replace('not-now','spawn');
+    document.getElementById('icon4to1').style.opacity = '0';
+  }, 8710 );
+  setTimeout( () => {
+    document.getElementById('icon1to4').classList.remove('open');
+    document.getElementById('icon1to4').style.opacity = '0';
+    document.getElementById('icon4to1').classList.remove('spawn');
+    document.getElementById('icon4to1').style.opacity = '1';
+    document.getElementById('disabled').classList.add('not-now');
+    document.getElementById('im4').classList.remove('complete');
+    document.getElementById('im9to4').classList.remove('complete');
+  }, 14510);
 });
 
 //__IMAGE 2__\\
@@ -145,8 +137,8 @@ document.getElementById('im2').addEventListener('mousedown', function() {
 
 document.getElementById('to-im2-1').addEventListener('mousedown', function() {
   this.classList.add('not-now');
-  document.getElementById('cube2').classList.replace('rotate-90','rotate0');
   document.getElementById('disabled').classList.remove('not-now');
+  document.getElementById('cube2').classList.replace('rotate-90','rotate0');
   setTimeout( () => {
     document.getElementById('to-im2-2').classList.remove('not-now');
     document.getElementById('disabled').classList.add('not-now');
@@ -155,8 +147,8 @@ document.getElementById('to-im2-1').addEventListener('mousedown', function() {
 
 document.getElementById('to-im2-2').addEventListener('mousedown', function() {
   this.classList.add('not-now');
-  document.getElementById('cube2').classList.replace('rotate0','rotate-90');
   document.getElementById('disabled').classList.remove('not-now');
+  document.getElementById('cube2').classList.replace('rotate0','rotate-90');
   setTimeout( () => {
     document.getElementById('to-im2-1').classList.remove('not-now');
     document.getElementById('disabled').classList.add('not-now');
@@ -182,85 +174,47 @@ document.getElementById('icon3to2').addEventListener('mousedown', function() {
   setTimeout( () => {
     document.getElementById('to-im2-1').classList.remove('not-now');
     document.getElementById('cube2').style.opacity = '1';
-    document.getElementById('bg2-2-spawn').classList.add('bg-open');
+    document.getElementById('bg2-2-spawn').classList.remove('bg-open');
     document.getElementById('disabled').classList.add('not-now');
     document.getElementById('im2').classList.remove('complete');
   }, 6010 );
 });
-/*
-$('#to-im2-1').mousedown(function() {
-  $('#to-im2-1').addClass('not-now');
-  $('#cube2').removeClass('rotate-90');
-  $('#cube2').addClass('rotate0');
-  $('#disabled').removeClass('not-now');
-  setTimeout(function() {
-    $('#to-im2-2').removeClass('not-now');
-    $('#disabled').addClass('not-now');
-  }, 3000);
-});
-$('#to-im2-2').mousedown(function() {
-  $('#to-im2-2').addClass('not-now');
-  $('#cube2').removeClass('rotate0');
-  $('#cube2').addClass('rotate-90');
-  $('#disabled').removeClass('not-now');
-  setTimeout(function() {
-    $('#to-im2-1').removeClass('not-now');
-    $('#disabled').addClass('not-now');
-  }, 3000);
-});
 
-$('#icon3to2').mousedown(function() {
-  $('#im3to2').addClass('open');
-  $('#im3to2').removeClass('complete');
-  $('#bg3').addClass('bg-close');
-  $('#bgo').addClass('im3-open');
-  $('#bgo').addClass('ride3to2');
-  $('#cube2').css('transform','rotateY(-90deg)');
-  $('#disabled').removeClass('not-now');
-  setTimeout(function() {
-    $('#bg2-2-spawn').addClass('bg-open');
-  }, 1000);
-  setTimeout(function() {
-    $('#to-im2-1').removeClass('not-now');
-    $('#cube2').css('opacity','1');
-    $('#bgo').removeClass('ride3to2');
-    $('#bg2-2-spawn').removeClass('bg-open');
-    $('#disabled').addClass('not-now');
-    $('#im2').removeClass('complete');
-  }, 6010);
-});*/
+//__IMAGE 4__\\
 
 document.getElementById('im4').addEventListener('mousedown', function() {
   let elem = this;
   openImage(4, '4to1', elem);
+  document.getElementById('cube1to4').classList.add('rotate1to4');
+  document.querySelector('rotate1to4').style.animation = '0';
 
   setTimeout( () => {
     document.getElementById('bg4-spawn').classList.remove('bg-open');
+    document.querySelector('rotate1to4').style.animation = '';
     document.getElementById('cube1to4').style.cssText = 'opacity: 1; transform: rotateY(-180deg) translateX(74vw);';
   }, 5710 );
 });
 
-$('.icon4to1').mousedown(function() {
-  $('#text4to1').addClass('open');
-  $('#cube1to4').removeClass('rotate1to4');
-  $('#cube1to4').addClass('rotate4to1');
-  $('#disabled').removeClass('not-now');
-  $('#help-180').removeClass('fade-from-down');
-  $('#help-180').addClass('fade-to-down');
-  setTimeout(function() {
-    $('#text1to4').removeClass('not-now');
-    $('#text1to4').css('opacity','0');
-    $('#text1to4').addClass('spawn');
-  }, 8710);
-  setTimeout(function() {
-    $('#text4to1').css('opacity','0')
-    $('#text4to1').removeClass('open');
-    $('#text1to4').removeClass('spawn');
-    $('#text1to4').css('opacity','1');
-    $('#disabled').addClass('not-now');
-    $('#im1').removeClass('complete');
-  }, 14600);
+document.getElementById('icon4to1').addEventListener('mousedown', function() {
+  this.classList.add('open');
+  document.getElementById('disabled').classList.remove('not-now');
+  document.getElementById('cube1to4').classList.replace('rotate1to4','rotate4to1');
+  document.getElementById('help-180').classList.replace('fade-from-down','fade-to-down');
+  setTimeout( () => {
+    document.getElementById('icon1to4').classList.replace('not-now','spawn');
+    document.getElementById('icon1to4').style.opacity = '0';
+  }, 8710 );
+  setTimeout( () => {
+    document.getElementById('icon4to1').classList.remove('open');
+    document.getElementById('icon4to1').style.opacity = '0';
+    document.getElementById('icon1to4').classList.remove('spawn');
+    document.getElementById('icon1to4').style.opacity = '1';
+    document.getElementById('disabled').classList.add('not-now');
+    document.getElementById('im1').classList.remove('complete');
+  }, 14510);
 });
+
+//__IMAGE 5__\\
 
 document.getElementById('im5').addEventListener('mousedown', function() {
   let elem = this;
@@ -289,6 +243,8 @@ $('#icon5to3').mousedown(function() {
   }, 5710);
 });
 
+//__IMAGE 6__\\
+
 document.getElementById('im6').addEventListener('mousedown', function() {
   let elem = this;
   openImage(6, '6to7', elem);
@@ -311,6 +267,8 @@ $('#icon6to7').mousedown(function() {
   }, 3000);
 });
 
+//__IMAGE 7__\\
+
 document.getElementById('im7').addEventListener('mousedown', function() {
   let elem = this;
   openImage(7, '7to10', elem);
@@ -331,11 +289,15 @@ $('#icon7to10').mousedown(function() {
   $('#im10').removeClass('complete');
 });
 
+//__IMAGE 10__\\
+
 document.getElementById('im10').addEventListener('mousedown', function() {
   let elem = this;
   openImage(10, '-', elem);
   document.getElementById('icon7to10').classList.remove('complete');
 });
+
+//__IMAGE 8__\\
 
 document.getElementById('im8').addEventListener('mousedown', function() {
   let elem = this;
@@ -398,6 +360,8 @@ $('.icon9to8').mousedown(function() {
   }, 6800);
 });
 
+//__IMAGE 9__\\
+
 $('#to-im9-2').mousedown(function() {
   $('#to-im9-2').addClass('not-now');
   $('#text9to8').addClass('not-now');
@@ -455,11 +419,15 @@ $('#icon9to4').mousedown(function() {
   }, 5710);
 });
 
+//__IMAGE 11__\\
+
 document.getElementById('im11').addEventListener('mousedown', function() {
   let elem = this;
   openImage(11, '13', elem);
   document.getElementById('bg11-spawn').style.transformOrigin = '77vw 33vw';
 });
+
+//__IMAGE 12__\\
 
 document.getElementById('im12').addEventListener('mousedown', function() {
   let elem = this;
@@ -503,6 +471,8 @@ $('#to-im12').mousedown(function() {
     $('#disabled').addClass('not-now');
   }, 3000);
 });
+
+//__IMAGE 13__\\
 
 $('#to-im13').mousedown(function() {
   $('#to-im13').addClass('not-now');
