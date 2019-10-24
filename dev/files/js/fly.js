@@ -92,11 +92,11 @@ document.getElementById('im1').addEventListener('mousedown', function() {
   let elem = this;
   openImage(1, '1to4', elem);
   document.getElementById('cube1to4').classList.add('rotate4to1');
-  document.querySelector('.rotate4to1').style.animation = '0';
+  document.querySelector('.rotate4to1').style.animationDuration = '4s';
 
   setTimeout( () => {
     document.getElementById('bg1-spawn').classList.remove('bg-open');
-    document.querySelector('.rotate4to1').style.animation = '';
+    document.querySelector('.rotate4to1').style.animationDuration = '13s';
     document.getElementById('cube1to4').style.opacity = "1";
   }, 5710 );
 });
@@ -117,7 +117,7 @@ document.getElementById('icon1to4').addEventListener('mousedown', function() {
     document.getElementById('icon4to1').style.opacity = '1';
     document.getElementById('disabled').classList.add('not-now');
     document.getElementById('im4').classList.remove('complete');
-    document.getElementById('im9to4').classList.remove('complete');
+    document.getElementById('icon9to4').classList.remove('complete');
   }, 14510);
 });
 
@@ -186,12 +186,12 @@ document.getElementById('im4').addEventListener('mousedown', function() {
   let elem = this;
   openImage(4, '4to1', elem);
   document.getElementById('cube1to4').classList.add('rotate1to4');
-  document.querySelector('.rotate1to4').style.animation = '0';
+  document.querySelector('.rotate4to1').style.animationDuration = '4s';
 
   setTimeout( () => {
     document.getElementById('bg4-spawn').classList.remove('bg-open');
-    document.querySelector('.rotate1to4').style.animation = '';
-    document.getElementById('cube1to4').style.cssText = 'opacity: 1; transform: rotateY(-180deg) translateX(74vw);';
+    document.querySelector('.rotate4to1').style.animationDuration = '13s';
+    document.getElementById('cube1to4').style.opacity = '1';
   }, 5710 );
 });
 
@@ -284,7 +284,7 @@ document.getElementById('icon7to10').addEventListener('mousedown', function() {
   this.classList.remove('complete');
   document.getElementById('bg6').style.opacity = '0';
   document.getElementById('cube6').classList.replace('rotate-90','rotate0');
-  document.getElementById('icon10').classList.remove('complete');
+  document.getElementById('im10').classList.remove('complete');
 });
 
 //__IMAGE 10__\\
