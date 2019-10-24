@@ -51,6 +51,7 @@ document.addEventListener('keydown', function(e) {
   console.log(e);
   if(e.keyCode===83) open();
   if(e.keyCode===69) close();
+  if(e.keyCode===27) close();
   if(e.keyCode===122) close();
 });
 
@@ -307,6 +308,38 @@ document.getElementById('im8').addEventListener('mousedown', function() {
   }, 5710 );
 });
 
+document.getElementById('icon8to9').addEventListener('mousedown', function() {
+  this.classList.add('open');
+  document.getElementById('disabled').classList.remove('not-now');
+  document.getElementById('cube8to9').classList.replace('rotate9to8','rotate8to9');
+  document.getElementById('help-180').classList.replace('fade-from-down','fade-to-down');
+  document.getElementById('icon9to8').classList.replace('not-now','spawn');
+  document.getElementById('icon9to4').classList.replace('not-now','spawn');
+  setTimeout( function() {
+    document.getElementById('to-im9-2').classList.remove('not-now');
+    document.getElementById('icon9to8').classList.remove('spawn');
+    document.getElementById('icon9to4').classList.remove('spawn');
+    document.getElementById('disabled').classList.add('not-now');
+    this.classList.replace('open','not-now');
+  }, 5710 );
+});
+
+document.getElementById('icon9to8').addEventListener('mousedown', function() {
+  this.classList.add('open');
+  document.getElementById('disabled').classList.remove('not-now');
+  document.getElementById('cube8to9').classList.replace('rotate8to9','rotate9to8');
+  document.getElementById('icon8to9').classList.replace('not-now','spawn');
+  document.getElementById('icon9to4').classList.add('not-now');
+  document.getElementById('to-im9-2').classList.add('not-now');
+  setTimeout( function() {
+    document.getElementById('to-im9-2').classList.remove('not-now');
+    document.getElementById('icon9to8').classList.remove('spawn');
+    document.getElementById('icon9to4').classList.remove('spawn');
+    document.getElementById('disabled').classList.add('not-now');
+    this.classList.replace('open','not-now');
+  }, 5710 );
+});
+/*
 $('.icon8to9').mousedown(function() {
   $('#text8to9').addClass('open');
   $('#cube8to9').removeClass('rotate9to8');
@@ -356,7 +389,7 @@ $('.icon9to8').mousedown(function() {
     $('#text8to9').css('opacity','1');
     $('#disabled').addClass('not-now');
   }, 6800);
-});
+});*/
 
 //__IMAGE 9__\\
 
