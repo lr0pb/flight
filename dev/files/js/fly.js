@@ -97,7 +97,7 @@ document.getElementById('im1').addEventListener('mousedown', function() {
 
   setTimeout( () => {
     document.getElementById('bg1-spawn').classList.remove('bg-open');
-    document.getElementById('cube1to4').style.opacity = "1";
+    document.getElementById('cube1to4').style.opacity = '1';
   }, 5710 );
 });
 
@@ -130,7 +130,7 @@ document.getElementById('im2').addEventListener('mousedown', function() {
   document.getElementById('cube2').classList.add('rotate0');
   setTimeout( () => {
     document.getElementById('bg2-spawn').classList.remove('bg-open');
-    document.getElementById('cube2').style.opacity = "1";
+    document.getElementById('cube2').style.opacity = '1';
     document.getElementById('to-im2-2').classList.remove('not-now');
     document.getElementById('icon3to2').classList.remove('complete');
   }, 5710 );
@@ -250,7 +250,7 @@ document.getElementById('im6').addEventListener('mousedown', function() {
 
   setTimeout( () => {
     document.getElementById('bg6-spawn').classList.remove('bg-open');
-    document.getElementById('cube6').style.opacity = "1";
+    document.getElementById('cube6').style.opacity = '1';
   }, 5710 );
 });
 
@@ -275,7 +275,7 @@ document.getElementById('im7').addEventListener('mousedown', function() {
 
   setTimeout( () => {
     document.getElementById('bg7-spawn').classList.remove('bg-open');
-    document.getElementById('cube6').style.opacity = "1";
+    document.getElementById('cube6').style.opacity = '1';
     document.getElementById('icon6to7').classList.remove('complete');
   }, 5710 );
 });
@@ -305,7 +305,7 @@ document.getElementById('im8').addEventListener('mousedown', function() {
 
   setTimeout( () => {
     document.getElementById('bg8-spawn').classList.remove('bg-open');
-    document.getElementById('cube8to9').style.opacity = "1";
+    document.getElementById('cube8to9').style.opacity = '1';
   }, 5710 );
 });
 
@@ -329,6 +329,7 @@ document.getElementById('icon9to8').addEventListener('mousedown', function() {
   this.classList.add('open');
   document.getElementById('disabled').classList.remove('not-now');
   document.getElementById('cube8to9').classList.replace('rotate8to9','rotate9to8');
+  document.getElementById('cube8to9').classList.remove('rotate-to-im9-1');
   document.getElementById('icon8to9').classList.replace('not-now','spawn');
   document.getElementById('icon9to4').classList.add('not-now');
   document.getElementById('to-im9-2').classList.add('not-now');
@@ -338,86 +339,57 @@ document.getElementById('icon9to8').addEventListener('mousedown', function() {
     document.getElementById('icon9to8').classList.replace('open','not-now');
   }, 5710 );
 });
-/*
-$('.icon8to9').mousedown(function() {
-  $('#text8to9').addClass('open');
-  $('#cube8to9').removeClass('rotate9to8');
-  $('#cube8to9').addClass('rotate8to9');
-  $('#text9to8').removeClass('not-now');
-  $('#text9to8').css('opacity','0');
-  $('#text9to8').addClass('spawn');
-  $('#im9to4').removeClass('not-now');
-  $('#im9to4').css('opacity','0');
-  $('#im9to4').addClass('spawn');
-  $('#disabled').removeClass('not-now');
-  $('#help-180').removeClass('fade-from-down');
-  $('#help-180').addClass('fade-to-down');
-  setTimeout(function() {
-    $('#to-im9-2').removeClass('not-now');
-    $('#text8to9').removeClass('open');
-    $('#text8to9').addClass('not-now');
-    $('#im9to4').removeClass('not-now');
-  }, 5000);
-  setTimeout(function() {
-    $('#text9to8').removeClass('spawn');
-    $('#text9to8').css('opacity','1');
-    $('#im9to4').removeClass('spawn');
-    $('#im9to4').css('opacity','1');
-    $('#disabled').addClass('not-now');
-  }, 6800);
-});
-
-$('.icon9to8').mousedown(function() {
-  $('#text9to8').addClass('open');
-  $('#im9to4').addClass('not-now');
-  $('#to-im9-2').addClass('not-now');
-  $('#cube8to9').removeClass('rotate-to-im9-2');
-  $('#cube8to9').removeClass('rotate-to-im9-1');
-  $('#cube8to9').removeClass('rotate8to9');
-  $('#cube8to9').addClass('rotate9to8');
-  $('#text8to9').removeClass('not-now');
-  $('#text8to9').css('opacity','0');
-  $('#text8to9').addClass('spawn');
-  $('#disabled').removeClass('not-now');
-  setTimeout(function() {
-    $('#text9to8').removeClass('open');
-    $('#text9to8').addClass('not-now');
-  }, 5000);
-  setTimeout(function() {
-    $('#text8to9').removeClass('spawn');
-    $('#text8to9').css('opacity','1');
-    $('#disabled').addClass('not-now');
-  }, 6800);
-});*/
 
 //__IMAGE 9__\\
 
-$('#to-im9-2').mousedown(function() {
-  $('#to-im9-2').addClass('not-now');
-  $('#text9to8').addClass('not-now');
-  $('#im9to4').addClass('not-now');
-  $('#cube8to9').removeClass('rotate-to-im9-1');
-  $('#cube8to9').addClass('rotate-to-im9-2');
-  $('#disabled').removeClass('not-now');
-  setTimeout(function() {
-    $('#to-im9-1').removeClass('not-now');
-    $('#disabled').addClass('not-now');
-  }, 3600);
+document.getElementById('to-im9-2').addEventListener('mousedown', function() {
+  this.classList.add('not-now');
+  document.getElementById('disabled').classList.remove('not-now');
+  document.getElementById('icon9to4').classList.add('not-now');
+  document.getElementById('icon9to8').classList.add('not-now');
+  document.getElementById('cube8to9').classList.remove('rotate-to-im9-1');
+  document.getElementById('cube8to9').classList.add('rotate-to-im9-2');
+  setTimeout( () => {
+    document.getElementById('to-im9-1').classList.remove('not-now');
+    document.getElementById('disabled').classList.add('not-now');
+  }, 3610 );
 });
 
-$('#to-im9-1').mousedown(function() {
-  $('#to-im9-1').addClass('not-now');
-  $('#cube8to9').removeClass('rotate-to-im9-2');
-  $('#cube8to9').addClass('rotate-to-im9-1');
-  $('#disabled').removeClass('not-now');
-  setTimeout(function() {
-    $('#to-im9-2').removeClass('not-now');
-    $('#text9to8').removeClass('not-now');
-    $('#im9to4').removeClass('not-now');
-    $('#disabled').addClass('not-now');
-  }, 3600);
+document.getElementById('to-im9-1').addEventListener('mousedown', function() {
+  this.classList.add('not-now');
+  document.getElementById('disabled').classList.remove('not-now');
+  document.getElementById('cube8to9').classList.remove('rotate-to-im9-2');
+  document.getElementById('cube8to9').classList.add('rotate-to-im9-1');
+  setTimeout( () => {
+    document.getElementById('icon9to4').classList.remove('not-now');
+    document.getElementById('icon9to8').classList.remove('not-now');
+    document.getElementById('to-im9-2').classList.remove('not-now');
+    document.getElementById('disabled').classList.add('not-now');
+  }, 3610 );
 });
 
+document.getElementById('icon9to4').addEventListener('mousedown', function() {
+  this.classList.add('not-now');
+  this.classList.remove('complete');
+  document.getElementById('im4').classList.remove('complete');
+  document.getElementById('disabled').classList.remove('not-now');
+  document.getElementById('icon9to8').classList.add('not-now');
+  document.getElementById('to-im9-2').classList.add('not-now');
+  document.getElementById('cube8to9').style.opacity = '0';
+  document.getElementById('bg9-1-spawn').classList.add('bgo-open');
+  document.getElementById('bg4-spawn').style.transformOrigin = '60vw 35vw';
+  document.getElementById('bg4-spawn').classList.add('bg-open');
+  document.getElementById('icon4to1').classList.replace('not-now','spawn');
+  setTimeout( () => {
+    document.getElementById('bg4-spawn').classList.remove('bg-open');
+    document.getElementById('bg4-spawn').style.transformOrigin = '';
+    document.getElementById('cube1to4').style.opacity = '1';
+    document.getElementById('cube1to4').classList.add('rotate1to4');
+    document.querySelector('.rotate4to1').style.animation = '0';
+    document.getElementById('disabled').classList.add('not-now');
+  }, 5710 );
+});
+/*
 $('#icon9to4').mousedown(function() {
   $('#im9to4').addClass('open');
   $('#im9to4').removeClass('complete');
@@ -447,7 +419,7 @@ $('#icon9to4').mousedown(function() {
     $('#bg4-spawn').css('transform-origin','center');
     $('#im4').removeClass('complete');
   }, 5710);
-});
+});*/
 
 //__IMAGE 11__\\
 
@@ -470,6 +442,8 @@ document.getElementById('im12').addEventListener('mousedown', function() {
     document.getElementById('icon13').classList.remove('complete');
   }, 5710 );
 });
+
+//__IMAGE 13__\\
 
 $('#icon13').mousedown(function() {
   $('#im13').addClass('open');
@@ -501,8 +475,6 @@ $('#to-im12').mousedown(function() {
     $('#disabled').addClass('not-now');
   }, 3000);
 });
-
-//__IMAGE 13__\\
 
 $('#to-im13').mousedown(function() {
   $('#to-im13').addClass('not-now');
