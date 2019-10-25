@@ -93,11 +93,10 @@ document.getElementById('im1').addEventListener('mousedown', function() {
   let elem = this;
   openImage(1, '1to4', elem);
   document.getElementById('cube1to4').classList.add('rotate4to1');
-  document.querySelector('.rotate4to1').style.animationDuration = '4s';
+  document.querySelector('.rotate4to1').style.animation = '0';
 
   setTimeout( () => {
     document.getElementById('bg1-spawn').classList.remove('bg-open');
-    document.querySelector('.rotate4to1').style.animationDuration = '13s';
     document.getElementById('cube1to4').style.opacity = "1";
   }, 5710 );
 });
@@ -105,6 +104,7 @@ document.getElementById('im1').addEventListener('mousedown', function() {
 document.getElementById('icon1to4').addEventListener('mousedown', function() {
   this.classList.add('open');
   document.getElementById('disabled').classList.remove('not-now');
+  document.querySelector('.rotate4to1').style.animation = '';
   document.getElementById('cube1to4').classList.replace('rotate4to1','rotate1to4');
   document.getElementById('help-180').classList.replace('fade-from-down','fade-to-down');
   setTimeout( () => {
@@ -187,11 +187,10 @@ document.getElementById('im4').addEventListener('mousedown', function() {
   let elem = this;
   openImage(4, '4to1', elem);
   document.getElementById('cube1to4').classList.add('rotate1to4');
-  document.querySelector('.rotate4to1').style.animationDuration = '4s';
+  document.querySelector('.rotate4to1').style.animation = '0';
 
   setTimeout( () => {
     document.getElementById('bg4-spawn').classList.remove('bg-open');
-    document.querySelector('.rotate4to1').style.animationDuration = '13s';
     document.getElementById('cube1to4').style.opacity = '1';
   }, 5710 );
 });
@@ -199,6 +198,7 @@ document.getElementById('im4').addEventListener('mousedown', function() {
 document.getElementById('icon4to1').addEventListener('mousedown', function() {
   this.classList.add('open');
   document.getElementById('disabled').classList.remove('not-now');
+  document.querySelector('.rotate1to4').style.animation = '';
   document.getElementById('cube1to4').classList.replace('rotate1to4','rotate4to1');
   document.getElementById('help-180').classList.replace('fade-from-down','fade-to-down');
   setTimeout( () => {
@@ -301,6 +301,7 @@ document.getElementById('im10').addEventListener('mousedown', function() {
 document.getElementById('im8').addEventListener('mousedown', function() {
   let elem = this;
   openImage(8, '8to9', elem);
+  document.getElementById('cube8to9').classList.add('rotate9to8');
 
   setTimeout( () => {
     document.getElementById('bg8-spawn').classList.remove('bg-open');
@@ -315,12 +316,12 @@ document.getElementById('icon8to9').addEventListener('mousedown', function() {
   document.getElementById('help-180').classList.replace('fade-from-down','fade-to-down');
   document.getElementById('icon9to8').classList.replace('not-now','spawn');
   document.getElementById('icon9to4').classList.replace('not-now','spawn');
-  setTimeout( function() {
+  setTimeout( () => {
     document.getElementById('to-im9-2').classList.remove('not-now');
     document.getElementById('icon9to8').classList.remove('spawn');
     document.getElementById('icon9to4').classList.remove('spawn');
     document.getElementById('disabled').classList.add('not-now');
-    this.classList.replace('open','not-now');
+    document.getElementById('icon8to9').classList.replace('open','not-now');
   }, 5710 );
 });
 
@@ -331,12 +332,10 @@ document.getElementById('icon9to8').addEventListener('mousedown', function() {
   document.getElementById('icon8to9').classList.replace('not-now','spawn');
   document.getElementById('icon9to4').classList.add('not-now');
   document.getElementById('to-im9-2').classList.add('not-now');
-  setTimeout( function() {
-    document.getElementById('to-im9-2').classList.remove('not-now');
-    document.getElementById('icon9to8').classList.remove('spawn');
-    document.getElementById('icon9to4').classList.remove('spawn');
+  setTimeout( () => {
+    document.getElementById('icon8to9').classList.remove('spawn');
     document.getElementById('disabled').classList.add('not-now');
-    this.classList.replace('open','not-now');
+    document.getElementById('icon9to8').classList.replace('open','not-now');
   }, 5710 );
 });
 /*
