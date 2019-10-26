@@ -385,7 +385,7 @@ h5:hover {transform: scale(1.3);}
 #bg1to4-3-2 {transform: rotateY(165deg) translateZ(93vw);}
 #bg4 {opacity: 1; transform: translateX(-74vw) rotateY(180deg) translateZ(97vw);}
 .rotate1to4 {
-  animation-name: rotate1to4;
+  animation: 14s rotate1to4;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -394,7 +394,7 @@ h5:hover {transform: scale(1.3);}
   to {transform: rotateY(-180deg) translateX(74vw);}
 }
 .rotate4to1 {
-  animation-name: rotate4to1;
+  animation: 14s rotate4to1;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -447,7 +447,7 @@ h5:hover {transform: scale(1.3);}
 #bg9-1 {opacity: 1; transform: rotateY(180deg) translateZ(50vw);}
 #bg9-2 {opacity: 1; transform: rotateY(-90deg) translateZ(-49.999vw);}
 .rotate8to9 {
-  animation: 5s rotate8to9;
+  animation: 4s rotate8to9;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -456,7 +456,7 @@ h5:hover {transform: scale(1.3);}
   to {transform: rotateY(-180deg);}
 }
 .rotate9to8 {
-  animation: 5s rotate9to8;
+  animation: 4s rotate9to8;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
