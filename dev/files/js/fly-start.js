@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('about-fly').classList.add('large-about-block');
     document.getElementById('understand').classList.remove('not-now');
     localStorage.setItem('isFirstEntry','no');
+    localStorage.setItem('whatIsVersion', 2); //Version list - /version.txt
   };
 });
 

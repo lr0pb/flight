@@ -76,7 +76,7 @@
 
 #fly-block, #news-block, #gallery-block, #about-fly, #hot-keys {
   background-size: cover; background-position: center center; background-repeat: no-repeat;
-  background-color: #1f2740; border-radius: 1.5rem; z-index: 4;
+  background-color: #1f2740; border-radius: 1.5rem; z-index: 5;
 }
 #news-block, #gallery-block {cursor: pointer;}
 #header-block {
@@ -89,6 +89,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 4;
   /*background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
   url(/images/cover.jpg);*/
 }
@@ -110,7 +111,7 @@
   25%, 75% {background-position: 50% 50%;}
   50% {background-position: 100% 100%;}
 }
-h1 {z-index: 4;}
+h1 {z-index: 5;}
 #fly-open {
   cursor: pointer;
   font-weight: 800;
