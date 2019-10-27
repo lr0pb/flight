@@ -145,7 +145,7 @@ h1 {z-index: 4;}
   padding: 0 0 2rem 2.5rem;
   font-size: 2.5em;
 }
-.look-here {animation: 1.5s look-here; animation-delay: 1s;}
+.look-here {animation: 1.5s look-here; animation-delay: 2s;}
 @keyframes look-here {
   from {border: 0.0rem solid azure;}
   33% {border: 0.4rem solid azure;}
