@@ -388,6 +388,7 @@ document.getElementById('icon9to4').addEventListener('mousedown', function() {
     document.getElementById('bg9-1-spawn').classList.remove('bgo-open');
     document.getElementById('bg4-spawn').classList.remove('bg-open');
     document.getElementById('bg4-spawn').style.transformOrigin = 'center';
+    document.getElementById('icon4to1').style.opacity = '1';
     document.getElementById('icon4to1').classList.remove('spawn');
     document.getElementById('cube1to4').style.opacity = '1';
     document.getElementById('cube1to4').style.transform = 'rotateY(-180deg) translateX(74vw)';
