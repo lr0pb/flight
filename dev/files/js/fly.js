@@ -59,12 +59,10 @@ document.getElementById('fly-open').addEventListener('click', open);
 document.getElementById('cross').addEventListener('click', close);
 
 function open() {
-  fly.classList.remove('not-now');
   if (fly.webkitRequestFullscreen) fly.webkitRequestFullscreen();
   else if (fly.requestFullscreen) fly.requestFullscreen();
 };
 function close() {
-  fly.classList.add('not-now');
   if (fly.webkitRequestFullscreen) document.exitFullscreen();
   else if (fly.requestFullscreen) document.exitFullscreen();
 };
@@ -114,7 +112,7 @@ document.getElementById('icon1to4').addEventListener('mousedown', function() {
   }, 8710 );
   setTimeout( () => {
     document.getElementById('icon1to4').classList.remove('open');
-    document.getElementById('icon1to4').style.opacity = '0';
+    document.getElementById('icon1to4').classList.add('not-now');
     document.getElementById('icon4to1').classList.remove('spawn');
     document.getElementById('icon4to1').style.opacity = '1';
     document.getElementById('disabled').classList.add('not-now');
@@ -210,7 +208,7 @@ document.getElementById('icon4to1').addEventListener('mousedown', function() {
   }, 8710 );
   setTimeout( () => {
     document.getElementById('icon4to1').classList.remove('open');
-    document.getElementById('icon4to1').style.opacity = '0';
+    document.getElementById('icon4to1').classList.add('not-now');
     document.getElementById('icon1to4').classList.remove('spawn');
     document.getElementById('icon1to4').style.opacity = '1';
     document.getElementById('disabled').classList.add('not-now');
@@ -383,10 +381,14 @@ document.getElementById('icon9to4').addEventListener('mousedown', function() {
   document.getElementById('bg9-1-spawn').classList.add('bgo-open');
   document.getElementById('bg4-spawn').style.transformOrigin = '60vw 35vw';
   document.getElementById('bg4-spawn').classList.add('bg-open');
+  document.getElementById('icon4to1').style.opacity = '0';
   document.getElementById('icon4to1').classList.replace('not-now','spawn');
   setTimeout( () => {
+    document.getElementById('bg9-1-spawn').style.opacity = '0';
+    document.getElementById('bg9-1-spawn').classList.remove('bgo-open');
     document.getElementById('bg4-spawn').classList.remove('bg-open');
     document.getElementById('bg4-spawn').style.transformOrigin = 'center';
+    document.getElementById('icon4to1').classList.remove('spawn');
     document.getElementById('cube1to4').style.opacity = '1';
     document.getElementById('cube1to4').style.transform = 'rotateY(-180deg) translateX(74vw)';
     document.getElementById('disabled').classList.add('not-now');
