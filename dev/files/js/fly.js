@@ -409,10 +409,11 @@ document.getElementById('im11').addEventListener('mousedown', function() {
 document.getElementById('im12').addEventListener('mousedown', function() {
   let elem = this;
   openImage(12, '-', elem);
+  document.getElementById('cube12').classList.add('rotate12');
 
   setTimeout( () => {
     document.getElementById('bg12-spawn').classList.remove('bg-open');
-    document.getElementById('cube12').style.cssText = 'opacity: 1; transform: rotateY(180deg)';
+    document.getElementById('cube12').style.opacity = '1';
     document.getElementById('to-im13').classList.remove('not-now');
     document.getElementById('icon13').classList.remove('complete');
   }, 5710 );
@@ -420,46 +421,43 @@ document.getElementById('im12').addEventListener('mousedown', function() {
 
 //__IMAGE 13__\\
 
-$('#icon13').mousedown(function() {
-  $('#im13').addClass('open');
-  $('#im13').removeClass('complete');
-  $('#bg11').removeClass('bg-open');
-  $('#bg11').css({'transform-origin':'35vw 32vw','opacity':'1'});
-  $('#bg11').addClass('bgo-open');
-  $('#bg13-spawn').addClass('bg-open');
-  $('#cube12').css('transform','rotateY(90deg)');
-  $('#disabled').removeClass('not-now');
-  setTimeout(function() {
-    $('#to-im12').removeClass('not-now');
-    $('#cube12').css('opacity','1');
-    $('#bg11').css('opacity','0');
-    $('#bg11').removeClass('bgo-open');
-    $('#bg13-spawn').removeClass('bg-open');
-    $('#disabled').addClass('not-now');
-    $('#im12').removeClass('complete');
-  }, 5010);
+document.getElementById('icon13').addEventListener('mousedown', function() {
+  this.classList.add('open');
+  this.classList.remove('complete');
+  document.getElementById('disabled').classList.remove('not-now');
+  document.getElementById('bg11-spawn').style.cssText = 'opacity: 1; transform-origin: 35vw 32vw;';
+  document.getElementById('bg11-spawn').classList.replace('bg-open','bgo-open');
+  document.getElementById('bg13-spawn').classList.add('bg-open');
+  document.getElementById('cube12').classList.add('rotate13');
+  setTimeout( () => {
+    document.getElementById('to-im12').classList.remove('not-now');
+    document.getElementById('cube12').style.opacity = '1';
+    document.getElementById('bg11-spawn').style.opacity = '0';
+    document.getElementById('bg11-spawn').classList.remove('bgo-open');
+    document.getElementById('bg11-spawn').classList.remove('bg-open');
+    document.getElementById('disabled').classList.remove('not-now');
+    document.getElementById('im12').classList.remove('complete');
+  }, 5710 );
 });
 
-$('#to-im12').mousedown(function() {
-  $('#to-im12').addClass('not-now');
-  $('#cube12').removeClass('rotate13');
-  $('#cube12').addClass('rotate12');
-  $('#disabled').removeClass('not-now');
-  setTimeout(function() {
-    $('#to-im13').removeClass('not-now');
-    $('#disabled').addClass('not-now');
-  }, 3000);
+document.getElementById('to-im12').addEventListener('mousedown', function() {
+  this.classList.add('not-now');
+  document.getElementById('disabled').classList.remove('not-now');
+  document.getElementById('cube12').classList.replace('rotate13','rotate12');
+  setTimeout( () => {
+    document.getElementById('to-im13').classList.remove('not-now');
+    document.getElementById('disabled').classList.add('not-now');
+  }, 3010 );
 });
 
-$('#to-im13').mousedown(function() {
-  $('#to-im13').addClass('not-now');
-  $('#cube12').removeClass('rotate12');
-  $('#cube12').addClass('rotate13');
-  $('#disabled').removeClass('not-now');
-  setTimeout(function() {
-    $('#to-im12').removeClass('not-now');
-    $('#disabled').addClass('not-now');
-  }, 3000);
+document.getElementById('to-im13').addEventListener('mousedown', function() {
+  this.classList.add('not-now');
+  document.getElementById('disabled').classList.remove('not-now');
+  document.getElementById('cube12').classList.replace('rotate12','rotate13');
+  setTimeout( () => {
+    document.getElementById('to-im12').classList.remove('not-now');
+    document.getElementById('disabled').classList.add('not-now');
+  }, 3010 );
 });
 
 $('#bottom-button').click(function() {
