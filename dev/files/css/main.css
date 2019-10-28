@@ -7,6 +7,8 @@ body {
   margin: 0;
 }
 .overflow-hidden {overflow: hidden;}
+div, a, h1, h4 {outline: none;}
+div:focus, a:focus, h1:focus, h4:focus {outline: azure dashed 2px;}
 h1, h2, h3, h4, h5 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
@@ -110,4 +112,4 @@ footer, #fut-content {display: flex; justify-content: center; align-items: cente
 @media screen and (min-width: 401px) and (max-width: 500px) and (orientation: portrait) {
   html {font-size: 9px;}
 }
-.not-now {display: none; opacity: 0;}
+.not-now {display: none;}

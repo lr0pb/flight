@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (localStorage.getItem('isFirstEntry')!=='no') {
     for (let i = 0; i < 4; i++) {
-      document.querySelectorAll('.for-hide')[i].classList.add('not-now');
+      document.querySelectorAll('.for-hide')[i].style.display = 'none';
     };
     document.getElementById('fly-block').style.backgroundColor = 'transparent';
     document.getElementById('about-fly').classList.add('large-about-block');
@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('understand').addEventListener('click', function() {
   for (let i = 0; i < 4; i++) {
-    document.querySelectorAll('.for-hide')[i].classList.remove('not-now');
+    document.querySelectorAll('.for-hide')[i].removeAttribute('style');
   };
   this.classList.add('not-now');
-  document.getElementById('fly-block').style.backgroundColor = '';
+  document.getElementById('fly-block').removeAttribute('style');
   document.getElementById('about-fly').classList.remove('large-about-block');
 });
 
