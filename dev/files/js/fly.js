@@ -435,6 +435,7 @@ document.getElementById('icon13').addEventListener('mousedown', function() {
     document.getElementById('bg11-spawn').style.opacity = '0';
     document.getElementById('bg11-spawn').classList.remove('bgo-open');
     document.getElementById('bg11-spawn').classList.remove('bg-open');
+    document.getElementById('bg13-spawn').classList.remove('bg-open');
     document.getElementById('disabled').classList.remove('not-now');
     document.getElementById('im12').classList.remove('complete');
   }, 5710 );
