@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('fly-block').style.backgroundColor = 'transparent';
     document.getElementById('about-fly').classList.add('large-about-block');
     document.getElementById('understand').classList.remove('not-now');
-    localStorage.setItem('isFirstEntry','no');
     localStorage.setItem('whatIsVersion', 2); //Version list - /version.txt
   };
 });
@@ -41,6 +40,7 @@ document.getElementById('understand').addEventListener('click', function() {
   this.classList.add('not-now');
   document.getElementById('fly-block').removeAttribute('style');
   document.getElementById('about-fly').classList.remove('large-about-block');
+  localStorage.setItem('isFirstEntry','no');
 });
 
 document.getElementById('news-block').addEventListener('click', function(e) {
