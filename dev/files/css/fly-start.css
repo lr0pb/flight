@@ -196,7 +196,10 @@ a:focus {outline: azure solid 0.3rem;}
   border: 0.3rem solid #f0ffffa1;
   font-size: 1.5em;
 }
-#understand:hover, #understand:focus {border: 0.3rem solid azure;}
+#understand:hover, #understand:focus {
+  outline: none;
+  border: 0.3rem solid azure;
+}
 #hot-keys {
   grid-area: hot;
   flex-direction: column;
