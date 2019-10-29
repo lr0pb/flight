@@ -126,7 +126,7 @@ h1 {z-index: 5;}
   transition: box-shadow 0.5s;
 }
 #fly-open:hover, #fly-open:focus {
-  box-shadow: 0 0 3rem #41B619; /*
+  box-shadow: 0 0 3rem #251; /*
   background: -webkit-linear-gradient(75deg, #41B619, #CBE724)*/;}
 #news-block {
   grid-area: new;
@@ -195,7 +195,7 @@ a:focus {outline: azure solid 0.3rem;}
   border: 0.3rem solid #f0ffffa1;
   font-size: 1.5em;
 }
-#understand:hover {border: 0.3rem solid azure}
+#understand:hover, #understand:focus {border: 0.3rem solid azure;}
 #hot-keys {
   grid-area: hot;
   flex-direction: column;
