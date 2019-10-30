@@ -33,7 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 });
 
-document.getElementById('understand').addEventListener('click', function() {
+document.querySelector('.understand').addEventListener('click', understandClose);
+document.querySelector('.understand:focus').addEventListener('keydown', understandClose);
+
+function understandClose() {
   for (let i = 0; i < 4; i++) {
     document.querySelectorAll('.for-hide')[i].removeAttribute('style');
   };
@@ -41,7 +44,7 @@ document.getElementById('understand').addEventListener('click', function() {
   document.getElementById('fly-block').removeAttribute('style');
   document.getElementById('about-fly').classList.remove('large-about-block');
   localStorage.setItem('isFirstEntry','no');
-});
+};
 
 document.getElementById('news-block').addEventListener('click', function(e) {
   click(e);
