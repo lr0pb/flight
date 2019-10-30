@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 });
 
-document.querySelector('.understand').addEventListener('click', understandClose);
-document.querySelector('.understand:focus').addEventListener('keydown', understandClose);
+document.querySelector('#understand').addEventListener('click', understandClose);
+document.querySelector('#understand:focus').addEventListener('keydown', understandClose);
 
 function understandClose() {
   for (let i = 0; i < 4; i++) {
