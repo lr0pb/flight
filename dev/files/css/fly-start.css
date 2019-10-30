@@ -33,17 +33,35 @@
   #start-content {
     grid:
       "... ... ... ... ..."
-      "... ttl ttl set ..."
+      "... ttl ttl ttl ..."
       "... new new img ..."
       "... fly fly fly ..."
       "... abt abt hot ..."
       "... fut fut fut ..."
       "... ... ... ... ..."
     ;
-    /*ttl - title, set - language setting, abt - about, hot - hot keys, new - news, img - gallery, fut - footer */
+    /*ttl - title, abt - about, hot - hot keys, new - news, img - gallery, fut - footer */
     grid-template-rows: 1.5fr 4rem 12rem 42rem 18rem 2rem 1fr;
     grid-template-columns: 1fr repeat(3, 34rem) 1fr;
     grid-gap: 1rem;
+  }
+  .gradient-light {
+    position: absolute;
+    width: 104rem; height: 42rem;
+    background-image:
+    -webkit-linear-gradient(352.66deg, #CACE12 1.65%, rgba(202, 206, 18, 0) 75.97%),
+    -webkit-linear-gradient(18.23deg, #367720 16.16%, rgba(63, 176, 25, 0) 45.29%),
+    -webkit-linear-gradient(206.7deg, #E8651B 3.41%, rgba(232, 101, 27, 0) 80.34%),
+    -webkit-linear-gradient(155.56deg, #C82626 3.7%, rgba(200, 38, 38, 0) 72.86%),
+    -webkit-linear-gradient(90.56deg, #C82626 3.7%, rgba(38, 38, 38, 0) 72.86%);
+    background-size: 150% 150%;
+    filter: blur(13rem);
+    animation: 10s infinite gradient;
+  }
+  @keyframes gradient {
+    0%, 100% {background-position: 0 25%;}
+    25%, 75% {background-position: 50% 50%;}
+    50% {background-position: 100% 100%;}
   }
   #gallery-block, #hot-keys {display: flex;}
   .large-about-block {
@@ -60,16 +78,29 @@
     grid:
       "... ... ..."
       "... ttl ..."
-      "... fly ..."
-      "... abt ..."
+      "... ... ..."
       "... new ..."
+      "... abt ..."
       "... fut ..."
       "... ... ..."
     ;
     /*ttl - title, abt - about, new - news, img - gallery, fut - footer */
-    grid-template-rows: minmax(1rem, 1fr) 4rem repeat(2, 26rem) 13rem 2rem 1fr;
+    grid-template-rows: 1.5rem 4rem calc(42vh - 8.5rem) 14rem 24rem 2rem 1fr;
     grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
     grid-gap: 1.5rem;
+  }
+  #fly-block {
+    position: absolute;
+    width: 100vw;
+    height: 42vh;
+  }
+  .gradient-light {
+    position: absolute;
+    width: 104rem; height: 42vh;
+    filter: blur(6rem);
+    background-size: cover; background-repeat: no-repeat;
+    background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
+    url(/images/cover.jpg);
   }
   #gallery-block, #hot-keys {display: none;}
 }
@@ -90,26 +121,6 @@
   justify-content: center;
   align-items: center;
   z-index: 4;
-  /*background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
-  url(/images/cover.jpg);*/
-}
-.gradient-light {
-  position: absolute;
-  width: 104rem; height: 42rem;
-  background-image:
-  -webkit-linear-gradient(352.66deg, #CACE12 1.65%, rgba(202, 206, 18, 0) 75.97%),
-  -webkit-linear-gradient(18.23deg, #367720 16.16%, rgba(63, 176, 25, 0) 45.29%),
-  -webkit-linear-gradient(206.7deg, #E8651B 3.41%, rgba(232, 101, 27, 0) 80.34%),
-  -webkit-linear-gradient(155.56deg, #C82626 3.7%, rgba(200, 38, 38, 0) 72.86%),
-  -webkit-linear-gradient(90.56deg, #C82626 3.7%, rgba(38, 38, 38, 0) 72.86%);
-  background-size: 150% 150%;
-  filter: blur(13rem);
-  animation: 10s infinite gradient;
-}
-@keyframes gradient {
-  0%, 100% {background-position: 0 25%;}
-  25%, 75% {background-position: 50% 50%;}
-  50% {background-position: 100% 100%;}
 }
 h1 {z-index: 5;}
 #fly-open {
