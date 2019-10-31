@@ -56,6 +56,9 @@ document.addEventListener('keydown', function(e) {
 });
 
 document.getElementById('fly-open').addEventListener('click', open);
+document.getElementById('fly-open').addEventListener('keydown', function(e) {
+  if (e.keyCode===13) open();
+});
 document.getElementById('cross').addEventListener('click', close);
 
 function open() {

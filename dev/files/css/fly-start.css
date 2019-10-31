@@ -96,9 +96,9 @@
   }
   .gradient-light {
     position: absolute;
-    width: 104rem; height: 42vh;
-    filter: blur(6rem);
-    background-size: cover; background-repeat: no-repeat;
+    width: 100vw; height: 42vh;
+    filter: blur(4rem);
+    background-size: 150%; background-repeat: no-repeat;
     background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
     url(/images/cover.jpg);
   }

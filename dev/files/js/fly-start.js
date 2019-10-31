@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.getElementById('understand').addEventListener('click', understandClose);
-document.getElementById('understand').addEventListener('keydown', understandClose);
+document.getElementById('understand').addEventListener('keydown', function(e) {
+  if (e.keyCode===13) understandClose();
+});
 
 function understandClose() {
   for (let i = 0; i < 4; i++) {
@@ -51,9 +53,17 @@ document.getElementById('news-block').addEventListener('click', function(e) {
   setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/news'}, 1200 );
 });
 
+document.getElementById('news-block').addEventListener('keydown', function(e) {
+  if (e.keyCode===13) document.location.href = 'https://flight.pp.ua/dev/news';
+});
+
 document.getElementById('gallery-block').addEventListener('click', function(e) {
   click(e);
   setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/gallery'}, 1200 );
+});
+
+document.getElementById('gallery-block').addEventListener('keydown', function(e) {
+  if (e.keyCode===13) document.location.href = 'https://flight.pp.ua/dev/gallery';
 });
 
 function click(e) {
