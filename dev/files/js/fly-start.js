@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('body').classList.remove('overflow-hidden');
   }, 1510 );
 
+  if (screen.width < 650) {
+    document.getElementById('fly-block').style.display = 'none';
+  };
+
   if (localStorage.getItem('whatIsVersion')==1) {
     localStorage.setItem('isFirstEntry','no');
     document.getElementById('news-block').classList.add('look-here');
@@ -42,7 +46,10 @@ function understandClose() {
   for (let i = 0; i < 4; i++) {
     document.querySelectorAll('.for-hide')[i].removeAttribute('style');
   };
-  this.classList.add('not-now');
+  if (screen.width < 650) {
+    document.getElementById('fly-block').removeAttribute('style');
+  };
+  document.getElementById('understand').classList.add('not-now');
   document.getElementById('fly-block').removeAttribute('style');
   document.getElementById('about-fly').classList.remove('large-about-block');
   localStorage.setItem('isFirstEntry','no');

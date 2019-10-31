@@ -64,14 +64,6 @@
     50% {background-position: 100% 100%;}
   }
   #gallery-block, #hot-keys {display: flex;}
-  .large-about-block {
-    position: absolute;
-    width: 60rem;
-    height: 26rem;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-  }
 }
 @media screen and (max-width: 1099px) {
   #start-content {
@@ -103,6 +95,18 @@
     url(/images/cover.jpg);
   }
   #gallery-block, #hot-keys {display: none;}
+}
+.large-about-block {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 649px) {
+  .large-about-block {width: calc(100vw - 3rem); height: 31rem;}
+}
+@media screen and (min-width: 650px) {
+  .large-about-block {width: 60rem; height: 26rem;}
 }
 
 #fly-block, #news-block, #gallery-block, #about-fly, #hot-keys {
@@ -204,12 +208,12 @@ a:focus {outline: azure solid 0.3rem;}
   padding: 0.5rem 2.5rem;
   cursor: pointer;
   margin: -2rem 3rem 2.5rem auto;
-  border: 0.3rem solid #f0ffffa1;
+  border: 3px solid #f0ffffa1;
   font-size: 1.5em;
 }
 #understand:hover, #understand:focus {
   outline: none;
-  border: 0.3rem solid azure;
+  border: 3px solid azure;
 }
 #hot-keys {
   grid-area: hot;
