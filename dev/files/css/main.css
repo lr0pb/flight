@@ -102,6 +102,43 @@ a, .fut-text {
   margin: 0 1.5rem;
 }
 footer, #fut-content {display: flex; justify-content: center; align-items: center; bottom: 0;}
+
+
+#header-block {
+  grid-area: ttl;
+  z-index: 999;
+}
+h1 {z-index: 5;}
+a:hover {outline: none;}
+a:focus {outline: azure solid 0.3rem;}
+.update-title {
+  padding: 0 0 2rem 2.5rem;
+  font-size: 2.5em;
+}
+.about-title {
+  padding: 0rem 0 1rem 2.5rem;
+  font-size: 2em;
+  margin-top: auto;
+}
+.about-text {
+  padding: 0 2.5rem 2.5rem;
+  font-size: 1.6em;
+}
+#hot-keys {
+  grid-area: hot;
+  flex-direction: column;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
+}
+.hot-key-button {
+  font-size: 1.3em;
+  padding: 0.1rem 0.7rem;
+  border: 0.2rem solid #f0ffffb8;
+  border-radius: 0.7rem;
+}
+#footer-block {
+  grid-area: fut; display: flex; z-index: 4;
+}
+
 @media screen and (max-width: 360px) and (orientation: portrait) {
   html {font-size: 7px;}
 }

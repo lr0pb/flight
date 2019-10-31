@@ -114,10 +114,6 @@
   background-color: #1f2740; border-radius: 1.5rem; z-index: 5;
 }
 #news-block, #gallery-block {cursor: pointer;}
-#header-block {
-  grid-area: ttl;
-  z-index: 999;
-}
 #fly-block {
   grid-area: fly;
   display: flex;
@@ -126,7 +122,6 @@
   align-items: center;
   z-index: 4;
 }
-h1 {z-index: 5;}
 #fly-open {
   cursor: pointer;
   font-weight: 800;
@@ -155,18 +150,12 @@ h1 {z-index: 5;}
 #news-block:hover, #news-block:focus, #gallery-block:hover, #gallery-block:focus {
   box-shadow: 0 0 1.7rem #0b0e17;
 }
-a:hover {outline: none;}
-a:focus {outline: azure solid 0.3rem;}
 .update-action {
   margin-top: auto;
   padding: 0 0 0.5rem 2.5rem;
   color: rgba(255, 255, 255, 0.8);
   font-size: 1.7em;
   font-weight: 500;
-}
-.update-title {
-  padding: 0 0 2rem 2.5rem;
-  font-size: 2.5em;
 }
 .look-here {animation: 1.5s look-here; animation-delay: 2s;}
 @keyframes look-here {
@@ -193,15 +182,6 @@ a:focus {outline: azure solid 0.3rem;}
   flex-direction: column;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.9)), url(/images/cover.jpg);
 }
-.about-title {
-  padding: 0rem 0 1rem 2.5rem;
-  font-size: 2em;
-  margin-top: auto;
-}
-.about-text {
-  padding: 0 2.5rem 2.5rem;
-  font-size: 1.6em;
-}
 #understand {
   background-color: #1f2740;
   border-radius: 1.2rem;
@@ -214,20 +194,6 @@ a:focus {outline: azure solid 0.3rem;}
 #understand:hover, #understand:focus {
   outline: none;
   border: 3px solid azure;
-}
-#hot-keys {
-  grid-area: hot;
-  flex-direction: column;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
-}
-.hot-key-button {
-  font-size: 1.3em;
-  padding: 0.1rem 0.7rem;
-  border: 0.2rem solid #f0ffffb8;
-  border-radius: 0.7rem;
-}
-#footer-block {
-  grid-area: fut; display: flex; z-index: 4;
 }
 
 @media screen and (max-aspect-ratio: 4/3) {
