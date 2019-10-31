@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 1500 );
   document.querySelector('article:nth-child(1)').classList.remove('not-now');
 });
-
+/*
 document.getElementById('news-button').addEventListener('click', function() {
   document.getElementById('news-list').scrollIntoView({block: "start", behavior: "smooth"});
-})
+})*/
 
 document.getElementById('to-gallery').addEventListener('click', function(e) {
   click(e);
