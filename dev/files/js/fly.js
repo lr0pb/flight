@@ -1,5 +1,5 @@
-$(document).ready(function() {
-  /*if ( localStorage.getItem('isFirstEntry') == 1 ) {
+/*$(document).ready(function() {
+  if ( localStorage.getItem('isFirstEntry') == 1 ) {
     $('#first-load-view').addClass('not-now');
     setTimeout(function() {
       $('body').removeClass('overflow-hidden');
@@ -22,8 +22,8 @@ $(document).ready(function() {
       localStorage.setItem('isFirstEntry', 1); //1 - no
       localStorage.setItem('whatIsVersion', 1); //Version list - /version.txt
     }, 11500);
-  }*/
-});
+  }
+});*/
 
 document.addEventListener('DOMContentLoaded', () => {
   for (let i = 0; i < 11; i++) {
@@ -527,13 +527,17 @@ function realClose() {
   document.getElementById('icon7to10').classList.add('not-now');
   document.getElementById('icon9to4').classList.add('not-now');
   document.getElementById('icon13').classList.add('not-now');
+
   document.getElementById('icon1to4').classList.add('not-now');
   document.getElementById('icon4to1').classList.add('not-now');
-  document.getElementById('icon2').classList.add('not-now');
+  document.getElementById('to-im2-1').classList.add('not-now');
+  document.getElementById('to-im2-2').classList.add('not-now');
   document.getElementById('icon8to9').classList.add('not-now');
   document.getElementById('icon9to8').classList.add('not-now');
-  document.getElementById('icon9').classList.add('not-now');
-  document.getElementById('icon12').classList.add('not-now');
+  document.getElementById('to-im9-1').classList.add('not-now');
+  document.getElementById('to-im9-2').classList.add('not-now');
+  document.getElementById('to-im12').classList.add('not-now');
+  document.getElementById('to-im13').classList.add('not-now');
 
   for (let i = 0; i < document.querySelectorAll('.cube').lenght; i++) {
     document.querySelectorAll('.cube')[i].style.opacity = '0';
