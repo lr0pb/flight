@@ -21,14 +21,14 @@ header, footer {display: none;}
   #news-page {
     grid:
       "... ... ... ... ..."
-      "... ttl ttl set ..."
-      "... new new pln ..."
+      "... ttl ttl ttl ..."
       "... img img hot ..."
+      "... new new new ..."
       "... fut fut fut ..."
       "... ... ... ... ..."
     ;
-    /*ttl - title, img - to gallery, new - last news, pln - plan, hot - hot keys, fut - footer */
-    grid-template-rows: 1.5fr 4rem 40rem 10rem 4rem 1fr;
+    /*ttl - title, img - to gallery, new - last news, hot - hot keys, fut - footer */
+    grid-template-rows: 1.5fr 4rem 12rem 61rem 2rem 1fr;
     grid-template-columns: 1fr repeat(3, 34rem) 1fr;
     grid-gap: 1rem;
   }
