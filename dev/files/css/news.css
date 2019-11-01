@@ -37,7 +37,7 @@ header, footer {display: none;}
     flex-direction: column;
   }
   #news-list {transform: translateY(-11.5rem);}
-  article {width: 104rem; height: 38.5rem;}
+  article {width: 104rem; height: 36rem;}
 }
 @media screen and (max-width: 1099px) {
   #news-page {
@@ -87,26 +87,27 @@ header, footer {display: none;}
 }
 #news-block {
   grid-area: new;
+  background-color: brown;
 }
 .title-flex {
   display: flex;
   justify-content: center;
 }
 .news-title {
-  padding: 2rem 0 1.6rem 2.5rem;
+  padding: 2.5rem 0 2.6rem 0;
   font-size: 4em;
 }
 #news-place {
-  width: 104rem; height: 48rem;
+  width: 104rem; height: 47.5rem;
 }
 #news-line {
-  width: 104rem; height: 13rem;
+  width: 104rem; height: 13.5rem;
 }
 .line-nav {
   display: flex;
   cursor: pointer;
   width: 24rem; height: 12rem;
-  margin: 0 0 1rem 1rem;
+  margin: 0 0 1.5rem 1.5rem;
   background-color: #0b0e17;
   border-radius: 1rem;
 }
@@ -152,8 +153,9 @@ header, footer {display: none;}
 .article-head {
   font-size: 2.4rem;
   font-weight: 800;
-  padding: 4rem 10rem 2rem 10rem;
+  padding: 0 10rem 2rem 10rem;
 }
+.bg-article {padding: 3rem 10rem 2rem 10rem;}
 .article-text {
   font-size: 1.6rem;
   padding: 0 10rem 4rem 10rem;
@@ -163,6 +165,6 @@ header, footer {display: none;}
   url(/images/jpg-small/im7.jpg);
 }
 #first-autumn {
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.8), rgba(11, 14, 23, 0.75)),
+  background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 35%, brown),
   url(/images/autumn.jpg);
 }
