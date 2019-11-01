@@ -102,6 +102,7 @@ header, footer {display: none;}
 }
 #news-line {
   width: 104rem; height: 13.5rem;
+  display: flex;
 }
 .line-nav {
   display: flex;
