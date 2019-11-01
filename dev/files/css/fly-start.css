@@ -150,13 +150,6 @@
 #news-block:hover, #news-block:focus, #gallery-block:hover, #gallery-block:focus {
   box-shadow: 0 0 1.7rem #0b0e17;
 }
-.update-action {
-  margin-top: auto;
-  padding: 0 0 0.5rem 2.5rem;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.7em;
-  font-weight: 500;
-}
 .look-here {animation: 1.5s look-here; animation-delay: 2s;}
 @keyframes look-here {
   from {border: 0.0rem solid azure;}
