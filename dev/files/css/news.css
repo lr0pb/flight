@@ -100,7 +100,10 @@ header, footer {display: none;}
 #news-place {
   width: 104rem; height: 51.5rem;
   overflow: hidden scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
 }
+article {scroll-snap-align: start;}
 
 #future-block {
   grid-area: pln;
@@ -142,6 +145,7 @@ header, footer {display: none;}
   background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 45%, brown),
   url(/images/jpg-small/im7.jpg);
 }
+#september {scroll-margin-top: 3rem;}
 #first-autumn {
   background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 35%, brown),
   url(/images/autumn.jpg);
