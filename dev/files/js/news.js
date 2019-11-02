@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     circle.style.transition = 'transform 1.5s, opacity 0.5s';
     document.querySelector('body').classList.remove('overflow-hidden');
   }, 1500 );
-  document.querySelector('article').classList.remove('not-now');
 });
 /*
 document.getElementById('news-button').addEventListener('click', function() {
