@@ -49,13 +49,13 @@
     position: absolute;
     width: 104rem; height: 42rem;
     background-image:
-    -webkit-linear-gradient(352.66deg, #CACE12 1.65%, rgba(202, 206, 18, 0) 75.97%),
-    -webkit-linear-gradient(18.23deg, #367720 16.16%, rgba(63, 176, 25, 0) 45.29%),
-    -webkit-linear-gradient(206.7deg, #E8651B 3.41%, rgba(232, 101, 27, 0) 80.34%),
-    -webkit-linear-gradient(155.56deg, #C82626 3.7%, rgba(200, 38, 38, 0) 72.86%),
-    -webkit-linear-gradient(90.56deg, #C82626 3.7%, rgba(38, 38, 38, 0) 72.86%);
+    -webkit-linear-gradient(352.66deg, #CACE12 1.65%, transparent 75.97%),
+    -webkit-linear-gradient(18.23deg, #367720 16.16%, transparent 45.29%),
+    -webkit-linear-gradient(206.7deg, #E8651B 3.41%, transparent 80.34%),
+    -webkit-linear-gradient(155.56deg, #C82626 3.7%, transparent 72.86%),
+    -webkit-linear-gradient(90.56deg, brown 3.7%, transparent 72.86%);
     background-size: 150% 150%;
-    filter: blur(13rem);
+    filter: blur(9rem);
     animation: 10s infinite gradient;
   }
   @keyframes gradient {
