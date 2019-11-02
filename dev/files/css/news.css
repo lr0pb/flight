@@ -98,17 +98,22 @@ header, footer {display: none;}
   font-size: 4em;
 }
 #news-place {
-  width: 104rem; height: 38rem;
+  width: 104rem; height: 37rem;
+  overflow: hidden scroll;
+}
+.line-box {
+  width: 104rem; height: 14rem;
+  overflow: scroll hidden;
 }
 #news-line {
-  width: 104rem; height: 13rem;
+  width: 121rem; height: 14rem;
   display: flex;
 }
 .line-nav {
   display: flex;
   cursor: pointer;
   width: 23rem; height: 12rem;
-  margin: 0 0 1rem 1rem;
+  margin: 1rem 0 1rem 1rem;
   background-color: #0b0e17;
   border-radius: 1rem;
 }
