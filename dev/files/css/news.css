@@ -98,17 +98,17 @@ header, footer {display: none;}
   font-size: 4em;
 }
 #news-place {
-  width: 104rem; height: 47.5rem;
+  width: 104rem; height: 38rem;
 }
 #news-line {
-  width: 104rem; height: 13.5rem;
+  width: 104rem; height: 13rem;
   display: flex;
 }
 .line-nav {
   display: flex;
   cursor: pointer;
-  width: 24rem; height: 12rem;
-  margin: 0 0 1.5rem 1.5rem;
+  width: 23rem; height: 12rem;
+  margin: 0 0 1rem 1rem;
   background-color: #0b0e17;
   border-radius: 1rem;
 }
