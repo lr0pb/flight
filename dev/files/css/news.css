@@ -32,11 +32,21 @@ header, footer {display: none;}
     grid-template-columns: 1fr repeat(3, 34rem) 1fr;
     grid-gap: 1rem;
   }
-  #to-gallery, #hot-keys {
+  #hot-keys {
     display: flex;
     flex-direction: column;
   }
   article {width: 104rem; min-height: 36rem;}
+  .article-head {
+    font-size: 2.4rem;
+    font-weight: 800;
+    padding: 0 10rem 2rem 10rem;
+  }
+  .bg-article {padding: 3rem 10rem 2rem 10rem;}
+  .article-text {
+    font-size: 1.6rem;
+    padding: 0 10rem 4rem 10rem;
+  }
 }
 @media screen and (max-width: 1099px) {
   #news-page {
@@ -49,12 +59,22 @@ header, footer {display: none;}
       "... ... ..."
     ;
     /*ttl - title, img - to gallery, new - news list, fut - footer */
-    grid-template-rows: minmax(1.5rem, 1fr) 4rem 14rem 48rem 2rem 1fr;
-    grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
+    grid-template-rows: minmax(1.5rem, 1fr) 4rem 14rem 61rem 2rem 1fr;
+    grid-template-columns: 1fr minmax(calc(100vw - 3rem), 55rem) 1fr;
     grid-gap: 1.5rem;
   }
   #hot-keys {display: none;}
-  article {width: calc(100vw - 3rem); max-width: 55rem; min-height: 36rem;}
+  article {width: calc(100vw - 3rem); max-width: 55rem;}
+  .article-head {
+    font-size: 2.4rem;
+    font-weight: 800;
+    padding: 0 4rem 2rem 4rem;
+  }
+  .bg-article {padding: 3rem 4rem 2rem 4rem;}
+  .article-text {
+    font-size: 1.6rem;
+    padding: 0 4rem 4rem 4rem;
+  }
 }
 
 #news-block, #to-gallery, #hot-keys {
@@ -66,6 +86,8 @@ header, footer {display: none;}
 #to-gallery {
   grid-area: img;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
   transition: box-shadow 0.5s;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.6)),
   url(/images/jpg-small/im1.jpg);
@@ -92,16 +114,6 @@ header, footer {display: none;}
   scrollbar-width: none;
 }
 article {scroll-snap-align: start;}
-.article-head {
-  font-size: 2.4rem;
-  font-weight: 800;
-  padding: 0 10rem 2rem 10rem;
-}
-.bg-article {padding: 3rem 10rem 2rem 10rem;}
-.article-text {
-  font-size: 1.6rem;
-  padding: 0 10rem 4rem 10rem;
-}
 #release-notes {
   background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 45%, brown),
   url(/images/jpg-small/im7.jpg);
