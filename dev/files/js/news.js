@@ -24,7 +24,7 @@ document.getElementById('to-gallery').addEventListener('click', function(e) {
 
 document.getElementById('to-gallery').addEventListener('keydown', function(e) {
   if (e.keyCode===13) document.location.href = 'https://flight.pp.ua/dev/gallery';
-});
+}); 
 
 function click(e) {
   document.querySelector('body').classList.add('overflow-hidden');
