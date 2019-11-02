@@ -85,9 +85,11 @@ header, footer {display: none;}
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.6)),
   url(/images/jpg-small/im1.jpg);
 }
+#to-gallery:hover, #to-gallery:focus {box-shadow: 0 0 1.7rem #0b0e17;}
 #news-block {
   grid-area: new;
   background-color: brown;
+  transition: filter 0.5s;
 }
 .title-flex {
   display: flex;
