@@ -99,7 +99,7 @@ header, footer {display: none;}
 }
 #news-place {
   width: 104rem; height: 37rem;
-  overflow: hidden scroll;
+  overflow: hidden auto;
 }
 .line-box {
   width: 104rem; height: 14rem;
