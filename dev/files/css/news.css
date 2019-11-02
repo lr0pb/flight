@@ -66,6 +66,7 @@ header, footer {display: none;}
 #to-gallery {
   grid-area: img;
   cursor: pointer;
+  transition: box-shadow 0.5s;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.6)),
   url(/images/jpg-small/im1.jpg);
 }
