@@ -139,7 +139,7 @@ header, footer {display: none;}
   padding: 0 10rem 4rem 10rem;
 }
 #release-notes {
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.85), rgba(11, 14, 23, 0.75)),
+  background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 45%, brown),
   url(/images/jpg-small/im7.jpg);
 }
 #first-autumn {
