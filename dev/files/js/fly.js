@@ -515,7 +515,7 @@ function realClose() {
   cleanElemClasses('bgo','im5-open');
   cleanElemClasses('bgo','im6-open');
   cleanElemClasses('bgo','im7-open');
-  cleanElemClasses('bgo','om8-open');
+  cleanElemClasses('bgo','im8-open');
   cleanElemClasses('bgo','im10-open');
   cleanElemClasses('bgo','im11-open');
   cleanElemClasses('bgo','im12-open');
