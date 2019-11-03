@@ -1,21 +1,21 @@
 const circle = document.getElementById('circle');
 
 document.addEventListener('DOMContentLoaded', () => {
-  circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
+  circle.style.top = document.querySelector('.big').offsetTop + 'px';
+  circle.style.left = document.querySelector('.big').offsetLeft + 'px';
+  setTimeout( () => {
+    circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
+  }, 10 );
   setTimeout( () => {
     circle.style.opacity = '0';
     document.getElementById('cover').style.filter = 'blur(1rem)';
-  }, 500 );
+  }, 510 );
   setTimeout( () => {
     circle.style.display = 'none';
     circle.style.transition = 'transform 1.5s, opacity 0.5s';
     document.querySelector('body').classList.remove('overflow-hidden');
-  }, 1500 );
+  }, 1510 );
 });
-/*
-document.getElementById('news-button').addEventListener('click', function() {
-  document.getElementById('news-list').scrollIntoView({block: "start", behavior: "smooth"});
-})*/
 
 document.getElementById('to-gallery').addEventListener('click', function(e) {
   click(e);
