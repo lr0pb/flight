@@ -16,10 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('body').classList.remove('overflow-hidden');
   }, 1510 );
 
-  if (screen.width < 650) {
-    document.getElementById('fly-block').style.display = 'none';
-  };
-
   if (localStorage.getItem('whatIsVersion')==1) {
     localStorage.setItem('isFirstEntry','no');
     document.getElementById('news-block').classList.add('look-here');
