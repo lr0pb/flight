@@ -93,6 +93,7 @@ function openImage(imID, spawnID, elem) {
 document.getElementById('im1').addEventListener('mousedown', function() {
   let elem = this;
   openImage(1, '1to4', elem);
+  document.getElementById('cube1to4').style.transform = 'translateX(74vw)';
 
   setTimeout( () => {
     document.getElementById('bg1-spawn').classList.remove('bg-open');
@@ -480,7 +481,7 @@ function closeAnimation() {
 };
 
 function realClose() {
-  for (let i = 0; i < document.querySelectorAll('.image-point').lenght; i++) {
+  for (let i = 0; i < 17; i++) {
     if ( document.querySelectorAll('.image-point')[i].classList.contains('open') ) {
       document.querySelectorAll('.image-point')[i].classList.remove('open');
     };
@@ -491,7 +492,7 @@ function realClose() {
   for (let i = 0; i < document.querySelectorAll('h5').lenght; i++) {
     document.querySelectorAll('h5')[i].classList.add('not-now');
   };
-  for (let i = 0; i < document.querySelectorAll('img').lenght; i++) {
+  for (let i = 0; i < 34; i++) {
     if ( document.querySelectorAll('img')[i].classList.contains('bg-open') ) {
       document.querySelectorAll('img')[i].classList.remove('bg-open');
     };
@@ -539,7 +540,7 @@ function realClose() {
   document.getElementById('to-im12').classList.add('not-now');
   document.getElementById('to-im13').classList.add('not-now');
 
-  for (let i = 0; i < document.querySelectorAll('.cube').lenght; i++) {
+  for (let i = 0; i < 5; i++) {
     document.querySelectorAll('.cube')[i].style.opacity = '0';
   };
   cleanElemClasses('cube1to4','rotate1to4');
