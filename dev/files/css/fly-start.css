@@ -31,7 +31,8 @@
 }
 @media screen and (min-width: 1100px) {
   #start-content {
-    grid:
+    grid-template-columns: 1fr 42rem repeat(2, 30rem) 1fr;
+    grid-template-areas:
       "... ... ... ... ..."
       "... ttl ttl ttl ..."
       "... new new img ..."
@@ -42,7 +43,6 @@
     ;
     /*ttl - title, new - news, img - gallery, abt - about, hot - hot keys, ext - extra, fut - footer */
     grid-template-rows: 1.5fr 4rem 12rem 42rem 18rem 2rem 1fr;
-    grid-template-columns: 1fr 42rem repeat(2, 30rem) 1fr;
     grid-gap: 1rem;
   }
   .gradient-light {
