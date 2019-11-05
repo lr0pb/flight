@@ -122,15 +122,6 @@ a:focus {outline: azure solid 0.3rem;}
   font-size: 1.7em;
   font-weight: 500;
 }
-.about-title {
-  padding: 0rem 0 1rem 2.5rem;
-  font-size: 2em;
-  margin-top: auto;
-}
-.about-text {
-  padding: 0 2.5rem 2.5rem;
-  font-size: 1.6em;
-}
 #hot-keys {
   grid-area: hot;
   flex-direction: column;

@@ -36,13 +36,13 @@
       "... ttl ttl ttl ..."
       "... new new img ..."
       "... fly fly fly ..."
-      "... abt abt hot ..."
+      "... abt hot ext ..."
       "... fut fut fut ..."
       "... ... ... ... ..."
     ;
-    /*ttl - title, abt - about, hot - hot keys, new - news, img - gallery, fut - footer */
+    /*ttl - title, new - news, img - gallery, abt - about, hot - hot keys, ext - extra, fut - footer */
     grid-template-rows: 1.5fr 4rem 12rem 42rem 18rem 2rem 1fr;
-    grid-template-columns: 1fr repeat(3, 34rem) 1fr;
+    grid-template-columns: 1fr 42rem repeat(2, 30rem) 1fr;
     grid-gap: 1rem;
   }
   .gradient-light {
@@ -63,7 +63,7 @@
     25%, 75% {background-position: 50% 50%;}
     50% {background-position: 100% 100%;}
   }
-  #gallery-block, #hot-keys {display: flex;}
+  #gallery-block, #hot-keys, #extra {display: flex;}
 }
 @media screen and (max-width: 1099px) {
   #start-content {
@@ -94,7 +94,7 @@
     background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
     url(/images/cover.jpg);
   }
-  #gallery-block, #hot-keys {display: none;}
+  #gallery-block, #hot-keys, #extra {display: none;}
 }
 .large-about-block {
   position: absolute;
@@ -109,7 +109,7 @@
   .large-about-block {width: 60rem; height: 26rem;}
 }
 
-#fly-block, #news-block, #gallery-block, #about-fly, #hot-keys {
+#fly-block, #news-block, #gallery-block, #about-fly, #hot-keys, #extra {
   background-size: cover; background-position: center center; background-repeat: no-repeat;
   background-color: #1f2740; border-radius: 1.5rem; z-index: 5;
 }
@@ -133,10 +133,11 @@
   border: 0.6rem solid #41b619;
   border-radius: 5rem;
   box-shadow: 0 0.5rem 2rem #43a225;
-  transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s, background-color 0.5s;
 }
 #fly-open:hover, #fly-open:focus {
   outline: none;
+  background-color: #389717;
   box-shadow: 0 0 3rem #36841d; /*
   background: -webkit-linear-gradient(75deg, #41B619, #CBE724)*/;}
 #news-block {
@@ -175,6 +176,20 @@
   flex-direction: column;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.9)), url(/images/cover.jpg);
 }
+.about-title {
+  padding: 0rem 0 1rem 2.5rem;
+  font-size: 2em;
+  margin-top: auto;
+}
+.about-text {
+  padding: 0 2.5rem 2.5rem;
+  font-size: 1.6em;
+}
+.know-more::after {
+  content: '>';
+  display: block;
+  cursor: pointer;
+}
 #understand {
   background-color: #1f2740;
   border-radius: 1.2rem;
@@ -187,6 +202,11 @@
 #understand:hover, #understand:focus {
   outline: none;
   border: 3px solid azure;
+}
+#extra {
+  grid-area: ext;
+  flex-direction: column;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
 }
 
 @media screen and (max-aspect-ratio: 4/3) {
