@@ -478,24 +478,24 @@ function closeAnimation() {
 };
 
 async function closeWork() {
-  async function() {
+  async function imagePointClear() {
     for (let i = 0; i < 17; i++) {
       if ( document.querySelectorAll('.image-point')[i].classList.contains('open') ) {
         document.querySelectorAll('.image-point')[i].classList.remove('open');
       };
     };
   };
-  async function() {
+  async function imagePointShow() {
     for (let i = 0; i < 11; i++) {
       document.querySelectorAll('.image-point')[i].classList.remove('not-now');
     };
   };
-  async function() {
-    for (let i = 0; i < document.querySelectorAll('h5').lenght; i++) {
+  async function h5Clear() {
+    for (let i = 0; i < 4; i++) {
       document.querySelectorAll('h5')[i].classList.add('not-now');
     };
   };
-  async function() {
+  async function imgClear() {
     for (let i = 0; i < 34; i++) {
       if ( document.querySelectorAll('img')[i].classList.contains('bg-open') ) {
         document.querySelectorAll('img')[i].classList.remove('bg-open');
