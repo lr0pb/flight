@@ -68,7 +68,6 @@ img {background-color: #0b0e17; opacity: 0;}
 .close-box {
   z-index: 103;
   display: none;
-  opacity: 0;
   transition: 0.4s;
   background-size: cover;
   background-position: center center;
