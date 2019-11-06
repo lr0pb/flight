@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     circle.style.display = 'none';
     circle.style.transition = 'transform 1.5s, opacity 0.5s';
     document.querySelector('body').classList.remove('overflow-hidden');
-  }, 1510 );
+  }, 1510 ); 
 
   if (localStorage.getItem('whatIsVersion')==1) {
     localStorage.setItem('isFirstEntry','no');

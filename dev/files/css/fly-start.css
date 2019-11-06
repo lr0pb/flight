@@ -43,7 +43,7 @@
     ;
     /*ttl - title, new - news, img - gallery, abt - about, hot - hot keys, ext - extra, fut - footer */
     grid-template-rows: 1.5fr 4rem 12rem 42rem 18rem 2rem 1fr;
-    grid-gap: 1rem;
+    grid-gap: 1rem; 
   }
   .gradient-light {
     position: absolute;
