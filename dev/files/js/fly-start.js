@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (localStorage.getItem('isFirstEntry')!=='no') {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
       document.querySelectorAll('.for-hide')[i].style.display = 'none';
     };
     document.getElementById('fly-block').style.backgroundColor = 'transparent';
@@ -39,7 +39,7 @@ document.getElementById('understand').addEventListener('keydown', function(e) {
 });
 
 function understandClose() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 4; i++) {
     document.querySelectorAll('.for-hide')[i].removeAttribute('style');
   };
   if (screen.width < 650) {

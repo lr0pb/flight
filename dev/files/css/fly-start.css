@@ -31,17 +31,17 @@
 }
 @media screen and (min-width: 1100px) {
   #start-content {
-    grid-template-columns: 1fr 42rem repeat(2, 30rem) 1fr;
     grid-template-areas:
       "... ... ... ... ..."
       "... ttl ttl ttl ..."
       "... new new img ..."
       "... fly fly fly ..."
-      "... abt hot ext ..."
+      "... abt abt hot ..."
       "... fut fut fut ..."
       "... ... ... ... ..."
     ;
     /*ttl - title, new - news, img - gallery, abt - about, hot - hot keys, ext - extra, fut - footer */
+    grid-template-columns: 1fr repeat(3, 34rem) 1fr;
     grid-template-rows: 1.5fr 4rem 12rem 42rem 18rem 2rem 1fr;
     grid-gap: 1rem;
   }
@@ -63,11 +63,12 @@
     25%, 75% {background-position: 50% 50%;}
     50% {background-position: 100% 100%;}
   }
-  #gallery-block, #hot-keys, #extra {display: flex;}
+  #gallery-block, #hot-keys {display: flex;}
+  .about-bg {display: block;;}
 }
 @media screen and (max-width: 1099px) {
   #start-content {
-    grid:
+    grid-template-areas:
       "... ... ..."
       "... ttl ..."
       "... ... ..."
@@ -94,7 +95,8 @@
     background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
     url(/images/cover.jpg);
   }
-  #gallery-block, #hot-keys, #extra {display: none;}
+  #gallery-block, #hot-keys {display: none;}
+  .about-bg {display: none;}
 }
 .large-about-block {
   position: absolute;
@@ -106,7 +108,7 @@
   .large-about-block {width: calc(100vw - 3rem); height: 31rem;}
 }
 @media screen and (min-width: 650px) {
-  .large-about-block {width: 60rem; height: 26rem;}
+  .large-about-block {width: 57rem; height: 26rem;}
 }
 
 #fly-block, #news-block, #gallery-block, #about-fly, #hot-keys, #extra {
@@ -176,32 +178,18 @@
   flex-direction: column;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.9)), url(/images/cover.jpg);
 }
-.about-title {
-  padding: 0rem 0 1rem 2.5rem;
-  font-size: 2em;
-  margin-top: auto;
-}
-.about-text {
-  padding: 0 2.5rem 2.5rem;
-  font-size: 1.6em;
-}
 #understand {
   background-color: #1f2740;
   border-radius: 1.2rem;
   padding: 0.5rem 2.5rem;
   cursor: pointer;
-  margin: -2rem 3rem 2.5rem auto;
+  margin: 1rem 3rem 2.5rem auto;
   border: 3px solid #f0ffffa1;
   font-size: 1.5em;
 }
 #understand:hover, #understand:focus {
   outline: none;
   border: 3px solid azure;
-}
-#extra {
-  grid-area: ext;
-  flex-direction: column;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
 }
 
 @media screen and (max-aspect-ratio: 4/3) {
