@@ -41,7 +41,7 @@ header, footer {display: none;}
     overflow: hidden scroll;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
-  } 
+  }
   article {
     width: 104rem; min-height: 36rem;
     scroll-snap-align: start;
