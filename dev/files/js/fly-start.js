@@ -2,6 +2,7 @@ const circle = document.getElementById('circle');
 
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('fly-open').classList.remove('not-now');
+  document.querySelector('head').append( document.getElementById('stylesheets').content.cloneNode(true) );
   setTimeout( () => {document.querySelector('body').classList.remove('overflow-hidden');}, 1510 );
 
   if (localStorage.getItem('whatIsVersion')==1) {
