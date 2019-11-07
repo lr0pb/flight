@@ -22,74 +22,11 @@ h1 {
 }
 p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height: 1.5; margin: 0;}
 
-#cover {
-  position: absolute;
-  top: 0; z-index: 3;
-  width: 100vw; height: 100vh;
-  filter: blur(0rem);
-  transition: filter 1s;
-  background-size: cover; background-position: center center; background-repeat: no-repeat;
-  background-color: #0b0e17;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.65), rgba(11, 14, 23, 1)),
-  url(/images/main.jpg);
-}
-#circle {
-  position: absolute;
-  z-index: 998;
-  display: block; opacity: 1;
-  width: 35vmax; height: 35vmax;
-  top: 25vh; left: 25vw;
-  background-color: #0b0e17;
-  border-radius: 50%;
-  transform: translateX(-50%) translateY(-50%) scale(6);
-  transition: transform 1.5s, opacity 1s;
-}
-/* Navigation and Footer block */
-header, footer {background-color: hsla(205, 15%, 5%, 0.4); position: relative; width: 100vw; z-index: 20;}
 @media screen and (orientation: portrait) {
-  nav {flex-direction: column; height: 6rem;}
-  .nav-burger, footer, header {height: auto;}
-  #fut-content {height: 6rem;}
   a.big {font-size: 2.4em; margin: 1.55rem auto 1.55rem 2rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
-  a.norm {font-size: 2em; margin: 1rem 0 1rem; border-bottom: 3px solid transparent;}
-  .a-burger {display: none;}
-  a.left {margin-top: 1rem;}
-  a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
-  a.this, a.this:hover {border-bottom: 3px solid #41B619;}
-  a.last {margin-bottom: 2.2rem;}
-  #burger {position: absolute; right: 0; width: 2.5rem; height: 2.5rem; margin: 1.75rem 2rem 1.75rem; cursor: pointer;}
-  #burger span {display: block; width: 2.5rem; height: 0.3rem; background-color: #fff;}
-  .margin-top-2 {margin-top: -0.25rem;}
-  .margin-top4 {margin-top: 0.4rem;}
-  .margin-top8 {margin-top: 0.8rem;}
-  .cross-left {transform: rotateZ(-45deg);}
-  .cross-right {transform: rotateZ(45deg);}
 }
 @media screen and (orientation: landscape) {
   a.big {font-size: 2.7em; margin: 0 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
-  a.norm {font-size: 1.9em; margin: 0 1.5rem; border-bottom: 3px solid transparent;}
-  a.left {margin-left: auto;}
-  a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
-  a.this, a.this:hover {border-bottom: 3px solid #41B619;}
-  a.last {margin-right: 3rem;}
-  nav, footer, header, #fut-content {height: 7rem;}
-  #burger, #burger span {display: none;}
-}
-@media screen and (max-width: 1199px) and (orientation: landscape) {
-  nav, #fut-content {width: 100vw;}
-}
-.desktop {display: none;}
-@media screen and (min-width: 1200px) and (orientation: landscape) {
-  nav, #fut-content {width: 1200px;}
-  .desktop {display: inline-block;}
-}
-nav {
-  display: flex;
-  position: relative;
-  z-index: 25;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 a, .fut-text {
   font-family: 'Ubuntu', sans-serif;
@@ -101,8 +38,37 @@ a, .fut-text {
   font-size: 1.4em;
   margin: 0 1.5rem;
 }
-footer, #fut-content {display: flex; justify-content: center; align-items: center; bottom: 0;}
 
+#cover {
+  position: absolute;
+  top: 0; z-index: 3;
+  width: 100vw; height: 100vh;
+  filter: blur(0);
+  transition: filter 1s;
+  background-size: cover; background-position: center center; background-repeat: no-repeat;
+  background-color: #0b0e17;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.65), rgba(11, 14, 23, 1)),
+  url(/images/main.jpg);
+}
+#circle {
+  position: absolute;
+  z-index: 998;
+  display: block; opacity: 1;
+  width: 35vmax; height: 35vmax;
+  top: 0; left: 50vw;
+  background-color: #0b0e17;
+  border-radius: 50%;
+  transition: transform 1.5s, opacity 1s;
+}
+.circle-spawn {
+  animation: 1.5s circle-spawn;
+  animation-fill-mode: forwards;
+}
+@keyframes circle-spawn {
+  from {transform: translateX(-50%) translateY(-50%) scale(6); opacity: 1;}
+  67% {opacity: 0;}
+  to {transform: translateX(-50%) translateY(-50%) scale(1); opacity: 0;}
+}
 
 #header-block {
   grid-area: ttl;

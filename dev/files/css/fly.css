@@ -28,6 +28,30 @@
   #fly {font-size: 24px;}
 }
 
+@media screen and (max-aspect-ratio: 4/3) {
+  #rotate-box {
+    position: absolute;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  .portrait-text {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.9em;
+    line-height: 1.6;
+  }
+}
+@media screen and (orientation: landscape) and (min-aspect-ratio: 4/3) {
+  .portrait-text {display: none;}
+}
+
 .view-container, .close-box {
   position: absolute;
   top: 0; left: 0;

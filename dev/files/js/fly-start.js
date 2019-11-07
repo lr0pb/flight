@@ -1,20 +1,8 @@
 const circle = document.getElementById('circle');
 
 document.addEventListener('DOMContentLoaded', () => {
-  circle.style.top = document.querySelector('.big').offsetTop + 'px';
-  circle.style.left = document.querySelector('.big').offsetLeft + 'px';
-  setTimeout( () => {
-    circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
-  }, 10 );
-  setTimeout( () => {
-    circle.style.opacity = '0';
-    document.getElementById('cover').style.filter = 'blur(1rem)';
-  }, 510 );
-  setTimeout( () => {
-    circle.style.display = 'none';
-    circle.style.transition = 'transform 1.5s, opacity 0.5s';
-    document.querySelector('body').classList.remove('overflow-hidden');
-  }, 1510 );
+  document.getElementById('fly-open').classList.remove('not-now');
+  setTimeout( () => {document.querySelector('body').classList.remove('overflow-hidden');}, 1510 );
 
   if (localStorage.getItem('whatIsVersion')==1) {
     localStorage.setItem('isFirstEntry','no');
