@@ -58,6 +58,7 @@ a, .fut-text {
   top: 0; left: 50vw;
   background-color: #0b0e17;
   border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
   transition: transform 1.5s, opacity 1s;
 }
 .circle-spawn {
@@ -66,8 +67,9 @@ a, .fut-text {
 }
 @keyframes circle-spawn {
   from {transform: translateX(-50%) translateY(-50%) scale(6); opacity: 1;}
-  67% {opacity: 0;}
-  to {transform: translateX(-50%) translateY(-50%) scale(1); opacity: 0;}
+  33% {opacity: 1;}
+  99% {transform: translateX(-50%) translateY(-50%) scale(1); opacity: 0;}
+  to {transform: translateX(-50%) translateY(-35vmax) scale(0.1); opacity: 0;}
 }
 
 #header-block {

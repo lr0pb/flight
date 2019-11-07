@@ -9,7 +9,7 @@
     -webkit-linear-gradient(155deg, #C82626, transparent 70%),
     -webkit-linear-gradient(90deg, brown, transparent 70%);
     background-size: 150% 150%;
-    filter: blur(10rem);
+    filter: blur(100px);
     animation: 10s infinite gradient;
   }
   @keyframes gradient {
@@ -22,13 +22,13 @@
   .gradient-light {
     position: absolute;
     width: 100vw; height: 42vh;
-    filter: blur(4rem);
+    filter: blur(40px);
     background-size: 150%; background-repeat: no-repeat;
     background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
     url(/images/cover.jpg);
   }
 }
-#cover {filter: blur(1rem);}
+#cover {filter: blur(10px);}
 
 .look-here {animation: 1.5s look-here; animation-delay: 2s;}
 @keyframes look-here {
