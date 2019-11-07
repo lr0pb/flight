@@ -113,7 +113,7 @@
 
 #fly-block, #news-block, #gallery-block, #about-fly, #hot-keys, #extra {
   background-size: cover; background-position: center center; background-repeat: no-repeat;
-  background-color: #1f2740; border-radius: 1.5rem; z-index: 5;
+  background-color: #1f2740; border-radius: 2rem; z-index: 5;
 }
 #news-block, #gallery-block {cursor: pointer;}
 #fly-block {

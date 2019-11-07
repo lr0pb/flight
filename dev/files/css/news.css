@@ -37,7 +37,7 @@ header, footer {display: none;}
     flex-direction: column;
   }
   #news-place {
-    width: 104rem; height: 51.5rem;
+    width: 104rem; height: 51rem;
     overflow: hidden scroll;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
@@ -86,7 +86,7 @@ header, footer {display: none;}
 }
 
 #news-block, #to-gallery, #hot-keys {
-  background-color: #1f2740; border-radius: 1.5rem; z-index: 5;
+  background-color: #1f2740; border-radius: 2rem; z-index: 5;
 }
 #to-gallery, article {
   background-size: cover; background-position: center center; background-repeat: no-repeat;
