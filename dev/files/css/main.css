@@ -63,7 +63,7 @@ a, .fut-text {
 }
 .circle-spawn {
   animation: 1.5s circle-spawn;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
   animation-fill-mode: forwards;
 }
 @keyframes circle-spawn {

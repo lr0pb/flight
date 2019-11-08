@@ -4,9 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('head').append( document.getElementById('stylesheets').content.cloneNode(true) );
   setTimeout( () => {
     document.querySelector('body').classList.remove('overflow-hidden');
-    document.getElementById('circle').classList.remove('circle-spawn');
-    document.getElementById('circle').style.display = 'none';
-  }, 2510 );
+    circle.classList.remove('circle-spawn');
+    circle.style.display = 'none';
+    circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
+  }, 2010 );
 
   if (localStorage.getItem('whatIsVersion')==1) {
     localStorage.setItem('isFirstEntry','no');
