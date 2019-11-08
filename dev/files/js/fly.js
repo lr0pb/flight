@@ -91,14 +91,24 @@ function openImage(imID, spawnID, elem) {
 //__c__\\
 
 document.querySelector('.icons-container').addEventListener('mousedown', function(e) {
+  let elem = e.target;
   if ( e.target==document.getElementById('im1') ) {
-    let elem = e.target;
     openImage(1, '1to4', elem);
     document.getElementById('cube1to4').style.transform = 'translateX(74vw)';
 
     setTimeout( () => {
       document.getElementById('bg1-spawn').classList.remove('bg-open');
       document.getElementById('cube1to4').style.opacity = '1';
+    }, 5710 );
+  };
+  if ( e.target==document.getElementById('im2') ) {
+    openImage(2, '-', elem);
+    document.getElementById('cube2').classList.add('rotate0');
+    setTimeout( () => {
+      document.getElementById('bg2-spawn').classList.remove('bg-open');
+      document.getElementById('cube2').style.opacity = '1';
+      document.getElementById('to-im2-2').classList.remove('not-now');
+      document.getElementById('icon3to2').classList.remove('complete');
     }, 5710 );
   };
 });
@@ -141,7 +151,7 @@ document.getElementById('icon1to4').addEventListener('mousedown', function() {
 });
 
 //__IMAGE 2__\\
-
+/*
 document.getElementById('im2').addEventListener('mousedown', function() {
   let elem = this;
   openImage(2, '-', elem);
@@ -152,7 +162,7 @@ document.getElementById('im2').addEventListener('mousedown', function() {
     document.getElementById('to-im2-2').classList.remove('not-now');
     document.getElementById('icon3to2').classList.remove('complete');
   }, 5710 );
-});
+});*/
 
 document.getElementById('to-im2-1').addEventListener('mousedown', function() {
   this.classList.add('not-now');
