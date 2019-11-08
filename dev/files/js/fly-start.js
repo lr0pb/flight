@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('body').classList.remove('overflow-hidden');
     document.getElementById('circle').classList.remove('circle-spawn');
     document.getElementById('circle').style.display = 'none';
-  }, 3010 );
+  }, 2510 );
 
   if (localStorage.getItem('whatIsVersion')==1) {
     localStorage.setItem('isFirstEntry','no');

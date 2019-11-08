@@ -58,12 +58,12 @@ a, .fut-text {
   top: 0; left: 50vw;
   background-color: #0b0e17;
   border-radius: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%) scale(6);
   transition: transform 1.5s, opacity 1s;
 }
 .circle-spawn {
   animation: 1.5s circle-spawn;
-  animation-delay: 1.5s;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
 }
 @keyframes circle-spawn {
