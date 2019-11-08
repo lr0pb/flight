@@ -45,6 +45,24 @@
     grid-template-rows: 1.5fr 4rem 12rem 42rem 18rem 2rem 1fr;
     grid-gap: 1rem;
   }
+  .gradient-light {
+    position: absolute;
+    width: 104rem; height: 42rem;
+    background-image:
+    -webkit-linear-gradient(10deg, #CACE12, transparent 55%),
+    -webkit-linear-gradient(20deg, orange 15%, transparent 65%),
+    -webkit-linear-gradient(210deg, #E8651B, transparent 80%),
+    -webkit-linear-gradient(155deg, #C82626, transparent 70%),
+    -webkit-linear-gradient(90deg, brown, transparent 70%);
+    background-size: 150% 150%;
+    filter: blur(100px);
+    animation: 10s infinite gradient;
+  }
+  @keyframes gradient {
+    0%, 100% {background-position: 0 25%;}
+    25%, 75% {background-position: 50% 50%;}
+    50% {background-position: 100% 100%;}
+  }
   #gallery-block, #hot-keys {display: flex;}
   .about-br {display: block;}
 }
@@ -68,6 +86,14 @@
     position: absolute;
     width: 100vw;
     height: 42vh;
+  }
+  .gradient-light {
+    position: absolute;
+    width: 100vw; height: 42vh;
+    filter: blur(40px);
+    background-size: 150%; background-repeat: no-repeat;
+    background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
+    url(/images/cover.jpg);
   }
   #gallery-block, #hot-keys {display: none;}
   .about-br {display: none;}
@@ -98,7 +124,6 @@
   align-items: center;
   z-index: 4;
 }
-h1 {transition: 1.5s;}
 #fly-open {
   cursor: pointer;
   font-weight: 800;
@@ -127,6 +152,13 @@ h1 {transition: 1.5s;}
 }
 #news-block:hover, #news-block:focus, #gallery-block:hover, #gallery-block:focus {
   box-shadow: 0 0 1.7rem #0b0e17;
+}
+.look-here {animation: 1.5s look-here; animation-delay: 2s;}
+@keyframes look-here {
+  from {border: 0.0rem solid azure;}
+  33% {border: 0.4rem solid azure;}
+  67% {border: 0.4rem solid azure;}
+  to {border: 0.0rem solid azure;}
 }
 #gallery-block {
   grid-area: img;

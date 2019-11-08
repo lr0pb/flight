@@ -43,7 +43,7 @@ a, .fut-text {
   position: absolute;
   top: 0; z-index: 3;
   width: 100vw; height: 100vh;
-  filter: blur(0);
+  filter: blur(10px);
   transition: filter 1s;
   background-size: cover; background-position: center center; background-repeat: no-repeat;
   background-color: #0b0e17;
@@ -63,6 +63,7 @@ a, .fut-text {
 }
 .circle-spawn {
   animation: 1.5s circle-spawn;
+  animation-delay: 1.5s;
   animation-fill-mode: forwards;
 }
 @keyframes circle-spawn {
