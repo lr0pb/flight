@@ -2,7 +2,11 @@ const circle = document.getElementById('circle');
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('head').append( document.getElementById('stylesheets').content.cloneNode(true) );
-  setTimeout( () => {document.querySelector('body').classList.remove('overflow-hidden');}, 3010 );
+  setTimeout( () => {
+    document.querySelector('body').classList.remove('overflow-hidden');
+    document.getElementById('circle').classList.remove('circle-spawn');
+    document.getElementById('circle').style.display = 'none';
+  }, 3010 );
 
   if (localStorage.getItem('whatIsVersion')==1) {
     localStorage.setItem('isFirstEntry','no');
@@ -11,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (localStorage.getItem('isFirstEntry')!=='no') {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
       document.querySelectorAll('.for-hide')[i].style.display = 'none';
     };
     document.getElementById('fly-block').style.backgroundColor = 'transparent';
@@ -27,7 +31,7 @@ document.getElementById('understand').addEventListener('keydown', function(e) {
 });
 
 function understandClose() {
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     document.querySelectorAll('.for-hide')[i].removeAttribute('style');
   };
   if (screen.width < 650) {
@@ -62,5 +66,5 @@ function click(e) {
   circle.style.display = 'block';
   circle.style.top = e.pageY + 'px';
   circle.style.left = e.pageX + 'px';
-  setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(6)';circle.style.opacity = '1'}, 15);
+  setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(6)'; circle.style.opacity = '1'}, 15);
 };
