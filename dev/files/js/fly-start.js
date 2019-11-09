@@ -75,7 +75,7 @@ document.querySelector('.play').addEventListener('mousedown', function(e) {
   for (let i = 0; i < 4; i++) {
     document.querySelectorAll('audio')[i].play();
   };
-  document.querySelectorAll('audio')[1].volume = '0.5';
+  document.querySelectorAll('audio')[1].volume = '0.2';
   document.querySelectorAll('audio')[3].volume = '0.2';
 });
 document.querySelector('.pause').addEventListener('mousedown', function(e) {
