@@ -36,7 +36,7 @@
       "... ttl ttl ttl ..."
       "... new new img ..."
       "... fly fly fly ..."
-      "... abt abt hot ..."
+      "... abt hot snd ..."
       "... fut fut fut ..."
       "... ... ... ... ..."
     ;
@@ -74,11 +74,12 @@
       "... ... ..."
       "... new ..."
       "... abt ..."
+      "... snd ..."
       "... fut ..."
       "... ... ..."
     ;
-    /*ttl - title, abt - about, new - news, img - gallery, fut - footer */
-    grid-template-rows: 1.5rem 4rem calc(42vh - 8.5rem) 14rem 24rem 2rem 1fr;
+    /*ttl - title, new - news, abt - about, snd - sound, fut - footer */
+    grid-template-rows: 1.5rem 4rem minmax( 32rem, calc(42vh - 8.5rem) ) 13rem 17rem 14rem 2rem 1fr;
     grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
     grid-gap: 1.5rem;
   }
@@ -86,10 +87,12 @@
     position: absolute;
     width: 100vw;
     height: 42vh;
+    min-height: 40rem;
   }
   .gradient-light {
     position: absolute;
     width: 100vw; height: 42vh;
+    min-height: 40rem;
     filter: blur(40px);
     background-size: 150%; background-repeat: no-repeat;
     background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
@@ -115,7 +118,7 @@
   background-size: cover; background-position: center center; background-repeat: no-repeat;
   background-color: #1f2740; border-radius: 2rem; z-index: 5;
 }
-#news-block, #gallery-block {cursor: pointer;}
+#news-block, #gallery-block, #sound-block {cursor: pointer; transition: transform 0.5s;}
 #fly-block {
   grid-area: fly;
   display: flex;
@@ -150,8 +153,12 @@
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8)),
   url(/images/jpg-small/im7.jpg);
 }
-#news-block:hover, #news-block:focus, #gallery-block:hover, #gallery-block:focus {
+#news-block:hover, #gallery-block:hover, #sound-block:hover {
   box-shadow: 0 0 1.7rem #0b0e17;
+}
+#news-block:focus, #gallery-block:focus, #sound-block:focus {
+  box-shadow: 0 0 1.7rem #0b0e17;
+  transform: scale(0.975);
 }
 .look-here {animation: 1.5s look-here; animation-delay: 2s;}
 @keyframes look-here {
@@ -190,6 +197,12 @@
 #understand:hover, #understand:focus {
   outline: none;
   border: 3px solid azure;
+}
+#sound-block {
+  grid-area: snd;
+  display: flex;
+  flex-direction: column;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
 }
 
 .invisible-loading {display: block; z-index: 1;}

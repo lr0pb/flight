@@ -1,30 +1,3 @@
-/*$(document).ready(function() {
-  if ( localStorage.getItem('isFirstEntry') == 1 ) {
-    $('#first-load-view').addClass('not-now');
-    setTimeout(function() {
-      $('body').removeClass('overflow-hidden');
-    }, 1500);
-  }
-  else {
-    $('#start-content').css('display','none');
-    setTimeout(function() {
-      $('#fly').removeClass('not-now');
-      $('#fly').addClass('invisible-loading');
-    }, 1000);
-    setTimeout(function() {
-      $('#fly').removeClass('invisible-loading');
-      $('#fly').addClass('not-now');
-    }, 11000);
-    setTimeout(function() {
-      $('#start-content').css('display','grid');
-      $('#first-load-view').addClass('not-now');
-      $('body').removeClass('overflow-hidden');
-      localStorage.setItem('isFirstEntry', 1); //1 - no
-      localStorage.setItem('whatIsVersion', 1); //Version list - /version.txt
-    }, 11500);
-  }
-});*/
-
 document.addEventListener('DOMContentLoaded', () => {
   for (let i = 0; i < 11; i++) {
     document.querySelectorAll('.image-point')[i].addEventListener('mousedown', () => {
@@ -343,7 +316,7 @@ document.querySelector('.icons-container').addEventListener('mousedown', functio
     }, 3610 );
   };
   if ( e.target==document.getElementById('icon9to4') ) {
-    e.target.classList.add('not-now');
+    e.target.classList.add('open');
     e.target.classList.remove('complete');
     document.getElementById('im4').classList.remove('complete');
     document.getElementById('disabled').classList.remove('not-now');
@@ -411,15 +384,8 @@ document.getElementById('bottom-button').addEventListener('click', closeAnimatio
 
 async function closeAnimation() {
   document.getElementById('bottom-button').classList.remove('button-spawn');
-  document.querySelector('.close-box').style.cssText = 'display: flex';
   closeWork();
   await closeWork();
-  document.querySelector('.close-box').style.cssText = 'display: none';
-  /*if (screen.width < 1100) {
-    setTimeout( () => {document.querySelector('.close-box').style.cssText = 'display: none';}, 1900 );
-  } else if (screen.width >= 1100) {
-    setTimeout( () => {document.querySelector('.close-box').style.cssText = 'display: none';}, 900 );
-  };*/
 };
 
 async function closeWork() {
