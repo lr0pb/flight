@@ -114,7 +114,7 @@
   .large-about-block {width: 57rem; height: 26rem;}
 }
 
-#fly-block, #news-block, #gallery-block, #about-fly, #hot-keys, #extra {
+#fly-block, #news-block, #gallery-block, #about-fly, #hot-keys, #sound-block {
   background-size: cover; background-position: center center; background-repeat: no-repeat;
   background-color: #1f2740; border-radius: 2rem; z-index: 5;
 }
