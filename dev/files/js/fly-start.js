@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (localStorage.getItem('isFirstEntry')!=='no') {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       document.querySelectorAll('.for-hide')[i].style.display = 'none';
     };
     document.getElementById('fly-block').style.backgroundColor = 'transparent';
@@ -32,7 +32,7 @@ document.getElementById('understand').addEventListener('keydown', function(e) {
 });
 
 function understandClose() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 6; i++) {
     document.querySelectorAll('.for-hide')[i].removeAttribute('style');
   };
   if (screen.width < 650) {
@@ -69,3 +69,18 @@ function click(e) {
   circle.style.left = e.pageX + 'px';
   setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(6)'; circle.style.opacity = '1'}, 15);
 };
+
+document.querySelector('.play').addEventListener('mousedown', function(e) {
+  this.classList.replace('play','pause');
+  for (let i = 0; i < 4; i++) {
+    document.querySelectorAll('audio')[i].play();
+  };
+  document.querySelectorAll('audio')[1].volume = '0.5';
+  document.querySelectorAll('audio')[3].volume = '0.2';
+});
+document.querySelector('.pause').addEventListener('mousedown', function(e) {
+  this.classList.replace('pause','play');
+  for (let i = 0; i < 4; i++) {
+    document.querySelectorAll('audio')[i].pause();
+  };
+});
