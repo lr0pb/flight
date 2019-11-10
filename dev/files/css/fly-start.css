@@ -212,6 +212,7 @@ audio {
 }
 .sound-animation {
   animation: 1.7s infinite sound;
+  animation-timing-function: cubic-bezier(.4,.01,.34,.98);
 }
 @keyframes sound {
   from {transform: scale(1); opacity: 1;}

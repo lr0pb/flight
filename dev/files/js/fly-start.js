@@ -93,12 +93,13 @@ snd.addEventListener('mousedown', function() {
       document.querySelectorAll('audio')[i].pause();
     };
   };
-  if ( sessionStorage.getItem('soundIsOn')!=='yes' ) {
-    setTimeout( () => {
-      document.querySelectorAll('audio')[1].volume = '0';
-      setInterval( () => {document.querySelectorAll('audio')[2].volume = '0.7';}, 56000 );
-    }, 56000 );
-    setInterval( () => {document.querySelectorAll('audio')[2].volume = '0';}, 56000 );
-    sessionStorage.setItem('soundIsOn','yes');
-  };
 });
+/*
+if ( sessionStorage.getItem('soundIsOn')!=='yes' ) {
+  setTimeout( () => {
+    document.querySelectorAll('audio')[1].volume = '0';
+    setInterval( () => {document.querySelectorAll('audio')[2].volume = '0.7';}, 56000 );
+  }, 56000 );
+  setInterval( () => {document.querySelectorAll('audio')[2].volume = '0';}, 56000 );
+  sessionStorage.setItem('soundIsOn','yes');
+};*/
