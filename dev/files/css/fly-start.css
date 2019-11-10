@@ -205,13 +205,18 @@
 audio {
   width: 0; height: 0; opacity: 0;
 }
-.play-animation {
-  animation: 3s infinite play;
+.sound-border {
+  position: absolute; opacity: 0;
+  width: 34rem; height: 18rem;
+  border: #41b619 solid 0.4rem;
+  transform: translate(-0.4rem, -0.4rem);
 }
-@keyframes play {
-  from {filter: drop-shadow(0 0 1rem #41b619);}
-  50% {filter: drop-shadow(0 0 4rem #41b619);}
-  to {filter: drop-shadow(0 0 1rem #41b619);}
+.sound-animation {
+  animation: 1.2s infinite sound;
+}
+@keyframes sound {
+  from {transform: translate(-0.4rem, -0.4rem) scale(1); opacity: 1;}
+  to {transform: translate(-0.4rem, -0.4rem) scale(1.1); opacity: 0;}
 }
 
 .invisible-loading {display: block; z-index: 1;}
