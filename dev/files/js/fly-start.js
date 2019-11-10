@@ -75,23 +75,26 @@ document.querySelectorAll('audio')[2].volume = '0.7';
 document.querySelectorAll('audio')[3].volume = '0.05';
 
 const snd = document.getElementById('sound-block');
+localStorage.setItem('playOn','no');
 
 snd.addEventListener('mousedown', function() {
-  if ( snd.classList.contains('play') ) {
+  if (localStorage.getItem('playOn')=='no') {
     snd.classList.replace('play','pause');
     snd.style.backgroundColor = '#41b619';
     document.querySelector('.sound-border').classList.add('sound-animation');
     for (let i = 0; i < 4; i++) {
       document.querySelectorAll('audio')[i].play();
     };
+    localStorage.setItem('playOn','yes');
   };
-  if ( snd.classList.contains('pause') ) {
+  if (localStorage.getItem('playOn')=='yes') {
     snd.classList.replace('pause','play');
     snd.style.backgroundColor = '';
     document.querySelector('.sound-border').classList.remove('sound-animation');
     for (let i = 0; i < 4; i++) {
       document.querySelectorAll('audio')[i].pause();
     };
+    localStorage.setItem('playOn','no');
   };
 });
 /*
