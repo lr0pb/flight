@@ -64,7 +64,7 @@
     50% {background-position: 100% 100%;}
   }
   #gallery-block, #hot-keys {display: flex;}
-  .about-br {display: block;}
+  .sound-border {width: 34rem; height: 18rem;}
 }
 @media screen and (max-width: 1099px) {
   #start-content {
@@ -99,7 +99,7 @@
     url(/images/cover.jpg);
   }
   #gallery-block, #hot-keys {display: none;}
-  .about-br {display: none;}
+  .sound-border {width: calc(100vw - 3rem); max-width: 55rem; height: 13rem;}
 }
 .large-about-block {
   position: absolute;
@@ -207,7 +207,6 @@ audio {
 }
 .sound-border {
   position: absolute; opacity: 0;
-  width: 34rem; height: 18rem;
   border: #41b619 solid 0.4rem;
   transform: translate(-0.4rem, -0.4rem);
 }
