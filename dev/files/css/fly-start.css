@@ -207,15 +207,14 @@ audio {
 }
 .sound-border {
   position: absolute; opacity: 0;
-  border: #41b619 solid 0.4rem;
-  transform: translate(-0.4rem, -0.4rem);
+  box-shadow: 0 0 2rem aliceblue;
 }
 .sound-animation {
-  animation: 1.2s infinite sound;
+  animation: 1.7s infinite sound;
 }
 @keyframes sound {
-  from {transform: translate(-0.4rem, -0.4rem) scale(1); opacity: 1;}
-  to {transform: translate(-0.4rem, -0.4rem) scale(1.1); opacity: 0;}
+  from {transform: scale(1); opacity: 1;}
+  to {transform: scale(1.1); opacity: 0;}
 }
 
 .invisible-loading {display: block; z-index: 1;}

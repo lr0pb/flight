@@ -76,15 +76,7 @@ document.querySelectorAll('audio')[3].volume = '0.05';
 
 const snd = document.getElementById('sound-block');
 
-snd.addEventListener('mousedown', () => {
-  if (sessionStorage.getItem('soundIsOn')!=='yes') {
-    setTimeout( () => {
-      document.querySelectorAll('audio')[1].volume = '0';
-      setInterval( () => {document.querySelectorAll('audio')[2].volume = '0.7';}, 56000 );
-    }, 56000 );
-    setInterval( () => {document.querySelectorAll('audio')[2].volume = '0';}, 56000 );
-    sessionStorage.setItem('soundIsOn','yes');
-  };
+snd.addEventListener('mousedown', function() {
   if ( snd.classList.contains('play') ) {
     snd.classList.replace('play','pause');
     snd.style.backgroundColor = '#41b619';
@@ -100,5 +92,13 @@ snd.addEventListener('mousedown', () => {
     for (let i = 0; i < 4; i++) {
       document.querySelectorAll('audio')[i].pause();
     };
+  };
+  if ( sessionStorage.getItem('soundIsOn')!=='yes' ) {
+    setTimeout( () => {
+      document.querySelectorAll('audio')[1].volume = '0';
+      setInterval( () => {document.querySelectorAll('audio')[2].volume = '0.7';}, 56000 );
+    }, 56000 );
+    setInterval( () => {document.querySelectorAll('audio')[2].volume = '0';}, 56000 );
+    sessionStorage.setItem('soundIsOn','yes');
   };
 });
