@@ -83,12 +83,12 @@ document.querySelector('.play').addEventListener('mousedown', function() {
   for (let i = 0; i < 4; i++) {
     document.querySelectorAll('audio')[i].play();
   };
-  document.querySelector('.pause').addEventListener('mousedown', function() {
-    snd.classList.replace('pause','play');
-    snd.style.backgroundColor = '';
-    snd.classList.remove('play-animation');
-    for (let i = 0; i < 4; i++) {
-      document.querySelectorAll('audio')[i].pause();
-    };
-  });
+});
+document.querySelector('.pause').addEventListener('mousedown', function() {
+  snd.classList.replace('pause','play');
+  snd.style.backgroundColor = '';
+  snd.classList.remove('play-animation');
+  for (let i = 0; i < 4; i++) {
+    document.querySelectorAll('audio')[i].pause();
+  };
 });
