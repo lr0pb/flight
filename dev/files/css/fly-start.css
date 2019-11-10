@@ -205,5 +205,13 @@
 audio {
   width: 0; height: 0; opacity: 0;
 }
+.play-animation {
+  animation: 3s infinite play;
+}
+@keyframes play {
+  from {filter: drop-shadow(0 0 1rem #41b619);}
+  50% {filter: drop-shadow(0 0 4rem #41b619);}
+  to {filter: drop-shadow(0 0 1rem #41b619);}
+}
 
 .invisible-loading {display: block; z-index: 1;}

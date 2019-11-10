@@ -79,6 +79,7 @@ const snd = document.getElementById('sound-block');
 document.getElementsByClassName('.play')[0].addEventListener('mousedown', function(e) {
   snd.classList.replace('play','pause');
   snd.style.backgroundColor = '#41b619';
+  snd.classList.add('play-animation');
   for (let i = 0; i < 4; i++) {
     document.querySelectorAll('audio')[i].play();
   };
@@ -86,6 +87,7 @@ document.getElementsByClassName('.play')[0].addEventListener('mousedown', functi
 document.getElementsByClassName('.pause')[0].addEventListener('mousedown', function(e) {
   snd.classList.replace('pause','play');
   snd.style.backgroundColor = '';
+  snd.classList.remove('play-animation');
   for (let i = 0; i < 4; i++) {
     document.querySelectorAll('audio')[i].pause();
   };
