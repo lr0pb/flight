@@ -70,16 +70,22 @@ function click(e) {
   setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(6)'; circle.style.opacity = '1'}, 15);
 };
 
-document.querySelector('.play').addEventListener('mousedown', function(e) {
-  this.classList.replace('play','pause');
+document.querySelectorAll('audio')[1].volume = '0.03';
+document.querySelectorAll('audio')[2].volume = '0.7';
+document.querySelectorAll('audio')[3].volume = '0.05';
+
+const snd = document.getElementById('sound-block');
+
+document.getElementsByClassName('.play')[0].addEventListener('mousedown', function(e) {
+  snd.classList.replace('play','pause');
+  snd.style.backgroundColor = '#41b619';
   for (let i = 0; i < 4; i++) {
     document.querySelectorAll('audio')[i].play();
   };
-  document.querySelectorAll('audio')[1].volume = '0.2';
-  document.querySelectorAll('audio')[3].volume = '0.2';
 });
-document.querySelector('.pause').addEventListener('mousedown', function(e) {
-  this.classList.replace('pause','play');
+document.getElementsByClassName('.pause')[0].addEventListener('mousedown', function(e) {
+  snd.classList.replace('pause','play');
+  snd.style.backgroundColor = '';
   for (let i = 0; i < 4; i++) {
     document.querySelectorAll('audio')[i].pause();
   };

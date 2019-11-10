@@ -68,7 +68,7 @@ header, footer {display: none;}
       "... ... ..."
     ;
     /*ttl - title, img - to gallery, new - news list, fut - footer */
-    grid-template-rows: 1.5rem 4rem 14rem 1fr 2rem 0;
+    grid-template-rows: 1.5rem 4rem 13rem 1fr 2rem 0;
     grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
     grid-gap: 1.5rem;
   }

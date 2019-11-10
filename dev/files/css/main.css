@@ -81,7 +81,7 @@ h1 {z-index: 5;}
 a:hover {outline: none;}
 a:focus {outline: azure solid 0.3rem;}
 .update-title {
-  padding: 0 2.5rem 2rem 2.5rem;
+  padding: 0 3.5rem 2rem 2.5rem;
   font-size: 2.5em;
 }
 .update-action {
@@ -92,13 +92,14 @@ a:focus {outline: azure solid 0.3rem;}
   font-weight: 500;
 }
 .about-title {
-  padding: 0rem 0 1rem 2.5rem;
+  padding: 0rem 0 0.75rem 2.5rem;
   font-size: 2em;
   margin-top: auto;
 }
 .about-text {
   padding: 0 2.5rem 2.5rem;
   font-size: 1.6em;
+  line-height: 1.45;
 }
 #hot-keys {
   grid-area: hot;
