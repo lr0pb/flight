@@ -115,6 +115,17 @@ header, footer {display: none;}
   padding: 1.6rem 0 1.7rem 0;
   font-size: 3.8em;
 }
+.article-question {
+  padding: 0.4rem 1rem;
+  margin: -1.5rem 0 3rem 10rem;
+  background-color: #1f274099;
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.article-question:hover, .article-question:focus {
+  background-color: #1f2740; outline: none;
+}
 #release-notes {
   background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 45%, brown),
   url(/images/jpg-small/im7.jpg);
