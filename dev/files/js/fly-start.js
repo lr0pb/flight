@@ -56,7 +56,7 @@ document.getElementById('start-content').addEventListener('click', function(e) {
     click(e);
     setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/gallery'}, 1200 );
   };
-  if ( e.target==document.querySelector('.play') playSound();
+  if ( e.target==document.querySelector('.play') ) playSound();
   function playSound() {
     sound.classList.replace('play','pause');
     sound.style.backgroundColor = '#41b619';
