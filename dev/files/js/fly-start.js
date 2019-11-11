@@ -44,45 +44,6 @@ function understandClose() {
   localStorage.setItem('isFirstEntry','no');
 };
 
-const sound = document.getElementById('sound-block');
-
-document.getElementById('start-content').addEventListener('click', function(e) {
-  console.log(e.target);
-  if ( e.target==document.getElementById('news-block') ) {
-    click(e);
-    setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/news'}, 1200 );
-  };
-  if ( e.target==document.getElementById('gallery-block') ) {
-    click(e);
-    setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/gallery'}, 1200 );
-  };
-  if ( e.target==document.querySelector('.play') ) playSound();
-  function playSound() {
-    sound.classList.replace('play','pause');
-    sound.style.backgroundColor = '#41b619';
-    document.querySelector('.sound-border').classList.add('sound-animation');
-    /*for (let i = 0; i < 4; i++) {
-      document.querySelectorAll('audio')[i].play();
-    };*/
-  };
-  if ( e.target==document.querySelector('.pause') ) {
-    sound.classList.replace('pause','play');
-    sound.style.backgroundColor = '';
-    document.querySelector('.sound-border').classList.remove('sound-animation');
-    /*for (let i = 0; i < 4; i++) {
-      document.querySelectorAll('audio')[i].pause();
-    };*/
-  };
-  if ( e.target==sound ) {
-    setTimeout( () => {
-      document.querySelectorAll('audio')[1].volume = '0';
-      setInterval( () => {document.querySelectorAll('audio')[2].volume = '0.7';}, 56000 );
-    }, 56000 );
-    setInterval( () => {document.querySelectorAll('audio')[2].volume = '0';}, 56000 );
-    sessionStorage.setItem('soundIsOn','yes');
-  };
-});
-/*
 document.getElementById('news-block').addEventListener('click', function(e) {
   click(e);
   setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/news'}, 1200 );
@@ -99,7 +60,7 @@ document.getElementById('gallery-block').addEventListener('click', function(e) {
 
 document.getElementById('gallery-block').addEventListener('keydown', function(e) {
   if (e.keyCode===13) document.location.href = 'https://flight.pp.ua/dev/gallery';
-});*/
+});
 
 function click(e) {
   document.querySelector('body').classList.add('overflow-hidden');
@@ -113,7 +74,9 @@ document.querySelectorAll('audio')[1].volume = '0.03';
 document.querySelectorAll('audio')[2].volume = '0.7';
 document.querySelectorAll('audio')[3].volume = '0.05';
 
-/*sound.addEventListener('mousedown', function() {
+const sound = document.getElementById('sound-block');
+
+sound.addEventListener('mousedown', function() {
   if (localStorage.getItem('playOn')=='no') {
     sound.classList.replace('play','pause');
     sound.style.backgroundColor = '#41b619';
@@ -132,7 +95,7 @@ document.querySelectorAll('audio')[3].volume = '0.05';
     };
     localStorage.setItem('playOn','no');
   };
-});*/
+});
 /*
 if ( sessionStorage.getItem('soundIsOn')!=='yes' ) {
   setTimeout( () => {
