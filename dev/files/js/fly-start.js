@@ -76,7 +76,12 @@ document.querySelectorAll('audio')[3].volume = '0.05';
 
 const sound = document.getElementById('sound-block');
 
-sound.addEventListener('click', function(e) {
+sound.addEventListener('click', soundControl());
+sound.addEventListener('keydown', function(e) {
+  if (e.keyCode===13) soundControl();
+});
+
+function soundControl() {
   if ( sound.classList.contains('play') ) {
     sound.classList.replace('play','pause');
     sound.style.backgroundColor = '#41b619';
@@ -100,13 +105,4 @@ sound.addEventListener('click', function(e) {
     setInterval( () => {document.querySelectorAll('audio')[2].volume = '0';}, 56000 );
     sessionStorage.setItem('soundIsOn','yes');
   };
-});
-/*
-if ( sessionStorage.getItem('soundIsOn')!=='yes' ) {
-  setTimeout( () => {
-    document.querySelectorAll('audio')[1].volume = '0';
-    setInterval( () => {document.querySelectorAll('audio')[2].volume = '0.7';}, 56000 );
-  }, 56000 );
-  setInterval( () => {document.querySelectorAll('audio')[2].volume = '0';}, 56000 );
-  sessionStorage.setItem('soundIsOn','yes');
-};*/
+};
