@@ -76,7 +76,7 @@ document.querySelectorAll('audio')[3].volume = '0.05';
 
 const sound = document.getElementById('sound-block');
 
-sound.addEventListener('click', function() {
+sound.addEventListener('click', function(e) {
   console.log(e);
   console.log(e.target);
   console.log(sound.classList.contains('play'));
