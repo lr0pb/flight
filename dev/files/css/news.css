@@ -56,6 +56,7 @@ header, footer {display: none;}
     font-size: 1.6rem;
     padding: 0 10rem 4rem 10rem;
   }
+  .q-article {padding: 0 10rem 0.1rem 10rem;}
   .article-question {margin-left: 10rem;}
 }
 @media screen and (max-width: 1099px) {
@@ -84,6 +85,7 @@ header, footer {display: none;}
     font-size: 1.6rem;
     padding: 0 4rem 4rem 4rem;
   }
+  .q-article {padding: 0 4rem 0.1rem 4rem;}
   .article-question {margin-left: 4rem;}
 }
 
