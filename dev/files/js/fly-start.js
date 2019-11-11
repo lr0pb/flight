@@ -76,24 +76,36 @@ document.querySelectorAll('audio')[3].volume = '0.05';
 
 const sound = document.getElementById('sound-block');
 
-sound.addEventListener('mousedown', function() {
-  if (localStorage.getItem('playOn')=='no') {
+sound.addEventListener('click', function() {
+  console.log(e);
+  console.log(e.target);
+  console.log(sound.classList.contains('play'));
+  console.log(sound.classList.contains('pause'));
+  if ( sound.classList.contains('play') ) {
     sound.classList.replace('play','pause');
+    console.log(sound.classList.contains('play'));
+    console.log(sound.classList.contains('pause'));
     sound.style.backgroundColor = '#41b619';
+    console.log(sound.style.backgroundColor);
     document.querySelector('.sound-border').classList.add('sound-animation');
+    console.log(document.querySelector('.sound-border').classList.contains('sound-animation'));
     for (let i = 0; i < 4; i++) {
       document.querySelectorAll('audio')[i].play();
+      console.log(i);
     };
-    localStorage.setItem('playOn','yes');
   };
-  if (localStorage.getItem('playOn')=='yes') {
+  if ( sound.classList.contains('puase') ) {
     sound.classList.replace('pause','play');
+    console.log(sound.classList.contains('play'));
+    console.log(sound.classList.contains('pause'));
     sound.style.backgroundColor = '';
+    console.log(sound.style.backgroundColor);
     document.querySelector('.sound-border').classList.remove('sound-animation');
+    console.log(document.querySelector('.sound-border').classList.contains('sound-animation'));
     for (let i = 0; i < 4; i++) {
       document.querySelectorAll('audio')[i].pause();
+      console.log(i);
     };
-    localStorage.setItem('playOn','no');
   };
 });
 /*
