@@ -98,7 +98,7 @@ header, footer {display: none;}
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s, transform 0.5s;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.6)),
   url(/images/jpg-small/im1.jpg);
 }
@@ -131,7 +131,7 @@ header, footer {display: none;}
   line-height: 4;
 }
 .article-question:hover, .article-question:focus {
-  background-color: #1f2740; outline: none;
+  outline: none; background-color: #1f2740; box-shadow: 0 0 1.5rem #0b0e17;
 }
 #release-notes {
   background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 45%, brown),

@@ -185,16 +185,15 @@
 }
 #understand {
   background-color: #1f2740;
-  border-radius: 1.2rem;
+  border-radius: 5rem;
   padding: 0.5rem 2.5rem;
   cursor: pointer;
   margin: 1rem 3rem 2.5rem auto;
   border: 3px solid #f0ffffa1;
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
 #understand:hover, #understand:focus {
-  outline: none;
-  border: 3px solid azure;
+  outline: none; border: 3px solid azure; box-shadow: 0 0 1.5rem #0b0e17;
 }
 #sound-block {
   grid-area: snd;
