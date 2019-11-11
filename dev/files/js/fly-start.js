@@ -76,14 +76,28 @@ document.querySelectorAll('audio')[3].volume = '0.05';
 
 const sound = document.getElementById('sound-block');
 
-sound.addEventListener('mousedown', soundControl());
+sound.addEventListener('mousedown', soundControl);
 sound.addEventListener('keydown', function(e) {
   if (e.keyCode===13) soundControl();
 });
 
 function soundControl() {
+  if ( sound.classList.contains('play') ) {
+    sound.classList.replace('play','pause');
+    sound.style.backgroundColor = '#41b619';
+    document.querySelector('.sound-border').classList.add('sound-animation');
+    for (let i = 0; i < 4; i++) {
+      document.querySelectorAll('audio')[i].play();
+    };
+  } else if ( sound.classList.contains('pause') ) {
+    sound.classList.replace('pause','play');
+    sound.style.backgroundColor = '';
+    document.querySelector('.sound-border').classList.remove('sound-animation');
+    for (let i = 0; i < 4; i++) {
+      document.querySelectorAll('audio')[i].pause();
+    };
+  };
   if ( sessionStorage.getItem('soundIsOn')!=='yes' ) {
-    sound.classList.add('play');
     setTimeout( () => {
       document.querySelectorAll('audio')[1].volume = '0';
       setInterval( () => {document.querySelectorAll('audio')[2].volume = '0.7';}, 56000 );
@@ -91,21 +105,4 @@ function soundControl() {
     setInterval( () => {document.querySelectorAll('audio')[2].volume = '0';}, 56000 );
     sessionStorage.setItem('soundIsOn','yes');
   };
-  setTimeout( () => {
-    if ( sound.classList.contains('play') ) {
-      sound.classList.replace('play','pause');
-      sound.style.backgroundColor = '#41b619';
-      document.querySelector('.sound-border').classList.add('sound-animation');
-      for (let i = 0; i < 4; i++) {
-        document.querySelectorAll('audio')[i].play();
-      };
-    } else if ( sound.classList.contains('pause') ) {
-      sound.classList.replace('pause','play');
-      sound.style.backgroundColor = '';
-      document.querySelector('.sound-border').classList.remove('sound-animation');
-      for (let i = 0; i < 4; i++) {
-        document.querySelectorAll('audio')[i].pause();
-      };
-    };
-  }, 10 );
 };
