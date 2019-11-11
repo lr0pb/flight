@@ -56,6 +56,7 @@ header, footer {display: none;}
     font-size: 1.6rem;
     padding: 0 10rem 4rem 10rem;
   }
+  .article-question {margin-left: 10rem;}
 }
 @media screen and (max-width: 1099px) {
   #news-page {
@@ -83,6 +84,7 @@ header, footer {display: none;}
     font-size: 1.6rem;
     padding: 0 4rem 4rem 4rem;
   }
+  .article-question {margin-left: 4rem;}
 }
 
 #news-block, #to-gallery, #hot-keys {
@@ -116,12 +118,13 @@ header, footer {display: none;}
   font-size: 3.8em;
 }
 .article-question {
-  padding: 0.4rem 1rem;
-  margin: -1.5rem 0 3rem 10rem;
+  padding: 0.8rem 1.8rem;
   background-color: #1f274099;
   border-radius: 5rem;
   cursor: pointer;
   transition: 0.5s;
+  font-size: 1.6em;
+  line-height: 4;
 }
 .article-question:hover, .article-question:focus {
   background-color: #1f2740; outline: none;
