@@ -59,17 +59,17 @@ document.getElementById('start-content').addEventListener('click', function(e) {
     sound.classList.replace('play','pause');
     sound.style.backgroundColor = '#41b619';
     document.querySelector('.sound-border').classList.add('sound-animation');
-    for (let i = 0; i < 4; i++) {
+    /*for (let i = 0; i < 4; i++) {
       document.querySelectorAll('audio')[i].play();
-    };
+    };*/
   };
   if ( e.target==document.querySelector('.pause') ) {
     sound.classList.replace('pause','play');
     sound.style.backgroundColor = '';
     document.querySelector('.sound-border').classList.remove('sound-animation');
-    for (let i = 0; i < 4; i++) {
+    /*for (let i = 0; i < 4; i++) {
       document.querySelectorAll('audio')[i].pause();
-    };
+    };*/
   };
   if ( e.target==sound ) {
     setTimeout( () => {
