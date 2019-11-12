@@ -2,3 +2,4 @@ Version list
 
 0 - Release (unavailable)
 1 - September update
+2 - November update

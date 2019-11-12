@@ -12,9 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (screen.width < 1100) {
-    document.querySelector('.images-container').append( document.getElementById('spring19-small').content.cloneNode(true) );
+    document.querySelector('.images-container').appendChild(document.getElementById('spring19-small').content);
+    document.getElementById('im2').style.display = 'none';
+    document.getElementById('im3').style.display = 'none';
+    document.getElementById('im4').style.display = 'none';
+    document.getElementById('im7').style.display = 'none';
+    document.getElementById('im10').style.display = 'none';
+    document.getElementById('im12').style.display = 'none';
   } else if (screen.width >= 1100) {
-    document.querySelector('.images-container').append( document.getElementById('spring19-large').content.cloneNode(true) );
+    document.querySelector('.images-container').appendChild(document.getElementById('spring19-large').content);
   };
 });
 

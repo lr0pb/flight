@@ -1,7 +1,6 @@
 const circle = document.getElementById('circle');
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('head').append( document.getElementById('stylesheets').content.cloneNode(true) );
   setTimeout( () => {
     document.querySelector('body').classList.remove('overflow-hidden');
     circle.classList.remove('circle-spawn');
