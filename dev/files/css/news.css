@@ -19,7 +19,7 @@ header, footer {display: none;}
 
 @media screen and (min-width: 1100px) {
   #news-page {
-    grid:
+    grid-template-areas:
       "... ... ... ... ..."
       "... ttl ttl ttl ..."
       "... img img hot ..."
@@ -62,7 +62,7 @@ header, footer {display: none;}
 }
 @media screen and (max-width: 1099px) {
   #news-page {
-    grid:
+    grid-template-areas:
       "... ... ..."
       "... ttl ..."
       "... img ..."
