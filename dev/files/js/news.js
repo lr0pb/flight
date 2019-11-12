@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     circle.style.display = 'none';
     circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
   }, 2010 );
+  localStorage.setItem('checkNews','yes');
 });
 
 document.getElementById('to-gallery').addEventListener('click', function(e) {

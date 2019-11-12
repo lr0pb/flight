@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('understand').classList.remove('not-now');
     localStorage.setItem('whatIsVersion', 2); //Version list - /version.txt
   };
+
+  if (localStorage.getItem('checkNews')!=='yes') {
+    document.querySelector('#news-block::after').style.opacity = '1';
+  };
 });
 
 document.getElementById('understand').addEventListener('click', understandClose);
@@ -100,7 +104,7 @@ function soundControl() {
     setTimeout( () => {
       document.querySelectorAll('audio')[1].volume = '0';
       setInterval( () => {document.querySelectorAll('audio')[2].volume = '0.7';}, 56000 );
-    }, 56000 );
+    }, 28000 );
     setInterval( () => {document.querySelectorAll('audio')[2].volume = '0';}, 56000 );
     sessionStorage.setItem('soundIsOn','yes');
   };

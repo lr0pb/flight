@@ -150,7 +150,7 @@
   display: flex;
   flex-direction: column;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8)),
-  url(/images/jpg-small/im7.jpg);
+  url(/images/autumn.jpg);
 }
 #news-block:hover, #gallery-block:hover, #sound-block:hover {
   box-shadow: 0 0 1.7rem #0b0e17;
@@ -160,6 +160,15 @@
   transform: scale(0.975);
 }
 .look-here {animation: 1.5s look-here; animation-delay: 2s;}
+#news-block::after {
+  content: '';
+  display: block;
+  opacity: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: brown;
+  border-radius: 50%;
+}
 @keyframes look-here {
   from {border: 0.0rem solid azure;}
   33% {border: 0.4rem solid azure;}
@@ -213,7 +222,7 @@ audio {width: 0; height: 0; opacity: 0;}
 }
 @keyframes sound {
   from {transform: scale(1); opacity: 0;}
-  11% {opacity: 1;}
+  15% {opacity: 1;}
   to {transform: scale(1.1); opacity: 0;}
 }
 
