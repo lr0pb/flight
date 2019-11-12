@@ -42,6 +42,7 @@ header, footer {display: none;}
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
   }
+  #news-place::-webkit-scrollbar {width: 0;}
   article {
     width: 104rem; min-height: 36rem;
     scroll-snap-align: start;
