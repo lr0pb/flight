@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (localStorage.getItem('checkNews')!=='yes') {
-    document.querySelector('#news-block::after').style.opacity = '1';
+    document.getElementById('news-block').classList.add('not-read');
   };
 });
 

@@ -63,6 +63,7 @@
     25%, 75% {background-position: 50% 50%;}
     50% {background-position: 100% 100%;}
   }
+  .not-read::before {margin-left: calc(100vw - 3.5rem);}
   #gallery-block, #hot-keys {display: flex;}
   .sound-border {width: 34rem; height: 18rem;}
 }
@@ -98,6 +99,7 @@
     background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
     url(/images/cover.jpg);
   }
+  .not-read::before {margin-left: 67.5rem;}
   #gallery-block, #hot-keys {display: none;}
   .sound-border {width: calc(100vw - 3rem); max-width: 55rem; height: 13rem;}
 }
@@ -160,10 +162,9 @@
   transform: scale(0.975);
 }
 .look-here {animation: 1.5s look-here; animation-delay: 2s;}
-#news-block::after {
+.not-read::before {
   content: '';
   display: block;
-  opacity: 0;
   width: 1.5rem;
   height: 1.5rem;
   background-color: brown;
