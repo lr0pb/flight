@@ -63,7 +63,7 @@
     25%, 75% {background-position: 50% 50%;}
     50% {background-position: 100% 100%;}
   }
-  .not-read::before {margin-left: calc(100vw - 3.5rem);}
+  .not-read::before {margin-left: 67rem;}
   #gallery-block, #hot-keys {display: flex;}
   .sound-border {width: 34rem; height: 18rem;}
 }
@@ -99,7 +99,7 @@
     background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
     url(/images/cover.jpg);
   }
-  .not-read::before {margin-left: 67.5rem;}
+  .not-read::before {margin-left: calc(100vw - 5rem);}
   #gallery-block, #hot-keys {display: none;}
   .sound-border {width: calc(100vw - 3rem); max-width: 55rem; height: 13rem;}
 }
@@ -165,8 +165,8 @@
 .not-read::before {
   content: '';
   display: block;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   background-color: brown;
   border-radius: 50%;
 }
