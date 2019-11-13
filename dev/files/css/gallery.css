@@ -42,6 +42,7 @@
     scrollbar-width: none;
   }
   #gallery-place::-webkit-scrollbar {width: 0;}
+  picture {scroll-snap-align: start;}
 }
 @media screen and (max-width: 1099px) {
   #gallery-page {
