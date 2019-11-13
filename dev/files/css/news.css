@@ -10,11 +10,9 @@
   min-height: 100vh;
   display: none;
 }
-header, footer {display: none;}
 @supports (display: grid) {
   #support-box {display: none;}
   #news-page {display: grid;}
-  header, footer {display: block;}
 }
 
 @media screen and (min-width: 1100px) {
@@ -115,14 +113,6 @@ header, footer {display: none;}
   background-color: brown;
   transition: filter 0.5s;
   z-index: 4;
-}
-.title-flex {
-  display: flex;
-  justify-content: center;
-}
-.news-title {
-  padding: 1.6rem 0 1.7rem 0;
-  font-size: 3.8em;
 }
 .article-question {
   padding: 0.8rem 1.8rem;

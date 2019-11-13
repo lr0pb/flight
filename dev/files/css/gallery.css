@@ -5,98 +5,92 @@
   align-items: center;
   font-size: 2rem;
 }
-#gallery {
+#gallery-page {
+  width: 100vw;
+  min-height: 100vh;
   display: none;
-  height: auto;
-  min-height: calc(100vh - 14rem);
 }
-header, footer {display: none;}
 @supports (display: grid) {
   #support-box {display: none;}
-  #gallery {display: block;}
-  header, footer {display: block;}
+  #gallery-page {display: grid;}
 }
-@media screen and (max-width: 995px) {
-  #gallery-nav {display: block;}
-  #gallery-box {flex-direction: column; align-items: center; left: 0;}
-  picture:first-child, picture:last-child, #prev, #next {display: none;}
-  img {
-    width: 100vmin;
-    height: 75vmin;
-  }
-}
-@media screen and (min-width: 996px) {
-  #gallery-nav {
-    display: grid;
-    grid:
-      "gl-head gl-head gl-head"
-      "prev gl-box next"
+
+@media screen and (min-width: 1100px) {
+  #news-page {
+    grid-template-areas:
+      "... ... ... ... ..."
+      "... ttl ttl ttl ..."
+      "... new new hot ..."
+      "... img img img ..."
+      "... fut fut fut ..."
+      "... ... ... ... ..."
     ;
-    grid-template-rows: 12rem minmax(68rem, calc(100vh - 28rem));
-    grid-template-columns: 1fr 80rem 1fr;
+    /*ttl - title, mew - to news, hot - hot keys, img - gallery, fut - footer */
+    grid-template-rows: 1.5fr 4rem 12rem 61rem 2rem 1fr;
+    grid-template-columns: 1fr repeat(3, 34rem) 1fr;
+    grid-gap: 1rem;
   }
-  #gallery-box {left: -95rem;}
-  img {
-    width: 80rem;
-    height: 60rem;
-  }
-  #prev, #next {
-    z-index: 1000;
+  #hot-keys {
     display: flex;
-    align-items: center;
-    cursor: pointer;
-    height: 60rem;
+    flex-direction: column;
   }
-  #prev {
-    grid-area: prev;
-    background: -webkit-linear-gradient(left, rgba(11, 14, 23, 0.9) 85%, transparent 100%);
+  #gallery-place {
+    display: flex;
+    width: 104rem; height: 51rem;
+    overflow: scroll hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
   }
-  #next {
-    grid-area: next;
-    background: -webkit-linear-gradient(right, rgba(11, 14, 23, 0.9) 85%, transparent 100%);
-  }
-  #prev-icon, #next-icon {
-    width: 2rem;
-    height: 2rem;
-    border: 0.7rem solid;
-    border-color: #fff #fff transparent transparent;
-  }
-  #prev-icon {
-    margin-left: auto;
-    margin-right: 2rem;
-    transform: rotateZ(-135deg);
-  }
-  #next-icon {
-    margin-left: 2rem;
-    transform: rotateZ(45deg);
-  }
+  #gallery-place::-webkit-scrollbar {width: 0;}
 }
-#gallery-box {
-  position: relative;
-  z-index: 998;
+@media screen and (max-width: 1099px) {
+  #news-page {
+    grid-template-areas:
+      "... ... ..."
+      "... ttl ..."
+      "... new ..."
+      "... img ..."
+      "... fut ..."
+      "... ... ..."
+    ;
+    /*ttl - title, new - to news, img - gallery, fut - footer */
+    grid-template-rows: 1.5rem 4rem 13rem 1fr 2rem 0;
+    grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
+    grid-gap: 1.5rem;
+  }
+  #hot-keys {display: none;}
+}
+
+#gallery-block, #to-news, #hot-keys {
+  background-color: #1f2740; border-radius: 2rem; z-index: 5;
+}
+#to-news {
+  background-size: cover; background-position: center center; background-repeat: no-repeat;
+}
+#to-news {
+  grid-area: new;
+  cursor: pointer;
   display: flex;
-  grid-area: gl-box;
-  transition: 1s;
+  flex-direction: column;
+  transition: box-shadow 0.5s, transform 0.5s;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.6)),
+  url(/images/autumn.jpg);
+}
+#to-news:hover {box-shadow: 0 0 1.7rem #0b0e17;}
+#to-news:focus {
+  box-shadow: 0 0 1.7rem #0b0e17;
+  transform: scale(0.975);
+}
+#gallery-block {
+  grid-area: img;
+  background-color: brown;
+  transition: filter 0.5s;
+  z-index: 4;
 }
 img {
-  margin: 0 5rem;
-  margin-bottom: 5rem;
-  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.3);
-  background-color: #1f2740;
+  width: 80rem; height: 60rem;
 }
-.container {width: 100vw; height: 12rem; display: flex; grid-area: gl-head;}
-.gl-head-box {width: 1200px; height: inherit;; display: flex; align-items: center; margin-left: auto; margin-right: auto;}
-#gl-head {position: absolute; font-size: 3.6em; margin-left: 3rem; white-space: nowrap; cursor: pointer;}
-#gl-head::before {
-  display: inline-block;
-  content: ' < ';
-  background-color: #eee;
-  color: #000;
-  font-size: 0.7em;
-  line-height: 1.2;
-  border-radius: 50%;
-  margin: 0 1.5rem 0 0;
-}
+
 .image-description {
   display: none;
   font-family: 'Montserrat', sans-serif;
