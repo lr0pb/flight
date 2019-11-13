@@ -99,9 +99,10 @@
     background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.4)),
     url(/images/cover.jpg);
   }
-  .not-read::before {margin-left: calc(100vw - 5rem);}
   #gallery-block, #hot-keys {display: none;}
   .sound-border {width: calc(100vw - 3rem); max-width: 55rem; height: 13rem;}
+  @media screen and (max-width: 58rem) { .not-read::before {margin-left: calc(100vw - 5rem);} }
+  @media screen and (min-width: 58.1rem) { .not-read::before {margin-left: 53rem;} }
 }
 .large-about-block {
   position: absolute;

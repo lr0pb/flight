@@ -42,7 +42,11 @@
     scrollbar-width: none;
   }
   #gallery-place::-webkit-scrollbar {width: 0;}
-  picture {scroll-snap-align: start;}
+  img {
+    scroll-snap-align: start;
+    padding: 0 1rem;
+    scroll-margin-left: 11rem;
+  }
 }
 @media screen and (max-width: 1099px) {
   #gallery-page {
@@ -84,7 +88,6 @@
 }
 #gallery-block {
   grid-area: img;
-  background-color: brown;
   transition: filter 0.5s;
   z-index: 4;
 }
