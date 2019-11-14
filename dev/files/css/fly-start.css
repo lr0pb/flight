@@ -163,6 +163,12 @@
   transform: scale(0.975);
 }
 .look-here {animation: 1.5s look-here; animation-delay: 2s;}
+@keyframes look-here {
+  from {border: 0.0rem solid azure;}
+  33% {border: 0.4rem solid azure;}
+  67% {border: 0.4rem solid azure;}
+  to {border: 0.0rem solid azure;}
+}
 .not-read::before {
   content: '';
   display: block;
@@ -170,12 +176,6 @@
   height: 2rem;
   background-color: brown;
   border-radius: 50%;
-}
-@keyframes look-here {
-  from {border: 0.0rem solid azure;}
-  33% {border: 0.4rem solid azure;}
-  67% {border: 0.4rem solid azure;}
-  to {border: 0.0rem solid azure;}
 }
 #gallery-block {
   grid-area: img;

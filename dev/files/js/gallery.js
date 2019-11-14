@@ -1,9 +1,16 @@
-$(document).ready(function() {
-  setTimeout(function() {
-    $('#transition-layer').css('display','none');
-    $('body').removeClass('overflow-hidden');
-  }, 1000);
-  responsiveImages();
+const circle = document.getElementById('circle');
+
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout( () => {
+    document.querySelector('body').classList.remove('overflow-hidden');
+    circle.classList.remove('circle-spawn');
+    circle.style.display = 'none';
+    circle.style.transform = 'translateX(-50%) translateY(-50%) scale(1)';
+  }, 2010 );
+
+  if (localStorage.getItem('checkNews')!=='yes') {
+    document.getElementById('news-block').classList.add('not-read');
+  };
 });
 
 $('#next').bind('mousedown', next);
