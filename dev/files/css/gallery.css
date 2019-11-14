@@ -73,7 +73,7 @@
     height: calc(calc(100vw - 3rem) / 4 * 3);
     max-width: 55rem;
     max-height: 41.25rem;
-    padding: 1rem 0;
+    padding-bottom: 1.5rem;
   }
 }
 

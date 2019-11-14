@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 2010 );
 
   if (localStorage.getItem('checkNews')!=='yes') {
-    document.getElementById('news-block').classList.add('not-read');
+    document.getElementById('to-news').classList.add('not-read');
   };
 });
 
