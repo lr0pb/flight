@@ -46,7 +46,7 @@
     scroll-snap-align: start;
     padding: 0 1rem;
     scroll-margin-left: 11rem;
-  }
+  } 
 }
 @media screen and (max-width: 1099px) {
   #gallery-page {
