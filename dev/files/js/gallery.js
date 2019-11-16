@@ -51,10 +51,14 @@ function back() {
 
 let i = 0;
 document.getElementById('next-field').addEventListener('click', function() {
+  console.log(i);
   i++;
+  console.log(i);
   document.querySelectorAll('img')[i].scrollIntoView({block: 'start', behavior: 'smooth'});
   return i;
+  console.log(i);
 });
+console.log(i);
 
 /*const bg131 = document.getElementById('bg13-1');
 const bg111 = document.getElementById('bg1-1');
