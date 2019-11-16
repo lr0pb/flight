@@ -57,7 +57,7 @@ document.getElementById('next-field').addEventListener('click', function() {
   if (i=18) {
     document.getElementById('next-field').classList.add('not-now');
   } else {
-    if (document.getElementById('next-field').classList.contains('not-now');) {
+    if (document.getElementById('next-field').classList.contains('not-now')) {
       document.getElementById('next-field').classList.remove('not-now');
     };
   };
@@ -69,7 +69,7 @@ document.getElementById('prev-field').addEventListener('click', function() {
   if (i=0) {
     document.getElementById('prev-field').classList.add('not-now');
   } else {
-    if (document.getElementById('prev-field').classList.contains('not-now');) {
+    if (document.getElementById('prev-field').classList.contains('not-now')) {
       document.getElementById('prev-field').classList.remove('not-now');
     };
   };
