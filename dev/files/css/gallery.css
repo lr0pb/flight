@@ -36,6 +36,7 @@
     flex-direction: column;
   }
   #gallery-place {
+    position: absolute;
     display: flex;
     width: 104rem; height: 51rem;
     overflow: scroll hidden;
@@ -52,23 +53,24 @@
   #gallery-control {
     position: absolute;
     display: grid;
-    margin-top: 8rem;
     width: 104rem; height: 51rem;
     grid-template-areas:
       "prev ... next"
     ;
     grid-template-rows: 51rem;
-    grid-template-columns: 15rem 1fr 15rem;
+    grid-template-columns: 12rem 1fr 12rem;
     grid-gap: 0;
   }
   #prev-field, #next-field {
-    width: 15rem; height: 51rem;
+    width: 12rem; height: 51rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(11, 14, 23, 0.75);
   }
+  #prev-field {grid-area: prev;}
+  #next-field {grid-area: next;}
   #prev-icon, #next-icon {
     border-style: solid;
     border-width: 1rem;
