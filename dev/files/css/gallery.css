@@ -50,27 +50,16 @@
     padding: 0 3rem;
     scroll-margin-left: 15rem;
   }
-  #gallery-control {
-    position: absolute;
-    display: grid;
-    width: 104rem; height: 51rem;
-    grid-template-areas:
-      "prev ... next"
-    ;
-    grid-template-rows: 51rem;
-    grid-template-columns: 12rem 1fr 12rem;
-    grid-gap: 0;
-  }
   #prev-field, #next-field {
     width: 12rem; height: 51rem;
+    position: absolute;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(11, 14, 23, 0.75);
   }
-  #prev-field {grid-area: prev;}
-  #next-field {grid-area: next;}
+  #next-field {right: 0;}
   #prev-icon, #next-icon {
     border-style: solid;
     border-width: 1rem;

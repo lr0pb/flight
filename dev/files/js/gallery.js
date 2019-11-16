@@ -37,13 +37,6 @@ document.getElementById('gallery-place').addEventListener('blur', () => {
   document.getElementById('gallery-block').style.filter = '';
 });
 
-document.getElementById('gallery-control').addEventListener('focus', () => {
-  document.getElementById('gallery-block').style.filter = 'drop-shadow(0 0 3rem #2b4282)';
-});
-document.getElementById('gallery-control').addEventListener('blur', () => {
-  document.getElementById('gallery-block').style.filter = '';
-});
-
 document.addEventListener('keydown', function(e) {
   console.log(e);
   if(e.keyCode===66) back();
