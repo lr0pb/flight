@@ -51,12 +51,28 @@ function back() {
 
 let i = 0;
 document.getElementById('next-field').addEventListener('click', function() {
-  console.log(i);
   i++;
-  console.log(i);
   document.querySelectorAll('img')[i].scrollIntoView({block: 'start', behavior: 'smooth'});
   return i;
-  console.log(i);
+  if (i=18) {
+    document.getElementById('next-field').classList.add('not-now');
+  } else {
+    if (document.getElementById('next-field').classList.contains('not-now');) {
+      document.getElementById('next-field').classList.remove('not-now');
+    };
+  };
+});
+document.getElementById('prev-field').addEventListener('click', function() {
+  i--;
+  document.querySelectorAll('img')[i].scrollIntoView({block: 'start', behavior: 'smooth'});
+  return i;
+  if (i=0) {
+    document.getElementById('prev-field').classList.add('not-now');
+  } else {
+    if (document.getElementById('prev-field').classList.contains('not-now');) {
+      document.getElementById('prev-field').classList.remove('not-now');
+    };
+  };
 });
 
 /*const bg131 = document.getElementById('bg13-1');
