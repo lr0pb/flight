@@ -28,7 +28,7 @@ function click(e) {
 };
 
 document.getElementById('news-place').addEventListener('focus', () => {
-  document.getElementById('news-block').style.filter = 'drop-shadow(0 0 3rem #353c4f)';
+  document.getElementById('news-block').style.filter = 'drop-shadow(0 0 3rem #2b4282)';
 });
 document.getElementById('news-place').addEventListener('blur', () => {
   document.getElementById('news-block').style.filter = '';

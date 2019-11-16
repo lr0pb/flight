@@ -44,10 +44,10 @@
   }
   #gallery-place::-webkit-scrollbar {width: 0;}
   img {
-    width: 80rem; height: 60rem;
+    width: 68rem; height: 51rem;
     scroll-snap-align: start;
-    padding: 0 1rem;
-    scroll-margin-left: 11rem;
+    padding: 0 3rem;
+    scroll-margin-left: 14rem;
   }
 }
 @media screen and (max-width: 1099px) {

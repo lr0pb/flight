@@ -13,6 +13,42 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 });
 
+document.getElementById('to-news').addEventListener('click', function(e) {
+  click(e);
+  setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/news'}, 1200 );
+});
+
+document.getElementById('to-news').addEventListener('keydown', function(e) {
+  if (e.keyCode===13) document.location.href = 'https://flight.pp.ua/dev/news';
+});
+
+function click(e) {
+  document.querySelector('body').classList.add('overflow-hidden');
+  circle.style.display = 'block';
+  circle.style.top = e.pageY + 'px';
+  circle.style.left = e.pageX + 'px';
+  setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(5)';circle.style.opacity = '1'}, 15);
+};
+
+document.getElementById('gallery-place').addEventListener('focus', () => {
+  document.getElementById('gallery-block').style.filter = 'drop-shadow(0 0 3rem #2b4282)';
+});
+document.getElementById('gallery-place').addEventListener('blur', () => {
+  document.getElementById('gallery-block').style.filter = '';
+});
+
+document.addEventListener('keydown', function(e) {
+  console.log(e);
+  if(e.keyCode===66) back();
+});
+
+function back() {
+  document.querySelector('body').classList.add('overflow-hidden');
+  circle.style.display = 'block';
+  setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(5)'; circle.style.opacity = '1'}, 15);
+  setTimeout( () => {document.location.href = "https://flight.pp.ua/dev/fly";}, 1200 );
+};
+
 $('#next').bind('mousedown', next);
 $('#prev').bind('mousedown', prev);
 
@@ -140,20 +176,3 @@ function responsiveImages() {
     bg11.src="/images/jpg-small/im11.jpg";
   }
 };*/
-
-$('#gl-head').click(back);
-$(document).keydown(function(e) {
-  if(e.keyCode===66){
-    back();
-  };
-});
-function back() {
-  $('body').addClass('overflow-hidden');
-  $('#transition-layer').css({
-    'display':'block',
-    'animation':'1s transition-start-phase'
-  });
-  setTimeout(function() {
-    document.location.href = "https://flight.pp.ua/";
-  }, 1000);
-};
