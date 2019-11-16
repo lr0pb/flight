@@ -110,7 +110,7 @@
 }
 #news-block {
   grid-area: new;
-  background-color: brown;
+  background-color: #912626;
   transition: filter 0.5s;
   z-index: 4;
 }
@@ -127,11 +127,11 @@
   outline: none; background-color: #1f2740; box-shadow: 0 0 1.5rem #0b0e17;
 }
 #release-notes {
-  background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 45%, brown),
+  background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 45%, #912626),
   url(/images/jpg-small/im7.jpg);
 }
 #september {scroll-margin-top: 3rem;}
 #first-autumn {
-  background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 35%, brown),
+  background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 35%, #912626),
   url(/images/autumn.jpg);
 }
