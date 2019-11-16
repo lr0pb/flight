@@ -58,7 +58,6 @@ document.getElementById('next-field').addEventListener('click', function() {
   return i;
   console.log(i);
 });
-console.log(i);
 
 /*const bg131 = document.getElementById('bg13-1');
 const bg111 = document.getElementById('bg1-1');
