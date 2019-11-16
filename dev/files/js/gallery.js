@@ -49,60 +49,12 @@ function back() {
   setTimeout( () => {document.location.href = "https://flight.pp.ua/dev/fly";}, 1200 );
 };
 
-$('#next').bind('mousedown', next);
-$('#prev').bind('mousedown', prev);
-
-var gl = $('#gallery-box');
-
-function next() {
-  var glValue = gl.css('left');
-  glValue = parseInt(glValue);
-
-  if (glValue !== -17150) {
-    gl.css('left','-=900');
-    $('#next').unbind('mousedown', next);
-    $('#prev').unbind('mousedown', prev);
-    setTimeout(function() {
-      $('#next').bind('mousedown', next);
-      $('#prev').bind('mousedown', prev);
-    }, 1000);
-  };
-  if (glValue == -17150) {
-    gl.css({'left':'-95rem','transition':'0.1s'});
-    $('#next').unbind('mousedown', next);
-    $('#prev').unbind('mousedown', prev);
-    setTimeout(function() {
-      gl.css('transition','1s');
-      $('#next').bind('mousedown', next);
-      $('#prev').bind('mousedown', prev);
-    }, 100);
-  };
-};
-
-function prev() {
-  var glValue = gl.css('left');
-  glValue = parseInt(glValue);
-
-  if (glValue !== -950) {
-    gl.css('left','+=900');
-    $('#next').unbind('mousedown', next);
-    $('#prev').unbind('mousedown', prev);
-    setTimeout(function() {
-      $('#next').bind('mousedown', next);
-      $('#prev').bind('mousedown', prev);
-    }, 1000);
-  };
-  if (glValue == -950) {
-    gl.css({'left':'-1715rem','transition':'0.1s'});
-    $('#next').unbind('mousedown', next);
-    $('#prev').unbind('mousedown', prev);
-    setTimeout(function() {
-      gl.css('transition','1s');
-      $('#next').bind('mousedown', next);
-      $('#prev').bind('mousedown', prev);
-    }, 100);
-  };
-};
+let i = 0;
+document.getElementById('next-field').addEventListener('click', function() {
+  i++;
+  document.querySelectorAll('img')[i].scrollIntoView({block: 'start', behavior: 'smooth'});
+  return i;
+});
 
 /*const bg131 = document.getElementById('bg13-1');
 const bg111 = document.getElementById('bg1-1');
