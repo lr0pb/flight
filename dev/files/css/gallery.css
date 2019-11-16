@@ -59,7 +59,7 @@
     justify-content: center;
     background-color: rgba(11, 14, 23, 0.75);
   }
-  #next-field {right: 0;}
+  #next-field {margin-left: 92rem;}
   #prev-icon, #next-icon {
     border-style: solid;
     border-width: 1rem;
