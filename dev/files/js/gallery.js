@@ -54,7 +54,7 @@ document.getElementById('next-field').addEventListener('click', function() {
   i++;
   document.querySelectorAll('img')[i].scrollIntoView({block: 'start', behavior: 'smooth'});
   return i;
-  if (i==18) {
+  if (i===18) {
     document.getElementById('next-field').style.display = 'none';
   } else {
     document.getElementById('next-field').style.display = '';
@@ -65,11 +65,21 @@ document.getElementById('prev-field').addEventListener('click', function() {
   i--;
   document.querySelectorAll('img')[i].scrollIntoView({block: 'start', behavior: 'smooth'});
   return i;
-  if (i==0) {
+  if (i===0) {
     document.getElementById('prev-field').style.display = 'none';
   } else {
     document.getElementById('next-field').style.display = '';
     document.getElementById('prev-field').style.display = '';
+  };
+});
+document.getElementById('gallery-place').addEventListener('keydown', function(e) {
+  if(e.keyCode===37) {
+    i--;
+    return i;
+  };
+  if (e.keyCode===39) {
+    i++;
+    return i;
   };
 });
 
