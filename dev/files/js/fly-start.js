@@ -109,3 +109,6 @@ function soundControl() {
     sessionStorage.setItem('soundIsOn','yes');
   };
 };
+document.addEventListener('beforeunload', function() {
+  sessionStorage.removeItem('soundIsOn');
+});
