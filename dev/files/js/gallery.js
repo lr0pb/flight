@@ -30,6 +30,12 @@ function click(e) {
   setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(5)';circle.style.opacity = '1'}, 15);
 };
 
+if (screen.width < 1100) {
+  document.getElementById('gallery-place').appendChild(document.getElementById('spring19-small').content);
+} else if (screen.width >= 1100) {
+  document.getElementById('gallery-place').appendChild(document.getElementById('spring19-large').content);
+};
+
 document.getElementById('gallery-place').addEventListener('focus', () => {
   document.getElementById('gallery-block').style.filter = 'drop-shadow(0 0 3rem #2b4282)';
 });
