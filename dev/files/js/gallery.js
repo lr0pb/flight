@@ -56,17 +56,6 @@ function back() {
 };
 
 let i = 0;
-document.getElementById('next-field').addEventListener('click', function() {
-  i++;
-  document.querySelectorAll('img')[i].scrollIntoView({block: 'start', behavior: 'smooth'});
-  if (i===18) {
-    document.getElementById('next-field').style.display = 'none';
-  } else {
-    document.getElementById('next-field').style.display = '';
-    document.getElementById('prev-field').style.display = '';
-  };
-  return i;
-});
 document.getElementById('prev-field').addEventListener('click', function() {
   i--;
   document.querySelectorAll('img')[i].scrollIntoView({block: 'start', behavior: 'smooth'});
@@ -78,13 +67,40 @@ document.getElementById('prev-field').addEventListener('click', function() {
   };
   return i;
 });
+document.getElementById('next-field').addEventListener('click', function() {
+  i++;
+  document.querySelectorAll('img')[i].scrollIntoView({block: 'start', behavior: 'smooth'});
+  if (i===18) {
+    document.getElementById('next-field').style.display = 'none';
+  } else {
+    document.getElementById('next-field').style.display = '';
+    document.getElementById('prev-field').style.display = '';
+  };
+  return i;
+});
 document.getElementById('gallery-place').addEventListener('keydown', function(e) {
   if(e.keyCode===37) {
-    i--;
+    if (i>0) {
+      i--;
+    };
+    if (i===0) {
+      document.getElementById('prev-field').style.display = 'none';
+    } else {
+      document.getElementById('next-field').style.display = '';
+      document.getElementById('prev-field').style.display = '';
+    };
     return i;
   };
   if (e.keyCode===39) {
-    i++;
+    if (i<18) {
+      i++;
+    };
+    if (i===18) {
+      document.getElementById('next-field').style.display = 'none';
+    } else {
+      document.getElementById('next-field').style.display = '';
+      document.getElementById('prev-field').style.display = '';
+    };
     return i;
   };
 });
