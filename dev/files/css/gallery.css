@@ -86,7 +86,7 @@
   @media screen and (max-width: 58rem) { .not-read::before {margin-left: calc(100vw - 5rem);} }
   @media screen and (min-width: 58.1rem) { .not-read::before {margin-left: 53rem;} }
   #hot-keys, #gallery-control, #prev-field, #next-field, #prev-icon, #next-icon {display: none;}
-  #gallery-block {filter: drop-shadow(0 0 3rem #2b4282);}
+  #gallery-block {filter: drop-shadow(0 -2rem 3rem #2b4282);}
   img {
     width: calc(100vw - 3rem);
     height: calc(calc(100vw - 3rem) / 4 * 3);

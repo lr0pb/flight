@@ -37,7 +37,7 @@ if (screen.width < 1100) {
 };
 
 document.getElementById('gallery-place').addEventListener('focus', () => {
-  document.getElementById('gallery-block').style.filter = 'drop-shadow(0 0 3rem #2b4282)';
+  document.getElementById('gallery-block').style.filter = 'drop-shadow(0 -2rem 3rem #2b4282)';
 });
 document.getElementById('gallery-place').addEventListener('blur', () => {
   document.getElementById('gallery-block').style.filter = '';
