@@ -13,13 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 });
 
+if (document.location.href==='https://flight.pp.ua/gallery') {
+  localStorage.setItem('lang','ru')
+};
+if (document.location.href==='https://flight.pp.ua/en/gallery') {
+  localStorage.setItem('lang','en')
+};
+
 document.getElementById('to-news').addEventListener('click', function(e) {
   click(e);
-  setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/news'}, 1200 );
+  if (localStorage.getItem('lang')=='ru') setTimeout( () => {document.location.href = 'https://flight.pp.ua/news'}, 1200 );
+  if (localStorage.getItem('lang')=='en') setTimeout( () => {document.location.href = 'https://flight.pp.ua/en/news'}, 1200 );
 });
 
 document.getElementById('to-news').addEventListener('keydown', function(e) {
-  if (e.keyCode===13) document.location.href = 'https://flight.pp.ua/dev/news';
+  if (e.keyCode===13) function() {
+    if (localStorage.getItem('lang')=='ru') document.location.href = 'https://flight.pp.ua/news';
+    if (localStorage.getItem('lang')=='en') document.location.href = 'https://flight.pp.ua/en/news';
+  };
 });
 
 function click(e) {
@@ -52,12 +63,14 @@ function back() {
   document.querySelector('body').classList.add('overflow-hidden');
   circle.style.display = 'block';
   setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(5)'; circle.style.opacity = '1'}, 15);
-  setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/fly';}, 1200 );
+  if (localStorage.getItem('lang')=='ru') setTimeout( () => {document.location.href = 'https://flight.pp.ua/'}, 1200 );
+  if (localStorage.getItem('lang')=='en') setTimeout( () => {document.location.href = 'https://flight.pp.ua/en/'}, 1200 );
 };
 
 document.getElementById('back-button').addEventListener('click', function(e) {
   click(e);
-  setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/fly';}, 1200 );
+  if (localStorage.getItem('lang')=='ru') setTimeout( () => {document.location.href = 'https://flight.pp.ua/'}, 1200 );
+  if (localStorage.getItem('lang')=='en') setTimeout( () => {document.location.href = 'https://flight.pp.ua/en/'}, 1200 );
 });
 
 let i = 0;

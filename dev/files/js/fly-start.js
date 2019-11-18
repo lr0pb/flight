@@ -47,22 +47,37 @@ function understandClose() {
   localStorage.setItem('isFirstEntry','no');
 };
 
+if (document.location.href==='https://flight.pp.ua/') {
+  localStorage.setItem('lang','ru')
+};
+if (document.location.href==='https://flight.pp.ua/en/') {
+  localStorage.setItem('lang','en')
+};
+
 document.getElementById('news-block').addEventListener('click', function(e) {
   click(e);
-  setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/news'}, 1200 );
+  if (localStorage.getItem('lang')=='ru') setTimeout( () => {document.location.href = 'https://flight.pp.ua/news'}, 1200 );
+  if (localStorage.getItem('lang')=='en') setTimeout( () => {document.location.href = 'https://flight.pp.ua/en/news'}, 1200 );
 });
 
 document.getElementById('news-block').addEventListener('keydown', function(e) {
-  if (e.keyCode===13) document.location.href = 'https://flight.pp.ua/dev/news';
+  if (e.keyCode===13) function() {
+    if (localStorage.getItem('lang')=='ru') document.location.href = 'https://flight.pp.ua/news';
+    if (localStorage.getItem('lang')=='en') document.location.href = 'https://flight.pp.ua/en/news';
+  };
 });
 
 document.getElementById('gallery-block').addEventListener('click', function(e) {
   click(e);
-  setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/gallery'}, 1200 );
+  if (localStorage.getItem('lang')=='ru') setTimeout( () => {document.location.href = 'https://flight.pp.ua/gallery'}, 1200 );
+  if (localStorage.getItem('lang')=='en') setTimeout( () => {document.location.href = 'https://flight.pp.ua/en/gallery'}, 1200 );
 });
 
 document.getElementById('gallery-block').addEventListener('keydown', function(e) {
-  if (e.keyCode===13) document.location.href = 'https://flight.pp.ua/dev/gallery';
+  if (e.keyCode===13) function() {
+    if (localStorage.getItem('lang')=='ru') document.location.href = 'https://flight.pp.ua/gallery';
+    if (localStorage.getItem('lang')=='en') document.location.href = 'https://flight.pp.ua/en/gallery';
+  };
 });
 
 function click(e) {
