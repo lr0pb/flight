@@ -46,7 +46,7 @@ function back() {
   setTimeout( () => {document.location.href = "https://flight.pp.ua/dev/fly";}, 1200 );
 };
 
-document.getElementById('back-button').addEventListener('touchend', function(e) {
+document.getElementById('back-button').addEventListener('click', function(e) {
   click(e);
   setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/fly';}, 1200 );
 });
