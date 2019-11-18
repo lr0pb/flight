@@ -232,7 +232,7 @@ img {background-color: #0b0e17; opacity: 0;}
   #disabled {
     position: absolute;
     z-index: 241;
-    width: 20rem;
+    width: 25rem;
     height: 10rem;
     bottom: 2vh; right: 2vw;
   }
