@@ -145,13 +145,10 @@
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
+  background-color: dodgerblue;
 }
 .back-text {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 1.7em;
-  width: 26rem;
-  border-radius: 2rem;
-  background-color: dodgerblue;
 }
