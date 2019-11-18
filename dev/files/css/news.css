@@ -57,6 +57,7 @@
   }
   .q-article {padding: 0 10rem 0.1rem 10rem;}
   .article-question {margin-left: 10rem;}
+  #back-button {display: none;}
 }
 @media screen and (max-width: 1099px) {
   #news-page {
@@ -65,10 +66,11 @@
       "... ttl ..."
       "... img ..."
       "... new ..."
+      "... fly ..."
       "... fut ..."
       "... ... ..."
     ;
-    /*ttl - title, img - to gallery, new - news list, fut - footer */
+    /*ttl - title, img - to gallery, new - news list, fly - back to fly, fut - footer */
     grid-template-rows: 1.5rem 4rem 13rem 1fr 2rem 0;
     grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
     grid-gap: 1.5rem;
@@ -86,6 +88,7 @@
   }
   .q-article {padding: 0 4rem 0.1rem 4rem;}
   .article-question {margin-left: 4rem;}
+  #bottom-button {display: flex;}
 }
 
 #news-block, #to-gallery, #hot-keys {
@@ -134,4 +137,18 @@
 #first-autumn {
   background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 35%, #912626),
   url(/images/autumn.jpg);
+}
+#back-button {
+  grid-area: fly;
+  position: sticky;
+  bottom: 1.5rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background-color: dodgerblue;
+}
+.back-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.6em;
 }

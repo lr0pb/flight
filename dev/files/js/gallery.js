@@ -48,17 +48,17 @@ document.addEventListener('keydown', function(e) {
   if(e.keyCode===66) back();
 });
 
-document.getElementById('back-button').addEventListener('touchend', function(e) {
-  click(e);
-  setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/fly';}, 1200 );
-});
-
 function back() {
   document.querySelector('body').classList.add('overflow-hidden');
   circle.style.display = 'block';
   setTimeout( () => {circle.style.transform = 'translateX(-50%) translateY(-50%) scale(5)'; circle.style.opacity = '1'}, 15);
   setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/fly';}, 1200 );
 };
+
+document.getElementById('back-button').addEventListener('touchend', function(e) {
+  click(e);
+  setTimeout( () => {document.location.href = 'https://flight.pp.ua/dev/fly';}, 1200 );
+});
 
 let i = 0;
 document.getElementById('prev-field').addEventListener('click', function() {
