@@ -31,7 +31,7 @@
     grid-gap: 1rem;
   }
   .not-read::before {margin-left: 67rem;}
-  #hot-keys {
+  #hot-keys, #back-button {
     display: flex;
     flex-direction: column;
   }
@@ -75,17 +75,18 @@
       "... ttl ..."
       "... new ..."
       "... img ..."
+      "... fly ..."
       "... fut ..."
       "... ... ..."
     ;
-    /*ttl - title, new - to news, img - gallery, fut - footer */
-    grid-template-rows: 1.5rem 4rem 13rem 1fr 2rem 0;
+    /*ttl - title, new - to news, img - gallery, fly - back to fly, fut - footer */
+    grid-template-rows: 1.5rem 4rem 13rem 1fr 4rem 2rem 0;
     grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
     grid-gap: 1.5rem;
   }
   @media screen and (max-width: 58rem) { .not-read::before {margin-left: calc(100vw - 5rem);} }
   @media screen and (min-width: 58.1rem) { .not-read::before {margin-left: 53rem;} }
-  #hot-keys, #gallery-control, #prev-field, #next-field, #prev-icon, #next-icon {display: none;}
+  #hot-keys, #gallery-control, #prev-field, #next-field, #prev-icon, #next-icon, #back-button {display: none;}
   #gallery-block {filter: drop-shadow(0 -2rem 3rem #2b4282);}
   img {
     width: calc(100vw - 3rem);
@@ -96,7 +97,7 @@
   }
 }
 
-#gallery-block, #to-news, #hot-keys {
+#gallery-block, #to-news, #hot-keys, #back-button {
   background-color: #1f2740; border-radius: 2rem; z-index: 5;
 }
 #to-news {
@@ -128,4 +129,9 @@
   grid-area: img;
   transition: filter 0.5s;
   z-index: 4;
+}
+#back-button {
+  grid-area: fly;
+  position: sticky;
+  bottom: 1.5rem;
 }
