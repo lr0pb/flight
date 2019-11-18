@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144516578-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-144516578-1');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title>Flight - LR0PB</title>
+    <meta name="description" content="This is new photo view mode, in which you travel by picturesque valley and move to its main points via fly effect.">
+    <meta name="keywords" content="LR0PB Flight site photo">
+    <meta property="og:title" content="Flight - LR0PB">
+    <meta property="og:description" content="This is new photo view mode, in which you travel by picturesque valley and move to its main points via fly effect.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://flight.pp.ua/images/previews/fly.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1920">
+    <meta property="og:image:height" content="1080">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="canonical" href="https://flight.pp.ua/en">
+    <link rel="icon" href="/images/icons/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/icons/logo.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:600,700,800&display=swap&subset=cyrillic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:500&display=swap&subset=cyrillic">
+    <link rel="stylesheet" href="/dev/files/css/fly-start.css">
+    <link rel="stylesheet" href="/dev/files/css/main.css">
+    <link rel="stylesheet" href="/dev/files/css/fly.css">
+    <link rel="preload" as="image" href="/images/main.jpg">
+    <link rel="preload" as="image" href="/images/jpg-small/bg.jpg">
+  </head>
+  <body class="overflow-hidden">
+    <div id="support-box">
+      <h5>
+        Your browser or device is outlated and don't support new technologies that are used in Flight.<br>
+        Update the browser or use other device.
+      </h5>
+    </div>
+    <div id="start-box">
+      <div id="cover"></div>
+      <div id="circle" class="circle-spawn"></div>
+
+      <div id="start-content">
+        <header id="header-block">
+          <a class="big" href="https://flight.pp.ua/en" tabindex="0">FLIGHT</a>
+        </header>
+        <div id="news-block" class="for-hide" tabindex="0" role="button">
+          <h4 class="update-action">Find out, what's new</h4>
+          <h3 class="update-title">November update notes</h3>
+        </div>
+        <div id="gallery-block" class="for-hide" tabindex="0" role="button">
+          <h3 class="gallery-title">Look at Flight's photos in full size</h3>
+        </div>
+        <div id="fly-block">
+          <div class="gradient-light"></div>
+          <h1 class="for-hide">New Flight</h1>
+          <h4 id="fly-open" class="for-hide" tabindex="0" role="button">START</h4>
+        </div>
+        <div id="about-fly">
+          <h3 class="about-title">What is Flight?</h3>
+          <p class="about-text">
+            This is new photo view mode, in which you travel by picturesque valley and move to its main points via fly effect.
+          </p>
+          <h4 id="understand" class="not-now" tabindex="0" role="button">Understood!</h4>
+        </div>
+        <div id="hot-keys" class="for-hide">
+          <h3 class="about-title">Use hot keys:</h3>
+          <p class="about-text">
+            <span class="hot-key-button">S</span> – start the Flight<br>
+            <span class="hot-key-button">E</span> – finish the Flight
+          </p>
+        </div>
+        <div id="sound-block" class="for-hide play" tabindex="0" role="button">
+          <div class="sound-border"></div>
+          <h3 class="about-title">Turn on the sound:</h3>
+          <p class="about-text">
+            Click on this block to turn on the nature sound!
+          </p>
+          <audio loop type="audio/mpeg" src="/sounds/birds.mp3"></audio>
+          <audio loop type="audio/mpeg" src="/sounds/cock.mp3"></audio>
+          <audio loop type="audio/mpeg" src="/sounds/dogs.mp3"></audio>
+          <audio loop type="audio/mpeg" src="/sounds/wind.mp3"></audio>
+        </div>
+        <footer id="footer-block">
+          <h4 class="fut-text"><a href="mailto:help.lr0pb@gmail.com" tabindex="0">Write in support</a></h4>
+          <h4 class="fut-text" style="margin-left: auto">&copy; 2019 <a href="" tabindex="0">LR0PB</a></h4>
+        </footer>
+      </div>
+    </div>
+    <main id="fly" class="not-now">
+      <div id="rotate-box">
+        <h3 class="portrait-text">Please, turn your device horizontally or use the other</h3>
+      </div>
+      <div id="text-box">
+        <h2 class="top-text">New Flight: flowerig spring</h2>
+        <h3 id="help-point" class="bottom-text fade-from-down">Click on points to moving</h3>
+        <h3 id="help-180" class="bottom-text">180° - move on the point and turnover on 180°</h3>
+        <div id="cross">
+          <span class="cr-margin-top2 cr-cross-left"></span>
+          <span class="cr-margin-top-1 cr-cross-right"></span>
+        </div>
+        <div>
+          <h4 id="bottom-button">To start</h4>
+          <div id="disabled" class="not-now"></div>
+        </div>
+      </div>
+      <div class="view-container">
+        <div class="images-container"></div>
+        <template id="spring19-small">
+          <img id="bgo" src="/images/jpg-small/bg.jpg" loading="eager" alt="">
+          <div class="cube-container">
+            <div id="cube1to4" class="cube">
+              <img id="bg1" src="/images/jpg-small/im1.jpg" loading="lazy" alt="">
+              <img id="bg1to4-1-1" class="cube-image" src="/images/jpg-small/cube1to4/cube1to4-1-1.jpg" loading="lazy" alt="">
+              <img id="bg1to4-1-2" class="cube-image" src="/images/jpg-small/cube1to4/cube1to4-1-2.jpg" loading="lazy" alt="">
+              <img id="bg1to4-2-1" class="cube-image" src="/images/jpg-small/cube1to4/cube1to4-2-1.jpg" loading="lazy" alt="">
+              <img id="bg1to4-2-2" class="cube-image" src="/images/jpg-small/cube1to4/cube1to4-2-2.jpg" loading="lazy" alt="">
+              <img id="bg1to4-3-1" class="cube-image" src="/images/jpg-small/cube1to4/cube1to4-3-1.jpg" loading="lazy" alt="">
+              <img id="bg1to4-3-2" class="cube-image" src="/images/jpg-small/cube1to4/cube1to4-3-2.jpg" loading="lazy" alt="">
+              <img id="bg4" src="/images/jpg-small/im4.jpg" loading="lazy" alt="">
+            </div>
+            <div id="cube2" class="cube">
+              <img id="bg2-1" src="/images/jpg-small/im2-1.jpg" loading="lazy" alt="">
+              <img id="bg2-2" src="/images/jpg-small/im2-2.jpg" loading="lazy" alt="">
+            </div>
+            <div id="cube6" class="cube">
+              <img id="bg6" src="/images/jpg-small/im6.jpg" loading="lazy" alt="">
+              <img id="bg7" src="/images/jpg-small/im7.jpg" loading="lazy" alt="">
+              <img id="bg10" src="/images/jpg-small/im10.jpg" loading="lazy" alt="">
+            </div>
+            <div id="cube8to9" class="cube">
+              <img id="bg8" src="/images/jpg-small/im8.jpg" loading="lazy" alt="">
+              <img id="bg8to9" src="/images/jpg-small/im8to9.jpg" loading="lazy" alt="">
+              <img id="bg9-1" src="/images/jpg-small/im9-1.jpg" loading="lazy" alt="">
+              <img id="bg9-2" src="/images/jpg-small/im9-2.jpg" loading="lazy" alt="">
+            </div>
+            <div id="cube12" class="cube">
+              <img id="bg12" src="/images/jpg-small/im12.jpg" loading="lazy" alt="">
+              <img id="bg13" src="/images/jpg-small/im13.jpg" loading="lazy" alt="">
+            </div>
+          </div>
+          <img id="bg1-spawn" src="/images/jpg-small/im1.jpg" loading="lazy" alt="">
+          <img id="bg2-spawn" src="/images/jpg-small/im2-1.jpg" loading="lazy" alt="">
+          <img id="bg2-2-spawn" src="/images/jpg-small/im2-2.jpg" loading="lazy" alt="">
+          <img id="bg3-spawn" src="/images/jpg-small/im3.jpg" loading="lazy" alt="">
+          <img id="bg5-spawn" src="/images/jpg-small/im5.jpg" loading="lazy" alt="">
+          <img id="bg6-spawn" src="/images/jpg-small/im6.jpg" loading="lazy" alt="">
+          <img id="bg7-spawn" src="/images/jpg-small/im7.jpg" loading="lazy" alt="">
+          <img id="bg8-spawn" src="/images/jpg-small/im8.jpg" loading="lazy" alt="">
+          <img id="bg9-1-spawn" src="/images/jpg-small/im9-1.jpg" loading="lazy" alt="">
+          <img id="bg4-spawn" src="/images/jpg-small/im4.jpg" loading="lazy" alt="">
+          <img id="bg10-spawn" src="/images/jpg-small/im10.jpg" loading="lazy" alt="">
+          <img id="bg11-spawn" src="/images/jpg-small/im11.jpg" loading="lazy" alt="">
+          <img id="bg12-spawn" src="/images/jpg-small/im12.jpg" loading="lazy" alt="">
+          <img id="bg13-spawn" src="/images/jpg-small/im13.jpg" loading="lazy" alt="">
+        </template>
+        <template id="spring19-large">
+          <img id="bgo" src="/images/jpg-large/bg.jpg" loading="eager" alt="">
+          <div class="cube-container">
+            <div id="cube1to4" class="cube">
+              <img id="bg1" src="/images/jpg-large/im1.jpg" loading="lazy" alt="">
+              <img id="bg1to4-1-1" class="cube-image" src="/images/jpg-large/cube1to4/cube1to4-1-1.jpg" loading="lazy" alt="">
+              <img id="bg1to4-1-2" class="cube-image" src="/images/jpg-large/cube1to4/cube1to4-1-2.jpg" loading="lazy" alt="">
+              <img id="bg1to4-2-1" class="cube-image" src="/images/jpg-large/cube1to4/cube1to4-2-1.jpg" loading="lazy" alt="">
+              <img id="bg1to4-2-2" class="cube-image" src="/images/jpg-large/cube1to4/cube1to4-2-2.jpg" loading="lazy" alt="">
+              <img id="bg1to4-3-1" class="cube-image" src="/images/jpg-large/cube1to4/cube1to4-3-1.jpg" loading="lazy" alt="">
+              <img id="bg1to4-3-2" class="cube-image" src="/images/jpg-large/cube1to4/cube1to4-3-2.jpg" loading="lazy" alt="">
+              <img id="bg4" src="/images/jpg-large/im4.jpg" loading="lazy" alt="">
+            </div>
+            <div id="cube2" class="cube">
+              <img id="bg2-1" src="/images/jpg-large/im2-1.jpg" loading="lazy" alt="">
+              <img id="bg2-2" src="/images/jpg-large/im2-2.jpg" loading="lazy" alt="">
+            </div>
+            <div id="cube6" class="cube">
+              <img id="bg6" src="/images/jpg-large/im6.jpg" loading="lazy" alt="">
+              <img id="bg7" src="/images/jpg-large/im7.jpg" loading="lazy" alt="">
+              <img id="bg10" src="/images/jpg-large/im10.jpg" loading="lazy" alt="">
+            </div>
+            <div id="cube8to9" class="cube">
+              <img id="bg8" src="/images/jpg-large/im8.jpg" loading="lazy" alt="">
+              <img id="bg8to9" src="/images/jpg-large/im8to9.jpg" loading="lazy" alt="">
+              <img id="bg9-1" src="/images/jpg-large/im9-1.jpg" loading="lazy" alt="">
+              <img id="bg9-2" src="/images/jpg-large/im9-2.jpg" loading="lazy" alt="">
+            </div>
+            <div id="cube12" class="cube">
+              <img id="bg12" src="/images/jpg-large/im12.jpg" loading="lazy" alt="">
+              <img id="bg13" src="/images/jpg-large/im13.jpg" loading="lazy" alt="">
+            </div>
+          </div>
+          <img id="bg1-spawn" src="/images/jpg-large/im1.jpg" loading="lazy" alt="">
+          <img id="bg2-spawn" src="/images/jpg-large/im2-1.jpg" loading="lazy" alt="">
+          <img id="bg2-2-spawn" src="/images/jpg-large/im2-2.jpg" loading="lazy" alt="">
+          <img id="bg3-spawn" src="/images/jpg-large/im3.jpg" loading="lazy" alt="">
+          <img id="bg5-spawn" src="/images/jpg-large/im5.jpg" loading="lazy" alt="">
+          <img id="bg6-spawn" src="/images/jpg-large/im6.jpg" loading="lazy" alt="">
+          <img id="bg7-spawn" src="/images/jpg-large/im7.jpg" loading="lazy" alt="">
+          <img id="bg8-spawn" src="/images/jpg-large/im8.jpg" loading="lazy" alt="">
+          <img id="bg9-1-spawn" src="/images/jpg-large/im9-1.jpg" loading="lazy" alt="">
+          <img id="bg4-spawn" src="/images/jpg-large/im4.jpg" loading="lazy" alt="">
+          <img id="bg10-spawn" src="/images/jpg-large/im10.jpg" loading="lazy" alt="">
+          <img id="bg11-spawn" src="/images/jpg-large/im11.jpg" loading="lazy" alt="">
+          <img id="bg12-spawn" src="/images/jpg-large/im12.jpg" loading="lazy" alt="">
+          <img id="bg13-spawn" src="/images/jpg-large/im13.jpg" loading="lazy" alt="">
+        </template>
+        <div class="gradient-box"></div>
+        <div class="icons-container">
+          <div id="im1" class="image-point complete n2 n3 n4 n5 n6 n7 n8 n10 n11 n12 point-180"></div>
+          <div id="im2" class="image-point complete n1 n3 n4 n5 n6 n7 n8 n10 n11 n12"></div>
+          <div id="im3" class="image-point complete n1 n2 n4 n5 n6 n7 n8 n10 n11 n12"></div>
+          <div id="im4" class="image-point complete n1 n2 n3 n5 n6 n7 n8 n10 n11 n12 point-180"></div>
+          <div id="im5" class="image-point complete n1 n2 n3 n4 n6 n7 n8 n10 n11 n12"></div>
+          <div id="im6" class="image-point complete n1 n2 n3 n4 n5 n7 n8 n10 n11 n12"></div>
+          <div id="im7" class="image-point complete n1 n2 n3 n4 n5 n6 n8 n10 n11 n12"></div>
+          <div id="im8" class="image-point complete n1 n2 n3 n4 n5 n6 n7 n10 n11 n12 point-180"></div>
+          <div id="im9"></div>
+          <div id="im10" class="image-point complete n1 n2 n3 n4 n5 n6 n7 n8 n11 n12"></div>
+          <div id="im11" class="image-point complete n1 n2 n3 n4 n5 n6 n7 n8 n10 n12"></div>
+          <div id="im12" class="image-point complete n1 n2 n3 n4 n5 n6 n7 n8 n10 n11"></div>
+
+          <div id="icon3to2" class="image-point complete not-now"></div>
+          <div id="icon5to3" class="image-point complete not-now"></div>
+          <div id="icon6to7" class="image-point complete not-now"></div>
+          <div id="icon7to10" class="image-point complete not-now"></div>
+          <div id="icon9to4" class="image-point complete not-now"></div>
+          <div id="icon13" class="image-point complete not-now"></div>
+
+          <h5 id="icon1to4" class="icon1to4 not-now">180°</h5>
+          <h5 id="icon4to1" class="icon4to1 not-now">180°</h5>
+          <div id="to-im2-1" class="to-point icon2 not-now"></div>
+          <div id="to-im2-2" class="to-point icon2 not-now"></div>
+          <h5 id="icon8to9" class="icon8to9 not-now">180°</h5>
+          <h5 id="icon9to8" class="icon9to8 not-now">180°</h5>
+          <div id="to-im9-1" class="to-point icon9 not-now"></div>
+          <div id="to-im9-2" class="to-point icon9 not-now"></div>
+          <div id="to-im12" class="to-point icon12 not-now"></div>
+          <div id="to-im13" class="to-point icon12 not-now"></div>
+
+          <div id="icon-" style="display: none;"></div>
+        </div>
+      </div>
+    </main>
+    <script src="/dev/files/js/fly-start.js" type="text/javascript"></script>
+    <script src="/dev/files/js/fly.js" type="text/javascript"></script>
+  </body>
+</html>
