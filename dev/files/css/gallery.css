@@ -114,8 +114,8 @@
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8)),
   url(/images/autumn.jpg);
 }
-#to-news:hover, #back-button:hover {box-shadow: 0 0 1.7rem #0b0e17;}
-#to-news:focus, #back-button:focus {
+#to-news:hover, #back-button:hover, #back-button:focus {box-shadow: 0 0 1.7rem #0b0e17;}
+#to-news:focus {
   box-shadow: 0 0 1.7rem #0b0e17;
   transform: scale(0.975);
 }
