@@ -96,7 +96,7 @@
     max-height: 41.25rem;
     padding-bottom: 1.5rem;
   }
-  #bottom-button {display: flex;}
+  #back-button {display: flex;}
 }
 
 #gallery-block, #to-news, #hot-keys, #back-button {

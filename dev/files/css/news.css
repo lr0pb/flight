@@ -88,7 +88,7 @@
   }
   .q-article {padding: 0 4rem 0.1rem 4rem;}
   .article-question {margin-left: 4rem;}
-  #bottom-button {display: flex;}
+  #back-button {display: flex;}
 }
 
 #news-block, #to-gallery, #hot-keys {
