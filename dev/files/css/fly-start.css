@@ -55,8 +55,11 @@
     -webkit-linear-gradient(155deg, #C82626, transparent 70%),
     -webkit-linear-gradient(90deg, brown, transparent 70%);
     background-size: 150% 150%;
+    background-position: center center;
     filter: blur(100px);
-    animation: 10s infinite gradient;
+  }
+  @supports -moz-animation {
+    .gradient-light {-moz-animation: 10s infinite gradient;}
   }
   @keyframes gradient {
     0%, 100% {background-position: 0 25%;}
