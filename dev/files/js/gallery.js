@@ -27,7 +27,7 @@ document.getElementById('to-news').addEventListener('click', function(e) {
 });
 
 document.getElementById('to-news').addEventListener('keydown', function(e) {
-  if (e.keyCode===13) function() {
+  if (e.keyCode===13) {
     if (localStorage.getItem('lang')=='ru') document.location.href = 'https://flight.pp.ua/news';
     if (localStorage.getItem('lang')=='en') document.location.href = 'https://flight.pp.ua/en/news';
   };

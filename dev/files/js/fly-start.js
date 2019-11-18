@@ -61,7 +61,7 @@ document.getElementById('news-block').addEventListener('click', function(e) {
 });
 
 document.getElementById('news-block').addEventListener('keydown', function(e) {
-  if (e.keyCode===13) function() {
+  if (e.keyCode===13) {
     if (localStorage.getItem('lang')=='ru') document.location.href = 'https://flight.pp.ua/news';
     if (localStorage.getItem('lang')=='en') document.location.href = 'https://flight.pp.ua/en/news';
   };
@@ -74,7 +74,7 @@ document.getElementById('gallery-block').addEventListener('click', function(e) {
 });
 
 document.getElementById('gallery-block').addEventListener('keydown', function(e) {
-  if (e.keyCode===13) function() {
+  if (e.keyCode===13) {
     if (localStorage.getItem('lang')=='ru') document.location.href = 'https://flight.pp.ua/gallery';
     if (localStorage.getItem('lang')=='en') document.location.href = 'https://flight.pp.ua/en/gallery';
   };
