@@ -114,8 +114,8 @@
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8)),
   url(/images/autumn.jpg);
 }
-#to-news:hover {box-shadow: 0 0 1.7rem #0b0e17;}
-#to-news:focus {
+#to-news:hover, #back-button:hover {box-shadow: 0 0 1.7rem #0b0e17;}
+#to-news:focus, #back-button:focus {
   box-shadow: 0 0 1.7rem #0b0e17;
   transform: scale(0.975);
 }
@@ -136,8 +136,10 @@
   grid-area: fly;
   position: sticky;
   bottom: 1.5rem;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
+  background-color: dodgerblue;
 }
 .back-text {
   font-family: 'Montserrat', sans-serif;
