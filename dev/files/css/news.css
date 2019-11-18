@@ -71,7 +71,7 @@
       "... ... ..."
     ;
     /*ttl - title, img - to gallery, new - news list, fly - back to fly, fut - footer */
-    grid-template-rows: 1.5rem 4rem 13rem 1fr 2rem 0;
+    grid-template-rows: 1.5rem 4rem 13rem 1fr 4rem 2rem 0;
     grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
     grid-gap: 1.5rem;
   }
@@ -91,7 +91,7 @@
   #back-button {display: flex;}
 }
 
-#news-block, #to-gallery, #hot-keys {
+#news-block, #to-gallery, #hot-keys, #back-button {
   background-color: #1f2740; border-radius: 2rem; z-index: 5;
 }
 #to-gallery, article {
