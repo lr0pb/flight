@@ -21,21 +21,11 @@ h1 {
   font-weight: 800;
 }
 p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height: 1.5; margin: 0;}
-a.big::before {
-  content: '';
-  display: inline-block;
-  background-image: url(/images/icons/logo.png);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
 @media screen and (orientation: portrait) {
-  a.big {font-size: 2.4em; margin: 1.55rem auto 1.55rem 2rem; font-family: 'Montserrat', sans-serif; font-weight: 800; line-height: 1;}
-  a.big::before {width: 2.4rem; height: 2.4rem;}
+  a.big {font-size: 2.4em; margin: 1.55rem auto 1.55rem 2rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
 }
 @media screen and (orientation: landscape) {
-  a.big {font-size: 2.7em; margin: 0 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800; line-height: 1;}
-  a.big::before {width: 2.7rem; height: 2.7rem;}
+  a.big {font-size: 2.7em; margin: 0 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
 }
 a, .fut-text {
   font-family: 'Ubuntu', sans-serif;
