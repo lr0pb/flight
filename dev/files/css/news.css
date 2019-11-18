@@ -71,7 +71,7 @@
       "... ... ..."
     ;
     /*ttl - title, img - to gallery, new - news list, fly - back to fly, fut - footer */
-    grid-template-rows: 1.5rem 4rem 13rem 1fr 6rem 2rem 0;
+    grid-template-rows: 1.5rem 4rem 13rem 1fr 5rem 2rem 0;
     grid-template-columns: 1fr minmax(auto, 55rem) 1fr;
     grid-gap: 1.5rem;
   }
@@ -140,7 +140,6 @@
 }
 #back-button {
   grid-area: fly;
-  width: 26rem;
   position: sticky;
   bottom: 1.5rem;
   cursor: pointer;
@@ -151,5 +150,5 @@
 .back-text {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 1.6em;
+  font-size: 1.7em;
 }
