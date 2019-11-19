@@ -23,11 +23,11 @@ h1 {
 p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height: 1.5; margin: 0;}
 @media screen and (orientation: portrait) {
   a.big {font-size: 2.4em; margin: 1.55rem auto 1.55rem 2rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
-  a.lang-set {font-size: 1.8em; margin: 1.6rem 0.5rem; font-family: 'Montserrat', sans-serif; font-weight: 600;}
+  a.lang-set {margin: 1.6rem 0.5rem;}
 }
 @media screen and (orientation: landscape) {
   a.big {font-size: 2.7em; margin: 0 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
-  a.lang-set {font-size: 2.1em; margin: 0.4rem 0.7rem; font-family: 'Montserrat', sans-serif; font-weight: 600;}
+  a.lang-set {margin: 0.4rem 0.7rem;}
 }
 a, .fut-text {
   font-family: 'Ubuntu', sans-serif;
@@ -40,7 +40,9 @@ a, .fut-text {
   margin: 0 1.5rem;
 }
 a.big {z-index: 999;}
+a.lang-set {font-size: 1.8em; font-family: 'Montserrat', sans-serif; font-weight: 600;}
 a.left {margin-left: auto;}
+a.right {margin-right: 2rem;}
 a.this {font-weight: 800;}
 
 #cover {
@@ -56,7 +58,7 @@ a.this {font-weight: 800;}
 }
 #circle {
   position: absolute;
-  z-index: 998;
+  z-index: 997;
   display: block; opacity: 1;
   width: 35vmax; height: 35vmax;
   top: 0; left: 50vw;
