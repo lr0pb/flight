@@ -18,6 +18,18 @@
   <loc>https://flight.pp.ua/gallery</loc>
   <priority>0.80</priority>
 </url>
+<url>
+  <loc>https://flight.pp.ua/en/</loc>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://flight.pp.ua/en/news</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://flight.pp.ua/en/gallery</loc>
+  <priority>0.80</priority>
+</url>
 
 
 </urlset>
