@@ -122,13 +122,14 @@
   background-color: #1f274099;
   border-radius: 5rem;
   cursor: pointer;
-  transition: 0.5s;
+  transition: background-color 0.5s, box-shadow 0.5s;
   font-size: 1.6em;
   line-height: 4;
 }
 .article-question:hover, .article-question:focus {
   outline: none; background-color: #1f2740; box-shadow: 0 0 1.5rem #0b0e17;
 }
+.article-question:focus {border: azure solid 0.3rem;}
 #release-notes {
   background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 45%, #912626),
   url(/images/jpg-small/im7.jpg);
