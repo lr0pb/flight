@@ -46,7 +46,6 @@ document.getElementById('news-place').addEventListener('blur', () => {
 });
 
 document.addEventListener('keydown', function(e) {
-  console.log(e);
   if(e.keyCode===66) back();
 });
 
