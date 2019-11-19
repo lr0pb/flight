@@ -39,6 +39,7 @@ a, .fut-text {
   font-size: 1.4em;
   margin: 0 1.5rem;
 }
+a.big {z-index: 999;}
 a.left {margin-left: auto;}
 a.this {font-weight: 800;}
 
@@ -78,8 +79,8 @@ a.this {font-weight: 800;}
 
 #header-block {
   grid-area: ttl;
-  z-index: 999;
   display: flex;
+  align-items: center;
 }
 h1 {z-index: 5;}
 a:hover {outline: none;}
