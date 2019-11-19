@@ -151,6 +151,7 @@
   background-color: #389717;
   box-shadow: 0 0 3rem #36841d; /*
   background: -webkit-linear-gradient(75deg, #41B619, #CBE724)*/;}
+#fly-open:focus {border: azure solid 0.6rem;}
 #news-block {
   grid-area: new;
   display: flex;

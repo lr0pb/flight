@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const fly = document.getElementById('fly');
 
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', async function(e) {
   if(e.keyCode===83) open();
   if(e.keyCode===70) close();
   if(e.keyCode===27) close();
@@ -43,9 +43,11 @@ function open() {
   if (fly.webkitRequestFullscreen) fly.webkitRequestFullscreen();
   else if (fly.requestFullscreen) fly.requestFullscreen();
 };
-function close() {
+async function close() {
   if (fly.webkitRequestFullscreen) document.exitFullscreen();
   else if (fly.requestFullscreen) document.exitFullscreen();
+  closeWork();
+  await closeWork();
 };
 
 function openImage(imID, spawnID, elem) {
@@ -66,7 +68,7 @@ function openImage(imID, spawnID, elem) {
   }, 5710 );
 };
 
-//__c__\\
+//__POINTS__\\
 
 document.querySelector('.icons-container').addEventListener('mousedown', function(e) {
   let elem = e.target;
@@ -100,6 +102,7 @@ document.querySelector('.icons-container').addEventListener('mousedown', functio
     setTimeout( () => {
       document.getElementById('bg4-spawn').classList.remove('bg-open');
       document.getElementById('cube1to4').style.opacity = '1';
+      document.getElementById('icon9to4').classList.remove('complete');
     }, 5710 );
   };
   if ( e.target==document.getElementById('im5') ) {
@@ -151,6 +154,7 @@ document.querySelector('.icons-container').addEventListener('mousedown', functio
       document.getElementById('icon13').classList.remove('complete');
     }, 5710 );
   };
+
   if ( e.target==document.getElementById('icon1to4') ) {
     e.target.classList.add('open');
     document.getElementById('disabled').classList.remove('not-now');

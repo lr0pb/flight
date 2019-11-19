@@ -7,7 +7,7 @@ body {
   margin: 0;
 }
 .overflow-hidden {overflow: hidden;}
-div:focus, main:focus {outline: none;}
+div:focus, main:focus {outline: none; border: azure solid 0.3rem;}
 h1, h2, h3, h4, h5 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
