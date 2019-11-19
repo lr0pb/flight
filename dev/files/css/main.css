@@ -79,6 +79,7 @@ a.this {font-weight: 800;}
 
 #header-block {
   grid-area: ttl;
+  z-index: 5;
   display: flex;
   align-items: center;
 }
