@@ -58,8 +58,8 @@
     background-position: center center;
     filter: blur(100px);
   }
-  @supports (-moz-animation: media) {
-    .gradient-light {-moz-animation: 10s infinite gradient;}
+  @supports (-moz-orient: block) {
+    .gradient-light {animation: 10s infinite gradient;}
   }
   @keyframes gradient {
     0%, 100% {background-position: 0 25%;}
