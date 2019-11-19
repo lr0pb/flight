@@ -39,7 +39,6 @@ a, .fut-text {
   font-size: 1.4em;
   margin: 0 1.5rem;
 }
-a.big {z-index: 999;}
 a.lang-set {font-size: 1.8em; font-family: 'Montserrat', sans-serif; font-weight: 600;}
 a.left {margin-left: auto;}
 a.right {margin-right: 2rem;}
@@ -58,7 +57,7 @@ a.this {font-weight: 800;}
 }
 #circle {
   position: absolute;
-  z-index: 997;
+  z-index: 998;
   display: block; opacity: 1;
   width: 35vmax; height: 35vmax;
   top: 0; left: 50vw;
@@ -81,7 +80,7 @@ a.this {font-weight: 800;}
 
 #header-block {
   grid-area: ttl;
-  z-index: 5;
+  z-index: 999;
   display: flex;
   align-items: center;
 }
