@@ -3,6 +3,7 @@
   top: 0; left: 0;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   background-color: #0b0e17;
 }
 #fly:-moz-full-screen {display: block;}
@@ -18,13 +19,37 @@
   #fly {font-size: 10px;}
 }
 @media screen and (min-width: 1922px) and (max-width: 2900px) and (orientation: landscape) {
-  html, #fly {font-size: 15px;}
+  #fly {font-size: 15px;}
 }
 @media screen and (min-width: 2901px) and (max-width: 3900px) and (orientation: landscape) {
-  html, #fly {font-size: 20px;}
+  #fly {font-size: 20px;}
 }
 @media screen and (min-width: 3901px) and (orientation: landscape) {
-  html, #fly {font-size: 24px;}
+  #fly {font-size: 24px;}
+}
+
+@media screen and (max-aspect-ratio: 4/3) {
+  #rotate-box {
+    position: absolute;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  .portrait-text {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.9em;
+    line-height: 1.6;
+  }
+}
+@media screen and (orientation: landscape) and (min-aspect-ratio: 4/3) {
+  .portrait-text {display: none;}
 }
 
 .view-container, .close-box {
@@ -41,8 +66,8 @@ img {background-color: #0b0e17; opacity: 0;}
 
 #bg2-1-spawn {transform-origin: 35vw 30vw;}
 #bg2-2-spawn {transform-origin: 38vw 32vw;}
-#bg3 {transform-origin: 40vw 40vw;}
-#bg5 {transform-origin: 45vw 33vw;}
+#bg3-spawn {transform-origin: 40vw 40vw;}
+#bg5-spawn {transform-origin: 45vw 33vw;}
 #bg9-1-spawn {transform-origin: 70vw 36vw;}
 #bg10-spawn {transform-origin: 60vw 32vw;}
 #bg12-spawn {transform-origin: 75vw 38vw;}
@@ -64,18 +89,6 @@ img {background-color: #0b0e17; opacity: 0;}
   -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.0) 15%);
 }
 .icons-container {z-index: 102;}
-.close-box {
-  z-index: 103;
-  display: none;
-  opacity: 0;
-  transition: 0.4s;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 30%),
-  -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 15%), url(/images/jpg-small/bg.jpg);
-}
-.close-text {font-size: 1.9em;}
 .image-point {
   position: absolute;
   cursor: pointer;
@@ -101,19 +114,19 @@ img {background-color: #0b0e17; opacity: 0;}
 #im11 {top: 35vw; left: 76vw;}
 #im12 {top: 38vw; left: 85vw;}
 
-#im3to2 {top: 28vw; left: 53.8vw;}
-#im5to3 {top: 42vw; left: 53vw;}
-#im6to7 {top: 34vw; left: 50vw;}
-#im7to10 {top: 39vw; left: 40vw;}
-#im9to4 {top: 32vw; left: 65vw;}
-#im13 {top: 31vw; left: 36vw;}
+#icon3to2 {top: 28vw; left: 53.8vw;}
+#icon5to3 {top: 42vw; left: 53vw;}
+#icon6to7 {top: 34vw; left: 50vw;}
+#icon7to10 {top: 39vw; left: 40vw;}
+#icon9to4 {top: 32vw; left: 65vw;}
+#icon13 {top: 31vw; left: 36vw;}
 
-#text1to4 {top: 34.5vw; left: 78.3vw;}
-#text4to1 {top: 31vw; left: 34vw;}
+#icon1to4 {top: 34.5vw; left: 78.3vw;}
+#icon4to1 {top: 31vw; left: 34vw;}
 #to-im2-1 {top: 36vw; left: 7vw;}
 #to-im2-2 {top: 36vw; right: 7vw;}
-#text8to9 {top: 26vw; left: 58vw;}
-#text9to8 {top: 42vw; left: 31vw;}
+#icon8to9 {top: 26vw; left: 58vw;}
+#icon9to8 {top: 42vw; left: 31vw;}
 #to-im9-1 {top: 36vw; right: 7vw;}
 #to-im9-2 {top: 36vw; left: 7vw;}
 #to-im12 {top: 36vw; left: 7vw;}
@@ -137,13 +150,13 @@ img {background-color: #0b0e17; opacity: 0;}
 .cr-cross-left {transform: rotateZ(-45deg);}
 .cr-cross-right {transform: rotateZ(45deg);}
 
-@media (max-width: 1099px) and (orientation: landscape) {
+@media (max-width: 1099px) {
   #cross {height: 3rem; width: 3rem;}
   #cross span {width: 3rem; height: 0.5rem;}
   .cr-margin-top2 {margin-top: 1.2rem;}
   .cr-margin-top-1 {margin-top: -0.5rem;}
 }
-@media (min-width: 1100px) or (orientation: portrait) {
+@media (min-width: 1100px) {
   #cross {height: 5rem; width: 5rem;}
   #cross span {width: 5rem; height: 0.6rem;}
   .cr-margin-top2 {margin-top: 2rem;}
@@ -155,21 +168,21 @@ img {background-color: #0b0e17; opacity: 0;}
   to {opacity: 1; top: 2vh;}
 }
 .fade-from-down {
-  animation: 1s fade-from-down;
+  animation: 1.3s fade-from-down;
   animation-delay: 0.3s;
   animation-fill-mode: forwards;
 }
 @keyframes fade-from-down {
-  from {opacity: 0; bottom: -7vh;}
+  from {opacity: 0; bottom: -20vh;}
   to {opacity: 1; bottom: 2vh;}
 }
 .fade-to-down {
-  animation: 1s fade-to-down;
+  animation: 1.3s fade-to-down;
   animation-fill-mode: forwards;
 }
 @keyframes fade-to-down {
   from {opacity: 1; bottom: 2vh;}
-  to {opacity: 0; bottom: -7vh;}
+  to {opacity: 0; bottom: -20vh;}
 }
 
 @media screen and (min-width: 567px) and (orientation: landscape) {
@@ -192,12 +205,11 @@ img {background-color: #0b0e17; opacity: 0;}
     left: 1vw;
   }
   #bottom-button {
-    display: none;
     position: absolute;
     cursor: pointer;
     z-index: 240;
     padding: 1.1rem 4rem;
-    bottom: -7vh;
+    bottom: -20vh;
     right: 2vw;
     color: #eee;
     background-color: rgba(0, 0, 0, 0.5);
@@ -213,14 +225,15 @@ img {background-color: #0b0e17; opacity: 0;}
   }
   .button-spawn {
     animation-name: fade-from-down;
-    animation-duration: 1s;
+    animation-delay: 5.1s;
+    animation-duration: 1.3s;
     animation-fill-mode: forwards;
   }
   #disabled {
     position: absolute;
     z-index: 241;
-    width: 9rem; height: 2.2rem;
-    padding: 1.6rem 4.5rem;
+    width: 25rem;
+    height: 10rem;
     bottom: 2vh; right: 2vw;
   }
 }
@@ -308,6 +321,7 @@ h5:hover {transform: scale(1.3);}
   to {transform: scale(0.01); opacity: 0;}
 }
 .spawn {
+  opacity: 0;
   animation: 1.5s spawn;
   animation-delay: 4s;
   animation-fill-mode: forwards;
@@ -383,7 +397,7 @@ h5:hover {transform: scale(1.3);}
 #bg1to4-3-2 {transform: rotateY(165deg) translateZ(93vw);}
 #bg4 {opacity: 1; transform: translateX(-74vw) rotateY(180deg) translateZ(97vw);}
 .rotate1to4 {
-  animation: 13s rotate1to4;
+  animation: 14s rotate1to4;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
@@ -392,7 +406,7 @@ h5:hover {transform: scale(1.3);}
   to {transform: rotateY(-180deg) translateX(74vw);}
 }
 .rotate4to1 {
-  animation: 13s rotate4to1;
+  animation: 14s rotate4to1;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }

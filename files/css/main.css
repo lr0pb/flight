@@ -7,6 +7,7 @@ body {
   margin: 0;
 }
 .overflow-hidden {overflow: hidden;}
+div:focus, main:focus {outline: none; border: azure solid 0.3rem;}
 h1, h2, h3, h4, h5 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
@@ -17,84 +18,119 @@ h4 {font-size: 1.8em;}
 h1 {
   font-size: 4.8em;
   white-space: nowrap;
+  font-weight: 800;
 }
-p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height: 1.6; margin: 0;}
-#transition-layer {
-  position: absolute;
-  z-index: 100000;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: -webkit-linear-gradient(bottom, rgb(11, 14, 23) 98.5%, #000 98.6%);
-  animation: 1s transition-end-phase;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-@keyframes transition-start-phase {
-  from {top:100vh;}
-  to {top: 0;}
-}
-@keyframes transition-end-phase {
-  from {top:0;}
-  to {top: 100vh;}
-}
-/* Navigation and Footer block */
-header, footer {background-color: hsla(205, 15%, 5%, 0.4); position: relative; width: 100vw; z-index: 20;}
+p {font-family: 'Ubuntu', sans-serif; font-weight: 500; color: #fff; line-height: 1.5; margin: 0;}
 @media screen and (orientation: portrait) {
-  nav {flex-direction: column; height: 6rem;}
-  .nav-burger, footer, header {height: auto;}
-  #fut-content {height: 6rem;}
   a.big {font-size: 2.4em; margin: 1.55rem auto 1.55rem 2rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
-  a.norm {font-size: 2em; margin: 1rem 0 1rem; border-bottom: 3px solid transparent;}
-  .a-burger {display: none;}
-  a.left {margin-top: 1rem;}
-  a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
-  a.this, a.this:hover {border-bottom: 3px solid #41B619;}
-  a.last {margin-bottom: 2.2rem;}
-  .fut-text {font-size: 1.8em; border-bottom: 3px solid transparent;}
-  #burger {position: absolute; right: 0; width: 2.5rem; height: 2.5rem; margin: 1.75rem 2rem 1.75rem; cursor: pointer;}
-  #burger span {display: block; width: 2.5rem; height: 0.3rem; background-color: #fff;}
-  .margin-top-2 {margin-top: -0.25rem;}
-  .margin-top4 {margin-top: 0.4rem;}
-  .margin-top8 {margin-top: 0.8rem;}
-  .cross-left {transform: rotateZ(-45deg);}
-  .cross-right {transform: rotateZ(45deg);}
+  a.lang-set {margin: 1.6rem 0.5rem;}
 }
 @media screen and (orientation: landscape) {
   a.big {font-size: 2.7em; margin: 0 3rem; font-family: 'Montserrat', sans-serif; font-weight: 800;}
-  a.norm {font-size: 1.9em; margin: 0 1.5rem; border-bottom: 3px solid transparent;}
-  a.left {margin-left: auto;}
-  a.norm:hover {border-bottom: 3px solid #fff; transition: 0.4s;}
-  a.this, a.this:hover {border-bottom: 3px solid #41B619;}
-  a.last {margin-right: 3rem;}
-  .fut-text {font-size: 1.6em; margin-right: 3rem; border-bottom: 3px solid transparent;}
-  nav, footer, header, #fut-content {height: 7rem;}
-  #burger, span {display: none;}
-}
-@media screen and (max-width: 1199px) and (orientation: landscape) {
-  nav, #fut-content {width: 100vw;}
-}
-.desktop {display: none;}
-@media screen and (min-width: 1200px) and (orientation: landscape) {
-  nav, #fut-content {width: 1200px;}
-  .desktop {display: inline-block;}
-}
-nav {
-  display: flex;
-  position: relative;
-  z-index: 25;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
+  a.lang-set {margin: 0.4rem 0.7rem;}
 }
 a, .fut-text {
   font-family: 'Ubuntu', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   text-decoration: none;
   color: #fff;
 }
-footer, #fut-content {display: flex; justify-content: center; align-items: center; bottom: 0;}
+.fut-text {
+  font-size: 1.4em;
+  margin: 0 1.5rem;
+}
+a.lang-set {font-size: 1.8em; font-family: 'Montserrat', sans-serif; font-weight: 600;}
+a.left {margin-left: auto;}
+a.right {margin-right: 2rem;}
+a.this {font-weight: 800;}
+
+#cover {
+  position: absolute;
+  top: 0; z-index: 3;
+  width: 100vw; height: 100vh;
+  filter: blur(10px);
+  transition: filter 1s;
+  background-size: cover; background-position: center center; background-repeat: no-repeat;
+  background-color: #0b0e17;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.65), rgba(11, 14, 23, 1)),
+  url(/images/main.jpg);
+}
+#circle {
+  position: absolute;
+  z-index: 998;
+  display: block; opacity: 1;
+  width: 35vmax; height: 35vmax;
+  top: 0; left: 50vw;
+  background-color: #0b0e17;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(6);
+  transition: transform 1.5s, opacity 1s;
+}
+.circle-spawn {
+  animation: 1.5s circle-spawn;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes circle-spawn {
+  from {transform: translateX(-50%) translateY(-50%) scale(6); opacity: 1;}
+  33% {opacity: 1;}
+  99% {transform: translateX(-50%) translateY(-50%) scale(1); opacity: 0;}
+  to {transform: translateX(-50%) translateY(-35vmax) scale(0.1); opacity: 0;}
+}
+
+#header-block {
+  grid-area: ttl;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+}
+h1 {z-index: 5;}
+a:hover {outline: none;}
+a:focus {outline: azure solid 0.3rem;}
+.update-title {
+  padding: 0 3.5rem 2rem 2.5rem;
+  font-size: 2.5em;
+}
+.update-action {
+  margin-top: auto;
+  padding: 0 0 0.5rem 2.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.7em;
+  font-weight: 500;
+}
+.about-title {
+  padding: 0rem 0 0.75rem 2.5rem;
+  font-size: 2em;
+  margin-top: auto;
+}
+.about-text {
+  padding: 0 2.5rem 2.5rem;
+  font-size: 1.6em;
+  line-height: 1.45;
+}
+#hot-keys {
+  grid-area: hot;
+  flex-direction: column;
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
+}
+.hot-key-button {
+  font-size: 1.3em;
+  padding: 0.1rem 0.7rem;
+  border: 0.2rem solid #f0ffffb8;
+  border-radius: 0.7rem;
+}
+.title-flex {
+  display: flex;
+  justify-content: center;
+}
+.page-title {
+  padding: 1.6rem 0 1.7rem 0;
+  font-size: 3.8em;
+}
+#footer-block {
+  grid-area: fut; display: flex; z-index: 4;
+}
+
 @media screen and (max-width: 360px) and (orientation: portrait) {
   html {font-size: 7px;}
 }
@@ -105,17 +141,3 @@ footer, #fut-content {display: flex; justify-content: center; align-items: cente
   html {font-size: 9px;}
 }
 .not-now {display: none;}
-.article-head {
-  font-size: 2.4rem;
-  padding-bottom: 1.5rem;
-}
-.article-sub-head {
-  font-size: 1.8rem;
-  padding: 1.2rem 0;
-}
-.article-text {
-  font-size: 1.7rem;
-  font-weight: 500;
-  padding-left: 2rem;
-  margin: 0;
-}
