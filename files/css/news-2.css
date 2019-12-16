@@ -117,6 +117,7 @@
   transition: filter 0.5s;
   z-index: 4;
 }
+#news-block:focus {border: 0;}
 .article-question {
   padding: 0.8rem 1.8rem;
   background-color: #1f274099;
@@ -138,18 +139,4 @@
 #first-autumn {
   background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 35%, #912626),
   url(/images/autumn.jpg);
-}
-#back-button {
-  grid-area: fly;
-  position: sticky;
-  bottom: 1.5rem;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  background-color: dodgerblue;
-}
-.back-text {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 1.7em;
 }

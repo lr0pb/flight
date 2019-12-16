@@ -132,17 +132,4 @@
   transition: filter 0.5s;
   z-index: 4;
 }
-#back-button {
-  grid-area: fly;
-  position: sticky;
-  bottom: 1.5rem;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  background-color: dodgerblue;
-}
-.back-text {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 1.7em;
-}
+#gallery-block:focus {border: 0;}

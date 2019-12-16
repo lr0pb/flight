@@ -133,6 +133,20 @@ a:focus {outline: azure solid 0.3rem;}
 #footer-block {
   grid-area: fut; display: flex; z-index: 4;
 }
+#back-button {
+  grid-area: fly;
+  position: sticky;
+  bottom: 1.5rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background-color: dodgerblue;
+}
+.back-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.7em;
+}
 
 @media screen and (max-width: 360px) and (orientation: portrait) {
   html {font-size: 7px;}
