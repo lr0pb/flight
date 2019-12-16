@@ -156,11 +156,11 @@
   grid-area: new;
   display: flex;
   flex-direction: column;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), #15234f),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), var(--primary-blue)),
   url(/images/autumn.jpg);
 }
 #news-block:hover, #news-block:focus {
-  background-image: -webkit-linear-gradient(top, rgba(21, 35, 79, 0.8), #15234f),
+  background-image: -webkit-linear-gradient(top, rgba(21, 35, 79, 0.8), var(--primary-blue)),
   url(/images/autumn.jpg);
 }
 #news-block:focus, #gallery-block:focus, #sound-block:focus {
@@ -183,11 +183,11 @@
 }
 #gallery-block {
   grid-area: img;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), #15234f),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), var(--primary-blue)),
   url(/images/jpg-small/im1.jpg);
 }
 #gallery-block:hover, #gallery-block:focus {
-  background-image: -webkit-linear-gradient(top, rgba(21, 35, 79, 0.8), #15234f),
+  background-image: -webkit-linear-gradient(top, rgba(21, 35, 79, 0.8), var(--primary-blue)),
   url(/images/jpg-small/im1.jpg);
 }
 .gallery-title {
@@ -200,7 +200,7 @@
   grid-area: abt;
   display: flex;
   flex-direction: column;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), #15234f), url(/images/cover.jpg);
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), var(--primary-blue)), url(/images/cover.jpg);
 }
 #understand {
   background-color: #1f2740;
@@ -212,16 +212,16 @@
   font-size: 1.6em;
 }
 #understand:hover, #understand:focus {
-  outline: none; border: 3px solid azure; box-shadow: 0 0 1.5rem #0b0e17;
+  outline: none; border: 3px solid azure; box-shadow: 0 0 1.5rem var(--primary-blue);
 }
 #sound-block {
   grid-area: snd;
   display: flex;
   flex-direction: column;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), #15234f);
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), var(--primary-blue));
 }
 #sound-block:hover, #sound-block:focus {
-  background-image: -webkit-linear-gradient(top, rgba(21, 35, 79, 0.8), #15234f);
+  background-image: -webkit-linear-gradient(top, rgba(21, 35, 79, 0.8), var(--primary-blue));
 }
 audio {width: 0; height: 0; opacity: 0;}
 .sound-border {
