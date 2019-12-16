@@ -1,3 +1,6 @@
+:root {
+  --primary-red: #a42424;
+}
 #support-box {
   position: absolute;
   display: flex;
@@ -116,7 +119,7 @@
 }
 #news-block {
   grid-area: new;
-  background-color: #912626;
+  background-color: var(--primary-red);
   transition: filter 0.5s;
   z-index: 4;
 }
@@ -135,11 +138,11 @@
 }
 .article-question:focus {border: azure solid 0.3rem;}
 #release-notes {
-  background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 45%, #912626),
+  background-image: -webkit-linear-gradient(top, var(--primary-blue), rgba(21, 35, 79, 0.75) 45%, var(--primary-red)),
   url(/images/jpg-small/im7.jpg);
 }
 #september {scroll-margin-top: 3rem;}
 #first-autumn {
-  background-image: -webkit-linear-gradient(top, #1f2740, rgba(11, 14, 23, 0.75) 35%, #912626),
+  background-image: -webkit-linear-gradient(top, var(--primary-blue), rgba(21, 35, 79, 0.75) 35%, var(--primary-red)),
   url(/images/autumn.jpg);
 }
