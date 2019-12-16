@@ -52,7 +52,7 @@ a.this {font-weight: 800;}
   transition: filter 1s;
   background-size: cover; background-position: center center; background-repeat: no-repeat;
   background-color: #0b0e17;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.65), rgba(11, 14, 23, 1)),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(9, 14, 27, 0.65), rgba(9, 11, 30, 1)),
   url(/images/main.jpg);
 }
 #circle {

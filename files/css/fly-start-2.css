@@ -49,18 +49,18 @@
     position: absolute;
     width: 104rem; height: 42rem;
     background-image:
-    -webkit-linear-gradient(10deg, #CACE12, transparent 55%),
+    -webkit-linear-gradient(10deg, #ff7519, transparent 55%),
     -webkit-linear-gradient(20deg, orange 15%, transparent 65%),
     -webkit-linear-gradient(210deg, #E8651B, transparent 80%),
     -webkit-linear-gradient(155deg, #C82626, transparent 70%),
-    -webkit-linear-gradient(90deg, brown, transparent 70%);
+    -webkit-linear-gradient(90deg, #ff7519, transparent 70%);
     background-size: 150% 150%;
     background-position: center center;
     filter: blur(100px);
   }
-  /*@supports (-moz-orient: block) {
-    .gradient-light {animation: 10s infinite gradient;}
-  }*/
+  @supports (-moz-orient: block) {
+    .gradient-light {animation: 5s infinite gradient;}
+  }
   @keyframes gradient {
     0%, 100% {background-position: 0 25%;}
     25%, 75% {background-position: 50% 50%;}
@@ -163,9 +163,6 @@
   background-image: -webkit-linear-gradient(top, rgba(21, 35, 79, 0.8), #15234f),
   url(/images/autumn.jpg);
 }
-/*#news-block:hover, #gallery-block:hover, #sound-block:hover, #news-block:focus, #gallery-block:focus, #sound-block:focus {
-  box-shadow: 0 0 2.5rem #15234f;
-}*/
 #news-block:focus, #gallery-block:focus, #sound-block:focus {
   transform: scale(0.975);
 }
