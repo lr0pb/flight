@@ -17,7 +17,7 @@
   z-index: 2;
   width: 100vw;
   height: 100vh;
-  background-color: #0b0e17;
+  background-color: inherit;
 }
 @supports (display: grid) {
   #support-box {display: none;}

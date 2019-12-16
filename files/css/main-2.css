@@ -8,6 +8,7 @@ html {
 body {
   overflow-x: hidden;
   margin: 0;
+  background-color: inherit;
 }
 .overflow-hidden {overflow: hidden;}
 div:focus, main:focus {outline: none; border: azure solid 0.3rem;}
