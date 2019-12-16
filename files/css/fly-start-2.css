@@ -58,9 +58,9 @@
     background-position: center center;
     filter: blur(100px);
   }
-  @supports (-moz-orient: block) {
+  /*@supports (-moz-orient: block) {
     .gradient-light {animation: 10s infinite gradient;}
-  }
+  }*/
   @keyframes gradient {
     0%, 100% {background-position: 0 25%;}
     25%, 75% {background-position: 50% 50%;}
@@ -156,14 +156,18 @@
   grid-area: new;
   display: flex;
   flex-direction: column;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8)),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), #15234f),
   url(/images/autumn.jpg);
 }
-#news-block:hover, #gallery-block:hover, #sound-block:hover {
-  box-shadow: 0 0 1.7rem #0b0e17;
+#news-block:hover, #news-block:focus {
+  background-image: -webkit-linear-gradient(top, rgba(21, 35, 79, 0.8), #15234f),
+  url(/images/autumn.jpg);
 }
+
+/*#news-block:hover, #gallery-block:hover, #sound-block:hover, #news-block:focus, #gallery-block:focus, #sound-block:focus {
+  box-shadow: 0 0 2.5rem #15234f;
+}*/
 #news-block:focus, #gallery-block:focus, #sound-block:focus {
-  box-shadow: 0 0 1.7rem #0b0e17;
   transform: scale(0.975);
 }
 .look-here {animation: 1.5s look-here; animation-delay: 2s;}
@@ -183,7 +187,11 @@
 }
 #gallery-block {
   grid-area: img;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.6)),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), #15234f),
+  url(/images/jpg-small/im1.jpg);
+}
+#gallery-block:hover, #gallery-block:focus {
+  background-image: -webkit-linear-gradient(top, rgba(21, 35, 79, 0.8), #15234f),
   url(/images/jpg-small/im1.jpg);
 }
 .gallery-title {
@@ -196,7 +204,7 @@
   grid-area: abt;
   display: flex;
   flex-direction: column;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.9)), url(/images/cover.jpg);
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), #15234f), url(/images/cover.jpg);
 }
 #understand {
   background-color: #1f2740;
@@ -214,7 +222,10 @@
   grid-area: snd;
   display: flex;
   flex-direction: column;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8));
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), #15234f);
+}
+#sound-block:hover, #sound-block:focus {
+  background-image: -webkit-linear-gradient(top, rgba(21, 35, 79, 0.8), #15234f);
 }
 audio {width: 0; height: 0; opacity: 0;}
 .sound-border {
