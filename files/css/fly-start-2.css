@@ -124,7 +124,7 @@
   background-size: cover; background-position: center center; background-repeat: no-repeat;
   background-color: #1f2740; border-radius: 2rem; z-index: 5;
 }
-#news-block, #gallery-block, #sound-block {cursor: pointer; transition: box-shadow 0.5s, transform 0.5s, background-color 1s;}
+#news-block, #gallery-block, #sound-block {cursor: pointer; transition: transform 0.5s, background-color 1s;}
 #fly-block {
   grid-area: fly;
   display: flex;

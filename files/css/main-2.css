@@ -113,9 +113,6 @@ a:focus {outline: azure solid 0.3rem;}
   flex-direction: column;
   background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), #15234f);
 }
-#hot-keys:hover, #hot-keys:focus {
-  background-image: -webkit-linear-gradient(top, rgba(21, 35, 79, 0.8), #15234f);
-}
 .hot-key-button {
   font-size: 1.3em;
   padding: 0.1rem 0.7rem;
