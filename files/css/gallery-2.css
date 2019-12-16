@@ -111,12 +111,15 @@
   display: flex;
   flex-direction: column;
   transition: box-shadow 0.5s, transform 0.5s;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), rgba(11, 14, 23, 0.8)),
+  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.5), #15234f),
   url(/images/autumn.jpg);
 }
-#to-news:hover, #back-button:hover, #back-button:focus {box-shadow: 0 0 1.7rem #0b0e17;}
+#to-news:hover, #to-news:focus {
+  background-image: -webkit-linear-gradient(top, rgba(21, 35, 79, 0.8), #15234f),
+  url(/images/autumn.jpg);
+}
+#back-button:hover, #back-button:focus {box-shadow: 0 0 1.7rem #0b0e17;}
 #to-news:focus {
-  box-shadow: 0 0 1.7rem #0b0e17;
   transform: scale(0.975);
 }
 .not-read::before {

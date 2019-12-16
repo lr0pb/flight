@@ -103,12 +103,15 @@
   display: flex;
   flex-direction: column;
   transition: box-shadow 0.5s, transform 0.5s;
-  background-image: -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), rgba(11, 14, 23, 0.6)),
+  background-image:  -webkit-linear-gradient(top, rgba(11, 14, 23, 0.6), #15234f),
   url(/images/jpg-small/im1.jpg);
 }
-#to-gallery:hover, #back-button:hover, #back-button:focus {box-shadow: 0 0 1.7rem #0b0e17;}
+#to-gallery:hover, #to-gallery:focus {
+  background-image: -webkit-linear-gradient(top, rgba(21, 35, 79, 0.8), #15234f),
+  url(/images/jpg-small/im1.jpg);
+}
+#back-button:hover, #back-button:focus {box-shadow: 0 0 1.7rem #0b0e17;}
 #to-gallery:focus {
-  box-shadow: 0 0 1.7rem #0b0e17;
   transform: scale(0.975);
 }
 #news-block {
