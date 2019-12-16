@@ -134,5 +134,6 @@
   grid-area: img;
   transition: filter 0.5s;
   z-index: 4;
+  background-color: #15234f;
 }
 #gallery-place:focus {border: 0;}
