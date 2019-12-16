@@ -135,4 +135,4 @@
   transition: filter 0.5s;
   z-index: 4;
 }
-#gallery-block:focus {border: 0;}
+#gallery-place:focus {border: 0;}
