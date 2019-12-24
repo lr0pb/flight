@@ -50,16 +50,16 @@
     width: 104rem; height: 42rem;
     background-image:
     -webkit-linear-gradient(10deg, #ff7519, transparent 55%),
-    -webkit-linear-gradient(20deg, orange 15%, transparent 65%),
-    -webkit-linear-gradient(210deg, #E8651B, transparent 80%),
-    -webkit-linear-gradient(155deg, #C82626, transparent 70%),
+    -webkit-linear-gradient(20deg, #fc6b03 15%, transparent 65%),
+    -webkit-linear-gradient(210deg, #e8651b, transparent 80%),
+    -webkit-linear-gradient(155deg, #c82626, transparent 70%),
     -webkit-linear-gradient(90deg, #ff7519, transparent 70%);
     background-size: 150% 150%;
     background-position: center center;
     filter: blur(100px);
   }
   @supports (-moz-orient: block) {
-    .gradient-light {animation: 5s infinite gradient;}
+    .gradient-light {animation: 4s infinite gradient;}
   }
   @keyframes gradient {
     0%, 100% {background-position: 0 25%;}
