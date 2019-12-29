@@ -11,7 +11,7 @@ body {
   background-color: inherit;
 }
 .overflow-hidden {overflow: hidden;}
-div:focus, main:focus {outline: none; border: azure solid 0.3rem;}
+div:focus, main:focus {outline: none; border: azure solid 0.5rem;}
 h1, h2, h3, h4, h5 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;

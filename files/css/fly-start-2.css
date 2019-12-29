@@ -49,8 +49,8 @@
     position: absolute;
     width: 104rem; height: 42rem;
     background-image:
-    -webkit-linear-gradient(10deg, #ff7519, transparent 55%),
-    -webkit-linear-gradient(20deg, #fc6b03 15%, transparent 65%),
+    -webkit-linear-gradient(10deg, #eb4034, transparent 55%),
+    -webkit-linear-gradient(20deg, #eb4034 15%, transparent 65%),
     -webkit-linear-gradient(210deg, #e8651b, transparent 80%),
     -webkit-linear-gradient(155deg, #c82626, transparent 70%),
     -webkit-linear-gradient(90deg, #ff7519, transparent 70%);
@@ -59,7 +59,7 @@
     filter: blur(100px);
   }
   @supports (-moz-orient: block) {
-    .gradient-light {animation: 4s infinite gradient;}
+    .gradient-light {animation: 6s infinite gradient;}
   }
   @keyframes gradient {
     0%, 100% {background-position: 0 25%;}
@@ -140,16 +140,16 @@
   z-index: 4;
   padding: 1rem 4rem;
   margin-top: 2rem;
-  background-color: #318613;
-  border: 0.6rem solid #41b619;
+  background-color: #136b86;
+  border: 0.6rem solid #1982b6;
   border-radius: 5rem;
-  box-shadow: 0 0.5rem 2rem #43a225;
+  box-shadow: 0 0.5rem 2rem #2567a2;
   transition: box-shadow 0.5s, background-color 0.5s;
 }
 #fly-open:hover, #fly-open:focus {
   outline: none;
-  background-color: #389717;
-  box-shadow: 0 0 3rem #36841d; /*
+  background-color: #15709d;
+  box-shadow: 0 0 3rem #1d4584; /*
   background: -webkit-linear-gradient(75deg, #41B619, #CBE724)*/;}
 #fly-open:focus {border: azure solid 0.6rem;}
 #news-block {
