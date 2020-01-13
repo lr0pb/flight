@@ -1,6 +1,9 @@
 :root {
   --dark-blue: hsl(225, 40%, 5%);
   --light-blue: hsl(225, 75%, 95%);
+  --bg-blue: hsl(225, 90%, 70%);
+  --border-blue: hsl(225, 90%, 90%);
+  --shadow-blue: hsl(225, 90%, 90%);
   --primary-red: hsl(10, 80%, 55%);
   --hover-red: hsl(10, 80%, 35%);
 }
@@ -50,16 +53,16 @@ main {
   flex-direction: column;
   width: 28rem; height: 40rem;
   margin: 1.5rem 1rem;
-  border: 0.4rem solid hsl(225, 90%, 90%);
+  border: 0.4rem solid var(--border-blue);
   border-radius: 2rem;
   background-color: white;
-  box-shadow: 0 1.5rem 3rem hsl(225, 90%, 90%);
+  box-shadow: 0 1.5rem 3rem var(--shadow-blue);
 }
 .item > div {
   width: inherit; height: 28rem;
   object-fit: cover;
   border-radius: 1.6rem 1.6rem 0 0;
-  background-color: hsl(225, 90%, 70%);
+  background-color: var(--bg-blue);
 }
 .item > h3 {margin: 1rem 1.5rem;}
 .item > h4 {margin: 0 1.5rem;}
@@ -71,7 +74,7 @@ main {
 .skeleton {cursor: default;}
 .skeleton > h3 {width: 17rem; height: 3rem;}
 .skeleton > h4 {width: 5rem; height: 2.7rem;}
-.skeleton > h3, .skeleton > h4 {background-color: hsl(225, 90%, 70%); border-radius: 0.5rem;}
+.skeleton > h3, .skeleton > h4 {background-color: var(--bg-blue); border-radius: 0.5rem;}
 .skeleton > h4::after {display: none;}
 
 .skeleton:nth-child(2) {opacity: 0.7;}
