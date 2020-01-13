@@ -1,0 +1,72 @@
+:root {
+  --dark-blue: hsl(225, 40%, 5%);
+  --light-blue: hsl(225, 75%, 95%);
+  --primary-red: hsl(10, 80%, 55%);
+  --hover-red: hsl(10, 80%, 35%);
+}
+html {font-size: 10px;}
+html, body {
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--light-blue);
+}
+body, h1, h2, h3, h4 {
+  margin: 0;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+}
+h1 {
+  font-weight: 800;
+  font-size: 4em;
+}
+.title {
+  margin: 1.5rem;
+}
+h3 {
+  font-weight: 700;
+  font-size: 2.6em;
+}
+h4 {
+  font-weight: 600;
+  font-size: 2em;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#itemsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3rem;
+  width: 100%; max-width: 124rem;
+}
+.product {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  width: 28rem; height: 40rem;
+  margin: 1.5rem 1rem;
+  border: 0.4rem solid hsl(225, 90%, 90%);
+  border-radius: 2rem;
+  background-color: white;
+  box-shadow: 0 1.5rem 3rem hsl(225, 90%, 90%);
+}
+.product > div {
+  width: inherit; height: 28rem;
+  object-fit: cover;
+  border-radius: 1.6rem 1.6rem 0 0;
+  background-color: hsl(225, 90%, 70%);
+}
+.product > h3 {
+  margin: 1rem 1.5rem;
+}
+.product > h4 {
+  margin: 0 1.5rem;
+}
+.product > h4::after {
+  display: inline-block;
+  content: '$';
+}
