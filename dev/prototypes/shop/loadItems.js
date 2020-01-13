@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   async function iDetecter() {
     for (let j = 1; j < 30; j++) {
       response = await fetch(`items/itemList${j}.json`);
+      console.log(response);
       if (!response.ok) {
         i = j--;
         break;
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 
 document.addEventListener('scroll', async function () {
-  if (document.documentElement.scrollTop > 1200 && document.documentElement.scrollTop % 1200 > 10 && document.documentElement.scrollTop % 1200 < 20) {
+  if (document.documentElement.scrollTop % 1250 == 0) {
     document.querySelector('#loadingBlock').style.display = 'flex';
     await loadItems();
     document.querySelector('#loadingBlock').style.display = 'none';
