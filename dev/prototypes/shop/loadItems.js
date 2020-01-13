@@ -2,35 +2,40 @@ let i
 let response
 
 document.addEventListener('DOMContentLoaded', async function () {
-  for (let j = 1; j < 30; j++) {
+  document.querySelector('#loadingBlock').style.display = 'flex';
+  await for (let j = 1; j < 30; j++) {
     response = await fetch(`items/itemList${j}.json`);
     if (!response.ok) {
       i = j--;
       break;
     };
   };
-  loadItems();
+  await loadItems();
+  document.querySelector('#loadingBlock').style.display = 'none';
 });
 
-
 document.addEventListener('scroll', function () {
-  if (document.documentElement.scrollTop > 1200 && document.documentElement.scrollTop % 1200 >= 10 && document.documentElement.scrollTop % 1200 <= 30) {
-    loadItems();
+  if (document.documentElement.scrollTop > 1200 && document.documentElement.scrollTop % 1200 > 10 && document.documentElement.scrollTop % 1200 < 20) {
+    document.querySelector('#loadingBlock').style.display = 'flex';
+    await loadItems();
+    document.querySelector('#loadingBlock').style.display = 'none';
   };
 });
 
 async function loadItems() {
-  response = await fetch(`items/itemList${i}.json`);
+  if (i > 0) {
+    response = await fetch(`items/itemList${i}.json`);
 
-  if (response.ok) {
-    let rawJson = await response.json();
-    let json = JSON.parse(rawJson);
-    showItems(json);
-  } else {
-    console.log(response.status);
+    if (response.ok) {
+      let rawJson = await response.json();
+      let json = JSON.parse(rawJson);
+      showItems(json);
+    } else {
+      console.log(response.status);
+    };
+
+    i--;
   };
-
-  i--;
 };
 
 function showItems(json) {
