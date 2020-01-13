@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 
 document.addEventListener('scroll', function () {
-  if (document.documentElement.scrollTop % 1200 => 1 && document.documentElement.scrollTop % 1200 <= 300) {
+  if (document.documentElement.scrollTop % 1200 >= 1 && document.documentElement.scrollTop % 1200 <= 300) {
     loadItems();
   };
 });
