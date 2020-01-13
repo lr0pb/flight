@@ -16,7 +16,7 @@ let arr = [
 let response;
 
 async function loadItems() {
-  response = await fetch('items/itemsList1.json');
+  response = await fetch('items/itemList1.json');
 
   if (response.ok) {
     let json = await response.json();
