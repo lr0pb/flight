@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       console.log(response);
       if (!response.ok) {
         i = j--;
+        console.log(i);
         break;
       };
     };
@@ -27,6 +28,7 @@ document.addEventListener('scroll', async function () {
 });
 
 async function loadItems() {
+  console.log(i);
   if (i > 0) {
     response = await fetch(`items/itemList${i}.json`);
 
