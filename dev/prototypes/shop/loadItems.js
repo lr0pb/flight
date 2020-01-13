@@ -33,9 +33,15 @@ function showItems(json) {
     let item = document.createElement('div');
     item.className = 'item';
     item.dataset.link = json[i].link;
-    item.append(document.createElement('div').style.backgroundImage = '/images/' + json[i].image + '.jpg');
-    item.append(document.createElement('h3').textContent = json[i].title);
-    item.append(document.createElement('h4').textContent = json[i].price);
+    let image = document.createElement('div');
+    image.style.backgroundImage = '/images/' + json[i].image + '.jpg';
+    let title = document.createElement('h3');
+    title.textContent = json[i].title;
+    let price = document.createElement('h4');
+    price.textContent = json[i].price;
+    item.append(image);
+    item.append(title);
+    item.append(price);
     document.querySelector('#itemsList').append(item);
   };
 }
