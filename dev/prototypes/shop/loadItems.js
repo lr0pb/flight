@@ -2,7 +2,7 @@ let i
 let response
 
 document.addEventListener('DOMContentLoaded', async function () {
-  for (let j = 0; j < 30; j++) {
+  for (let j = 1; j < 30; j++) {
     response = await fetch(`items/itemList${j}.json`);
     if (!response.ok) {
       i = j--;
@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     };
   };
   loadItems();
+});
+
+document.addEventListener('scroll', function () {
+  if (document.documentElement.scrollTop % 1200 => 1 && document.documentElement.scrollTop % 1200 <= 300) {
+    loadItems();
+  };
 });
 
 async function loadItems() {
