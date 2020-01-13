@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   document.querySelector('#loadingBlock').style.display = 'none';
 });
 
-document.addEventListener('scroll', function () {
+document.addEventListener('scroll', async function () {
   if (document.documentElement.scrollTop > 1200 && document.documentElement.scrollTop % 1200 > 10 && document.documentElement.scrollTop % 1200 < 20) {
     document.querySelector('#loadingBlock').style.display = 'flex';
     await loadItems();
