@@ -3,13 +3,16 @@ let response
 
 document.addEventListener('DOMContentLoaded', async function () {
   document.querySelector('#loadingBlock').style.display = 'flex';
-  await for (let j = 1; j < 30; j++) {
-    response = await fetch(`items/itemList${j}.json`);
-    if (!response.ok) {
-      i = j--;
-      break;
+  async function iDetecter() {
+    for (let j = 1; j < 30; j++) {
+      response = await fetch(`items/itemList${j}.json`);
+      if (!response.ok) {
+        i = j--;
+        break;
+      };
     };
   };
+  await iDetecter();
   await loadItems();
   document.querySelector('#loadingBlock').style.display = 'none';
 });
