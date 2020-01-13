@@ -17,13 +17,13 @@ let response;
 
 async function loadItems() {
   response = await fetch('items/itemsList1.json');
+
+  if (response.ok) {
+    let json = await response.json();
+    console.log(json);
+  } else {
+    console.log(response.status);
+  };
 };
 
 loadItems();
-
-if (response.ok) {
-  let json = response.json();
-  console.log(json);
-} else {
-  console.log(response.status);
-};
