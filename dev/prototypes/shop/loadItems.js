@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       response = await fetch(`items/itemList${j}.json`);
       console.log(response);
       if (!response.ok) {
-        i = j--;
+        i = --j;
         console.log(i);
         break;
       };
