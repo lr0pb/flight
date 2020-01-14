@@ -77,5 +77,6 @@ main {
 .skeleton > h3, .skeleton > h4 {background-color: var(--bg-blue); border-radius: 0.5rem;}
 .skeleton > h4::after {display: none;}
 
-.skeleton:nth-child(2) {opacity: 0.7;}
-.skeleton:nth-child(3) {opacity: 0.4;}
+.skeleton:nth-child(2) {opacity: 0.8;}
+.skeleton:nth-child(3) {opacity: 0.6;}
+.skeleton:nth-child(4) {opacity: 0.4;}
