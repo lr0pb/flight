@@ -46,7 +46,7 @@ main {
   width: 100%; max-width: 124rem;
 }
 #itemsList {justify-content: center;}
-#loadingBlock {margin-top: -3rem; display: none;}
+#loadingBlock {margin-top: -3rem;}
 .item {
   display: flex;
   cursor: pointer;

@@ -1,5 +1,6 @@
 let i
 let response
+let timeStamp
 
 document.addEventListener('DOMContentLoaded', async function () {
   document.querySelector('#loadingBlock').style.display = 'flex';
@@ -19,8 +20,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 
 document.addEventListener('scroll', async function () {
-  if (document.documentElement.scrollTop >= 1250 && document.documentElement.scrollTop % 1250 >= 0 && document.documentElement.scrollTop % 1250 <= 30) {
-    document.querySelector('#loadingBlock').style.display = 'flex';
+  if (document.documentElement.scrollTop > 1250 && document.documentElement.scrollTop % 1250 > 0 && document.documentElement.scrollTop % 1250 < 100) {
     await loadItems();
     document.querySelector('#loadingBlock').style.display = 'none';
   };
