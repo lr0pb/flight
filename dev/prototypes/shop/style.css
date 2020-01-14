@@ -9,7 +9,7 @@
 }
 html {font-size: 10px;}
 html, body {
-  min-height: 100vh;
+  min-height: calc(100vh + 1px);
   width: 100vw;
   overflow-x: hidden;
   background-color: var(--light-blue);
