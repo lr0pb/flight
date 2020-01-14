@@ -27,10 +27,12 @@ document.addEventListener('scroll', async function () {
 });
 
 async function loadItems() {
+  console.log(i);
   if (i > 0) {
     response = await fetch(`items/itemList${i}.json`);
 
     if (response.ok) {
+      console.log(response);
       let rawJson = await response.json();
       let json = JSON.parse(rawJson);
       showItems(json);
@@ -39,6 +41,7 @@ async function loadItems() {
     };
 
     i--;
+    console.log(i);
   };
 };
 
