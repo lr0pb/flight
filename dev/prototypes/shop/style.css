@@ -14,7 +14,7 @@ html, body {
   overflow-x: hidden;
   background-color: var(--light-blue);
 }
-body, h1, h2, h3, h4 {
+body, h1, h2, h3, h4, h5, button {
   margin: 0;
   color: black;
   font-family: 'Montserrat', sans-serif;
@@ -31,6 +31,10 @@ h3 {
   font-size: 2.6em;
 }
 h4 {
+  font-weight: 600;
+  font-size: 2em;
+}
+h5 {
   font-weight: 600;
   font-size: 2em;
 }
@@ -64,6 +68,37 @@ main {
   --shadow-blue: hsl(225, 90%, 75%);
   transform: scale(1.05);
 }
+.item > h5 {
+  display: none;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem; right: 6rem;
+  width: 20rem; height: 4rem;
+  margin: 0;
+  line-height: 2;
+  text-align: center;
+  color: var(--bg-blue);
+  border-radius: 1rem;
+  background-color: var(--white-blue);
+  box-shadow: 0 0.5rem 1.5rem var(--bg-blue);
+  will-change: opacity;
+  transition: 0.35s;
+}
+.item > button {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 4rem; height: 4rem;
+  border: 0;
+  border-radius: 1rem;
+  background-color: var(--white-blue);
+  background-image: url(icons/plus.png);
+  background-position: center; background-size: 75%; background-repeat: no-repeat;
+  box-shadow: 0 0.5rem 1.5rem var(--bg-blue);
+}
+.item > button[data-later="later"] {background-image: url(icons/tick.png);}
 .item > div {
   width: 28rem; height: 28rem;
   object-fit: cover;
@@ -73,8 +108,8 @@ main {
 .item > h3 {margin: 1rem 1.5rem;}
 .item > h4 {margin: 0 1.5rem;}
 .item > h4::after {
-  display: inline-block;
   content: '$';
+  display: inline-block;
 }
 
 .skeleton {cursor: default;}
@@ -87,3 +122,24 @@ main {
 .skeleton:nth-child(2) {opacity: 0.8;}
 .skeleton:nth-child(3) {opacity: 0.6;}
 .skeleton:nth-child(4) {opacity: 0.4;}
+
+#reloadBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%; max-width: 120rem;
+  height: 20rem;
+  margin-bottom: 3rem;
+}
+#reloadBlock > button {
+  cursor: pointer;
+  width: 23rem; height: 5.5rem;
+  font-size: 1.9em; font-weight: 700;
+  color: white;
+  border: 0.5rem solid var(--primary-red);
+  border-radius: 5rem;
+  background-color: var(--primary-red);
+  transition: 0.5s;
+}
+#reloadBlock > button:hover {background-color: var(--hover-red);}
