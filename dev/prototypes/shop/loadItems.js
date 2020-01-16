@@ -1,38 +1,6 @@
 let i
 let response
 
-document.querySelector('#itemsList').addEventListener('mouseover', function (e) {
-  if (e.target.tagName == 'BUTTON') {
-    e.target.nextElementSibling.style.display = 'block'
-    setTimeout( () => {e.target.nextElementSibling.style.opacity = '1'}, 10 );
-  };
-});
-document.querySelector('#itemsList').addEventListener('click', function (e) {
-  if (e.target.tagName == 'BUTTON') {
-    e.target.dataset.later = 'later';
-  };
-  if (e.target.parentElement.className == 'item' || e.target.className == 'item') {
-    if (e.target.tagName != 'BUTTON') {
-      console.log(e.target);
-    };
-  };
-});
-document.querySelector('#itemsList').addEventListener('mouseout', function (e) {
-  if (e.target.tagName == 'BUTTON') {
-    e.target.nextElementSibling.style.opacity = '0';
-    setTimeout( () => {e.target.nextElementSibling.removeAttribute('style')}, 350 );
-  };
-});
-document.querySelector('#reloadBlock > button').addEventListener('click', async function (e) {
-  e.target.parentElement.style.display = 'none';
-  document.querySelector('#loadingBlock').removeAttribute('style');
-  await loadItems();
-  document.querySelector('#loadingBlock').style.display = 'none';
-  e.target.parentElement.removeAttribute('style');
-});
-
-
-
 document.addEventListener('DOMContentLoaded', async function () {
   async function iDetecter() {
     for (let j = 1; j < 30; j++) {
@@ -47,11 +15,23 @@ document.addEventListener('DOMContentLoaded', async function () {
   await iDetecter();
   await loadItems();
   document.querySelector('#loadingBlock').style.display = 'none';
+  document.querySelector('#reloadBlock').removeAttribute('style');
+});
+
+document.querySelector('#reloadBlock > button').addEventListener('click', async function (e) {
+  if (i > 0) {
+    e.target.parentElement.style.display = 'none';
+    document.querySelector('#loadingBlock').removeAttribute('style');
+    await loadItems();
+    document.querySelector('#loadingBlock').style.display = 'none';
+    e.target.parentElement.removeAttribute('style');
+  };
 });
 
 document.addEventListener('scroll', async function () {
-  if (document.documentElement.scrollTop >= 1250 && document.documentElement.scrollTop % 1250 >= 0 && document.documentElement.scrollTop % 1250 <= 50) {
+  if (document.documentElement.offsetHeight - document.documentElement.scrollTop < document.documentElement.clientHeight * 2) {
     document.querySelector('#loadingBlock').removeAttribute('style');
+    document.querySelector('#reloadBlock').style.display = 'none';
     await loadItems();
     document.querySelector('#loadingBlock').style.display = 'none';
   };
@@ -69,7 +49,11 @@ async function loadItems() {
       console.log(response.status);
     };
 
+    document.querySelector('#reloadBlock').removeAttribute('style');
     i--;
+    if (i == 1) {
+      document.querySelector('#reloadBlock').style.display = 'none';
+    };
   };
 };
 
@@ -78,6 +62,9 @@ function showItems(json) {
     let item = document.createElement('div');
     item.className = 'item';
     item.dataset.link = json[k].link;
+    item.dataset.index = json[k].index;
+    let button = document.createElement('button');
+    button.dataset.later = 'none';
     let hint = document.createElement('h5');
     hint.textContent = 'Смотреть позже';
     let image = document.createElement('div');
@@ -86,7 +73,7 @@ function showItems(json) {
     title.textContent = json[k].title;
     let price = document.createElement('h4');
     price.textContent = json[k].price;
-    item.append(document.createElement('button'));
+    item.append(button);
     item.append(hint);
     item.append(image);
     item.append(title);
