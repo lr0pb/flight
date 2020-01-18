@@ -24,7 +24,7 @@ h1 {
   font-size: 4em;
 }
 .title {
-  margin: 1.5rem;
+  margin: 11.5rem 0 1.5rem 0;
 }
 h3 {
   font-weight: 700;
@@ -38,12 +38,62 @@ h5 {
   font-weight: 600;
   font-size: 2em;
 }
+header {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  position: fixed; top: 0;
+  width: 100vw; height: 8rem;
+  background-color: var(--white-blue);
+  box-shadow: 0 1.5rem 3rem var(--shadow-blue);
+}
+header > h5 {margin: 0 1rem 0 auto !important; width: 23rem !important;}
+header > button {
+  z-index: 3;
+  cursor: pointer;
+  width: 5rem; height: 5rem;
+  margin-right: 10rem;
+  margin-left: auto;
+  border: 0;
+  border-radius: 1rem;
+  background-color: var(--white-blue);
+  background-image: url(icons/folder.png);
+  background-position: center; background-size: 70%; background-repeat: no-repeat;
+  box-shadow: 0 0.5rem 1.5rem var(--bg-blue);
+}
+header > [data-counter=""] {
+  z-index: 3;
+  display: none;
+  position: absolute;
+  top: 1rem; right: 9rem;
+  width: 2rem; height: 2rem;
+  font-size: 1.5em;
+  line-height: 1.2; color: white;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--primary-red);
+}
+#file {
+  z-index: 2;
+  display: none;
+  position: fixed;
+  width: 4rem; height: 4rem;
+  top: 0; left: 0;
+  border: 0;
+  border-radius: 1rem;
+  background-color: var(--white-blue);
+  background-image: url(icons/file.png);
+  background-position: center; background-size: 75%; background-repeat: no-repeat;
+  offset-rotate: 0deg;
+  offset-distance: 0%;
+  transition-timing-function: cubic-bezier(.39,.15,.49,.99); //cubic-bezier(.45,.57,.12,.93);
+}
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#itemsList, #loadingBlock {
+.itemsList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -68,12 +118,10 @@ main {
   --shadow-blue: hsl(225, 90%, 75%);
   transform: scale(1.05);
 }
-.item > h5 {
+.item > h5 {position: absolute; top: 1rem; right: 6rem;}
+.item > h5, .hint {
   display: none;
   opacity: 0;
-  cursor: pointer;
-  position: absolute;
-  top: 1rem; right: 6rem;
   width: 20rem; height: 4rem;
   margin: 0;
   line-height: 2;
@@ -97,6 +145,7 @@ main {
   background-image: url(icons/plus.png);
   background-position: center; background-size: 75%; background-repeat: no-repeat;
   box-shadow: 0 0.5rem 1.5rem var(--bg-blue);
+  transition: 0.2s;
 }
 .item > button[data-later="later"] {background-image: url(icons/tick.png);}
 .item > div {

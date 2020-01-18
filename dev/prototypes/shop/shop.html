@@ -18,16 +18,22 @@
     <link rel="apple-touch-icon-precomposed" href=" ">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:600,700,800&display=swap&subset=cyrillic">
     <link rel="stylesheet" href="style.css">
-    <script defer src="loadItems.js" type="text/javascript"></script>
+    <script defer src="loadItems.js" type="module"></script>
     <script defer src="showLater.js" type="text/javascript"></script>
   </head>
   <body>
+    <header>
+      <h5 class="hint">Список продуктов</h5>
+      <button></button>
+      <h4 data-counter="">0</h4>
+    </header>
     <main>
+      <div id="file"></div>
       <h1 class="title">Наши продукты:</h1>
-      <div id="itemsList">
+      <div id="itemsList" class="itemsList">
 
       </div>
-      <div id="loadingBlock">
+      <div id="loadingBlock" class="itemsList">
         <div class="item skeleton">
           <div></div> <h3></h3> <h4></h4>
         </div>

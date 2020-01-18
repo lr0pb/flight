@@ -1,3 +1,7 @@
+import createItem from '/createItem.js';
+
+(function () {
+
 let i
 let response
 
@@ -29,7 +33,7 @@ document.querySelector('#reloadBlock > button').addEventListener('click', async 
 });
 
 document.addEventListener('scroll', async function () {
-  if (document.documentElement.offsetHeight - document.documentElement.scrollTop < document.documentElement.clientHeight * 2) {
+  if (document.documentElement.offsetHeight - document.documentElement.scrollTop < document.documentElement.clientHeight * 1.5) {
     document.querySelector('#loadingBlock').removeAttribute('style');
     document.querySelector('#reloadBlock').style.display = 'none';
     await loadItems();
@@ -58,26 +62,9 @@ async function loadItems() {
 };
 
 function showItems(json) {
-  for (let k = 0; k < json.length; k++) {
-    let item = document.createElement('div');
-    item.className = 'item';
-    item.dataset.link = json[k].link;
-    item.dataset.index = json[k].index;
-    let button = document.createElement('button');
-    button.dataset.later = 'none';
-    let hint = document.createElement('h5');
-    hint.textContent = 'Смотреть позже';
-    let image = document.createElement('div');
-    image.style.backgroundImage = 'url(/images/' + json[k].image + '.jpg)';
-    let title = document.createElement('h3');
-    title.textContent = json[k].title;
-    let price = document.createElement('h4');
-    price.textContent = json[k].price;
-    item.append(button);
-    item.append(hint);
-    item.append(image);
-    item.append(title);
-    item.append(price);
-    document.querySelector('#itemsList').append(item);
+  for (let j = 0; j < json.length; j++) {
+    new createItem('itemsList', json[j].index, json[j].title, json[j].price, json[j].image, json[j].link)
   };
 };
+
+})()
