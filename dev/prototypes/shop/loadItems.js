@@ -1,4 +1,4 @@
-import createItem from '/createItem.js';
+import createItem from './createItem.js';
 
 (function () {
 
