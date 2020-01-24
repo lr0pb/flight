@@ -1,15 +1,16 @@
 (function () {
 
-let i;
+let totalIndex;
+let currentIndex = 1;
 let response;
 
 document.addEventListener('DOMContentLoaded', async function () {
   async function iDetecter() {
-    for (let j = 1; j < 30; j++) {
-      response = await fetch(`items/itemList${j}.json`);
+    for (let i = 1; i < 30; i++) {
+      response = await fetch(`items/itemList${i}.json`);
       console.log(response);
       if (!response.ok) {
-        i = --j;
+        totalIndex = --i;
         break;
       };
     };
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 
 document.querySelector('#reloadBlock > button').addEventListener('click', async function (e) {
-  if (i > 0) {
+  if (currentIndex < totalIndex) {
     e.target.parentElement.style.display = 'none';
     document.querySelector('#loadingBlock').removeAttribute('style');
     await loadItems();
@@ -40,8 +41,8 @@ document.addEventListener('scroll', async function () {
 });
 
 async function loadItems() {
-  if (i > 0) {
-    response = await fetch(`items/itemList${i}.json`);
+  if (currentIndex <= totalIndex) {
+    response = await fetch(`items/itemList${currentIndex}.json`);
 
     if (response.ok) {
       let rawJson = await response.json();
@@ -52,7 +53,7 @@ async function loadItems() {
     };
 
     document.querySelector('#reloadBlock').removeAttribute('style');
-    i--;
+    currentIndex++;
     if (i == 1) {
       document.querySelector('#reloadBlock').style.display = 'none';
     };
@@ -60,8 +61,8 @@ async function loadItems() {
 };
 
 function showItems(json) {
-  for (let j = 0; j < json.length; j++) {
-    new createItem('itemsList', 'none', json[j].index, json[j].title, json[j].price, json[j].image, json[j].link);
+  for (let i = 0; i < json.length; i++) {
+    new createItem('itemsList', 'none', json[i].index, json[i].title, json[i].price, json[i].image, json[i].link);
   };
 };
 
