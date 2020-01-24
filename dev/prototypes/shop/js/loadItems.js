@@ -31,7 +31,7 @@ document.querySelector('#reloadBlock > button').addEventListener('click', async 
 });
 
 document.addEventListener('scroll', async function () {
-  if (document.documentElement.offsetHeight - document.documentElement.scrollTop < document.documentElement.clientHeight * 1.5 && loadStream == 'go') {
+  if (document.documentElement.offsetHeight - document.documentElement.scrollTop < document.documentElement.clientHeight * 1.3 && loadStream == 'go') {
     document.querySelector('#loadingBlock').removeAttribute('style');
     document.querySelector('#reloadBlock').style.display = 'none';
     await loadItems();
