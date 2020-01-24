@@ -1,9 +1,7 @@
-import createItem from './createItem.js';
-
 (function () {
 
-let i
-let response
+let i;
+let response;
 
 document.addEventListener('DOMContentLoaded', async function () {
   async function iDetecter() {
@@ -33,7 +31,7 @@ document.querySelector('#reloadBlock > button').addEventListener('click', async 
 });
 
 document.addEventListener('scroll', async function () {
-  if (document.documentElement.offsetHeight - document.documentElement.scrollTop < document.documentElement.clientHeight * 1.5) {
+  if (document.documentElement.offsetHeight - document.documentElement.scrollTop < document.documentElement.clientHeight * 1.5 && loadStream == 'go') {
     document.querySelector('#loadingBlock').removeAttribute('style');
     document.querySelector('#reloadBlock').style.display = 'none';
     await loadItems();
@@ -63,7 +61,7 @@ async function loadItems() {
 
 function showItems(json) {
   for (let j = 0; j < json.length; j++) {
-    new createItem('itemsList', json[j].index, json[j].title, json[j].price, json[j].image, json[j].link)
+    new createItem('itemsList', 'none', json[j].index, json[j].title, json[j].price, json[j].image, json[j].link);
   };
 };
 

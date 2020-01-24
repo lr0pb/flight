@@ -1,52 +1,28 @@
 (function () {
 
-document.querySelector('header > button').addEventListener('mouseover', function (e) {
-  e.target.style.marginLeft = '0'
-  e.target.previousElementSibling.style.display = 'block'
-  setTimeout( () => {e.target.previousElementSibling.style.opacity = '1'}, 10 );
-});
-document.querySelector('header > button').addEventListener('mouseout', function (e) {
-  e.target.previousElementSibling.style.opacity = '0'
-  setTimeout( () => {
-    e.target.previousElementSibling.removeAttribute('style');
-    e.target.removeAttribute('style');
-  }, 350 );
-});
-
-let laterItems = []
-
 document.querySelector('#itemsList').addEventListener('mouseover', function (e) {
-  if (e.target.tagName == 'BUTTON') {
-    e.target.nextElementSibling.style.display = 'block'
-    setTimeout( () => {e.target.nextElementSibling.style.opacity = '1'}, 10 );
-  };
+  showItemHint(e);
 });
 document.querySelector('#itemsList').addEventListener('mouseout', function (e) {
-  if (e.target.tagName == 'BUTTON') {
-    e.target.nextElementSibling.style.opacity = '0'
-    setTimeout( () => {e.target.nextElementSibling.removeAttribute('style')}, 350 );
-  };
+  hideItemHint(e);
 });
-
-const counter = document.querySelector('header > [data-counter=""]');
 
 document.querySelector('#itemsList').addEventListener('click', function (e) {
   if (e.target.tagName == 'BUTTON') {
     if (e.target.dataset.later == 'none') {
       e.target.dataset.later = 'later';
-      laterItems.push(e.target.parentElement.dataset.index);
+      let item = e.target.parentElement;
+      laterItems.push({
+        index: item.dataset.index,
+        title: item.children[3].textContent,
+        price: item.children[4].textContent,
+        image: item.children[2].style.backgroundImage.match(/\d/g).join(''),
+        link: item.dataset.link,
+      });
       animateMoving(e);
     } else if (e.target.dataset.later == 'later') {
       e.target.dataset.later = 'none';
-      let toDelete
-      for (let i = 0; i < laterItems.length; i++) {
-        if (laterItems[i] == e.target.parentElement.dataset.index) {
-          toDelete = i;
-        };
-      };
-      laterItems.splice(toDelete, 1);
-      counter.textContent = laterItems.length;
-      if (+counter.textContent == 0) counter.removeAttribute('style');
+      deleteLaterItem(e);
     };
   };
 
@@ -59,7 +35,7 @@ document.querySelector('#itemsList').addEventListener('click', function (e) {
 
 function animateMoving(e) {
   const file = document.querySelector('#file');
-  const folder = document.querySelector('header > button');
+  const folder = document.querySelector('nav > button');
   let startX = e.pageX;
   let startY = e.pageY - document.documentElement.scrollTop - 20;
   let finishX = folder.offsetLeft + 25;
@@ -77,9 +53,10 @@ function animateMoving(e) {
   file.style.offsetPath = `path('M ${startX} ${startY} Q ${controlX} ${controlY} ${finishX} ${finishY}')`;
   setTimeout( () => file.style.offsetDistance = '100%', 20 );
 };
-file.addEventListener('transitionend', () => {
+file.addEventListener('transitionend', function (e) {
+  console.log(e);
   file.removeAttribute('style');
-  if (+counter.textContent == 0) counter.style.display = 'block';
+  if (+counter.textContent == 0 || laterItems.length >= 0) counter.style.display = 'block';
   counter.textContent = laterItems.length;
 });
 

@@ -1,0 +1,122 @@
+header {
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed; top: 0;
+  width: 100vw;
+}
+nav {
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  position: sticky; top: 0;
+  width: 100vw; height: 8rem;
+  background-color: var(--shadow-blue);
+}
+@supports (backdrop-filter: blur(1px)) {
+  nav {
+    background-color: hsla(225, 90%, 90%, 0.8);
+    backdrop-filter: blur(2rem) saturate(180%);
+  }
+}
+nav > h5 {margin: 0 1rem 0 auto !important; width: 23rem !important;}
+nav > button {
+  z-index: 4;
+  cursor: pointer;
+  width: 5rem; height: 5rem;
+  margin-right: 10rem;
+  margin-left: auto;
+  border: 0;
+  border-radius: 1rem;
+  background-color: var(--white-blue);
+  background-image: url(icons/folder.png);
+  background-position: center; background-size: 70%; background-repeat: no-repeat;
+  //box-shadow: 0 0.5rem 1.5rem var(--shadow-blue);
+  transition: height 0.5s;
+}
+nav > button[data-state="open"] {height: 10rem;}
+nav > [data-counter=""] {
+  z-index: 4;
+  display: none;
+  position: absolute;
+  top: 1rem; right: 9rem;
+  width: 2rem; height: 2rem;
+  font-size: 1.5em;
+  line-height: 1.2; color: white;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--primary-red);
+}
+
+#laterBlock {
+  z-index: 3;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden scroll;
+  scrollbar-width: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 8rem;
+  background-color: var(--shadow-blue);
+  transition: height 1s;
+}
+#laterBlock::-webkit-scrollbar {width: 0;}
+#laterList {
+  opacity: 0;
+  transition: opacity 1s;
+  margin: 11.5rem 0 2rem 0;
+  --shadow-blue: var(--clear-blue);
+}
+#laterBlock > div:nth-child(2) {width: 100vw; min-height: 1rem;}
+.cancelPanel {
+  z-index: 4;
+  display: none;
+  opacity: 0;
+  justify-content: center;
+  position: fixed;
+  width: 100vw; height: 7rem;
+  bottom: 1.5rem;
+  transition: 0.5s;
+}
+.cancelPanel > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsla(225, 70%, 5%, 0.8);
+  width: 70rem;
+  border-radius: 1rem;
+}
+.cancelPanel > div > h4 {
+  width: 4rem; height: 4rem;
+  text-align: center;
+  line-height: 2;
+  font-weight: 800;
+  border-radius: 50%;
+  background-color: var(--light-blue);
+}
+.cancelPanel > div > div {
+  width: 45rem; height: 2rem;
+  margin: 2rem;
+  background-color: var(--light-blue);
+  border-radius: 5rem;
+}
+.cancelPanel > div > div > div {
+  width: 100%; height: inherit;
+  background-color: var(--bg-blue);
+  border-radius: 4rem;
+  transition: width 5s linear;
+}
+.cancelPanel > div > button {
+  cursor: pointer;
+  width: 10rem; height: 3rem;
+  background-color: var(--primary-red);
+  border-radius: 2rem;
+  border: 0;
+  font-weight: 700; color: white;
+  transition: 0.3s;
+}
+.cancelPanel > div > button:hover {
+  background-color: var(--hover-red);
+}
