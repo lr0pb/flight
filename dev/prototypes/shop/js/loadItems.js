@@ -55,7 +55,7 @@ async function loadItems() {
 
     document.querySelector('#reloadBlock').removeAttribute('style');
     index--;
-    if (i == 1) {
+    if (index == 1) {
       document.querySelector('#reloadBlock').style.display = 'none';
     };
   };
