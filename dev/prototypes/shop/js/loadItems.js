@@ -41,7 +41,7 @@ document.addEventListener('scroll', async function () {
 
 async function loadItems() {
   if (index > 0) {
-    response = await fetch(`items/itemList${currentIndex}.json`);
+    response = await fetch(`items/itemList${index}.json`);
 
     if (response.ok) {
       let rawJson = await response.json();
