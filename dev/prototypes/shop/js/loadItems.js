@@ -1,7 +1,6 @@
 (function () {
 
-let totalIndex;
-let currentIndex = 1;
+let index;
 let response;
 
 document.addEventListener('DOMContentLoaded', async function () {
@@ -10,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       response = await fetch(`items/itemList${i}.json`);
       console.log(response);
       if (!response.ok) {
-        totalIndex = --i;
+        index = --i;
         break;
       };
     };
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 
 document.querySelector('#reloadBlock > button').addEventListener('click', async function (e) {
-  if (currentIndex < totalIndex) {
+  if (index > 0) {
     e.target.parentElement.style.display = 'none';
     document.querySelector('#loadingBlock').removeAttribute('style');
     await loadItems();
@@ -41,7 +40,7 @@ document.addEventListener('scroll', async function () {
 });
 
 async function loadItems() {
-  if (currentIndex <= totalIndex) {
+  if (index > 0) {
     response = await fetch(`items/itemList${currentIndex}.json`);
 
     if (response.ok) {
@@ -53,7 +52,7 @@ async function loadItems() {
     };
 
     document.querySelector('#reloadBlock').removeAttribute('style');
-    currentIndex++;
+    index--;
     if (i == 1) {
       document.querySelector('#reloadBlock').style.display = 'none';
     };
