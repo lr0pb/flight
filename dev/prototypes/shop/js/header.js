@@ -70,14 +70,14 @@ function createCancel() {
 };
 
 function removeItem() {
-  document.querySelector('[data-index="' + eData.target.parentElement.dataset.index + '"]').remove();
   document.querySelector('.cancelPanel').style.opacity = '0';
   setTimeout( () => {
     document.querySelector('.cancelPanel').remove();
   }, 500 );
-  document.querySelector('[data-index="' + eData.target.parentElement.dataset.index + '"] > button').dataset.later = 'none';
   deleteLaterItem(eData);
   clearTimeout(cancelState);
+  document.querySelector('#itemsList > [data-index="' + eData.target.parentElement.dataset.index + '"] > button').dataset.later = 'none';
+  item.remove();
 };
 
 function launchTimer() {
