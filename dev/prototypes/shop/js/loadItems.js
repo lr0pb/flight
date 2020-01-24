@@ -31,7 +31,7 @@ document.querySelector('#reloadBlock > button').addEventListener('click', async 
 });
 
 document.addEventListener('scroll', async function () {
-  if (document.documentElement.offsetHeight - document.documentElement.scrollTop < document.documentElement.clientHeight * 1.3 && loadStream == 'go') {
+  if (document.documentElement.offsetHeight - document.documentElement.scrollTop < document.documentElement.clientHeight * 2 && loadStream == 'go') {
     document.querySelector('#loadingBlock').removeAttribute('style');
     document.querySelector('#reloadBlock').style.display = 'none';
     await loadItems();
@@ -41,6 +41,8 @@ document.addEventListener('scroll', async function () {
 
 async function loadItems() {
   if (index > 0) {
+    loadStream = 'stop';
+    setTimeout( () => {loadStream = 'go';}, 1400 );
     response = await fetch(`items/itemList${index}.json`);
 
     if (response.ok) {
