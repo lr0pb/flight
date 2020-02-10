@@ -41,11 +41,13 @@ document.getElementById('cross').addEventListener('click', close);
 
 function open() {
   if (fly.webkitRequestFullscreen) fly.webkitRequestFullscreen();
+  else if (fly.webkitIsFullScreen) fly.webkitIsFullScreen();
   else if (fly.requestFullscreen) fly.requestFullscreen();
 };
 async function close() {
-  if (fly.webkitRequestFullscreen) document.exitFullscreen();
-  else if (fly.requestFullscreen) document.exitFullscreen();
+  if (fly.webkitRequestFullscreen) {document.exitFullscreen();}
+  else if (fly.webkitIsFullScreen) {document.exitFullscreen();}
+  else if (fly.requestFullscreen) {document.exitFullscreen();};
   closeWork();
   await closeWork();
 };
