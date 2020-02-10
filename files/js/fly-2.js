@@ -40,9 +40,9 @@ document.getElementById('fly-open').addEventListener('keydown', function(e) {
 document.getElementById('cross').addEventListener('click', close);
 
 function open() {
-  if (fly.webkitRequestFullscreen) fly.webkitRequestFullscreen();
-  else if (fly.webkitIsFullScreen) fly.webkitIsFullScreen();
-  else if (fly.requestFullscreen) fly.requestFullscreen();
+  if (fly.webkitRequestFullscreen) {fly.webkitRequestFullscreen();}
+  else if (fly.webkitIsFullScreen) {fly.webkitIsFullScreen();}
+  else if (fly.requestFullscreen) {fly.requestFullscreen();};
 };
 async function close() {
   if (fly.webkitRequestFullscreen) {document.exitFullscreen();}
