@@ -100,7 +100,7 @@
 }
 
 #gallery-block, #to-news, #hot-keys, #back-button {
-  background-color: #1f2740; border-radius: 2rem; z-index: 5;
+  background-color: #1f2740; border-radius: 1.5rem; z-index: 5;
 }
 #to-news {
   background-size: cover; background-position: center center; background-repeat: no-repeat;
