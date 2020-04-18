@@ -8,7 +8,9 @@ class NewsFeed {
     };*/
     this.feed = feedElement;
     this.newsFile = newsFile;
-    this.cacheName = this.feed.id;
+    this.cacheName = feedElement.id;
+    console.log(feed);
+    console.log(cacheName);
   }
   async install() {
     if (localStorage.getItem(this.cacheName) == 'true') {
@@ -23,6 +25,7 @@ class NewsFeed {
       cache.add(this.newsFile);
       let fetchNews = await fetch(this.newsFile);
       let newsList = fetchNews.json();
+      console.log(newsList);
       cache.addAll(newsList);
       this.renderAll(newsList);
       localStorage.setItem(this.cacheName, 'true');
