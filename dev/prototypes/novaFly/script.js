@@ -405,7 +405,11 @@ function flyRouter(e) {
 
 document.addEventListener('DOMContentLoaded', async () => {
   let feed = new NewsFeed(document.querySelector('#feed'), './api/news/newsList.json');
-  feed.install().then( (response) => {
-    console.log(response.installed);
-  })
+  let install = await feed.install();
+  if (install.installed === 'earlier') {
+    let check = await feed.check();
+    if (check.anyNews) {
+      feed.renderAll(check.data);
+    };
+  };
 });
