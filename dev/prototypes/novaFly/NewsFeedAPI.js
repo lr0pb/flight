@@ -8,49 +8,34 @@ class NewsFeed {
     };*/
     this.feed = feedElement;
     this.newsFile = newsFile;
-    this.cacheName = feedElement.id;
-    console.log(this.feed);
-    console.log(this.cacheName);
+    this.feedName = feedElement.id;
   }
   async install() {
-    if (localStorage.getItem(this.cacheName) == 'true') {
-      caches.open(this.cacheName).then(async (cache) => {
-        //let cacheNews = cache.match(this.newsFile);
-        let cacheNews = await fetch(this.newsFile, {cache: 'force-cache'});
-        let newsList = cacheNews.json();
-        console.log(newsList);
-        this.renderAll(newsList);
-        return;
-      })
+    if (localStorage[this.feedName + 'State'] !== 'installed') {
+      let newsFile = await fetch(this.newsFile);
+      let newsList = newsFile.json();
+      localStorage[this.feedName + 'Data'] = newsList;
+      localStorage[this.feedName + 'State'] = 'installed';
+      return {installed: 'now'};
+    } else if (localStorage[this.feedName + 'State'] === 'installed') {
+      return {installed: 'earlier'};
     };
-    caches.open(this.cacheName).then(async (cache) => {
-      cache.add(this.newsFile);
-      let fetchNews = await fetch(this.newsFile);
-      let newsList = fetchNews.json();
-      console.log(newsList);
-      cache.add(newsList);
-      for (let news of newsList) {
-        cache.add(news);
-      };
-      this.renderAll(newsList);
-      localStorage.setItem(this.cacheName, 'true');
-    })
   }
   async check() {
-    let cacheNews = await fetch(this.newsFile, {cache: 'force-cache'});
-    let cacheList = cacheNews.json();
-    console.log(cacheList);
-    let fetchNews = await fetch(this.newsFile);
-    let fetchList = fetchNews.json();
-    console.log(fetchList);
-    if (fetchList.length != cacheList.length) {
-      let newNews = this.findNew(fetchList, cacheList);
-      this.renderAll(newNews);
+    let newsFile = await fetch(this.newsFile);
+    let newsList = newsFile.json();
+    newsList = JSON.parse(newsList);
+    let savedNewsList = JSON.parse(localStorage[this.feedName + 'Data']);
+    if (newsList.length !== savedNewsList.length) {
+      let newNews = this.findNew(newsList, savedNewsList);
+      return {anyNews: true, data: newNews};
+    } else {
+      return {anyNews: false};
     };
   }
-  findNew(fetchList, cacheList) {
+  findNew(fetchList, savedList) {
     let newNews = [];
-    for (let i = cacheList.length; i < fetchList.length; i++) {
+    for (let i = savedList.length; i < fetchList.length; i++) {
       newNews.push(fetchList[i]);
     };
     console.log(newNews);
@@ -60,6 +45,7 @@ class NewsFeed {
     for (let item of array) {
         let response = await fetch(item);
         let data = response.json();
+        data = JSON.parse(data);
         this.render(data);
       };
   }
