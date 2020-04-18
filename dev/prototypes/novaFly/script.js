@@ -405,6 +405,7 @@ function flyRouter(e) {
 
 document.addEventListener('DOMContentLoaded', async () => {
   let feed = new NewsFeed(document.querySelector('#feed'), './api/news/newsList.json');
-  await feed.install();
-  feed.check();
+  feed.install().then( (response) => {
+    console.log(response.installed);
+  })
 });

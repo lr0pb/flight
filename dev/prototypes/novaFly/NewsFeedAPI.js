@@ -13,7 +13,7 @@ class NewsFeed {
   async install() {
     if (localStorage[this.feedName + 'State'] !== 'installed') {
       let newsFile = await fetch(this.newsFile);
-      let newsList = newsFile.json();
+      let newsList = await newsFile.json();
       localStorage[this.feedName + 'Data'] = newsList;
       localStorage[this.feedName + 'State'] = 'installed';
       return {installed: 'now'};
@@ -23,7 +23,7 @@ class NewsFeed {
   }
   async check() {
     let newsFile = await fetch(this.newsFile);
-    let newsList = newsFile.json();
+    let newsList = await newsFile.json();
     newsList = JSON.parse(newsList);
     let savedNewsList = JSON.parse(localStorage[this.feedName + 'Data']);
     if (newsList.length !== savedNewsList.length) {
@@ -44,7 +44,7 @@ class NewsFeed {
   async renderAll(array) {
     for (let item of array) {
         let response = await fetch(item);
-        let data = response.json();
+        let data = await response.json();
         data = JSON.parse(data);
         this.render(data);
       };
