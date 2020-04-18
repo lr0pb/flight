@@ -9,14 +9,16 @@ class NewsFeed {
     this.feed = feedElement;
     this.newsFile = newsFile;
     this.cacheName = feedElement.id;
-    console.log(feed);
-    console.log(cacheName);
+    console.log(this.feed);
+    console.log(this.cacheName);
   }
   async install() {
     if (localStorage.getItem(this.cacheName) == 'true') {
       caches.open(this.cacheName).then(async (cache) => {
-        let cacheNews = cache.match(this.newsFile);
+        //let cacheNews = cache.match(this.newsFile);
+        let cacheNews = await fetch(this.newsFile, {cache: 'force-cache'});
         let newsList = cacheNews.json();
+        console.log(newsList);
         this.renderAll(newsList);
         return;
       })
@@ -32,20 +34,18 @@ class NewsFeed {
     })
   }
   async check() {
+    let cacheNews = await fetch(this.newsFile, {cache: 'force-cache'});
+    let cacheList = cacheNews.json();
+    console.log(cacheList);
     let fetchNews = await fetch(this.newsFile);
     let fetchList = fetchNews.json();
-    let cacheNews;
-    caches.open(this.cacheName).then(async (cache) => {
-      cacheNews = cache.match(this.newsFile);
-    })
-    console.log(cacheNews);
-    let cacheList = cacheNews.json();
+    console.log(fetchList);
     if (fetchList.length != cacheList.length) {
-      let newNews = this.compare(fetchList, cacheList);
+      let newNews = this.findNew(fetchList, cacheList);
       this.renderAll(newNews);
     };
   }
-  compare(fetchList, cacheList) {
+  findNew(fetchList, cacheList) {
     let newNews = [];
     for (let i = cacheList.length; i < fetchList.length; i++) {
       newNews.push(fetchList[i]);
