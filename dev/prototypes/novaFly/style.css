@@ -1,0 +1,206 @@
+:root {
+  --color: white;
+  --h-blue: 225;
+  --h-green: 120;
+  --s: 50%;
+  --l: 50%;
+  --blue-100: hsl(var(--h-blue), calc(var(--s) - 25%), calc(var(--l) - 30%)); /*light*/
+  --blue-200: hsl(var(--h-blue), calc(var(--s) - 20%), calc(var(--l) - 35%)); /*normal*/
+  --blue-300: hsl(var(--h-blue), calc(var(--s) - 25%), calc(var(--l) - 40%)); /*dark*/
+  --blue-400: hsla(var(--h-blue), calc(var(--s) - 15%), calc(var(--l) - 15%), 0.5); /*shadow*/
+
+  --green-100: hsl(var(--h-green), calc(var(--s) + 45%), calc(var(--l) - 20%)); /*light*/
+  --green-200: hsl(var(--h-green), calc(var(--s) + 40%), calc(var(--l) - 25%)); /*normal*/
+  --green-300: hsl(var(--h-green), calc(var(--s) - 10%), calc(var(--l) - 25%)); /*dark*/
+  --green-400: hsla(var(--h-green), calc(var(--s) + 40%), calc(var(--l) - 35%), 0.5); /*shadow*/
+}
+html {
+  font-size: 10px;
+}
+body {
+  width: 100vw; height: 100vh;
+  margin: 0;
+}
+main {
+  width: calc(100vw + 5rem); height: calc(100vh + 5rem);
+  position: absolute;
+  background-color: var(--blue-200);
+}
+body, main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+img {
+  object-fit: cover;
+  user-select: none;
+}
+#bg, #startIcons, #otherIcons {
+  width: calc(100vw + 5rem); height: 75vw;
+  position: absolute;
+}
+#bg {
+  object-fit: cover;
+  top: auto; opacity: 1;
+  transition: scale 1.5s, transform 1.5s, filter 0.5s;
+}
+#startIcons {
+  perspective: 50rem;
+  transform-style: preserve-3d;
+  transform: translateY(-2rem);
+}
+#otherIcons {
+  visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.fly {
+  width: inherit; height: inherit;
+  transform: scale(var(--scale)) rotateY(var(--rotate));
+  transform-origin: var(--origin); translate: var(--dx) var(--dy);
+  --scale: 0.1; --rotate: 0deg; --translate: 0vw; --origin: center;
+  top: 0; left: var(--translate);
+  opacity: 0;
+  position: absolute;
+  border-radius: 0;
+  border: none;
+  box-sizing: border-box;
+  transition: left 1.2s, transform 1.2s, opacity 1s, border-radius 0.5s, filter 0.5s;
+}
+.icon, .hide {
+  width: 14rem; height: 14rem;
+  transform: scale(0.5); opacity: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1.5rem solid white;
+  transition: transform 0.7s, border-radius 0.7s, border 0.7s, opacity 0.5s, background-color 0.6s, box-shadow 0.6s ;
+}
+.icon:hover, .icon:focus, .poster {
+  transform: scale(1);
+  border-radius: 3rem;
+  border: 0.8rem solid hsla(0, 0%, 100%, 0.7);
+  outline: none;
+}
+.poster {
+  width: 20rem; height: 15rem;
+  transform: scale(0.8);
+  border: 1rem solid hsl(0, 0%, 100%);
+}
+.poster:hover, .poster:focus {
+  box-shadow: 0 1rem 3rem var(--blue-300);
+  border: 0.9rem solid hsl(0, 0%, 100%);
+}
+.circle {
+  width: 18rem; height: 18rem;
+  transform: scale(0.7); top: 34vw;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsla(0, 0%, 0%, 0.6);
+  border: 1.1rem solid white;
+  color: var(--color);
+  font-size: 3.3em;
+  font-weight: 700;
+  font-family: sans-serif;
+}
+.circle:hover, .circle:focus {
+  border-radius: 50%;
+  border: 1.1rem solid white;
+  background-color: hsla(0, 0%, 0%, 0.85);
+}
+.left {
+  left: 2vw;
+}
+.right {
+  left: auto;
+  right: 2vw;
+}
+
+.hide {
+  transform: scale(0); opacity: 0;
+}
+
+#im1 {left: 16.5vw; top: 29.5vw;}
+#im2 {left: 21.0vw; top: 35.3vw;}
+#im3 {left: 27.0vw; top: 39.5vw;}
+#im4 {left: 35.0vw; top: 30.7vw;}
+#im5 {left: 38.5vw; top: 36.0vw;}
+#im6 {left: 48.0vw; top: 34.5vw;}
+#im7 {left: 54.0vw; top: 35.4vw;}
+#im8 {left: 59.0vw; top: 29.3vw;}
+#im9 {display: none;}
+#im10 {left: 63.3vw; top: 32.0vw;}
+#im11 {left: 76.0vw; top: 35.0vw;}
+#im12 {left: 85.0vw; top: 38.0vw;}
+
+#im111 {left: 33.5vw; top: 28vw;}
+#im21 {left: 54vw; top: 26vw;}
+#im22 {left: 55vw; top: 30vw;}
+#im31 {left: 52vw; top: 41vw;}
+#im41 {left: 75vw; top: 30vw;}
+#im45 {left: 74vw; top: 30vw;}
+#im71 {left: 51vw; top: 32vw;}
+#im101 {left: 40vw; top: 37vw;}
+
+
+#mapBox {
+  width: 40rem; height: 25rem;
+  position: absolute; z-index: 10;
+  left: 5rem; bottom: 5rem;
+  background-color: hsla(225, 90%, 85%, 0.6);
+  border-radius: 2rem;
+  box-shadow: 0 1rem 4rem hsl(225, 20%, 10%);
+  overflow: hidden;
+}
+#map {
+  width: 80rem; height: 60rem;
+  position: absolute;
+  background-image: url(images/bg.jpg);
+  background-size: cover;
+  top: -15rem;
+  transition: transform 0.5s;
+}
+
+#feed {
+  position: absolute;
+  bottom: 5rem; left: 50rem;
+  width: 80rem; height: 50rem;
+  background-color: white;
+}
+
+button {
+  font-size: 1.8em;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 1.2rem 3rem;
+  color: var(--color);
+  border-radius: 5rem;
+  box-shadow: 0 0.5rem 2rem var(--blue-300);
+  transition: background-color 0.3s, bottom 0.8s, transform 0.4s;
+}
+button:hover, button:focus {
+  transform: translateY(-0.8rem);
+}
+button:disabled {
+  cursor: default;
+}
+button[data-green] {
+  background-color: var(--green-100);
+  border: 0.5rem solid var(--green-400);
+}
+button[data-green]:hover, button[data-green]:focus {
+  background-color: var(--green-200);
+  outline: none;
+}
+button[data-green]:disabled {
+  background-color: var(--green-300);
+}
+button[data-green]:disabled:hover, button[data-green]:disabled:hover {
+  transform: none;
+}
+#backToTheStart {
+  position: absolute;
+  bottom: -5rem; right: 5rem;
+}
