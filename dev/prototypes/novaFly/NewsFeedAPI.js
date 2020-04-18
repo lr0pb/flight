@@ -12,17 +12,17 @@ class NewsFeed {
   }
   async install() {
     if (localStorage.getItem(this.cacheName) == 'true') {
-      caches.open(this.feedName).then(async (cache) => {
-        let cacheNews = await cache.match(this.newsFile);
+      caches.open(this.cacheName).then(async (cache) => {
+        let cacheNews = cache.match(this.newsFile);
         let newsList = cacheNews.json();
         this.renderAll(newsList);
         return;
       })
     };
-    caches.open(this.feedName).then(async (cache) => {
+    caches.open(this.cacheName).then(async (cache) => {
       cache.add(this.newsFile);
       let fetchNews = await fetch(this.newsFile);
-      let newsList = response.json();
+      let newsList = fetchNews.json();
       cache.addAll(newsList);
       this.renderAll(newsList);
       localStorage.setItem(this.cacheName, 'true');
@@ -32,9 +32,10 @@ class NewsFeed {
     let fetchNews = await fetch(this.newsFile);
     let fetchList = fetchNews.json();
     let cacheNews;
-    caches.open(this.feedName).then(async (cache) => {
-      cacheNews = await cache.match(this.newsFile);
+    caches.open(this.cacheName).then(async (cache) => {
+      cacheNews = cache.match(this.newsFile);
     })
+    console.log(cacheNews);
     let cacheList = cacheNews.json();
     if (fetchList.length != cacheList.length) {
       let newNews = this.compare(fetchList, cacheList);
