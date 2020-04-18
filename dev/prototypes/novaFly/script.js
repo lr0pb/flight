@@ -408,8 +408,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   let install = await feed.install();
   if (install.installed === 'earlier') {
     let check = await feed.check();
-    if (check.anyNews) {
-      feed.renderAll(check.data);
-    };
+    if (check.anyNews) feed.renderAll(check.data);
+  } else if (install.installed === 'now') {
+    feed.renderAll(install.data);
   };
 });
