@@ -28,7 +28,10 @@ class NewsFeed {
       let fetchNews = await fetch(this.newsFile);
       let newsList = fetchNews.json();
       console.log(newsList);
-      cache.addAll(newsList);
+      cache.add(newsList);
+      for (let news of newsList) {
+        cache.add(news);
+      };
       this.renderAll(newsList);
       localStorage.setItem(this.cacheName, 'true');
     })
@@ -50,6 +53,7 @@ class NewsFeed {
     for (let i = cacheList.length; i < fetchList.length; i++) {
       newNews.push(fetchList[i]);
     };
+    console.log(newNews);
     return newNews;
   }
   async renderAll(array) {
