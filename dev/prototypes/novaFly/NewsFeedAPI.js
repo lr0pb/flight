@@ -2,6 +2,8 @@
 // v.0.0.1 first iteration
 // v.0.0.2 advanced work with templates <===
 // v.0.0.3 advanced findNew() method
+// v.0.0.4 divide newsFile feature
+// v.0.0.5 cache api integration
 
 class NewsFeed {
   consoleStart = '[News Feed API]';
@@ -12,7 +14,6 @@ class NewsFeed {
     this.feedName = feedElement.id;
   }
   async install() {
-    if (this.error) return;
     if (localStorage[this.feedName + 'State'] !== 'installed') {
       let newsFile = await fetch(this.newsFile);
       if (!newsFile.ok) {
@@ -42,10 +43,10 @@ class NewsFeed {
     };
   }
   findNew(fetchList, savedList) {
-    let newNews = [];
-    for (let i = savedList.length; i < fetchList.length; i++) {
-      newNews.push(fetchList[i]);
-    };
+    let newNews = fetchList.filter(item => {
+      !savedList.find(save => save === item);
+    });
+    console.log(newNews);
     return newNews;
   }
   async renderAll(newsList) {
