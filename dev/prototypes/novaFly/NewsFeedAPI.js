@@ -14,7 +14,6 @@ class NewsFeed {
     if (localStorage[this.feedName + 'State'] !== 'installed') {
       let newsFile = await fetch(this.newsFile);
       let newsList = await newsFile.json();
-      console.log(newsList);
       localStorage[this.feedName + 'Data'] = newsList;
       localStorage[this.feedName + 'State'] = 'installed';
       return {alreadyInstalled: false, data: JSON.parse(newsList)};
@@ -40,7 +39,6 @@ class NewsFeed {
     for (let i = savedList.length; i < fetchList.length; i++) {
       newNews.push(fetchList[i]);
     };
-    console.log(newNews);
     return newNews;
   }
   async renderAll(newsList) {
@@ -64,7 +62,7 @@ class NewsFeed {
       <p>${data.text}</p>
     `;
     article.style.setProperty('--bg', data.image || 'null');
-    this.feed.append(article);
+    this.feed.prepend(article);
   }/*
   checkTypes([...arguments], [...rightTypes]) {
     let booleanValues = [];
