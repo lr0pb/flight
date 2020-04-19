@@ -1,7 +1,7 @@
 // News Feed API
 // v.0.0.1 first iteration
 // v.0.0.2 advanced work with templates <===
-// v.0.0.3 advanced findNew() method
+// v.0.0.3 advanced findDifference() method
 // v.0.0.4 divide newsFile feature
 // v.0.0.5 cache api integration
 
@@ -34,20 +34,23 @@ class NewsFeed {
     let newsList = await newsFile.json();
     newsList = JSON.parse(newsList);
     let savedList = JSON.parse(localStorage[this.feedName + 'Data']);
-    if (newsList.length !== savedList.length) {
+    let difference = this.findDifference(newsFile, savedFile);
+    if (difference.new.length > 0 || difference.delete.length > 0) {
       localStorage[this.feedName + 'Data'] = JSON.stringify(newsList);
-      let newNews = this.findNew(newsList, savedList);
-      return {anyNews: true, data: newNews};
-    } else {
-      return {anyNews: false};
+      return {anyNews: true, new: difference.new, delete: difference.delete};
     };
+    return {anyNews: false};
   }
-  findNew(fetchList, savedList) {
+  findDifference(fetchList, savedList) {
     let newNews = fetchList.filter(item => {
       !savedList.find(save => save === item);
     });
     console.log(newNews);
-    return newNews;
+    let deleteNews = savedList.filter(item => {
+      !fetchList.find(fetch => fetch === item);
+    };
+    console.log(deleteNews);
+    return {new: newNews, delete: deleteNews};
   }
   async renderAll(newsList) {
     for (let news of newsList) {
