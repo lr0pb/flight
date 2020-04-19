@@ -1,16 +1,20 @@
-// News Feed API
+// News Feed API v.1.0.0
 
 class NewsFeed {
-  constructor(feedElement, newsFile) {
-    /*if (!this.checkTypes([feedElement, newsFile], ['object', 'string'])) {
-      throw new Error('Not valid data to render article');
-      return;
-    };*/
+  consoleStart = '[News Feed API]';
+  consoleStyle = 'background-color: hsl(225, 30%, 15%); color: white; padding: 3px 4px;';
+  async constructor(feedElement, newsFile) {
     this.feed = feedElement;
     this.newsFile = newsFile;
     this.feedName = feedElement.id;
+    let response = await fetch(newsFile);
+    if (!response.ok) {
+      console.error(`${consoleStart} News File have %c${response.status} status%cCheck way to your News File or change file`, consoleStyle);
+      this.error = true;
+    };
   }
   async install() {
+    if (this.error) return;
     if (localStorage[this.feedName + 'State'] !== 'installed') {
       let newsFile = await fetch(this.newsFile);
       let newsList = await newsFile.json();
@@ -63,13 +67,9 @@ class NewsFeed {
       <p>$(text)</p>
     `;
     this.setTemplate(defaultTemplate, false);
-    console.warn('Set your custom template with setTemplate() method');
+    console.warn(`${consoleStart} Set your custom template for render with %csetTemplate()%cmethod`, this.consoleStyle);
   }
   render(data) {
-    /*if (!this.checkTypes([data.date, data.title, data.text], ['date', 'string', 'string'])) {
-      throw new Error('Not valid data to render article');
-      return;
-    };*/
     if (!this.template.HTML) this.setDefaultTemplate();
     let filledTemplate = this.template.HTML;
     for (let item in data.HTML) {
@@ -77,34 +77,9 @@ class NewsFeed {
     };
     let article = document.createElement('article');
     article.innerHTML = filledTemplate;
-    if (this.template.variables && data.variables.length > 0) for (let item of data.variables) {
-      article.style.setProperty(item, data[item]);
+    if (this.template.variables && data.variables) for (let item in data.variables) {
+      article.style.setProperty(item, data.variables[item]);
     };
     this.feed.prepend(article);
   }
-
-/*
-  checkTypes([...arguments], [...rightTypes]) {
-    let booleanValues = [];
-    for (let i = 0; i < arguments.length; i++) {
-      if (rightTypes[i] != 'date' || 'array') {
-        if (typeof arguments[i] === rightTypes[i]) booleanValues.push(true);
-        else booleanValues.push(false);
-      } else if (rightTypes[i] === 'date') {
-        let parsedDate = arguments[i].match(/\d\d\s\d\d\s\d\d\d\d/).join('');
-        if (arguments[i] === parsedDate) booleanValues.push(true);
-        else booleanValues.push(false);
-      } else if (rightTypes[i] === 'array') {
-        if (Array.isArray(arguments[i])) booleanValues.push(true);
-        else booleanValues.push(false);
-      };
-    };
-    for (let boolean of booleanValues) {
-      if (boolean === false) {
-        break;
-        return false;
-      };
-    };
-    return true;
-  };*/
 };
