@@ -1,15 +1,12 @@
 // News Feed API
 
 class NewsFeed {
-  template = {
-    HTML: `
-      <time>$(date)</time>
-      <h3>$(title)</h3>
-      <p>$(text)</p>
-      <button>$(action)</button>
-    `,
-    variables: [{image: '--bg'}]
-  }
+  template = `
+    <time>$(date)</time>
+    <h3>$(title)</h3>
+    <p>$(text)</p>
+    <button>$(action)</button>
+  `
   constructor(feedElement, newsFile) {
     /*if (!this.checkTypes([feedElement, newsFile], ['object', 'string'])) {
       throw new Error('Not valid data to render article');
@@ -35,9 +32,10 @@ class NewsFeed {
     let newsFile = await fetch(this.newsFile);
     let newsList = await newsFile.json();
     newsList = JSON.parse(newsList);
-    let savedNewsList = JSON.parse(localStorage[this.feedName + 'Data']);
-    if (newsList.length !== savedNewsList.length) {
-      let newNews = this.findNew(newsList, savedNewsList);
+    let savedList = JSON.parse(localStorage[this.feedName + 'Data']);
+    if (newsList.length !== savedList.length) {
+      localStorage[this.feedName + 'Data'] = JSON.stringify(newsList);
+      let newNews = this.findNew(newsList, savedList);
       return {anyNews: true, data: newNews};
     } else {
       return {anyNews: false};
@@ -65,20 +63,18 @@ class NewsFeed {
       return;
     };*/
     let article = document.createElement('article');
-    let filledTemplate = this.template.HTML;
+    let filledTemplate = this.template;
     for (let item in data.HTML) {
+      console.log([item]);
+      console.log(item);
       filledTemplate = filledTemplate.replace(`$(${[item]})`, item);
     };
-    for (let item of data.variables) {
+    console.log(filledTemplate);
+    if (data.variables) for (let item of data.variables) {
       article.style.setProperty(item, data[item]);
     };
     article.innerHTML = filledTemplate;
     this.feed.prepend(article);
-  }
-  isVariable(variable) {
-    for (let variable of this.template.variables) {
-      
-    };
   }
 
 /*
