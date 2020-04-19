@@ -16,9 +16,10 @@ class NewsFeed {
       let newsList = await newsFile.json();
       localStorage[this.feedName + 'Data'] = newsList;
       localStorage[this.feedName + 'State'] = 'installed';
-      return {installed: 'now', data: JSON.parse(newsList)};
+      return {alreadyInstalled: false, data: JSON.parse(newsList)};
     } else if (localStorage[this.feedName + 'State'] === 'installed') {
-      return {installed: 'earlier'};
+      let newsList = localStorage[this.feedName + 'Data'];
+      return {alreadyInstalled: true, data: JSON.parse(newsList)};
     };
   }
   async check() {
@@ -41,13 +42,14 @@ class NewsFeed {
     console.log(newNews);
     return newNews;
   }
-  async renderAll(array) {
-    for (let item of array) {
-        let response = await fetch(item);
+  async renderAll(newsList) {
+    for (let news of newsList) {
+        let response = await fetch(news);
         let data = await response.json();
         data = JSON.parse(data);
         this.render(data);
       };
+    return {done: true};
   }
   render(data) {
     /*if (!this.checkTypes([data.date, data.title, data.text], ['date', 'string', 'string'])) {
