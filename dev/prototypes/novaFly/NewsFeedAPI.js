@@ -51,31 +51,35 @@ class NewsFeed {
       };
     return {done: true};
   }
-  template = `
-    <time>$(date)</time>
-    <h3>$(title)</h3>
-    <p>$(text)</p>
-    <button>$(action)</button>
-  `
-  setTemplate(template) {
-    this.template = template;
+  template = {}
+  setTemplate(template, variablesBoolean) {
+    this.template.HTML = template;
+    this.template.variables = variablesBoolean;
+  }
+  setDefaultTemplate() {
+    let defaultTemplate = `
+      <time>$(date)</time>
+      <h3>$(title)</h3>
+      <p>$(text)</p>
+    `;
+    this.setTemplate(defaultTemplate, false);
+    console.warn('Set your custom template with setTemplate() method');
   }
   render(data) {
     /*if (!this.checkTypes([data.date, data.title, data.text], ['date', 'string', 'string'])) {
       throw new Error('Not valid data to render article');
       return;
     };*/
-    let article = document.createElement('article');
-    let filledTemplate = this.template;
-    console.log(data.HTML);
+    if (!this.template.HTML) this.setDefaultTemplate();
+    let filledTemplate = this.template.HTML;
     for (let item in data.HTML) {
       filledTemplate = filledTemplate.replace(`$(${item})`, data.HTML[item]);
     };
-    console.log(filledTemplate);
-    if (data.variables) for (let item of data.variables) {
+    let article = document.createElement('article');
+    article.innerHTML = filledTemplate;
+    if (this.template.variables && data.variables.length > 0) for (let item of data.variables) {
       article.style.setProperty(item, data[item]);
     };
-    article.innerHTML = filledTemplate;
     this.feed.prepend(article);
   }
 
