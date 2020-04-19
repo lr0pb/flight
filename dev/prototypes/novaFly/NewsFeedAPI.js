@@ -3,20 +3,19 @@
 class NewsFeed {
   consoleStart = '[News Feed API]';
   consoleStyle = 'background-color: hsl(225, 30%, 15%); color: white; padding: 3px 4px;';
-  async constructor(feedElement, newsFile) {
+  constructor(feedElement, newsFile) {
     this.feed = feedElement;
     this.newsFile = newsFile;
     this.feedName = feedElement.id;
-    let response = await fetch(newsFile);
-    if (!response.ok) {
-      console.error(`${consoleStart} News File have %c${response.status} status%cCheck way to your News File or change file`, consoleStyle);
-      this.error = true;
-    };
   }
   async install() {
     if (this.error) return;
     if (localStorage[this.feedName + 'State'] !== 'installed') {
       let newsFile = await fetch(this.newsFile);
+      if (!newsFile.ok) {
+        console.error(`${consoleStart} News File have %c${response.status} status%cCheck way to your News File or change file`, consoleStyle);
+        return;
+      };
       let newsList = await newsFile.json();
       localStorage[this.feedName + 'Data'] = newsList;
       localStorage[this.feedName + 'State'] = 'installed';
