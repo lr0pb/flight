@@ -64,6 +64,7 @@ class NewsFeed {
     };*/
     let article = document.createElement('article');
     let filledTemplate = this.template;
+    console.log(data.HTML);
     for (let item in data.HTML) {
       console.log([item]);
       console.log(item);
