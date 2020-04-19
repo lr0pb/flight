@@ -14,6 +14,7 @@ class NewsFeed {
     if (localStorage[this.feedName + 'State'] !== 'installed') {
       let newsFile = await fetch(this.newsFile);
       let newsList = await newsFile.json();
+      console.log(newsList);
       localStorage[this.feedName + 'Data'] = newsList;
       localStorage[this.feedName + 'State'] = 'installed';
       return {alreadyInstalled: false, data: JSON.parse(newsList)};
