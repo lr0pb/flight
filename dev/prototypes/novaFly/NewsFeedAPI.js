@@ -1,6 +1,15 @@
 // News Feed API
 
 class NewsFeed {
+  template = {
+    HTML: `
+      <time>$(date)</time>
+      <h3>$(title)</h3>
+      <p>$(text)</p>
+      <button>$(action)</button>
+    `,
+    variables: [{image: '--bg'}]
+  }
   constructor(feedElement, newsFile) {
     /*if (!this.checkTypes([feedElement, newsFile], ['object', 'string'])) {
       throw new Error('Not valid data to render article');
@@ -56,14 +65,23 @@ class NewsFeed {
       return;
     };*/
     let article = document.createElement('article');
-    article.innerHTML = `
-      <time>${data.date}</time>
-      <h3>${data.title}</h3>
-      <p>${data.text}</p>
-    `;
-    article.style.setProperty('--bg', data.image || 'null');
+    let filledTemplate = this.template.HTML;
+    for (let item in data.HTML) {
+      filledTemplate = filledTemplate.replace(`$(${[item]})`, item);
+    };
+    for (let item of data.variables) {
+      article.style.setProperty(item, data[item]);
+    };
+    article.innerHTML = filledTemplate;
     this.feed.prepend(article);
-  }/*
+  }
+  isVariable(variable) {
+    for (let variable of this.template.variables) {
+      
+    };
+  }
+
+/*
   checkTypes([...arguments], [...rightTypes]) {
     let booleanValues = [];
     for (let i = 0; i < arguments.length; i++) {
