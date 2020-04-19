@@ -1,4 +1,7 @@
-// News Feed API v.1.0.0
+// News Feed API
+// v.0.0.1 first iteration
+// v.0.0.2 advanced work with templates <===
+// v.0.0.3 advanced findNew() method
 
 class NewsFeed {
   consoleStart = '[News Feed API]';
