@@ -99,10 +99,7 @@ class NewsFeed {
     this.asyncList = newsList;
     console.log(this.asyncList);
     const renderPart = async () => {
-      const filter = (item, index, array) => {
-        index < array.length - this.newsPerRender * this.currentPosition &&
-        index >= array.length - this.newsPerRender * (this.currentPosition++)
-      };
+      const filter = (item, index, array) =>  index < array.length - this.newsPerRender * this.currentPosition && index >= array.length - this.newsPerRender * (this.currentPosition++);
       let currentPart = this.asyncList.filter(filter);
       console.log(currentPart);
       for (let i = currentPart.length; i > 0; i--) {
