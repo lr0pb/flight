@@ -1,7 +1,7 @@
 // News Feed API
 // v.0.0.1 first iteration
-// v.0.0.2 advanced work with templates <===
-// v.0.0.3 advanced findDifference() method | not support v.0.0.2 code
+// v.0.0.2 advanced work with templates
+// v.0.0.3 advanced findDifference() method | not support v.0.0.2 code <===
 // v.0.0.4 advanced render methods
 // v.0.0.5 cache api integration
 

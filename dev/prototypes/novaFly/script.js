@@ -409,6 +409,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   await feed.renderAll(install.data);
   if (install.alreadyInstalled) {
     let check = await feed.check();
-    if (check.anyNews) feed.renderAll(check.new);
+    if (check.anyNews) {
+      feed.renderAll(check.new);
+      feed.deleteAll(check.delete);
+    };
   };
 });
