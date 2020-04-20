@@ -96,7 +96,7 @@ class NewsFeed {
         observer.unobserve(entry.target);
         observer.observe(document.querySelector(`${this.feedName} > article:last-child`));
       });
-    }, {threshold: 1};
+    }, {threshold: 1});
     observer.observe(document.querySelector(`{this.feedName} > article:last-child`));
   }
   template = {}
