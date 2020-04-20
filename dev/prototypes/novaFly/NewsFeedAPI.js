@@ -47,13 +47,15 @@ class NewsFeed {
   findDifference(fetchList, savedList) {
     console.log(fetchList);
     console.log(savedList);
-    let newNews = fetchList.filter(item => {
-      !savedList.find(save => save === item);
-    });
+    let newNews = [];
+    for (let item of fetchList) {
+      if (!savedList.find(save => item === save)) newNews.push(item);
+    };
+    let deleteNews = [];
+    for (let item of savedList) {
+      if (!fetchList.find(fetch => item === fetch)) deleteNews.push(item);
+    };
     console.log(newNews);
-    let deleteNews = savedList.filter(item => {
-      !fetchList.find(fetch => fetch === item);
-    });
     console.log(deleteNews);
     return {new: newNews, delete: deleteNews};
   }
@@ -77,6 +79,14 @@ class NewsFeed {
     else if (rule === 'append') this.feed.append(article);
     else console.error(`${this.consoleStart} Not valid rule in %crender()%cmethod`, this.consoleStyle);
   }
+  delete(newsURL) {
+    document.querySelector(`#${this.feedName} > article[data-url="${newsURL}"]`).remove();
+  }
+  deleteAll(newsList) {
+    for (let news of newsList) {
+      this.delete(news);
+    };
+  }
   async renderAll(newsList, rule) {
     if (!rule) rule = 'prepend';
     for (let news of newsList) {
@@ -96,10 +106,10 @@ class NewsFeed {
       entries.forEach(async (entry) => {
         if (entry.isIntersecting) await this.renderAll(this.previousNews.filter(filter));
         observer.unobserve(entry.target);
-        observer.observe(document.querySelector(`${this.feedName} > article:last-child`));
+        observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
       });
     }, {threshold: 1});
-    observer.observe(document.querySelector(`{this.feedName} > article:last-child`));
+    observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
   }
   template = {}
   setTemplate(template, variablesBoolean) {
