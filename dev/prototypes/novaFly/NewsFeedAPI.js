@@ -100,11 +100,14 @@ class NewsFeed {
     console.log(this.asyncList);
     const renderPart = async () => {
       let currentPart = [];
+      console.log(this.asyncList.length - this.newsPerRender * this.currentPosition);
+      console.log(this.asyncList.length - this.newsPerRender * (this.currentPosition + 1));
       for (let i = 0; i < this.asyncList.length; i++) {
-        if (i < this.asyncList.length - this.newsPerRender * this.currentPosition && i >= this.asyncList.length - this.newsPerRender * (this.currentPosition++)) {
+        if (i < (this.asyncList.length - this.newsPerRender * this.currentPosition) && i >= (this.asyncList.length - this.newsPerRender * (this.currentPosition + 1))) {
           currentPart.push(this.asyncList[i]);
         };
       };
+      this.currentPosition++;
       console.log(currentPart);
       for (let i = currentPart.length; i > 0; i--) {
         await this.render(currentPart[i], 'append');
