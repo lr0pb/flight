@@ -20,7 +20,7 @@ class NewsFeed {
     if (localStorage[this.feedName + 'State'] !== 'installed') {
       let newsFile = await fetch(this.newsFile);
       if (!newsFile.ok) {
-        console.error(`${consoleStart} News File have %c${response.status} status%cCheck way to your News File or change file`, consoleStyle);
+        console.error(`${this.consoleStart} News File have %c${response.status} status%cCheck way to your News File or change file`, this.consoleStyle);
         return;
       };
       let newsList = await newsFile.json();
@@ -59,10 +59,10 @@ class NewsFeed {
   setNewsPerRender(count) {
     if (count < 10) {
       this.newsPerRender = 10;
-      console.warn(`${consoleStart} Mininal news per render count is %c10%c`, consoleStyle);
+      console.warn(`${this.consoleStart} Mininal news per render count is %c10%c`, this.consoleStyle);
     } else if (count > 200) {
       this.newsPerRender = 200;
-      console.warn(`${consoleStart} Maximum news per render count is %c200%c`, consoleStyle);
+      console.warn(`${this.consoleStart} Maximum news per render count is %c200%c`, this.consoleStyle);
     } else this.newsPerRender = count;
   };
   async render(newsURL, rule) {
@@ -73,7 +73,7 @@ class NewsFeed {
     article.setAttribute('data-url', newsURL);
     if (rule === 'prepend') this.feed.prepend(article);
     else if (rule === 'append') this.feed.append(article);
-    else console.error(`${consoleStart} Not valid rule in %crender()%cmethod`, consoleStyle);
+    else console.error(`${this.consoleStart} Not valid rule in %crender()%cmethod`, this.consoleStyle);
   }
   async renderAll(newsList, rule) {
     if (!rule) rule = 'prepend';
@@ -111,7 +111,7 @@ class NewsFeed {
       <p>$(text)</p>
     `;
     this.setTemplate(defaultTemplate, false);
-    console.warn(`${consoleStart} Set your custom template for render with %csetTemplate()%cmethod`, this.consoleStyle);
+    console.warn(`${this.consoleStart} Set your custom template for render with %csetTemplate()%cmethod`, this.consoleStyle);
   }
   create(data) {
     if (!this.template.HTML) this.setDefaultTemplate();
