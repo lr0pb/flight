@@ -97,10 +97,11 @@ class NewsFeed {
       console.warn(`${this.consoleStart} Set your custom newsPerRender count by %csetNewsPerRender(count)%cmethod`, this.consoleStyle);
     };
     this.asyncList = newsList;
+    console.log(this.asyncList);
     const renderPart = async () => {
       const filter = (item, index, array) => {
         index < array.length - this.newsPerRender * this.currentPosition &&
-        index >= array.length - this.newsPerRender * (this.currentPosition++);
+        index >= array.length - this.newsPerRender * (this.currentPosition++)
       };
       let currentPart = this.asyncList.filter(filter);
       console.log(currentPart);
