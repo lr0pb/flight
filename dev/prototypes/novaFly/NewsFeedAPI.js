@@ -37,7 +37,7 @@ class NewsFeed {
     let newsList = await newsFile.json();
     newsList = JSON.parse(newsList);
     let savedList = JSON.parse(localStorage[this.feedName + 'Data']);
-    let difference = this.findDifference(newsFile, savedFile);
+    let difference = this.findDifference(newsList, savedList);
     if (difference.new.length > 0 || difference.delete.length > 0) {
       localStorage[this.feedName + 'Data'] = JSON.stringify(newsList);
       return {anyNews: true, new: difference.new, delete: difference.delete};
