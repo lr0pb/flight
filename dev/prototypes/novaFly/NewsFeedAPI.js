@@ -45,6 +45,8 @@ class NewsFeed {
     return {anyNews: false};
   }
   findDifference(fetchList, savedList) {
+    console.log(fetchList);
+    console.log(savedList);
     let newNews = fetchList.filter(item => {
       !savedList.find(save => save === item);
     });
