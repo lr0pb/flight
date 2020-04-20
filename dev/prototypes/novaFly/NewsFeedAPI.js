@@ -118,7 +118,7 @@ class NewsFeed {
         observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
       });
     }, {threshold: 1});
-    observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
+    //observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
   }
   currentPosition = 0;
   newsPerRender = null;
