@@ -94,26 +94,26 @@ class NewsFeed {
     };
     if (!this.newsPerRender) {
       this.setNewsPerRender(10);
-      console.warn(`${this.consoleStart} You can set newsPerRender count by %csetNewsPerRender(count)%cmethod`, this.consoleStyle);
+      console.warn(`${this.consoleStart} Set your custom newsPerRender count by %csetNewsPerRender(count)%cmethod`, this.consoleStyle);
     };
     this.asyncList = newsList;
-    const renderPart = () => {
+    const renderPart = async () => {
       const filter = (item, index, array) => {
         index < array.length - this.newsPerRender * this.currentPosition &&
         index >= array.length - this.newsPerRender * (this.currentPosition++);
       };
       let currentPart = this.asyncList.filter(filter);
       for (let i = currentPart.length; i > 0; i--) {
-        this.render(currentPart[i], 'append');
+        await this.render(currentPart[i], 'append');
       };
     };
-    renderPart();
+    await renderPart();
     this.setObserver(renderPart);
   }
   setObserver(renderPart) {
     let observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(async (entry) => {
-        if (entry.isIntersecting) renderPart();
+        if (entry.isIntersecting) await renderPart();
         observer.unobserve(entry.target);
         observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
       });
@@ -143,7 +143,7 @@ class NewsFeed {
       <p>$(text)</p>
     `;
     this.setTemplate(defaultTemplate, false);
-    console.warn(`${this.consoleStart} Set your custom template for render with %csetTemplate()%cmethod`, this.consoleStyle);
+    console.warn(`${this.consoleStart} Set your custom template for render by %csetTemplate()%cmethod`, this.consoleStyle);
   }
   create(data) {
     if (!this.template.HTML) this.setDefaultTemplate();
