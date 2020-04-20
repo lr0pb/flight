@@ -34,10 +34,12 @@ class NewsFeed {
   }
   async check() {
     let newsFile = await fetch(this.newsFile);
+    console.time('check');
     let newsList = await newsFile.json();
     newsList = JSON.parse(newsList);
     let savedList = JSON.parse(localStorage[this.feedName + 'Data']);
     let difference = this.findDifference(newsList, savedList);
+    console.timeEnd('check');
     if (difference.new.length > 0 || difference.delete.length > 0) {
       localStorage[this.feedName + 'Data'] = JSON.stringify(newsList);
       return {anyNews: true, new: difference.new, delete: difference.delete};
@@ -45,8 +47,6 @@ class NewsFeed {
     return {anyNews: false};
   }
   findDifference(fetchList, savedList) {
-    console.log(fetchList);
-    console.log(savedList);
     let newNews = [];
     for (let item of fetchList) {
       if (!savedList.find(save => item === save)) newNews.push(item);
@@ -55,24 +55,28 @@ class NewsFeed {
     for (let item of savedList) {
       if (!fetchList.find(fetch => item === fetch)) deleteNews.push(item);
     };
-    console.log(newNews);
-    console.log(deleteNews);
     return {new: newNews, delete: deleteNews};
   }
-  delete(newsURL) {
-    document.querySelector(`#${this.feedName} > article[data-url="${newsURL}"]`).remove();
+  delete(news) {
+    try {
+      if (this.asyncList) {
+        let index = this.asyncList.indexOf(news, 0);
+        this.asyncList = this.asyncList.splice(index, 1);
+      };
+      document.querySelector(`#${this.feedName} > article[data-url="${news}"]`).remove();
+    } catch (error) {};
   }
   deleteAll(newsList) {
     for (let news of newsList) {
       this.delete(news);
     };
   }
-  async render(newsURL, rule) {
-    let response = await fetch(newsURL);
+  async render(news, rule) {
+    let response = await fetch(news);
     let data = await response.json();
     data = JSON.parse(data);
     let article = this.create(data);
-    article.setAttribute('data-url', newsURL);
+    article.setAttribute('data-url', news);
     if (rule === 'prepend') this.feed.prepend(article);
     else if (rule === 'append') this.feed.append(article);
     else console.error(`${this.consoleStart} Not valid rule in %crender()%cmethod`, this.consoleStyle);
@@ -84,13 +88,35 @@ class NewsFeed {
     };
   }
   async renderAsync(newsList) {
-    const filter = (item, index, array) => {
-      index < array.length - this.newsPerRender * currentPosition &&
-      index >= array.length - this.newsPerRender * (currentPosition++);
+    if (this.asyncList) {
+      console.error(`${this.consoleStart} %crenderAsync()%cmethod can be called only one time`, this.consoleStart);
+      return;
     };
-    this.renderAll(this.previousNews.filter(filter));
-    this.setObserver(filter);
+    this.asyncList = newsList;
+    const function = () => {
+      const filter = (item, index, array) => {
+        index < array.length - this.newsPerRender * this.currentPosition &&
+        index >= array.length - this.newsPerRender * (this.currentPosition++);
+      };
+      let currentPart = this.asyncList.filter(filter);
+      for (let i = currentPart.length; i > 0; i--) {
+        this.render(currentPart[i], 'append');
+      };
+    };
+    function();
+    this.setObserver(function);
   }
+  setObserver(function) {
+    let observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(async (entry) => {
+        if (entry.isIntersecting) function();
+        observer.unobserve(entry.target);
+        observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
+      });
+    }, {threshold: 1});
+    observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
+  }
+  currentPosition = 0;
   newsPerRender = 10;
   setNewsPerRender(count) {
     if (count < 10) {
@@ -101,16 +127,6 @@ class NewsFeed {
       console.warn(`${this.consoleStart} Maximum news per render count is %c200%c`, this.consoleStyle);
     } else this.newsPerRender = count;
   };
-  setObserver(filter) {
-    let observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(async (entry) => {
-        if (entry.isIntersecting) await this.renderAll(this.previousNews.filter(filter));
-        observer.unobserve(entry.target);
-        observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
-      });
-    }, {threshold: 1});
-    observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
-  }
   template = {}
   setTemplate(template, variablesBoolean) {
     this.template.HTML = template;
