@@ -34,12 +34,10 @@ class NewsFeed {
   }
   async check() {
     let newsFile = await fetch(this.newsFile);
-    console.time('check');
     let newsList = await newsFile.json();
     newsList = JSON.parse(newsList);
     let savedList = JSON.parse(localStorage[this.feedName + 'Data']);
     let difference = this.findDifference(newsList, savedList);
-    console.timeEnd('check');
     if (difference.new.length > 0 || difference.delete.length > 0) {
       localStorage[this.feedName + 'Data'] = JSON.stringify(newsList);
       return {anyNews: true, new: difference.new, delete: difference.delete};
@@ -97,7 +95,6 @@ class NewsFeed {
       console.warn(`${this.consoleStart} Set your custom newsPerRender count by %csetNewsPerRender(count)%cmethod`, this.consoleStyle);
     };
     this.asyncList = newsList;
-    console.log(this.asyncList);
     const renderPart = async () => {
       let currentPart = [];
       for (let i = 0; i < this.asyncList.length; i++) {
@@ -106,7 +103,6 @@ class NewsFeed {
         };
       };
       this.currentPosition++;
-      console.log(currentPart);
       for (let i = currentPart.length - 1; i > -1; i--) {
         await this.render(currentPart[i], 'append');
       };
@@ -122,7 +118,7 @@ class NewsFeed {
         observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
       });
     }, {threshold: 1});
-    //observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
+    observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
   }
   currentPosition = 0;
   newsPerRender = null;
