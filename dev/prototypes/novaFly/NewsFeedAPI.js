@@ -103,6 +103,7 @@ class NewsFeed {
         index >= array.length - this.newsPerRender * (this.currentPosition++);
       };
       let currentPart = this.asyncList.filter(filter);
+      console.log(currentPart);
       for (let i = currentPart.length; i > 0; i--) {
         await this.render(currentPart[i], 'append');
       };
