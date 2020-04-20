@@ -51,7 +51,7 @@ class NewsFeed {
     console.log(newNews);
     let deleteNews = savedList.filter(item => {
       !fetchList.find(fetch => fetch === item);
-    };
+    });
     console.log(deleteNews);
     return {new: newNews, delete: deleteNews};
   }
