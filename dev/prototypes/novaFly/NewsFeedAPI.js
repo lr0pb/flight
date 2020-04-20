@@ -59,16 +59,14 @@ class NewsFeed {
     console.log(deleteNews);
     return {new: newNews, delete: deleteNews};
   }
-  newsPerRender = 10;
-  setNewsPerRender(count) {
-    if (count < 10) {
-      this.newsPerRender = 10;
-      console.warn(`${this.consoleStart} Mininal news per render count is %c10%c`, this.consoleStyle);
-    } else if (count > 200) {
-      this.newsPerRender = 200;
-      console.warn(`${this.consoleStart} Maximum news per render count is %c200%c`, this.consoleStyle);
-    } else this.newsPerRender = count;
-  };
+  delete(newsURL) {
+    document.querySelector(`#${this.feedName} > article[data-url="${newsURL}"]`).remove();
+  }
+  deleteAll(newsList) {
+    for (let news of newsList) {
+      this.delete(news);
+    };
+  }
   async render(newsURL, rule) {
     let response = await fetch(newsURL);
     let data = await response.json();
@@ -78,14 +76,6 @@ class NewsFeed {
     if (rule === 'prepend') this.feed.prepend(article);
     else if (rule === 'append') this.feed.append(article);
     else console.error(`${this.consoleStart} Not valid rule in %crender()%cmethod`, this.consoleStyle);
-  }
-  delete(newsURL) {
-    document.querySelector(`#${this.feedName} > article[data-url="${newsURL}"]`).remove();
-  }
-  deleteAll(newsList) {
-    for (let news of newsList) {
-      this.delete(news);
-    };
   }
   async renderAll(newsList, rule) {
     if (!rule) rule = 'prepend';
@@ -101,6 +91,16 @@ class NewsFeed {
     this.renderAll(this.previousNews.filter(filter));
     this.setObserver(filter);
   }
+  newsPerRender = 10;
+  setNewsPerRender(count) {
+    if (count < 10) {
+      this.newsPerRender = 10;
+      console.warn(`${this.consoleStart} Mininal news per render count is %c10%c`, this.consoleStyle);
+    } else if (count > 200) {
+      this.newsPerRender = 200;
+      console.warn(`${this.consoleStart} Maximum news per render count is %c200%c`, this.consoleStyle);
+    } else this.newsPerRender = count;
+  };
   setObserver(filter) {
     let observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(async (entry) => {
