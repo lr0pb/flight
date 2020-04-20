@@ -76,6 +76,7 @@ class NewsFeed {
     else console.error(`${consoleStart} Not valid rule in %crender()%cmethod`, consoleStyle);
   }
   async renderAll(newsList, rule) {
+    if (!rule) rule = 'prepend';
     for (let news of newsList) {
       await this.render(news, rule);
     };
