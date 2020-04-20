@@ -101,7 +101,7 @@ class NewsFeed {
     const renderPart = async () => {
       let currentPart = [];
       for (let i = 0; i < this.asyncList.length; i++) {
-        if (i < array.length - this.newsPerRender * this.currentPosition && i >= array.length - this.newsPerRender * (this.currentPosition++)) {
+        if (i < this.asyncList.length - this.newsPerRender * this.currentPosition && i >= this.asyncList.length - this.newsPerRender * (this.currentPosition++)) {
           currentPart.push(this.asyncList[i]);
         };
       };
