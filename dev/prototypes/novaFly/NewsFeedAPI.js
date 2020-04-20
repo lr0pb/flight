@@ -107,7 +107,7 @@ class NewsFeed {
       };
       this.currentPosition++;
       console.log(currentPart);
-      for (let i = currentPart.length; i > 0; i--) {
+      for (let i = currentPart.length - 1; i > -1; i--) {
         await this.render(currentPart[i], 'append');
       };
     };
