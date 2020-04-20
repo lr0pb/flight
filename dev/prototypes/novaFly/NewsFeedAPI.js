@@ -92,8 +92,12 @@ class NewsFeed {
       console.error(`${this.consoleStart} %crenderAsync()%cmethod can be called only one time`, this.consoleStart);
       return;
     };
+    if (!this.newsPerRender) {
+      this.setNewsPerRender(10);
+      console.warn(`${this.consoleStart} You can set newsPerRender count by %csetNewsPerRender(count)%cmethod`, this.consoleStyle);
+    };
     this.asyncList = newsList;
-    const function = () => {
+    const renderPart = () => {
       const filter = (item, index, array) => {
         index < array.length - this.newsPerRender * this.currentPosition &&
         index >= array.length - this.newsPerRender * (this.currentPosition++);
@@ -103,13 +107,13 @@ class NewsFeed {
         this.render(currentPart[i], 'append');
       };
     };
-    function();
-    this.setObserver(function);
+    renderPart();
+    this.setObserver(renderPart);
   }
-  setObserver(function) {
+  setObserver(renderPart) {
     let observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(async (entry) => {
-        if (entry.isIntersecting) function();
+        if (entry.isIntersecting) renderPart();
         observer.unobserve(entry.target);
         observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
       });
@@ -117,14 +121,14 @@ class NewsFeed {
     observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
   }
   currentPosition = 0;
-  newsPerRender = 10;
+  newsPerRender = null;
   setNewsPerRender(count) {
     if (count < 10) {
       this.newsPerRender = 10;
-      console.warn(`${this.consoleStart} Mininal news per render count is %c10%c`, this.consoleStyle);
+      console.warn(`${this.consoleStart} Mininal newsPerRrender count is %c10%c`, this.consoleStyle);
     } else if (count > 200) {
       this.newsPerRender = 200;
-      console.warn(`${this.consoleStart} Maximum news per render count is %c200%c`, this.consoleStyle);
+      console.warn(`${this.consoleStart} Maximum newsPerRender count is %c200%c`, this.consoleStyle);
     } else this.newsPerRender = count;
   };
   template = {}
