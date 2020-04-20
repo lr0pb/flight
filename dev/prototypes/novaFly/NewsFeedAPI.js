@@ -1,16 +1,19 @@
 // News Feed API
 // v.0.0.1 first iteration
 // v.0.0.2 advanced work with templates <===
-// v.0.0.3 advanced findDifference() method
-// v.0.0.4 divide newsFile feature
+// v.0.0.3 advanced findDifference() method | not support v.0.0.2 code
+// v.0.0.4 advanced render methods
 // v.0.0.5 cache api integration
 
 class NewsFeed {
   consoleStart = '[News Feed API]';
   consoleStyle = 'background-color: hsl(225, 30%, 15%); color: white; padding: 3px 4px;';
+
   constructor(feedElement, newsFile) {
     this.feed = feedElement;
     this.newsFile = newsFile;
+    this.path = newsFile.match(/\w/).join('');
+    console.log(this.path);
     this.feedName = feedElement.id;
   }
   async install() {
@@ -52,14 +55,48 @@ class NewsFeed {
     console.log(deleteNews);
     return {new: newNews, delete: deleteNews};
   }
-  async renderAll(newsList) {
+  newsPerRender = 10;
+  setNewsPerRender(count) {
+    if (count < 10) {
+      this.newsPerRender = 10;
+      console.warn(`${consoleStart} Mininal news per render count is %c10%c`, consoleStyle);
+    } else if (count > 200) {
+      this.newsPerRender = 200;
+      console.warn(`${consoleStart} Maximum news per render count is %c200%c`, consoleStyle);
+    } else this.newsPerRender = count;
+  };
+  async render(newsURL, rule) {
+    let response = await fetch(newsURL);
+    let data = await response.json();
+    data = JSON.parse(data);
+    let article = this.create(data);
+    article.setAttribute('data-url', newsURL);
+    if (rule === 'prepend') this.feed.prepend(article);
+    else if (rule === 'append') this.feed.append(article);
+    else console.error(`${consoleStart} Not valid rule in %crender()%cmethod`, consoleStyle);
+  }
+  async renderAll(newsList, rule) {
     for (let news of newsList) {
-        let response = await fetch(news);
-        let data = await response.json();
-        data = JSON.parse(data);
-        this.render(data);
-      };
-    return {done: true};
+      await this.render(news, rule);
+    };
+  }
+  async renderAsync(newsList) {
+    const filter = (item, index, array) => {
+      index < array.length - this.newsPerRender * currentPosition &&
+      index >= array.length - this.newsPerRender * (currentPosition++);
+    };
+    this.renderAll(this.previousNews.filter(filter));
+    this.setObserver(filter);
+  }
+  setObserver(filter) {
+    let observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(async (entry) => {
+        if (entry.isIntersecting) await this.renderAll(this.previousNews.filter(filter));
+        observer.unobserve(entry.target);
+        observer.observe(document.querySelector(`${this.feedName} > article:last-child`));
+      });
+    }, {threshold: 1};
+    observer.observe(document.querySelector(`{this.feedName} > article:last-child`));
   }
   template = {}
   setTemplate(template, variablesBoolean) {
@@ -75,7 +112,7 @@ class NewsFeed {
     this.setTemplate(defaultTemplate, false);
     console.warn(`${consoleStart} Set your custom template for render with %csetTemplate()%cmethod`, this.consoleStyle);
   }
-  render(data) {
+  create(data) {
     if (!this.template.HTML) this.setDefaultTemplate();
     let filledTemplate = this.template.HTML;
     for (let item in data.HTML) {
@@ -86,6 +123,6 @@ class NewsFeed {
     if (this.template.variables && data.variables) for (let item in data.variables) {
       article.style.setProperty(item, data.variables[item]);
     };
-    this.feed.prepend(article);
+    return article;
   }
 };
