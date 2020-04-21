@@ -83,12 +83,14 @@ class NewsFeed {
   async cache(news) {
     let request = new Request(`${this.path}${news}.json`);
     let cacheResponse = await caches.match(request);
+    console.log(cacheResponse);
     if (cacheResponse) return cacheResponse;
     let fetchResponse = await fetch(`${this.path}${news}.json`);
+    console.log(fetchResponse);
     caches.open(this.feedName).then((cache) => {
       cache.put(request, fetchResponse.clone());
+      return fetchResponse;
     })
-    return fetchResponse;
   }
   async renderAll(newsList, rule) {
     if (!rule) rule = 'prepend';
@@ -127,7 +129,7 @@ class NewsFeed {
         observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
       });
     }, {rootMargin: '50px', threshold: 1});
-    observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
+    //observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
   }
   currentPosition = 0;
   newsPerRender = null;
