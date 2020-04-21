@@ -1,9 +1,9 @@
 // News Feed API
 // v.0.0.1 first iteration
 // v.0.0.2 advanced work with templates
-// v.0.0.3 advanced findDifference() method | not support v.0.0.2 code <===
+// v.0.0.3 advanced findDifference() method | not support v.0.0.2 code
 // v.0.0.4 advanced render methods
-// v.0.0.5 cache api integration
+// v.0.0.5 cache api integration <===
 
 class NewsFeed {
   consoleStart = '[News Feed API]';
@@ -82,7 +82,6 @@ class NewsFeed {
   async cache(news) {
     let request = new Request(`${this.path}${news}.json`);
     let cacheResponse = await caches.match(request);
-    console.log(cacheResponse);
     if (cacheResponse) return cacheResponse;
     let fetchResponse = await fetch(`${this.path}${news}.json`);
     let clone = fetchResponse.clone();
@@ -124,7 +123,6 @@ class NewsFeed {
       entries.forEach(async (entry) => {
         if (!entry.isIntersecting) return;
         await renderPartFunction();
-        console.log('iteration');
         observer.unobserve(entry.target);
         if (this.asyncList.length / (this.newsPerRender * this.currentPosition) <= 1) {
           observer.disconnect();
