@@ -70,7 +70,8 @@ class NewsFeed {
     };
   }
   async render(news, rule) {
-    let response = await fetch(`${this.path}${news}.json`);
+    let response = await this.cache(news);
+    //let response = await fetch(`${this.path}${news}.json`);
     let data = await response.json();
     data = JSON.parse(data);
     let article = this.create(data);
@@ -78,6 +79,16 @@ class NewsFeed {
     if (rule === 'prepend') this.feed.prepend(article);
     else if (rule === 'append') this.feed.append(article);
     else console.error(`${this.consoleStart} Not valid rule in %crender()%cmethod`, this.consoleStyle);
+  }
+  async cache(news) {
+    let request = new Request(`${this.path}${news}.json`);
+    let cacheResponse = await caches.match(request);
+    if (cacheResponse) return cacheResponse;
+    let fetchResponse = await fetch(`${this.path}${news}.json`);
+    caches.open(this.feedName).then((cache) => {
+      cache.put(request, fetchResponse.clone());
+    })
+    return fetchResponse;
   }
   async renderAll(newsList, rule) {
     if (!rule) rule = 'prepend';
