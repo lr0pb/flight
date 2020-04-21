@@ -12,7 +12,7 @@ class NewsFeed {
   constructor(feedElement, newsFile) {
     this.feed = feedElement;
     this.newsFile = newsFile;
-    this.path = newsFile.match(/\w/).join('');
+    this.path = newsFile.match(/[^.]+/).join('');
     console.log(this.path);
     this.feedName = feedElement.id;
   }
@@ -90,12 +90,9 @@ class NewsFeed {
       console.error(`${this.consoleStart} %crenderAsync()%cmethod can be called only one time`, this.consoleStart);
       return;
     };
-    if (!this.newsPerRender) {
-      this.setNewsPerRender(10);
-      console.warn(`${this.consoleStart} Set your custom newsPerRender count by %csetNewsPerRender(count)%cmethod`, this.consoleStyle);
-    };
+    if (!this.newsPerRender) this.setDefaultNewsPerRender();
     this.asyncList = newsList;
-    const renderPart = async () => {
+    const renderPartFunction = async () => {
       let currentPart = [];
       for (let i = 0; i < this.asyncList.length; i++) {
         if (i < (this.asyncList.length - this.newsPerRender * this.currentPosition) && i >= (this.asyncList.length - this.newsPerRender * (this.currentPosition + 1))) {
@@ -107,17 +104,18 @@ class NewsFeed {
         await this.render(currentPart[i], 'append');
       };
     };
-    await renderPart();
-    this.setObserver(renderPart);
+    await renderPartFunction();
+    this.setObserver(renderPartFunction);
   }
-  setObserver(renderPart) {
+  setObserver(renderPartFunction) {
     let observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(async (entry) => {
-        if (entry.isIntersecting) await renderPart();
+        if (entry.isIntersecting) await renderPartFunction();
+        console.log('iteration');
         observer.unobserve(entry.target);
         observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
       });
-    }, {threshold: 1});
+    }, {rootMargin: '50px', threshold: 1});
     observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
   }
   currentPosition = 0;
@@ -131,6 +129,10 @@ class NewsFeed {
       console.warn(`${this.consoleStart} Maximum newsPerRender count is %c200%c`, this.consoleStyle);
     } else this.newsPerRender = count;
   };
+  setDefaultNewsPerRender() {
+    this.setNewsPerRender(10);
+    console.warn(`${this.consoleStart} Set your custom newsPerRender count by %csetNewsPerRender(count)%cmethod`, this.consoleStyle);
+  }
   template = {}
   setTemplate(template, variablesBoolean) {
     this.template.HTML = template;
@@ -143,7 +145,7 @@ class NewsFeed {
       <p>$(text)</p>
     `;
     this.setTemplate(defaultTemplate, false);
-    console.warn(`${this.consoleStart} Set your custom template for render by %csetTemplate()%cmethod`, this.consoleStyle);
+    console.warn(`${this.consoleStart} Set your custom template for render by %csetTemplate(template, variablesBoolean)%cmethod`, this.consoleStyle);
   }
   create(data) {
     if (!this.template.HTML) this.setDefaultTemplate();
