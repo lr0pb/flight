@@ -89,8 +89,14 @@ class NewsFeed {
     console.log(fetchResponse);
     caches.open(this.feedName).then((cache) => {
       cache.put(request, fetchResponse.clone());
-      return fetchResponse;
+      cacheResponse = await caches.match(request);
+      console.log(cacheResponse);
+      return new Promise(function(resolve, reject) {
+        resolve();
+      });
     })
+    console.log('promiseCheck');
+    return fetchResponse;
   }
   async renderAll(newsList, rule) {
     if (!rule) rule = 'prepend';
