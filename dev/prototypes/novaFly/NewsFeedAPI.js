@@ -71,7 +71,6 @@ class NewsFeed {
   }
   async render(news, rule) {
     let response = await this.cache(news);
-    //let response = await fetch(`${this.path}${news}.json`);
     let data = await response.json();
     data = JSON.parse(data);
     let article = this.create(data);
@@ -87,13 +86,9 @@ class NewsFeed {
     if (cacheResponse) return cacheResponse;
     let fetchResponse = await fetch(`${this.path}${news}.json`);
     let clone = fetchResponse.clone();
-    console.log(fetchResponse);
-    caches.open(this.feedName).then(async (cache) => {
+    caches.open(this.feedName).then((cache) => {
       cache.put(request, clone);
-      cacheResponse = await caches.match(request);
-      console.log(cacheResponse);
     })
-    console.log('promiseCheck');
     return fetchResponse;
   }
   async renderAll(newsList, rule) {
@@ -127,13 +122,18 @@ class NewsFeed {
   setObserver(renderPartFunction) {
     let observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(async (entry) => {
-        if (entry.isIntersecting) await renderPartFunction();
+        if (!entry.isIntersecting) return;
+        await renderPartFunction();
         console.log('iteration');
         observer.unobserve(entry.target);
-        observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
+        if (this.asyncList.length / (this.newsPerRender * this.currentPosition) <= 1) {
+          observer.disconnect();
+        } else {
+          observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
+        };
       });
     }, {rootMargin: '50px', threshold: 1});
-    //observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
+    observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
   }
   currentPosition = 0;
   newsPerRender = null;
