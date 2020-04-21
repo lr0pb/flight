@@ -12,7 +12,7 @@ class NewsFeed {
   constructor(feedElement, newsFile) {
     this.feed = feedElement;
     this.newsFile = newsFile;
-    this.path = newsFile.match(/[^.]+/).join('');
+    this.path = newsFile.match(/[-.\/\w]+\/(?=[-.\/\w]+.json)/).join('');
     console.log(this.path);
     this.feedName = feedElement.id;
   }
@@ -70,7 +70,7 @@ class NewsFeed {
     };
   }
   async render(news, rule) {
-    let response = await fetch(news);
+    let response = await fetch(`${this.path}${news}.json`);
     let data = await response.json();
     data = JSON.parse(data);
     let article = this.create(data);
