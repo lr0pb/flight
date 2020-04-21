@@ -87,7 +87,7 @@ class NewsFeed {
     if (cacheResponse) return cacheResponse;
     let fetchResponse = await fetch(`${this.path}${news}.json`);
     console.log(fetchResponse);
-    caches.open(this.feedName).then((cache) => {
+    caches.open(this.feedName).then(async (cache) => {
       cache.put(request, fetchResponse.clone());
       cacheResponse = await caches.match(request);
       console.log(cacheResponse);
