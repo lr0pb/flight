@@ -86,15 +86,16 @@ class NewsFeed {
     console.log(cacheResponse);
     if (cacheResponse) return cacheResponse;
     let fetchResponse = await fetch(`${this.path}${news}.json`);
-    console.log(fetchResponse);
+    console.log(fetchResponse);/*
     caches.open(this.feedName).then(async (cache) => {
       cache.put(request, fetchResponse.clone());
       cacheResponse = await caches.match(request);
       console.log(cacheResponse);
-      return new Promise(function(resolve, reject) {
-        resolve();
-      });
-    })
+    })*/
+    let cache = await caches.open(this.feedName);
+    cache.put(request, fetchResponse.clone());
+    cacheResponse = await caches.match(request);
+    console.log(cacheResponse);
     console.log('promiseCheck');
     return fetchResponse;
   }
