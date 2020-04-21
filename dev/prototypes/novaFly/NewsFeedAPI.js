@@ -12,7 +12,7 @@ class NewsFeed {
   constructor(feedElement, newsFile) {
     this.feed = feedElement;
     this.newsFile = newsFile;
-    this.path = newsFile.match(/[-.\/\w]+\/(?=[-.\/\w]+.json)/).join('');
+    this.path = newsFile.match(/[-.:\/\w]+\/(?=[-.\/\w]+.json)/).join('');
     console.log(this.path);
     this.feedName = feedElement.id;
   }
@@ -86,16 +86,13 @@ class NewsFeed {
     console.log(cacheResponse);
     if (cacheResponse) return cacheResponse;
     let fetchResponse = await fetch(`${this.path}${news}.json`);
-    console.log(fetchResponse);/*
+    let clone = fetchResponse.clone();
+    console.log(fetchResponse);
     caches.open(this.feedName).then(async (cache) => {
-      cache.put(request, fetchResponse.clone());
+      cache.put(request, clone);
       cacheResponse = await caches.match(request);
       console.log(cacheResponse);
-    })*/
-    let cache = await caches.open(this.feedName);
-    cache.put(request, fetchResponse.clone());
-    cacheResponse = await caches.match(request);
-    console.log(cacheResponse);
+    })
     console.log('promiseCheck');
     return fetchResponse;
   }
