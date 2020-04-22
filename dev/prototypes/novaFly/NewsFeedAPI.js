@@ -9,12 +9,12 @@ class NewsFeed {
   consoleStart = '[News Feed API]';
   consoleStyle = 'background-color: hsl(225, 30%, 15%); color: white; padding: 3px 4px;';
 
-  constructor(feedElement, newsFile) {
+  constructor(feedElement, newsFile, options) {
     this.feed = feedElement;
-    this.newsFile = newsFile;
-    this.path = newsFile.match(/[-.:\/\w]+\/(?=[-.\/\w]+.json)/).join('');
-    console.log(this.path);
     this.feedName = feedElement.id;
+    this.newsFile = newsFile;
+    this.path = newsFile.match(/[-.:\/\w]+\/(?=[-.\w]+.json)/).join('');
+    this.usePath = options.usePath;
   }
   async install() {
     if (localStorage[this.feedName + 'State'] !== 'installed') {
@@ -80,14 +80,20 @@ class NewsFeed {
     else console.error(`${this.consoleStart} Not valid rule in %crender()%cmethod`, this.consoleStyle);
   }
   async cache(news) {
-    let request = new Request(`${this.path}${news}.json`);
-    let cacheResponse = await caches.match(request);
-    if (cacheResponse) return cacheResponse;
-    let fetchResponse = await fetch(`${this.path}${news}.json`);
-    let clone = fetchResponse.clone();
-    caches.open(this.feedName).then((cache) => {
-      cache.put(request, clone);
-    })
+    let request;
+    if (this.usePath) request = new Request(`${this.path}${news}.json`);
+    else request = new Request(news);
+    if (caches in window) {
+      let cacheResponse = await caches.match(request, {cacheName: this.feedName});
+      if (cacheResponse) return cacheResponse;
+    };
+    let fetchResponse = await fetch(request);
+    if (caches in window) {
+      let clone = fetchResponse.clone();
+      caches.open(this.feedName).then((cache) => {
+        cache.put(request, clone);
+      })
+    };
     return fetchResponse;
   }
   async renderAll(newsList, rule) {
