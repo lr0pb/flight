@@ -22,7 +22,7 @@ class NewsFeed {
     if (localStorage[this._feedName + 'State'] !== 'installed') {
       let newsFile = await fetch(this._newsFile);
       if (!newsFile.ok) {
-        console.error(`${this._consoleStart} News File have %c${response.status} status%cCheck way to your News File or change file`, this._consoleStyle);
+        console.error(`${this._consoleStart} News File have %cstatus ${response.status}%cCheck way to this file or change file`, this._consoleStyle);
         return;
       };
       let newsList = await newsFile.json();
@@ -74,12 +74,16 @@ class NewsFeed {
   async render(news, rule) {
     let response = await this._cache(news);
     if (!response.ok) {
-      console.error(`${this._consoleStart} %c${news}%cnot found`, this._consoleStyle);
+      console.error(`${this._consoleStart} %c${news}%cfile have ${response.status} status. Check way to this file or change file`, this._consoleStyle);
       return;
     };
     let data = await response.json();
     data = JSON.parse(data);
     let article = this._create(data);
+    if (article === 'error') {
+      console.error(`${this._consoleStart} %c${news}%cfile have not valid data`, this._consoleStyle);
+      return;
+    };
     article.setAttribute('data-url', news);
     if (rule === 'prepend') this._feed.prepend(article);
     else if (rule === 'append') this._feed.append(article);
@@ -182,6 +186,7 @@ class NewsFeed {
     console.warn(`${this._consoleStart} Set your custom template for render by %csetTemplate(template, variablesBoolean)%cmethod`, this._consoleStyle);
   }
   _create(data) {
+    if (!data.HTML) return 'error';
     if (!this._template.HTML) this._setDefaultTemplate();
     let filledTemplate = this._template.HTML;
     for (let item in data.HTML) {

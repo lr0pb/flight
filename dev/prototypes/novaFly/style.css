@@ -168,6 +168,7 @@ img {
   bottom: 5rem; left: 50rem;
   width: 80rem; height: 50rem;
   background-color: white;
+  overflow: hidden auto;
 }
 
 button {
