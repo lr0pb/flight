@@ -73,6 +73,10 @@ class NewsFeed {
   }
   async render(news, rule) {
     let response = await this._cache(news);
+    if (!response.ok) {
+      console.error(`${this._consoleStart} %c${news}%cnot found`, this._consoleStyle);
+      return;
+    };
     let data = await response.json();
     data = JSON.parse(data);
     let article = this._create(data);
@@ -90,7 +94,7 @@ class NewsFeed {
       if (cacheResponse) return cacheResponse;
     };
     let fetchResponse = await fetch(request);
-    if (caches && !this._noCache) {
+    if (caches && !this._noCache && fetchResponse.ok) {
       let clone = fetchResponse.clone();
       caches.open(this._feedName).then((cache) => {
         cache.put(request, clone);
