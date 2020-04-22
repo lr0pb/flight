@@ -85,13 +85,13 @@ class NewsFeed {
     let request;
     if (this._usePath) request = new Request(`${this._path}${news}.json`);
     else request = new Request(news);
-    if (caches in window && !this._noCache) {
+    if (caches && !this._noCache) {
       let cacheResponse = await caches.match(request, {cacheName: this._feedName});
       if (cacheResponse) return cacheResponse;
     };
     let fetchResponse = await fetch(request);
-    let clone = fetchResponse.clone();
-    if (caches in window && !this._noCache) {
+    if (caches && !this._noCache) {
+      let clone = fetchResponse.clone();
       caches.open(this._feedName).then((cache) => {
         cache.put(request, clone);
       })
@@ -111,10 +111,11 @@ class NewsFeed {
     };
     if (!this._newsPerRender) this._setDefaultNewsPerRender();
     this._asyncList = newsList;
+    this._length = this._asyncList.length;
     const renderPartFunction = async () => {
       let currentPart = [];
       for (let i = 0; i < this._asyncList.length; i++) {
-        if (i < (this._asyncList.length - this._newsPerRender * this._currentPosition) && i >= (this._asyncList.length - this._newsPerRender * (this._currentPosition + 1))) {
+        if (i < (this._length - this._newsPerRender * this._currentPosition) && i >= (this._length - this._newsPerRender * (this._currentPosition + 1))) {
           currentPart.push(this._asyncList[i]);
         };
       };
@@ -132,7 +133,7 @@ class NewsFeed {
         if (!entry.isIntersecting) return;
         await renderPartFunction();
         observer.unobserve(entry.target);
-        if (this._asyncList.length / (this._newsPerRender * this._currentPosition) <= 1) {
+        if (this._length / (this._newsPerRender * this._currentPosition) <= 1) {
           observer.disconnect();
         } else {
           observer.observe(document.querySelector(`#${this._feedName} > article:last-child`));
@@ -159,7 +160,7 @@ class NewsFeed {
     this.setNewsPerRender(10);
     console.warn(`${this._consoleStart} Set your custom newsPerRender count by %csetNewsPerRender(count)%cmethod`, this._consoleStyle);
   }
-  _template = {}
+  _template = {HTML: null, variables: null;}
   getTemplate() {
     return {HTML: this._template.HTML, variables: this._template.variables};
   }
