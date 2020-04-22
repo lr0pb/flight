@@ -160,7 +160,7 @@ class NewsFeed {
     this.setNewsPerRender(10);
     console.warn(`${this._consoleStart} Set your custom newsPerRender count by %csetNewsPerRender(count)%cmethod`, this._consoleStyle);
   }
-  _template = {HTML: null, variables: null;}
+  _template = {HTML: null, variables: null}
   getTemplate() {
     return {HTML: this._template.HTML, variables: this._template.variables};
   }
