@@ -4,47 +4,49 @@
 // v.0.0.3 advanced findDifference() method | not support v.0.0.2 code
 // v.0.0.4 advanced render methods
 // v.0.0.5 cache api integration <===
+// v.0.1.0 pre-release version
 
 class NewsFeed {
-  consoleStart = '[News Feed API]';
-  consoleStyle = 'background-color: hsl(225, 30%, 15%); color: white; padding: 3px 4px;';
+  _consoleStart = '[News Feed API]';
+  _consoleStyle = 'background-color: hsl(225, 30%, 15%); color: white; padding: 3px 4px;';
 
   constructor(feedElement, newsFile, options) {
-    this.feed = feedElement;
-    this.feedName = feedElement.id;
-    this.newsFile = newsFile;
-    this.path = newsFile.match(/[-.:\/\w]+\/(?=[-.\w]+.json)/).join('');
-    this.usePath = options.usePath;
+    this._feed = feedElement;
+    this._feedName = feedElement.id;
+    this._newsFile = newsFile;
+    this._path = newsFile.match(/[-.:\/\w]+\/(?=[-.\w]+.json)/).join('');
+    options.usePath ? this._usePath = options.usePath : this._usePath = false;
+    options.noCache ? this._noCache = options.noCache : this._noCache = false;
   }
   async install() {
-    if (localStorage[this.feedName + 'State'] !== 'installed') {
-      let newsFile = await fetch(this.newsFile);
+    if (localStorage[this._feedName + 'State'] !== 'installed') {
+      let newsFile = await fetch(this._newsFile);
       if (!newsFile.ok) {
-        console.error(`${this.consoleStart} News File have %c${response.status} status%cCheck way to your News File or change file`, this.consoleStyle);
+        console.error(`${this._consoleStart} News File have %c${response.status} status%cCheck way to your News File or change file`, this._consoleStyle);
         return;
       };
       let newsList = await newsFile.json();
-      localStorage[this.feedName + 'Data'] = newsList;
-      localStorage[this.feedName + 'State'] = 'installed';
+      localStorage[this._feedName + 'Data'] = newsList;
+      localStorage[this._feedName + 'State'] = 'installed';
       return {alreadyInstalled: false, data: JSON.parse(newsList)};
-    } else if (localStorage[this.feedName + 'State'] === 'installed') {
-      let newsList = localStorage[this.feedName + 'Data'];
+    } else if (localStorage[this._feedName + 'State'] === 'installed') {
+      let newsList = localStorage[this._feedName + 'Data'];
       return {alreadyInstalled: true, data: JSON.parse(newsList)};
     };
   }
   async check() {
-    let newsFile = await fetch(this.newsFile);
+    let newsFile = await fetch(this._newsFile);
     let newsList = await newsFile.json();
     newsList = JSON.parse(newsList);
-    let savedList = JSON.parse(localStorage[this.feedName + 'Data']);
-    let difference = this.findDifference(newsList, savedList);
+    let savedList = JSON.parse(localStorage[this._feedName + 'Data']);
+    let difference = this._findDifference(newsList, savedList);
     if (difference.new.length > 0 || difference.delete.length > 0) {
-      localStorage[this.feedName + 'Data'] = JSON.stringify(newsList);
+      localStorage[this._feedName + 'Data'] = JSON.stringify(newsList);
       return {anyNews: true, new: difference.new, delete: difference.delete};
     };
     return {anyNews: false};
   }
-  findDifference(fetchList, savedList) {
+  _findDifference(fetchList, savedList) {
     let newNews = [];
     for (let item of fetchList) {
       if (!savedList.find(save => item === save)) newNews.push(item);
@@ -57,11 +59,11 @@ class NewsFeed {
   }
   delete(news) {
     try {
-      if (this.asyncList) {
-        let index = this.asyncList.indexOf(news, 0);
-        this.asyncList = this.asyncList.splice(index, 1);
+      if (this._asyncList) {
+        let index = this._asyncList.indexOf(news, 0);
+        this._asyncList = this._asyncList.splice(index, 1);
       };
-      document.querySelector(`#${this.feedName} > article[data-url="${news}"]`).remove();
+      document.querySelector(`#${this._feedName} > article[data-url="${news}"]`).remove();
     } catch (error) {};
   }
   deleteAll(newsList) {
@@ -70,27 +72,27 @@ class NewsFeed {
     };
   }
   async render(news, rule) {
-    let response = await this.cache(news);
+    let response = await this._cache(news);
     let data = await response.json();
     data = JSON.parse(data);
-    let article = this.create(data);
+    let article = this._create(data);
     article.setAttribute('data-url', news);
-    if (rule === 'prepend') this.feed.prepend(article);
-    else if (rule === 'append') this.feed.append(article);
-    else console.error(`${this.consoleStart} Not valid rule in %crender()%cmethod`, this.consoleStyle);
+    if (rule === 'prepend') this._feed.prepend(article);
+    else if (rule === 'append') this._feed.append(article);
+    else console.error(`${this._consoleStart} Not valid rule in %crender()%cmethod`, this._consoleStyle);
   }
-  async cache(news) {
+  async _cache(news) {
     let request;
-    if (this.usePath) request = new Request(`${this.path}${news}.json`);
+    if (this._usePath) request = new Request(`${this._path}${news}.json`);
     else request = new Request(news);
-    if (caches in window) {
-      let cacheResponse = await caches.match(request, {cacheName: this.feedName});
+    if (caches in window && !this._noCache) {
+      let cacheResponse = await caches.match(request, {cacheName: this._feedName});
       if (cacheResponse) return cacheResponse;
     };
     let fetchResponse = await fetch(request);
-    if (caches in window) {
-      let clone = fetchResponse.clone();
-      caches.open(this.feedName).then((cache) => {
+    let clone = fetchResponse.clone();
+    if (caches in window && !this._noCache) {
+      caches.open(this._feedName).then((cache) => {
         cache.put(request, clone);
       })
     };
@@ -103,80 +105,86 @@ class NewsFeed {
     };
   }
   async renderAsync(newsList) {
-    if (this.asyncList) {
-      console.error(`${this.consoleStart} %crenderAsync()%cmethod can be called only one time`, this.consoleStart);
+    if (this._asyncList) {
+      console.error(`${this._consoleStart} %crenderAsync()%cmethod can be called only one time`, this._consoleStart);
       return;
     };
-    if (!this.newsPerRender) this.setDefaultNewsPerRender();
-    this.asyncList = newsList;
+    if (!this._newsPerRender) this._setDefaultNewsPerRender();
+    this._asyncList = newsList;
     const renderPartFunction = async () => {
       let currentPart = [];
-      for (let i = 0; i < this.asyncList.length; i++) {
-        if (i < (this.asyncList.length - this.newsPerRender * this.currentPosition) && i >= (this.asyncList.length - this.newsPerRender * (this.currentPosition + 1))) {
-          currentPart.push(this.asyncList[i]);
+      for (let i = 0; i < this._asyncList.length; i++) {
+        if (i < (this._asyncList.length - this._newsPerRender * this._currentPosition) && i >= (this._asyncList.length - this._newsPerRender * (this._currentPosition + 1))) {
+          currentPart.push(this._asyncList[i]);
         };
       };
-      this.currentPosition++;
+      this._currentPosition++;
       for (let i = currentPart.length - 1; i > -1; i--) {
         await this.render(currentPart[i], 'append');
       };
     };
     await renderPartFunction();
-    this.setObserver(renderPartFunction);
+    this._setObserver(renderPartFunction);
   }
-  setObserver(renderPartFunction) {
+  _setObserver(renderPartFunction) {
     let observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(async (entry) => {
         if (!entry.isIntersecting) return;
         await renderPartFunction();
         observer.unobserve(entry.target);
-        if (this.asyncList.length / (this.newsPerRender * this.currentPosition) <= 1) {
+        if (this._asyncList.length / (this._newsPerRender * this._currentPosition) <= 1) {
           observer.disconnect();
         } else {
-          observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
+          observer.observe(document.querySelector(`#${this._feedName} > article:last-child`));
         };
       });
     }, {rootMargin: '50px', threshold: 1});
-    observer.observe(document.querySelector(`#${this.feedName} > article:last-child`));
+    observer.observe(document.querySelector(`#${this._feedName} > article:last-child`));
   }
-  currentPosition = 0;
-  newsPerRender = null;
+  _currentPosition = 0;
+  _newsPerRender = null;
+  getNewsPerRender() {
+    return this._newsPerRender;
+  }
   setNewsPerRender(count) {
     if (count < 10) {
-      this.newsPerRender = 10;
-      console.warn(`${this.consoleStart} Mininal newsPerRrender count is %c10%c`, this.consoleStyle);
+      this._newsPerRender = 10;
+      console.warn(`${this._consoleStart} Mininal newsPerRrender count is %c10%c`, this._consoleStyle);
     } else if (count > 200) {
-      this.newsPerRender = 200;
-      console.warn(`${this.consoleStart} Maximum newsPerRender count is %c200%c`, this.consoleStyle);
-    } else this.newsPerRender = count;
+      this._newsPerRender = 200;
+      console.warn(`${this._consoleStart} Maximum newsPerRender count is %c200%c`, this._consoleStyle);
+    } else this._newsPerRender = count;
   };
-  setDefaultNewsPerRender() {
+  _setDefaultNewsPerRender() {
     this.setNewsPerRender(10);
-    console.warn(`${this.consoleStart} Set your custom newsPerRender count by %csetNewsPerRender(count)%cmethod`, this.consoleStyle);
+    console.warn(`${this._consoleStart} Set your custom newsPerRender count by %csetNewsPerRender(count)%cmethod`, this._consoleStyle);
   }
-  template = {}
+  _template = {}
+  getTemplate() {
+    return {HTML: this._template.HTML, variables: this._template.variables};
+  }
   setTemplate(template, variablesBoolean) {
-    this.template.HTML = template;
-    this.template.variables = variablesBoolean;
+    this._template.HTML = template;
+    this._template.variables = variablesBoolean;
   }
-  setDefaultTemplate() {
+  _setDefaultTemplate() {
     let defaultTemplate = `
       <time>$(date)</time>
       <h3>$(title)</h3>
       <p>$(text)</p>
     `;
     this.setTemplate(defaultTemplate, false);
-    console.warn(`${this.consoleStart} Set your custom template for render by %csetTemplate(template, variablesBoolean)%cmethod`, this.consoleStyle);
+    console.warn(`${this._consoleStart} Set your custom template for render by %csetTemplate(template, variablesBoolean)%cmethod`, this._consoleStyle);
   }
-  create(data) {
-    if (!this.template.HTML) this.setDefaultTemplate();
-    let filledTemplate = this.template.HTML;
+  _create(data) {
+    if (!this._template.HTML) this._setDefaultTemplate();
+    let filledTemplate = this._template.HTML;
     for (let item in data.HTML) {
       filledTemplate = filledTemplate.replace(`$(${item})`, data.HTML[item]);
     };
     let article = document.createElement('article');
     article.innerHTML = filledTemplate;
-    if (this.template.variables && data.variables) for (let item in data.variables) {
+    if (this._template.variables && data.variables) for (let item in data.variables) {
       article.style.setProperty(item, data.variables[item]);
     };
     return article;
