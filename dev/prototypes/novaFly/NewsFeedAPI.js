@@ -22,10 +22,14 @@ class NewsFeed {
     if (localStorage[this._feedName + 'State'] !== 'installed') {
       let newsFile = await fetch(this._newsFile);
       if (!newsFile.ok) {
-        console.error(`${this._consoleStart} News File have %cstatus ${response.status}%cCheck way to this file or change file`, this._consoleStyle);
+        console.error(`${this._consoleStart} News File have %cstatus ${response.status}%cCheck path or change file\nNews Feed is not installed!`, this._consoleStyle);
         return;
       };
       let newsList = await newsFile.json();
+      if (!Array.isArray(JSON.parse(newsList))) {
+        console.error(`${this._consoleStart} News File data must be an %carray%c\nNews Feed is not installed!`, this._consoleStyle);
+        return;
+      };
       localStorage[this._feedName + 'Data'] = newsList;
       localStorage[this._feedName + 'State'] = 'installed';
       return {alreadyInstalled: false, data: JSON.parse(newsList)};
@@ -35,6 +39,7 @@ class NewsFeed {
     };
   }
   async check() {
+    if (localStorage[this._feedName + 'State'] !== 'installed') return;
     let newsFile = await fetch(this._newsFile);
     let newsList = await newsFile.json();
     newsList = JSON.parse(newsList);
@@ -58,6 +63,7 @@ class NewsFeed {
     return {new: newNews, delete: deleteNews};
   }
   delete(news) {
+    if (localStorage[this._feedName + 'State'] !== 'installed') return;
     try {
       if (this._asyncList) {
         let index = this._asyncList.indexOf(news, 0);
@@ -67,14 +73,16 @@ class NewsFeed {
     } catch (error) {};
   }
   deleteAll(newsList) {
+    if (localStorage[this._feedName + 'State'] !== 'installed') return;
     for (let news of newsList) {
       this.delete(news);
     };
   }
   async render(news, rule) {
+    if (localStorage[this._feedName + 'State'] !== 'installed') return;
     let response = await this._cache(news);
     if (!response.ok) {
-      console.error(`${this._consoleStart} %c${news}%cfile have ${response.status} status. Check way to this file or change file`, this._consoleStyle);
+      console.error(`${this._consoleStart} %c${news}%cfile have status ${response.status}. Check path or change file`, this._consoleStyle);
       return;
     };
     let data = await response.json();
@@ -107,12 +115,14 @@ class NewsFeed {
     return fetchResponse;
   }
   async renderAll(newsList, rule) {
+    if (localStorage[this._feedName + 'State'] !== 'installed') return;
     if (!rule) rule = 'prepend';
     for (let news of newsList) {
       await this.render(news, rule);
     };
   }
   async renderAsync(newsList) {
+    if (localStorage[this._feedName + 'State'] !== 'installed') return;
     if (this._asyncList) {
       console.error(`${this._consoleStart} %crenderAsync()%cmethod can be called only one time`, this._consoleStart);
       return;
