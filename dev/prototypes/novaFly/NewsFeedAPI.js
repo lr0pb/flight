@@ -149,9 +149,9 @@ class NewsFeed {
     let observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(async (entry) => {
         if (!entry.isIntersecting) return;
+        document.querySelector(`#${this._feedName} > article:last-child`).removeAttribute('style');
         await renderPartFunction();
         observer.unobserve(entry.target);
-        document.querySelector(`#${this._feedName} > article:last-child`).removeAttribute('style');
         if (this._length / (this._newsPerRender * this._currentPosition) <= 1) {
           observer.disconnect();
         } else {
@@ -159,7 +159,7 @@ class NewsFeed {
           document.querySelector(`#${this._feedName} > article:last-child`).style.backgroundColor = 'aliceblue';
         };
       });
-    }, {threshold: 1});
+    }, {root: this._feed, threshold: 1});
     observer.observe(document.querySelector(`#${this._feedName} > article:last-child`));
     document.querySelector(`#${this._feedName} > article:last-child`).style.backgroundColor = 'aliceblue';
   }
