@@ -159,7 +159,7 @@ class NewsFeed {
           document.querySelector(`#${this._feedName} > article:last-child`).style.backgroundColor = 'aliceblue';
         };
       });
-    }, {root: this._feed, threshold: 1});
+    }, {root: this._feed, threshold: 0});
     observer.observe(document.querySelector(`#${this._feedName} > article:last-child`));
     document.querySelector(`#${this._feedName} > article:last-child`).style.backgroundColor = 'aliceblue';
   }
