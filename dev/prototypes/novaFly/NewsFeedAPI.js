@@ -157,15 +157,17 @@ class NewsFeed {
           observer.observe(document.querySelector(`#${this._feedName} > article:last-child`));
         };
       });
-    }, {rootMargin: '50px', threshold: 1});
+    }, {rootMargin: '250px', threshold: 1});
     observer.observe(document.querySelector(`#${this._feedName} > article:last-child`));
   }
   _currentPosition = 0;
   _newsPerRender = null;
   getNewsPerRender() {
+    if (localStorage[this._feedName + 'State'] !== 'installed') return;
     return this._newsPerRender;
   }
   setNewsPerRender(count) {
+    if (localStorage[this._feedName + 'State'] !== 'installed') return;
     if (count < 10) {
       this._newsPerRender = 10;
       console.warn(`${this._consoleStart} Mininal newsPerRrender count is %c10%c`, this._consoleStyle);
@@ -180,9 +182,11 @@ class NewsFeed {
   }
   _template = {HTML: null, variables: null}
   getTemplate() {
+    if (localStorage[this._feedName + 'State'] !== 'installed') return;
     return {HTML: this._template.HTML, variables: this._template.variables};
   }
   setTemplate(template, variablesBoolean) {
+    if (localStorage[this._feedName + 'State'] !== 'installed') return;
     this._template.HTML = template;
     this._template.variables = variablesBoolean;
   }
