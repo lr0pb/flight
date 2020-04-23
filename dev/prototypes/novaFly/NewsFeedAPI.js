@@ -151,14 +151,17 @@ class NewsFeed {
         if (!entry.isIntersecting) return;
         await renderPartFunction();
         observer.unobserve(entry.target);
+        document.querySelector(`#${this._feedName} > article:last-child`).removeAttribute('style');
         if (this._length / (this._newsPerRender * this._currentPosition) <= 1) {
           observer.disconnect();
         } else {
           observer.observe(document.querySelector(`#${this._feedName} > article:last-child`));
+          document.querySelector(`#${this._feedName} > article:last-child`).style.backgroundColor = 'aliceblue';
         };
       });
-    }, {rootMargin: '250px', threshold: 1});
+    }, {rootMargin: '250px 0 0 0', threshold: 1});
     observer.observe(document.querySelector(`#${this._feedName} > article:last-child`));
+    document.querySelector(`#${this._feedName} > article:last-child`).style.backgroundColor = 'aliceblue';
   }
   _currentPosition = 0;
   _newsPerRender = null;
