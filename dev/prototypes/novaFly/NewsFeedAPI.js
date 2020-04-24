@@ -267,8 +267,8 @@ class NewsFeed {
   }
   setTemplate(template, variablesBoolean) {
     if (localStorage[this._feedName + 'State'] !== 'installed') return;
-    if (typeof template !== 'object') {
-      console.error(`${this._consoleStart} Template value must be an %cobject%c`, this._consoleStyle);
+    if (typeof template !== 'string') {
+      console.error(`${this._consoleStart} Template value must be a %cstring%c`, this._consoleStyle);
       return;
     };
     if (typeof variablesBoolean !== 'boolean') {
