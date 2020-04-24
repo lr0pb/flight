@@ -77,8 +77,8 @@ class NewsFeed {
     console.warn(`${this._consoleStart} Set your custom cache period by %csetCachePeriod(days)%cmethod`, this._consoleStyle);
   };
   _manageCache() {
+    if (!this._cachePeriod) this._setDefaultCachePeriod();
     if (!localStorage[this._feedName + 'Cache']) {
-      if (!this._cachePeriod) this._setDefaultCachePeriod();
       let cacheState = {
         startDate: new Date().getTime(),
         period: this._cachePeriod,
@@ -88,6 +88,7 @@ class NewsFeed {
     } else {
       let today = new Date().getTime();
       let cacheState = JSON.parse(localStorage[this._feedName + 'Cache']);
+      this._cachePeriod = cacheState.period;
       const deleteCache = () => {
         caches.delete(this._feedName);
         let cacheState = JSON.parse(localStorage[this._feedName + 'Cache']);
