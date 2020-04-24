@@ -64,6 +64,10 @@ class NewsFeed {
   }
   setCachePeriod(days) {
     if (localStorage[this._feedName + 'State'] !== 'installed') return;
+    if (typeof days !== 'number') {
+      console.error(`${this._consoleStart} Days value must be an integer %cnumber%c`, this._consoleStyle);
+      return;
+    };
     days = Math.floor(days);
     if (days < 7) {
       this.setCachePeriod(7);
@@ -89,19 +93,20 @@ class NewsFeed {
     } else {
       let today = new Date().getTime();
       let cacheState = JSON.parse(localStorage[this._feedName + 'Cache']);
-      this._cachePeriod = cacheState.period;
-      const deleteCache = () => {
+      cacheState.period = this._cachePeriod;
+      const resetCache = () => {
         caches.delete(this._feedName);
         let cacheState = JSON.parse(localStorage[this._feedName + 'Cache']);
+        cacheState.startDate = new Date().getTime();
         cacheState.count = 0;
         localStorage[this._feedName + 'Cache'] = JSON.stringify(cacheState);
       };
       if (today - cacheState.period >= cacheState.startDate && today - cacheState.period * 3 < cacheState.startDate && cacheState.count >= this._newsPerRender * 3) {
-        deleteCache();
+        resetCache();
       } else if (today - cacheState.period * 3 >= cacheState.startDate && today - cacheState.period * 4 < cacheState.startDate && (cacheState.count >= this._newsPerRender * 2 || cacheState.count >= 80)) {
-        deleteCache();
+        resetCache();
       } else if (today - cacheState.period * 4 >= cacheState.startDate) {
-        deleteCache();
+        resetCache();
       };
     };
   }
@@ -236,20 +241,24 @@ class NewsFeed {
     if (localStorage[this._feedName + 'State'] !== 'installed') return;
     return this._newsPerRender;
   }
-  setNewsPerRender(count) {
+  setNewsPerRender(value) {
     if (localStorage[this._feedName + 'State'] !== 'installed') return;
-    count = Math.floor(count);
-    if (count < 10) {
+    if (typeof value !== 'number') {
+      console.error(`${this._consoleStart} NewsPerRender value must be an integer %cnumber%c`, this._consoleStyle);
+      return;
+    };
+    value = Math.floor(value);
+    if (value < 10) {
       this._newsPerRender = 10;
-      console.warn(`${this._consoleStart} Mininal newsPerRender count is %c10%c`, this._consoleStyle);
-    } else if (count > 50) {
+      console.warn(`${this._consoleStart} Mininal newsPerRender value is %c10%c`, this._consoleStyle);
+    } else if (value > 50) {
       this._newsPerRender = 50;
-      console.warn(`${this._consoleStart} Maximum newsPerRender count is %c50%c`, this._consoleStyle);
-    } else this._newsPerRender = count;
+      console.warn(`${this._consoleStart} Maximum newsPerRender value is %c50%c`, this._consoleStyle);
+    } else this._newsPerRender = value;
   };
   _setDefaultNewsPerRender() {
     this.setNewsPerRender(10);
-    console.warn(`${this._consoleStart} Set your custom newsPerRender count by %csetNewsPerRender(count)%cmethod`, this._consoleStyle);
+    console.warn(`${this._consoleStart} Set your custom newsPerRender value by %csetNewsPerRender(value)%cmethod`, this._consoleStyle);
   }
   _template = {HTML: null, variables: null}
   getTemplate() {
@@ -258,6 +267,14 @@ class NewsFeed {
   }
   setTemplate(template, variablesBoolean) {
     if (localStorage[this._feedName + 'State'] !== 'installed') return;
+    if (typeof template !== 'object') {
+      console.error(`${this._consoleStart} Template value must be an %cobject%c`, this._consoleStyle);
+      return;
+    };
+    if (typeof variablesBoolean !== 'boolean') {
+      console.error(`${this._consoleStart} VariablesBoolean value must be a %cboolean%c`, this._consoleStyle);
+      return;
+    };
     this._template.HTML = template;
     this._template.variables = variablesBoolean;
   }
