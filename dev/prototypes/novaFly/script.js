@@ -403,10 +403,11 @@ function flyRouter(e) {
   };
 });*/
 
-let feed = await new NewsFeed(document.querySelector('#feed'), './api/news/newsList.json', {
+let feed = new NewsFeed(document.querySelector('#feed'), './api/news/newsList.json', {
   usePath: true,
   noCache: false,
-}).activate({
+});
+feed.activate({
   cachePeriod: 7,
   newsPerRender: 10,
 });
