@@ -24,6 +24,7 @@ class NewsFeed {
     if (settings) {
       if (settings.template) this.setTemplate(settings.template.HTML, settings.template.variablesBoolean);
       if (settings.newsPerRender) this.setNewsPerRender(settings.newsPerRender);
+      if (settings.cachePeriod) this.setCachePeriod(settings.cachePeriod);
     };
     let install = await this.install();
     await this.renderAsync(install.data);
@@ -36,7 +37,7 @@ class NewsFeed {
     };
   }
   async install() {
-    //if (!this._noCache) this._manageCache();
+    if (!this._noCache) this._manageCache();
     if (localStorage[this._feedName + 'State'] !== 'installed') {
       let newsFile = await fetch(this._newsFile);
       if (!newsFile.ok) {
@@ -57,11 +58,27 @@ class NewsFeed {
     };
   }
   _cachePeriod = null;
-  setCachePeriod(days) {
-    this._cachePeriod = days * 24 * 60 * 60 * 1000;
+  getCachePeriod() {
+    if (localStorage[this._feedName + 'State'] !== 'installed') return;
+    return this._cachePeriod / 24 / 60 / 60 / 1000;
   }
+  setCachePeriod(days) {
+    if (localStorage[this._feedName + 'State'] !== 'installed') return;
+    if (days < 7) {
+      this.setCachePeriod(7);
+      console.error(`${this._consoleStart} Minimal cache period is %c7 days%c`, this._consoleStyle);
+    } else if (days > 30) {
+      this.setCachePeriod(30);
+      console.error(`${this._consoleStart} Maximum cache period is %c30 days%c`, this._consoleStyle);
+    } else this._cachePeriod = days * 24 * 60 * 60 * 1000;
+  }
+  _setDefaultCachePeriod() {
+    this.setCachePeriod(14);
+    console.warn(`${this._consoleStart} Set your custom cache period by %csetCachePeriod(days)%cmethod`, this._consoleStyle);
+  };
   _manageCache() {
     if (!localStorage[this._feedName + 'Cache']) {
+      if (!this._cachePeriod) this._setDefaultCachePeriod();
       let cacheState = {
         startDate: new Date().getTime(),
         period: this._cachePeriod,
@@ -69,7 +86,21 @@ class NewsFeed {
       };
       localStorage[this._feedName + 'Cache'] = JSON.stringify(cacheState);
     } else {
-
+      let today = new Date().getTime();
+      let cacheState = JSON.parse(localStorage[this._feedName + 'Cache']);
+      const deleteCache = () => {
+        caches.delete(this._feedName);
+        let cacheState = JSON.parse(localStorage[this._feedName + 'Cache']);
+        cacheState.count = 0;
+        localStorage[this._feedName + 'Cache'] = JSON.stringify(cacheState);
+      };
+      if (today - cacheState.period >= cacheState.startDate && today - cacheState.period * 3 < cacheState.startDate && cacheState.count >= this._newsPerRender * 3) {
+        deleteCache();
+      } else if (today - cacheState.period * 3 >= cacheState.startDate && today - cacheState.period * 4 < cacheState.startDate && (cacheState.count >= this._newsPerRender * 2 || cacheState.count >= 80)) {
+        deleteCache();
+      } else if (today - cacheState.period * 4 >= cacheState.startDate) {
+        deleteCache();
+      };
     };
   }
   async check() {
@@ -145,6 +176,9 @@ class NewsFeed {
       caches.open(this._feedName).then((cache) => {
         cache.put(request, clone);
       })
+      let cacheState = JSON.parse(localStorage[this._feedName + 'Cache']);
+      cacheState.count++;
+      localStorage[this._feedName + 'Cache'] = JSON.stringify(cacheState);
     };
     return fetchResponse;
   }
