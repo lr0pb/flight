@@ -3,8 +3,9 @@
 // v.0.0.2 advanced work with templates
 // v.0.0.3 advanced findDifference() method | not support v.0.0.2 code
 // v.0.0.4 advanced render methods
-// v.0.0.5 cache api integration <===
-// v.0.1.0 pre-release version
+// v.0.0.5 cache api integration
+// v.0.1.0 usable pre-release version <===
+// v.0.1.1 advanced cache managing
 
 class NewsFeed {
   _consoleStart = '[News Feed API]';
@@ -17,8 +18,23 @@ class NewsFeed {
     this._path = newsFile.match(/[-.:\/\w]+\/(?=[-.\w]+.json)/).join('');
     options.usePath ? this._usePath = options.usePath : this._usePath = false;
     options.noCache ? this._noCache = options.noCache : this._noCache = false;
+    return this;
+  }
+  async activate(settings) {
+    if (settings.template) this.setTemplate(settings.template.HTML, settings.template.variablesBoolean);
+    if (settings.newsPerRender) this.setNewsPerRender(settings.newsPerRender);
+    let install = await this.install();
+    await this.renderAsync(install.data);
+    if (install.alreadyInstalled) {
+      let check = await this.check();
+      if (check.anyNews) {
+        this.renderAll(check.new);
+        this.deleteAll(check.delete);
+      };
+    };
   }
   async install() {
+    //if (!this._noCache) this._manageCache();
     if (localStorage[this._feedName + 'State'] !== 'installed') {
       let newsFile = await fetch(this._newsFile);
       if (!newsFile.ok) {
@@ -36,6 +52,22 @@ class NewsFeed {
     } else if (localStorage[this._feedName + 'State'] === 'installed') {
       let newsList = localStorage[this._feedName + 'Data'];
       return {alreadyInstalled: true, data: JSON.parse(newsList)};
+    };
+  }
+  _cachePeriod = null;
+  setCachePeriod(days) {
+    this._cachePeriod = days * 24 * 60 * 60 * 1000;
+  }
+  _manageCache() {
+    if (!localStorage[this._feedName + 'Cache']) {
+      let cacheState = {
+        startDate: new Date().getTime(),
+        period: this._cachePeriod,
+        count: 0
+      };
+      localStorage[this._feedName + 'Cache'] = JSON.stringify(cacheState);
+    } else {
+
     };
   }
   async check() {
@@ -69,7 +101,7 @@ class NewsFeed {
         let index = this._asyncList.indexOf(news, 0);
         this._asyncList = this._asyncList.splice(index, 1);
       };
-      document.querySelector(`#${this._feedName} > article[data-url="${news}"]`).remove();
+      document.querySelector(`#${this._feedName} > article[data-${this._feedName}-url="${news}"]`).remove();
     } catch (error) {};
   }
   deleteAll(newsList) {
@@ -92,7 +124,7 @@ class NewsFeed {
       console.error(`${this._consoleStart} %c${news}%cfile have not valid data`, this._consoleStyle);
       return;
     };
-    article.setAttribute('data-url', news);
+    article.setAttribute(`data-${this._feedName}-url`, news);
     if (rule === 'prepend') this._feed.prepend(article);
     else if (rule === 'append') this._feed.append(article);
     else console.error(`${this._consoleStart} Not valid rule in %crender()%cmethod`, this._consoleStyle);
@@ -168,12 +200,13 @@ class NewsFeed {
   }
   setNewsPerRender(count) {
     if (localStorage[this._feedName + 'State'] !== 'installed') return;
+    count = Math.floor(count);
     if (count < 10) {
       this._newsPerRender = 10;
-      console.warn(`${this._consoleStart} Mininal newsPerRrender count is %c10%c`, this._consoleStyle);
-    } else if (count > 200) {
-      this._newsPerRender = 200;
-      console.warn(`${this._consoleStart} Maximum newsPerRender count is %c200%c`, this._consoleStyle);
+      console.warn(`${this._consoleStart} Mininal newsPerRender count is %c10%c`, this._consoleStyle);
+    } else if (count > 50) {
+      this._newsPerRender = 50;
+      console.warn(`${this._consoleStart} Maximum newsPerRender count is %c50%c`, this._consoleStyle);
     } else this._newsPerRender = count;
   };
   _setDefaultNewsPerRender() {
