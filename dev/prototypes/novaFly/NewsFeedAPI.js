@@ -21,8 +21,10 @@ class NewsFeed {
     return this;
   }
   async activate(settings) {
-    if (settings.template) this.setTemplate(settings.template.HTML, settings.template.variablesBoolean);
-    if (settings.newsPerRender) this.setNewsPerRender(settings.newsPerRender);
+    if (settings) {
+      if (settings.template) this.setTemplate(settings.template.HTML, settings.template.variablesBoolean);
+      if (settings.newsPerRender) this.setNewsPerRender(settings.newsPerRender);
+    };
     let install = await this.install();
     await this.renderAsync(install.data);
     if (install.alreadyInstalled) {
