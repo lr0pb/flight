@@ -403,7 +403,7 @@ function flyRouter(e) {
   };
 });*/
 
-let feed = new NewsFeed(document.querySelector('#feed'), './api/news/newsList.json', {
+let feed = await new NewsFeed(document.querySelector('#feed'), './api/news/newsList.json', {
   usePath: true,
   noCache: false,
 }).activate({
