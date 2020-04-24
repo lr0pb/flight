@@ -18,7 +18,6 @@ class NewsFeed {
     this._path = newsFile.match(/[-.:\/\w]+\/(?=[-.\w]+.json)/).join('');
     options.usePath ? this._usePath = options.usePath : this._usePath = false;
     options.noCache ? this._noCache = options.noCache : this._noCache = false;
-    return this;
   }
   async activate(settings) {
     if (settings) {
@@ -35,6 +34,7 @@ class NewsFeed {
         this.deleteAll(check.delete);
       };
     };
+    return this;
   }
   async install() {
     if (!this._noCache) this._manageCache();
@@ -64,6 +64,7 @@ class NewsFeed {
   }
   setCachePeriod(days) {
     if (localStorage[this._feedName + 'State'] !== 'installed') return;
+    days = Math.floor(days);
     if (days < 7) {
       this.setCachePeriod(7);
       console.error(`${this._consoleStart} Minimal cache period is %c7 days%c`, this._consoleStyle);

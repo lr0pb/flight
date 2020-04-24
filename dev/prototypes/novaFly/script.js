@@ -403,4 +403,10 @@ function flyRouter(e) {
   };
 });*/
 
-let feed = new NewsFeed(document.querySelector('#feed'), './api/news/newsList.json', {usePath: true}).activate();
+let feed = new NewsFeed(document.querySelector('#feed'), './api/news/newsList.json', {
+  usePath: true,
+  noCache: false,
+}).activate({
+  cachePeriod: 7,
+  newsPerRender: 10,
+});
