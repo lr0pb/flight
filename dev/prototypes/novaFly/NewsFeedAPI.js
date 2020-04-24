@@ -21,7 +21,7 @@ class NewsFeed {
   }
   async activate(settings) {
     if (settings) {
-      if (settings.template) this.setTemplate(settings.template.HTML, settings.template.variablesBoolean);
+      if (settings.template) this.setTemplate(settings.template.HTML, settings.template.variables);
       if (settings.newsPerRender) this.setNewsPerRender(settings.newsPerRender);
       if (settings.cachePeriod) this.setCachePeriod(settings.cachePeriod);
     };
