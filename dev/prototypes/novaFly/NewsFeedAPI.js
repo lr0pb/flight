@@ -83,23 +83,24 @@ class NewsFeed {
   };
   _manageCache() {
     if (!this._cachePeriod) this._setDefaultCachePeriod();
-    if (!localStorage[this._feedName + 'Cache']) {
+    const setCacheState = () => {
       let cacheState = {
         startDate: new Date().getTime(),
         period: this._cachePeriod,
         count: 0
       };
       localStorage[this._feedName + 'Cache'] = JSON.stringify(cacheState);
+    };
+    if (!localStorage[this._feedName + 'Cache']) {
+      setCacheState();
     } else {
       let today = new Date().getTime();
       let cacheState = JSON.parse(localStorage[this._feedName + 'Cache']);
       cacheState.period = this._cachePeriod;
+      if (!this._newsPerRender) this._setDefaultNewsPerRender();
       const resetCache = () => {
         caches.delete(this._feedName);
-        let cacheState = JSON.parse(localStorage[this._feedName + 'Cache']);
-        cacheState.startDate = new Date().getTime();
-        cacheState.count = 0;
-        localStorage[this._feedName + 'Cache'] = JSON.stringify(cacheState);
+        setCacheState();
       };
       if (today - cacheState.period >= cacheState.startDate && today - cacheState.period * 3 < cacheState.startDate && cacheState.count >= this._newsPerRender * 3) {
         resetCache();
