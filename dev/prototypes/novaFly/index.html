@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <title>novaFly</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="NewsFeedAPI.js"></script>
+    <script defer src="FlightAnimations.js"></script>
     <script defer src="script.js"></script>
   </head>
   <body>
     <main>
-      <img id="bg" src="images/bg.jpg" alt="">
+      <img class="fly" id="bg" src="images/bg.jpg" alt="">
       <div id="startIcons">
         <img class="fly icon" id="im1" src="images/im1.jpg" alt="" tabindex="0" role="button">
         <img class="fly icon" id="im2" src="images/im2-1.jpg" alt="" tabindex="0" role="button">
-        <img class="fly icon" id="im3" src="images/im3.jpg" alt="" tabindex="0" role="button">
+        <img class="fly icon" id="im3" src="images/im3.jpg" data-dlCenter="" data-dlOffset="" alt="" tabindex="0" role="button">
         <img class="fly icon" id="im4" src="images/im4.jpg" alt="" tabindex="0" role="button">
         <img class="fly icon" id="im5" src="images/im5.jpg" alt="" tabindex="0" role="button">
         <img class="fly icon" id="im6" src="images/im6.jpg" alt="" tabindex="0" role="button">
@@ -24,6 +24,7 @@
         <img class="fly icon" id="im11" src="images/im11.jpg" alt="" tabindex="0" role="button">
         <img class="fly icon" id="im12" src="images/im12.jpg" alt="" tabindex="0" role="button">
         <div id="otherIcons">
+          <div id="dlBlob"></div>
           <img class="fly icon hide" id="im111" src="images/im1.jpg" alt="" tabindex="0" role="button">
           <img class="fly icon hide" id="im21" src="images/im2-1.jpg" alt="" tabindex="0" role="button">
           <img class="fly icon hide" id="im22" src="images/im2-2.jpg" alt="" tabindex="0" role="button">
@@ -35,6 +36,10 @@
           <div class="fly icon circle right hide" id="im44" tabindex="0" role="button">Вправо</div>
           <img class="fly icon poster hide" data-poster id="im45" src="images/gl2.jpg" alt="" tabindex="0" role="button">
           <img class="fly icon hide" id="im71" src="images/im7.jpg" alt="" tabindex="0" role="button">
+          <div class="fly icon circle left hide" id="im81" tabindex="0" role="button">Влево</div>
+          <div class="fly icon circle right hide" id="im82" tabindex="0" role="button">Вправо</div>
+          <img class="fly icon hide" id="im91" src="images/im9-1.jpg" alt="" tabindex="0" role="button">
+          <img class="fly hide" id="im8to9" src="images/im8to9.jpg" alt="" tabindex="0" role="button">
           <img class="fly icon hide" id="im101" src="images/im10.jpg" alt="" tabindex="0" role="button">
         </div>
       </div>
@@ -43,9 +48,6 @@
         <canvas id="mapLines" width="400" height="250"></canvas>
       </div>
       <button id="backToTheStart" data-green disabled>Вернуться</button>
-      <div id="feed">
-
-      </div>
     </main>
   </body>
 </html>

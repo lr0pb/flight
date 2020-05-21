@@ -35,15 +35,15 @@ body, main {
 img {
   object-fit: cover;
   user-select: none;
+  outline: none;
 }
 #bg, #startIcons, #otherIcons {
   width: calc(100vw + 5rem); height: 75vw;
   position: absolute;
 }
 #bg {
-  object-fit: cover;
-  top: auto; opacity: 1;
-  transition: scale 1.5s, transform 1.5s, filter 0.5s;
+  top: auto; opacity: 1; --scale: 1;
+  transition: transform 1.5s, filter 0.5s;
 }
 #startIcons {
   perspective: 50rem;
@@ -57,34 +57,35 @@ img {
 
 .fly {
   width: inherit; height: inherit;
-  transform: scale(var(--scale)) rotateY(var(--rotate));
-  transform-origin: var(--origin); translate: var(--dx) var(--dy);
-  --scale: 0.1; --rotate: 0deg; --translate: 0vw; --origin: center;
+  transform: scale(var(--scale)) rotateY(var(--rotate)) translate(var(--offset));
+  transform-origin: var(--origin);
+  --scale: 0.1; --rotate: 0deg; --offset: 0vw, 0vw; --translate: 0vw; --origin: center;
   top: 0; left: var(--translate);
   opacity: 0;
   position: absolute;
   border-radius: 0;
   border: none;
   box-sizing: border-box;
+  outline: none;
   transition: left 1.2s, transform 1.2s, opacity 1s, border-radius 0.5s, filter 0.5s;
 }
 .icon, .hide {
   width: 14rem; height: 14rem;
-  transform: scale(0.5); opacity: 1;
+  --scale: 0.5; opacity: 1;
   cursor: pointer;
   border-radius: 50%;
   border: 1.5rem solid white;
   transition: transform 0.7s, border-radius 0.7s, border 0.7s, opacity 0.5s, background-color 0.6s, box-shadow 0.6s ;
 }
 .icon:hover, .icon:focus, .poster {
-  transform: scale(1);
+  --scale: 1;
   border-radius: 3rem;
   border: 0.8rem solid hsla(0, 0%, 100%, 0.7);
   outline: none;
 }
 .poster {
   width: 20rem; height: 15rem;
-  transform: scale(0.8);
+  --scale: 0.8;
   border: 1rem solid hsl(0, 0%, 100%);
 }
 .poster:hover, .poster:focus {
@@ -93,7 +94,7 @@ img {
 }
 .circle {
   width: 18rem; height: 18rem;
-  transform: scale(0.7); top: 34vw;
+  --scale: 0.7; top: 34vw;
   user-select: none;
   display: flex;
   align-items: center;
@@ -111,15 +112,30 @@ img {
   background-color: hsla(0, 0%, 0%, 0.85);
 }
 .left {
-  left: 2vw;
+  left: 3vw;
 }
 .right {
   left: auto;
-  right: 2vw;
+  right: 3vw;
 }
 
 .hide {
-  transform: scale(0); opacity: 0;
+  --scale: 0; opacity: 0;
+}
+
+#dlBlob {
+  position: absolute;
+  width: 40vw; height: 30vw;
+  border-radius: 50%;
+  opacity: 0.4;
+  background-image: -webkit-radial-gradient(yellow, transparent),
+                    -webkit-radial-gradient(orange, transparent);
+  filter: blur(100px);
+  top: var(--top); left: var(--left);
+  transform: translate(var(--offset)) scale(var(--scale));
+  --top: 0; --left: 0; --offset: 0vw, 0vw; --scale: 0.5;
+  transition: 5s;
+  display: none;
 }
 
 #im1 {left: 16.5vw; top: 29.5vw;}
@@ -142,6 +158,7 @@ img {
 #im41 {left: 75vw; top: 30vw;}
 #im45 {left: 74vw; top: 30vw;}
 #im71 {left: 51vw; top: 32vw;}
+#im91 {left: 58vw; top: 23vw;}
 #im101 {left: 40vw; top: 37vw;}
 
 
@@ -155,6 +172,7 @@ img {
   overflow: hidden;
 }
 #map {
+  display: none;
   width: 80rem; height: 60rem;
   position: absolute;
   background-image: url(images/bg.jpg);
@@ -168,7 +186,6 @@ img {
   bottom: 5rem; left: 50rem;
   width: 80rem; height: 50rem;
   background-color: white;
-  overflow: hidden auto;
 }
 
 button {
